@@ -1,1 +1,5 @@
 include ':app'
+/*
+ * 项目第三方库
+ */
+include ':library-autolayout'//适配机型库
