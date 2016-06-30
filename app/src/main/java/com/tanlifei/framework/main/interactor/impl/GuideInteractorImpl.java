@@ -16,13 +16,13 @@ import java.util.List;
  */
 public class GuideInteractorImpl implements GuideInteractor {
 
-    private  List<View> guideViews ;
-    private  List<View> guideIndicatorViews ;
+    private List<View> guideViews;
+    private List<View> guideIndicatorViews;
 
     @Override
     public List<View> addGuideViews(Context context, View.OnClickListener listener) {
-        if(ListUtils.isEmpty(guideViews)){
-            guideViews = new ArrayList<View>();
+        if (ListUtils.isEmpty(guideViews)) {
+            guideViews = new ArrayList<>();
             guideViews.add(InflaterUtils.inflate(context, R.layout.main_activity_guide_page_one));
             guideViews.add(InflaterUtils.inflate(context, R.layout.main_activity_guide_page_two));
             guideViews.add(InflaterUtils.inflate(context, R.layout.main_activity_guide_page_three));
@@ -35,14 +35,13 @@ public class GuideInteractorImpl implements GuideInteractor {
     }
 
 
-
     @Override
     public List<View> addGuideIndicatorViews(Context context, View.OnClickListener listener) {
-        if(ListUtils.isEmpty(guideViews)){
-            addGuideViews(context,listener);
+        if (ListUtils.isEmpty(guideViews)) {
+            addGuideViews(context, listener);
         }
-        if (ListUtils.isEmpty(guideIndicatorViews)){
-            guideIndicatorViews = new ArrayList<View>();
+        if (ListUtils.isEmpty(guideIndicatorViews)) {
+            guideIndicatorViews = new ArrayList<>();
             for (int i = 0; i < guideViews.size(); i++) {
                 guideIndicatorViews.add(InflaterUtils.inflate(context, R.layout.main_activity_guide_indicator));
             }
