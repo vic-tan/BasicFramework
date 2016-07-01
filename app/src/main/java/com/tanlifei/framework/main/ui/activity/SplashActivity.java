@@ -36,13 +36,13 @@ public class SplashActivity extends BaseActivity implements SplashView {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case HANDLE_WHAT_ZERO://第一次打开应用,进入引导页
-                    start(GuideActivity.TAG, GuideActivity_.class);//进入引导页
+                    start(GuideActivity_.class);//进入引导页
                     break;
                 case HANDLE_WHAT_ONE://进入正在加载数据页
-                    start(LoadingActivity.TAG, LoadingActivity.class);//进入加载资源数据页
+                    start(LoadingActivity.class);//进入加载资源数据页
                     break;
                 case HANDLE_WHAT_TWO://没有正在加载数据页时,直接进入首页
-                    start(HomeActivity.TAG, HomeActivity_.class);//进入首页
+                    start(HomeActivity_.class);//进入首页
                     break;
             }
         }
@@ -54,8 +54,13 @@ public class SplashActivity extends BaseActivity implements SplashView {
         presenter.delayedStart(handler);
     }
 
-    private void start(String stackActKey,Class clazz){
-        StartActUtils.start(new ActBean(mContext, stackActKey, clazz));
-        StartActUtils.finish(new ActBean(mContext, TAG));
+    private void start(Class clazz) {
+        StartActUtils.start(new ActBean(mContext, clazz));
+        StartActUtils.finish(new ActBean(mContext, SplashActivity_.class));
+    }
+
+    @Override
+    protected Class<?> childClassName() {
+        return SplashActivity_.class;
     }
 }

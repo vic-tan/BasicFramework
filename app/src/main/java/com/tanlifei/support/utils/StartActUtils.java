@@ -1,7 +1,6 @@
 package com.tanlifei.support.utils;
 
 import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,7 +30,7 @@ public class StartActUtils {
      * @param intent
      */
     public static void start(ActBean actBean, Intent intent) {
-        actManage(actBean.getContext(), actBean.getStackActKey(), true);
+        actManage(actBean.getContext(), actBean.getClazz().getSimpleName(), true);
         actBean.getContext().startActivity(intent);
         ((Activity) actBean.getContext()).overridePendingTransition(R.anim.common_activity_start_anim, R.anim.common_activity_finish_main);
     }
@@ -101,7 +100,7 @@ public class StartActUtils {
      * @throws:throws
      */
     public static void forResult(ActBean actBean, Intent intent, int requestCode) {
-        actManage(actBean.getContext(), actBean.getStackActKey(), true);
+        actManage(actBean.getContext(), actBean.getClazz().getSimpleName(), true);
         ((Activity) actBean.getContext()).startActivityForResult(intent, requestCode);
     }
 
@@ -113,28 +112,9 @@ public class StartActUtils {
      * @throws:throws
      */
     public static void finish(ActBean actBean) {
-        actManage(actBean.getContext(), actBean.getStackActKey(), false);
+        actManage(actBean.getContext(), actBean.getClazz().getSimpleName(), false);
         ((Activity) actBean.getContext()).finish();
         ((Activity) actBean.getContext()).overridePendingTransition(R.anim.activity_open_main, R.anim.activity_close_next);
-    }
-
-    /**
-     * 通过activity绝对路径跳转，不带参数
-     */
-    public static void startForAbsolutePath(ActBean actBean) {
-        ComponentName comp = new ComponentName(actBean.getContext().getPackageName(), actBean.getActivityAbsolutePath());
-        Intent intent = new Intent();
-        intent.setComponent(comp);
-        start(actBean, intent);
-    }
-
-    /**
-     * 通过activity绝对路径跳转，带参数
-     */
-    public static void startForAbsolutePath(ActBean actBean, Intent intent) {
-        ComponentName comp = new ComponentName(actBean.getContext().getPackageName(), actBean.getActivityAbsolutePath());
-        intent.setComponent(comp);
-        start(actBean, intent);
     }
 
 

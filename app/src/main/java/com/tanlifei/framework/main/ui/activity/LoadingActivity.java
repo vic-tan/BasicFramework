@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.tanlifei.common.ui.activity.BaseActivity;
 
 /**
- * 加载数据界面
+ * 加载资源数据界面
  * Created by tanlifei on 16/1/19.
  */
 public class LoadingActivity extends BaseActivity {
@@ -21,5 +21,10 @@ public class LoadingActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         exitApp();
+    }
+
+    @Override
+    protected Class<?> childClassName() {
+        return LoadingActivity.class;
     }
 }

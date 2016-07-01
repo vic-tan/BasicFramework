@@ -30,7 +30,7 @@ public class ToastUtils {
     }
 
     public static void show(Context context, CharSequence text, int duration) {
-        View layout = InflaterUtils.inflate(context, R.layout.common_toast_layout);
+        View layout = InflaterUtils.inflate(context, R.layout.common_layout_toast);
         TextView textV = (TextView) layout.findViewById(R.id.toast_text);
         textV.setText(text);
 

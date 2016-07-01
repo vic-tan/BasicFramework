@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BasicFramework</string>
+    <string name="font_family">sans-serif-light</string><!--字体样式-->
 </resources>

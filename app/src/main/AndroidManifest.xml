@@ -27,6 +27,8 @@
         <meta-data
             android:name="design_height"
             android:value="1920" />
+
+        <activity android:name="com.tanlifei.exemple.ExempleHomeActivity_"/>
     </application>
 
 </manifest>

@@ -47,8 +47,8 @@ public class GuideActivity extends BaseActivity implements GuideView,
     @Override
     public void onClick(View v) {
         SPUtils.putBoolean(SplashPresenterImpl.FIRST_LAUNCHER_APP_TAG, false);//设置为已打开过该应用了
-        StartActUtils.start(new ActBean(mContext, HomeActivity.TAG, HomeActivity_.class));
-        StartActUtils.finish(new ActBean(mContext, TAG));
+        StartActUtils.start(new ActBean(mContext, HomeActivity_.class));
+        StartActUtils.finish(new ActBean(mContext, GuideActivity_.class));
     }
 
     @Override
@@ -69,6 +69,11 @@ public class GuideActivity extends BaseActivity implements GuideView,
 
     }
 
+
+    @Override
+    protected Class<?> childClassName() {
+        return GuideActivity_.class;
+    }
 
     /**
      * 退出App

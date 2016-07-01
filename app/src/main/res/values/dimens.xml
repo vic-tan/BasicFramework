@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ————————————————————————————————————— app所有字体大小常量   ——————————————————————————————————————————————————— -->
+    <dimen name="common_text_size_actionbar_title">55px</dimen> <!-- actionbar 标题字体大小 -->
+    <dimen name="common_text_size_actionbar_opt">45px</dimen> <!-- actionbar 右边操作按钮字体大小 -->
+    <dimen name="common_text_size_expandable">45px</dimen> <!-- expandable 字体大小 -->
+
+    <!-- ————————————————————————————————————— actionbar 常量   ——————————————————————————————————————————————————— -->
+    <dimen name="common_actionbar_standard_height">145px</dimen> <!-- 高度 -->
+
+</resources>

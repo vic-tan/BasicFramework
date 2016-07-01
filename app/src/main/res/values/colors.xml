@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!-- ————————————————————————————————————— app所有字体颜色常量   ——————————————————————————————————————————————————— -->
+    <color name="common_text_color_actionbar_title">#ffffff</color> <!-- actionbar 标题字体大小 -->
+    <color name="common_text_color_actionbar_opt">#ffffff</color> <!-- actionbar 右边操作按钮字体大小 -->
+    <color name="common_text_color_expandable">#666666</color> <!-- expandable 字体大小 -->
+
+
+
+    <color name="main_home_list_item_bg_pressed">#eaeaef</color>
 </resources>

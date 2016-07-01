@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ——————————————————————————————————————————ExpandableTextView 伸缩—————————————————————————————————————————— -->
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="maxCollapsedLines" format="integer"/>
+        <attr name="animDuration" format="integer"/>
+        <attr name="animAlphaStart" format="float"/>
+        <attr name="expandDrawable" format="reference"/>
+        <attr name="collapseDrawable" format="reference"/>
+        <!-- 点击事件的触发方式 -->
+        <attr name="clickListenerType">
+            <!-- 点击区域为全部区域,包括TextView和图标 -->
+            <enum name="all" value="0"></enum>
+            <!-- 点击区域仅为图标区域 -->
+            <enum name="footer" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
     <!-- —————————————————————————————————————————— Round 圆角 View  —————————————————————————————————————————— -->
 
     <!-- 以下是重用attr的正确姿势,一切为了在布局中可以自动提示--><!-- 圆角矩形背景色 -->
