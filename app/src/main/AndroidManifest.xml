@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.ui.activity.GuideActivity_"/>
-        <activity android:name=".main.ui.activity.HomeActivity_"/>
+        <activity android:name=".main.ui.activity.GuideActivity_" />
+        <activity android:name=".main.ui.activity.HomeActivity_" />
 
         <meta-data
             android:name="design_width"
@@ -28,7 +28,14 @@
             android:name="design_height"
             android:value="1920" />
 
-        <activity android:name="com.tanlifei.exemple.ExempleHomeActivity_"/>
+        <!-- —————————————————————————————————— 示例  —————————————————————————————————————— -->
+
+        <activity android:name="com.tanlifei.exemple.main.ExempleHomeActivity_" />
+
+        <!-- 所有公用的adapter -->
+        <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMainActivity" /><!-- 主界面 -->
+        <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdapterSingleItemTypeActivity" /> <!-- 单个布局的adapter -->
+        <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMutliItemTypeActivity" /><!-- 多个布局的adapter -->
     </application>
 
 </manifest>

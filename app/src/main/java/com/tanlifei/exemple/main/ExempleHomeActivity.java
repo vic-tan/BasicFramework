@@ -1,13 +1,15 @@
-package com.tanlifei.exemple;
+package com.tanlifei.exemple.main;
 
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.ListView;
 
-import com.tanlifei.common.base.adaper.CommonAdapter;
-import com.tanlifei.common.base.adaper.ViewHolder;
+import com.tanlifei.common.base.adapter.CommonAdapter;
+import com.tanlifei.common.base.adapter.ViewHolder;
 import com.tanlifei.common.bean.ActBean;
 import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.exemple.main.bean.ExempleHomeListBean;
+import com.tanlifei.exemple.main.presenter.ExempleHomePresenter;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
 import com.tanlifei.support.view.textview.expandable.ExpandableTextView;
@@ -33,7 +35,7 @@ public class ExempleHomeActivity extends BaseActivity {
     @AfterViews
     void init() {
         super.initActionBar();
-        presenter = new ExempleHomePresenterImpl();
+        presenter = new com.tanlifei.exemple.main.presenter.ExempleHomePresenterImpl();
         mList.setAdapter(new CommonAdapter<ExempleHomeListBean>(this, presenter.addList(), R.layout.exemple_activity_home_list_item) {
             @Override
             public void convert(ViewHolder holder, final ExempleHomeListBean bean) {

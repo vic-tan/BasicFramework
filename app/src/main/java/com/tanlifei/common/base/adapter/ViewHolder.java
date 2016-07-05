@@ -1,4 +1,4 @@
-package com.tanlifei.common.base.adaper;
+package com.tanlifei.common.base.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

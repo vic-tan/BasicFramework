@@ -1,4 +1,4 @@
-package com.tanlifei.common.base.adaper;
+package com.tanlifei.common.base.adapter;
 
 /**
  * 多个布局实现接口

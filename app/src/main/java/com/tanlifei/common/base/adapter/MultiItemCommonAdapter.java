@@ -1,4 +1,4 @@
-package com.tanlifei.common.base.adaper;
+package com.tanlifei.common.base.adapter;
 
 import android.content.Context;
 import android.view.View;

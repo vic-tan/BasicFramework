@@ -1,4 +1,4 @@
-package com.tanlifei.exemple;
+package com.tanlifei.exemple.main.bean;
 
 /**
  * Created by tanlifei on 16/6/30.

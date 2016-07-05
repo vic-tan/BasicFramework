@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import com.tanlifei.common.bean.ActBean;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.framework.main.GuideAdapter;
+import com.tanlifei.framework.main.adapter.GuideAdapter;
 import com.tanlifei.framework.main.presenter.GuidePresenter;
 import com.tanlifei.framework.main.presenter.impl.GuidePresenterImpl;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;

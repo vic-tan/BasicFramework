@@ -1,4 +1,4 @@
-package com.tanlifei.framework.main;
+package com.tanlifei.framework.main.adapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;

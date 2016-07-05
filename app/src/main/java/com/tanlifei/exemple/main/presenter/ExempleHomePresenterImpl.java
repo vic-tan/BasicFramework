@@ -1,4 +1,8 @@
-package com.tanlifei.exemple;
+package com.tanlifei.exemple.main.presenter;
+
+import com.tanlifei.exemple.main.bean.ExempleHomeListBean;
+import com.tanlifei.exemple.main.interactor.ExempleHomeInteractor;
+import com.tanlifei.exemple.main.interactor.ExempleHomeInteractorImpl;
 
 import java.util.List;
 

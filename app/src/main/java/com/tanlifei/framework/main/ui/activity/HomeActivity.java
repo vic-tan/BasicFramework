@@ -3,11 +3,11 @@ package com.tanlifei.framework.main.ui.activity;
 import android.view.View;
 import android.widget.ListView;
 
-import com.tanlifei.common.base.adaper.CommonAdapter;
-import com.tanlifei.common.base.adaper.ViewHolder;
+import com.tanlifei.common.base.adapter.CommonAdapter;
+import com.tanlifei.common.base.adapter.ViewHolder;
 import com.tanlifei.common.bean.ActBean;
 import com.tanlifei.common.ui.activity.BaseActivity;
-import com.tanlifei.exemple.ExempleHomeActivity_;
+import com.tanlifei.exemple.main.ExempleHomeActivity_;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
 
