@@ -5,7 +5,9 @@
     <color name="common_text_color_actionbar_opt">#ffffff</color> <!-- actionbar 右边操作按钮字体大小 -->
     <color name="common_text_color_expandable">#666666</color> <!-- expandable 字体大小 -->
 
-
+    <!-- ————————————————————————————————————— kprogresshud加载框常量   ——————————————————————————————————————————————————— -->
+    <color name="kprogresshud_default_color">#b1000000</color><!--windons窗体滤镜背景色-->
+    <color name="kprogresshud_grey_color">#449E9E9E</color><!--加载框窗体背景色-->
 
     <color name="main_home_list_item_bg_pressed">#eaeaef</color>
 </resources>
