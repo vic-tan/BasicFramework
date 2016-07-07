@@ -73,5 +73,9 @@ public class HomeActivity extends BaseActivity {
         exitApp();
     }
 
+    @Override
+    protected String setActionBarTitle() {
+        return "首页";
+    }
 
 }

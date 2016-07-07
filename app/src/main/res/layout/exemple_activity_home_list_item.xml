@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/mexemple_list_item_name"
         android:layout_width="match_parent"
-        android:layout_height="70px"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="40px"
         android:layout_marginTop="10px"
@@ -16,13 +16,14 @@
         android:padding="5px"
         android:singleLine="true"
         android:textColor="#293b5f"
-        android:textSize="60px" />
+        android:textSize="50px" />
 
     <include layout="@layout/common_textview_expandable" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="2px"
+        android:layout_marginTop="15px"
         android:layout_marginLeft="40px"
         android:background="#e1e1e1" />
 

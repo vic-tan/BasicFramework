@@ -48,6 +48,12 @@ public class ExempleHomeActivity extends BaseActivity {
                         StartActUtils.start(new ActBean(mContext, bean.getClazz()));
                     }
                 });
+                holder.setOnClickListener(R.id.mexemple_list_item_name, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        StartActUtils.start(new ActBean(mContext, bean.getClazz()));
+                    }
+                });
             }
         });
     }
@@ -65,5 +71,8 @@ public class ExempleHomeActivity extends BaseActivity {
         exitApp();
     }
 
-
+    @Override
+    protected String setActionBarTitle() {
+        return "示例列表";
+    }
 }
