@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">BasicFramework</string>
     <string name="font_family">sans-serif-light</string><!--字体样式-->
+
+    <!-- 正在加载框 -->
+    <string name="common_dialog_loading">加载中..</string>
 </resources>

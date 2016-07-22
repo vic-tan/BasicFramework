@@ -2,7 +2,7 @@ package com.tanlifei.support.okhttp.request;
 
 import android.text.TextUtils;
 
-import com.tanlifei.support.exception.Exceptions;
+import com.tanlifei.support.exception.AppException;
 import com.tanlifei.support.okhttp.OkHttpUtils;
 
 import java.util.Map;
@@ -37,7 +37,7 @@ public class OtherRequest extends OkHttpRequest
     {
         if (requestBody == null && TextUtils.isEmpty(content) && HttpMethod.requiresRequestBody(method))
         {
-            Exceptions.illegalArgument("requestBody and content can not be null in method:" + method);
+            AppException.illegalArgument("requestBody and content can not be null in method:" + method);
         }
 
         if (requestBody == null && !TextUtils.isEmpty(content))

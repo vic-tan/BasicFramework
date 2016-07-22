@@ -36,6 +36,10 @@ public class KProgressHUD {
         SPIN_INDETERMINATE, PIE_DETERMINATE, ANNULAR_DETERMINATE, BAR_DETERMINATE
     }
 
+    public ProgressDialog getmProgressDialog() {
+        return mProgressDialog;
+    }
+
     // To avoid redundant APIs, all HUD functions will be forward to
     // a custom dialog
     private ProgressDialog mProgressDialog;
@@ -260,11 +264,20 @@ public class KProgressHUD {
         }
     }
 
-    private class ProgressDialog extends Dialog {
+    public class ProgressDialog extends Dialog {
 
         private Determinate mDeterminateView;
         private Indeterminate mIndeterminateView;
         private View mView;
+
+        public TextView getmLabelText() {
+            return mLabelText;
+        }
+
+        public TextView getmDetailsText() {
+            return mDetailsText;
+        }
+
         private TextView mLabelText;
         private TextView mDetailsText;
         private String mLabel;

@@ -1,7 +1,7 @@
 package com.tanlifei.support.okhttp.request;
 
 
-import com.tanlifei.support.exception.Exceptions;
+import com.tanlifei.support.exception.AppException;
 
 import java.io.File;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class PostFileRequest extends OkHttpRequest
 
         if (this.file == null)
         {
-            Exceptions.illegalArgument("the file can not be null !");
+            AppException.illegalArgument("the file can not be null !");
         }
         if (this.mediaType == null)
         {

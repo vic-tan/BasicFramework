@@ -1,8 +1,11 @@
 package com.tanlifei.support.okhttp.builder;
 
 
+import com.google.gson.Gson;
+import com.tanlifei.support.constants.fixed.LoggerConstants;
 import com.tanlifei.support.okhttp.request.PostFormRequest;
 import com.tanlifei.support.okhttp.request.RequestCall;
+import com.tanlifei.support.utils.Logger;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -83,8 +86,8 @@ public class PostFormBuilder extends OkHttpRequestBuilder implements HasParamsab
         {
             this.params = new LinkedHashMap<>();
         }
-        //this.params.put("json", new Gson().toJson(mapParams));
-        //Logger.json(GlobalConstants.OKHTTP_PARAMS,new Gson().toJson(mapParams));
+        this.params.put("json", new Gson().toJson(mapParams));
+        Logger.json(LoggerConstants.OKHTTP_PARAMS,new Gson().toJson(mapParams));
         return this;
     }
 
@@ -109,7 +112,7 @@ public class PostFormBuilder extends OkHttpRequestBuilder implements HasParamsab
             params = new LinkedHashMap<>();
         }
         params.put("json", "{'"+key+"':'"+val+"'}");
-        //Logger.json(GlobalConstants.OKHTTP_PARAMS,"{'"+key+"':'"+val+"'}");
+        Logger.json(LoggerConstants.OKHTTP_PARAMS,"{'"+key+"':'"+val+"'}");
         return this;
     }
 

@@ -15,26 +15,37 @@
         android:paddingTop="16dp">
 
         <Button
-            android:id="@+id/indeterminate"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="10dp"
-            android:background="@android:color/darker_gray"
-            android:onClick="B"
-            android:text="简单adpter"
-            android:textColor="@android:color/black" />
-
-        <Button
-            android:id="@+id/label_indeterminate"
+            android:id="@+id/A"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"
             android:background="@android:color/darker_gray"
             android:onClick="A"
-            android:text="多个布局adpter"
+            android:text="普通请求"
             android:textColor="@android:color/black" />
 
+        <Button
+            android:id="@+id/B"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray"
+            android:onClick="B"
+            android:text="加载框架请求"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/C"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray"
+            android:onClick="C"
+            android:text="提示框请求"
+            android:textColor="@android:color/black" />
     </LinearLayout>
+
+
 </ScrollView>
 
 

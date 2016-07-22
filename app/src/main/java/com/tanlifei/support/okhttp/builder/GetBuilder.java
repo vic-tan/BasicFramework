@@ -1,8 +1,11 @@
 package com.tanlifei.support.okhttp.builder;
 
 
+import com.google.gson.Gson;
+import com.tanlifei.support.constants.fixed.LoggerConstants;
 import com.tanlifei.support.okhttp.request.GetRequest;
 import com.tanlifei.support.okhttp.request.RequestCall;
+import com.tanlifei.support.utils.Logger;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -78,8 +81,8 @@ public class GetBuilder extends OkHttpRequestBuilder implements HasParamsable
         {
             this.params = new LinkedHashMap<>();
         }
-        //this.params.put("json", new Gson().toJson(mapParams));
-        //Logger.json(GlobalConstants.OKHTTP_PARAMS,new Gson().toJson(mapParams));
+        this.params.put("json", new Gson().toJson(mapParams));
+        Logger.json(LoggerConstants.OKHTTP_PARAMS,new Gson().toJson(mapParams));
         return this;
     }
 
@@ -91,7 +94,7 @@ public class GetBuilder extends OkHttpRequestBuilder implements HasParamsable
             params = new LinkedHashMap<>();
         }
         params.put("json", "{'"+key+"':'"+val+"'}");
-        //Logger.json(GlobalConstants.OKHTTP_PARAMS,"{'"+key+"':'"+val+"'}");
+        Logger.json(LoggerConstants.OKHTTP_PARAMS,"{'"+key+"':'"+val+"'}");
         return this;
     }
 

@@ -2,6 +2,7 @@ package com.tanlifei.common.ui.activity;
 
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +26,10 @@ public abstract class BaseActivity extends AutoLayoutActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        baseRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         mContext = this;
     }
-
 
 
     protected void initActionBar() {
@@ -47,6 +48,19 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     }
 
     protected abstract Class<?> childClassName();
+
+    /**
+     * 显示横竖屏
+     * ActivityInfo.SCREEN_ORIENTATION_PORTRAIT 只能竖屏
+     * -1，可以横竖屏
+     */
+    protected void baseRequestedOrientation(int requestedOrientation) {
+        if (requestedOrientation == -1) {
+            return;
+        }else {
+            setRequestedOrientation(requestedOrientation);
+        }
+    }
 
     /**
      * 返回操作 子类可以覆盖此方法做特殊业务

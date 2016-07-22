@@ -1,7 +1,7 @@
 package com.tanlifei.support.okhttp.request;
 
 
-import com.tanlifei.support.exception.Exceptions;
+import com.tanlifei.support.exception.AppException;
 import com.tanlifei.support.okhttp.callback.Callback;
 
 import java.util.Map;
@@ -32,7 +32,7 @@ public abstract class OkHttpRequest
 
         if (url == null)
         {
-            Exceptions.illegalArgument("url can not be null.");
+            AppException.illegalArgument("url can not be null.");
         }
 
         initBuilder();

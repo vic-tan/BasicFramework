@@ -1,6 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tanlifei.framework">
 
+
+    <!-- 网络相关权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- SDCard相关权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".main.ui.BaseApplication"
         android:allowBackup="true"
@@ -21,6 +33,7 @@
         <activity android:name=".main.ui.activity.GuideActivity_" />
         <activity android:name=".main.ui.activity.HomeActivity_" />
 
+        <!-- 当前应用分辨率参考标准 -->
         <meta-data
             android:name="design_width"
             android:value="1080" />
@@ -40,7 +53,8 @@
         <!-- 所有公用的加载框 -->
         <activity android:name="com.tanlifei.exemple.kprogresshud.ExempleKProgresshudMainActivity" /><!-- 主界面 -->
 
-
+        <!-- 所有公用的请求框 -->
+        <activity android:name="com.tanlifei.exemple.okhttp.ExempleOkHttpMainActivity" /><!--http 示范 -->
     </application>
 
 </manifest>

@@ -59,7 +59,6 @@ public class LoggerInterceptor implements Interceptor
             //===>response log
             Response.Builder builder = response.newBuilder();
             Response clone = builder.build();
-            Logger.i(tag, clone.toString());
             if (showResponse)
             {
                 ResponseBody body = clone.body();
@@ -68,7 +67,7 @@ public class LoggerInterceptor implements Interceptor
                     MediaType mediaType = body.contentType();
                     if (mediaType != null)
                     {
-                       Logger.i(tag, "responseBody's contentType : " + mediaType.toString());
+                       //Logger.i(tag, "responseBody's contentType : " + mediaType.toString());
                         if (isText(mediaType))
                         {
                             String resp = body.string();
@@ -84,13 +83,16 @@ public class LoggerInterceptor implements Interceptor
                         {
                             Logger.i(tag, "responseBody's content : " + " maybe [file part] , too large too print , ignored!");
                         }
+                        //Logger.d(tag, "" + body.string());
+                        //Logger.json(tag, "" + body.string());
                     }
+
                 }
             }
 
         } catch (Exception e)
         {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
 
         return response;
@@ -127,7 +129,7 @@ public class LoggerInterceptor implements Interceptor
             }
         } catch (Exception e)
         {
-//            e.printStackTrace();
+            e.printStackTrace();
         }
     }
 

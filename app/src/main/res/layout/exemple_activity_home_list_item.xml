@@ -2,6 +2,7 @@
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/common_selector_item_bg"
     android:orientation="vertical">
 
 
@@ -19,13 +20,7 @@
         android:textSize="50px" />
 
     <include layout="@layout/common_textview_expandable" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:layout_marginTop="15px"
-        android:layout_marginLeft="40px"
-        android:background="#e1e1e1" />
+    <include layout="@layout/common_split_line" />
 
 
 </com.zhy.autolayout.AutoLinearLayout>

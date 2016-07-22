@@ -1,7 +1,7 @@
 package com.tanlifei.support.okhttp.request;
 
 
-import com.tanlifei.support.exception.Exceptions;
+import com.tanlifei.support.exception.AppException;
 
 import java.util.Map;
 
@@ -28,7 +28,7 @@ public class PostStringRequest extends OkHttpRequest
 
         if (this.content == null)
         {
-            Exceptions.illegalArgument("the content can not be null !");
+            AppException.illegalArgument("the content can not be null !");
         }
         if (this.mediaType == null)
         {
