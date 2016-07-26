@@ -35,7 +35,7 @@ dependencies {
     apt "org.androidannotations:androidannotations:3.3.2"
     compile 'com.android.support:support-v4:23.1.1'
     compile project(':library-autolayout')
-    compile files('libs/fastjson-1.2.5.jar')
+    compile project(':library-image-loader')
     compile files('libs/androidannotations-api-3.3.2.jar')
     compile files('libs/okhttp-3.2.0.jar')
     compile files('libs/okio-1.6.0.jar')

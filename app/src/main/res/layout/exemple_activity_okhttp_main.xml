@@ -45,6 +45,15 @@
             android:textColor="@android:color/black" />
     </LinearLayout>
 
+ <!--   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:orientation="vertical">
+
+        <com.tanlifei.support.view.layout.PromptView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>-->
 
 </ScrollView>
 

@@ -4,6 +4,7 @@ package com.tanlifei.framework.main.ui;
 import android.app.Application;
 import android.content.Context;
 
+import com.fans.loader.FanImageLoader;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.OnOffConstants;
 import com.tanlifei.support.constants.level.OnOffLevel;
@@ -29,7 +30,7 @@ public class BaseApplication extends Application {
         appContext = this;
         initCreateFolders();//创建文件夹
         setCrashHandler();//打开全局未捕获异常
-        //initImageLoader();//初始化图片加载缓存 ImageLoader基本配置
+        initImageLoader();//初始化图片加载缓存 ImageLoader基本配置
         //inittDatabase();//创建数据表
         initOKhttp();//初始化Okhttp*/
     }
@@ -44,12 +45,12 @@ public class BaseApplication extends Application {
 
     /**
      * 初始化图片加载缓存 ImageLoader基本配置
-     *//*
+     */
     private void initImageLoader() {
         FanImageLoader.init(appContext, GlobalConstants.IMAGES_CACHE_PATH);
     }
 
-    */
+
 
     /**
      * 设置是否开启全局未捕获异常

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/BasicFramework.iml" filepath="$PROJECT_DIR$/BasicFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-autolayout/library-autolayout.iml" filepath="$PROJECT_DIR$/library-autolayout/library-autolayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-image-loader/library-image-loader.iml" filepath="$PROJECT_DIR$/library-image-loader/library-image-loader.iml" />
     </modules>
   </component>
 </project>
