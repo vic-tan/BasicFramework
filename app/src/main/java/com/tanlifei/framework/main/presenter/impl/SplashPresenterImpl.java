@@ -3,7 +3,7 @@ package com.tanlifei.framework.main.presenter.impl;
 import android.content.Context;
 import android.os.Handler;
 
-import com.tanlifei.framework.main.presenter.SplashPresenter;
+import com.tanlifei.framework.main.presenter.ISplashPresenter;
 import com.tanlifei.framework.main.ui.activity.SplashActivity;
 import com.tanlifei.framework.main.ui.view.SplashView;
 import com.tanlifei.support.utils.SPUtils;
@@ -12,7 +12,7 @@ import com.tanlifei.support.utils.SPUtils;
 /**
  * Created by tanlifei on 16/5/12.
  */
-public class SplashPresenterImpl implements SplashPresenter {
+public class SplashPresenterImpl implements ISplashPresenter {
 
     public static final String FIRST_LAUNCHER_APP_TAG = "first_splash_app_tag";//保存第一次启动app的key
 

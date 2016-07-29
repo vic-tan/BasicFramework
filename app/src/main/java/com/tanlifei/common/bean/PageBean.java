@@ -1,25 +1,13 @@
-package com.tanlifei.support.okhttp.json;
+package com.tanlifei.common.bean;
 
-public class BasePager<T>  {
-
-
-    static final String LIST_KEY = "list";
+public class PageBean  {
 
 
     private int pageSize;
-    private T list;
     private int pageNumber;
     private int totalRow;
     private int totalPage;
 
-
-    public T getList() {
-        return list;
-    }
-
-    public void setList(T list) {
-        this.list = list;
-    }
 
     public int getPageNumber() {
         return pageNumber;
@@ -52,6 +40,5 @@ public class BasePager<T>  {
     public void setTotalRow(int totalRow) {
         this.totalRow = totalRow;
     }
-
 
 }

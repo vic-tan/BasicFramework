@@ -5,7 +5,7 @@ import android.widget.ListView;
 
 import com.tanlifei.common.base.adapter.CommonAdapter;
 import com.tanlifei.common.base.adapter.ViewHolder;
-import com.tanlifei.common.bean.ActBean;
+import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.exemple.main.ExempleHomeActivity_;
 import com.tanlifei.framework.R;
@@ -50,7 +50,7 @@ public class HomeActivity extends BaseActivity {
                     public void onClick(View v) {
                         switch (holder.getPosition()) {
                             case 0:
-                                StartActUtils.start(new ActBean(mContext, ExempleHomeActivity_.class));
+                                StartActUtils.start(new ActParams(mContext, ExempleHomeActivity_.class));
                                 break;
                         }
                     }

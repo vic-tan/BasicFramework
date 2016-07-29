@@ -4,11 +4,11 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.tanlifei.common.bean.ActBean;
+import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.adapter.GuideAdapter;
-import com.tanlifei.framework.main.presenter.GuidePresenter;
+import com.tanlifei.framework.main.presenter.IGuidePresenter;
 import com.tanlifei.framework.main.presenter.impl.GuidePresenterImpl;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.GuideView;
@@ -35,7 +35,7 @@ public class GuideActivity extends BaseActivity implements GuideView,
     ViewPager guidePager;
     @ViewById(R.id.guide_dots_container)
     LinearLayout guideDotsContainer;
-    private GuidePresenter presenter;
+    private IGuidePresenter presenter;
 
     @AfterViews
     void init() {
@@ -47,8 +47,8 @@ public class GuideActivity extends BaseActivity implements GuideView,
     @Override
     public void onClick(View v) {
         SPUtils.putBoolean(SplashPresenterImpl.FIRST_LAUNCHER_APP_TAG, false);//设置为已打开过该应用了
-        StartActUtils.start(new ActBean(mContext, HomeActivity_.class));
-        StartActUtils.finish(new ActBean(mContext, GuideActivity_.class));
+        StartActUtils.start(new ActParams(mContext, HomeActivity_.class));
+        StartActUtils.finish(new ActParams(mContext, GuideActivity_.class));
     }
 
     @Override

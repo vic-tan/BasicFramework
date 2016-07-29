@@ -1,4 +1,4 @@
-package com.tanlifei.support.okhttp.base;
+package com.tanlifei.common.bean.params;
 
 
 import com.tanlifei.support.constants.fixed.JsonConstants;

@@ -2,7 +2,7 @@ package com.tanlifei.exemple.baseadapter;
 
 import android.os.Bundle;
 import android.view.View;
-import com.tanlifei.common.bean.ActBean;
+import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
@@ -22,11 +22,11 @@ public class ExempleBaseAdpterMainActivity extends BaseActivity {
     }
 
     public void A(View v) {
-        StartActUtils.start(new ActBean(mContext, ExempleBaseAdapterSingleItemTypeActivity.class));
+        StartActUtils.start(new ActParams(mContext, ExempleBaseAdapterSingleItemTypeActivity.class));
     }
 
     public void B(View v) {
-        StartActUtils.start(new ActBean(mContext, ExempleBaseAdpterMutliItemTypeActivity.class));
+        StartActUtils.start(new ActParams(mContext, ExempleBaseAdpterMutliItemTypeActivity.class));
     }
 
 

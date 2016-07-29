@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.tanlifei.common.bean.ActBean;
+import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
 import com.zhy.autolayout.AutoLayoutActivity;
@@ -66,7 +66,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
      * 返回操作 子类可以覆盖此方法做特殊业务
      */
     protected void actionBack() {
-        StartActUtils.finish(new ActBean(BaseActivity.this, childClassName()));
+        StartActUtils.finish(new ActParams(BaseActivity.this, childClassName()));
     }
 
     /**

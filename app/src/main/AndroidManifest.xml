@@ -55,6 +55,14 @@
 
         <!-- 所有公用的请求框 -->
         <activity android:name="com.tanlifei.exemple.okhttp.ExempleOkHttpMainActivity" /><!--http 示范 -->
+
+        <!-- 下拉上拉 -->
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRefreshViewMainActivity" /><!--下拉上拉 示范 -->
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewActivity_"/><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

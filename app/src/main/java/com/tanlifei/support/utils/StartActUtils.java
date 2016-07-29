@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 
-import com.tanlifei.common.bean.ActBean;
+import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.framework.R;
 
 import java.io.Serializable;
@@ -29,7 +29,7 @@ public class StartActUtils {
      *
      * @param intent
      */
-    public static void start(ActBean actBean, Intent intent) {
+    public static void start(ActParams actBean, Intent intent) {
         actManage(actBean.getContext(), actBean.getClazz().getSimpleName(), true);
         actBean.getContext().startActivity(intent);
         ((Activity) actBean.getContext()).overridePendingTransition(R.anim.common_activity_start_anim, R.anim.common_activity_finish_main);
@@ -38,7 +38,7 @@ public class StartActUtils {
     /**
      * 找开activity
      */
-    public static void start(ActBean actBean) {
+    public static void start(ActParams actBean) {
         start(actBean, new Intent(actBean.getContext(), actBean.getClazz()));
     }
 
@@ -47,7 +47,7 @@ public class StartActUtils {
      *
      * @param bundle
      */
-    public static void start(ActBean actBean, Bundle bundle) {
+    public static void start(ActParams actBean, Bundle bundle) {
         Intent intent = new Intent(actBean.getContext(), actBean.getClazz());
         intent.putExtras(bundle);
         start(actBean, intent);
@@ -58,7 +58,7 @@ public class StartActUtils {
      *
      * @param value : Parcelable
      */
-    public static void start(ActBean actBean, String paramsKey, Parcelable value) {
+    public static void start(ActParams actBean, String paramsKey, Parcelable value) {
         Intent intent = new Intent(actBean.getContext(), actBean.getClazz());
         Bundle bundle = new Bundle();
         bundle.putParcelable(paramsKey, value);
@@ -72,7 +72,7 @@ public class StartActUtils {
      *
      * @param value : serializeEntity
      */
-    public static void start(ActBean actBean, String paramsKey, Serializable value) {
+    public static void start(ActParams actBean, String paramsKey, Serializable value) {
         Intent intent = new Intent(actBean.getContext(), actBean.getClazz());
         Bundle bundle = new Bundle();
         bundle.putSerializable(paramsKey, value);
@@ -85,7 +85,7 @@ public class StartActUtils {
      *
      * @param map
      */
-    public static void start(ActBean actBean, Map<String, Object> map) {
+    public static void start(ActParams actBean, Map<String, Object> map) {
         start(actBean, mapToIntent(actBean, map));
     }
 
@@ -99,7 +99,7 @@ public class StartActUtils {
      * @Description: 用一句话描述该文件做什么
      * @throws:throws
      */
-    public static void forResult(ActBean actBean, Intent intent, int requestCode) {
+    public static void forResult(ActParams actBean, Intent intent, int requestCode) {
         actManage(actBean.getContext(), actBean.getClazz().getSimpleName(), true);
         ((Activity) actBean.getContext()).startActivityForResult(intent, requestCode);
     }
@@ -111,7 +111,7 @@ public class StartActUtils {
      * @Description: 用一句话描述该文件做什么
      * @throws:throws
      */
-    public static void finish(ActBean actBean) {
+    public static void finish(ActParams actBean) {
         actManage(actBean.getContext(), actBean.getClazz().getSimpleName(), false);
         ((Activity) actBean.getContext()).finish();
         ((Activity) actBean.getContext()).overridePendingTransition(R.anim.activity_open_main, R.anim.activity_close_next);
@@ -124,7 +124,7 @@ public class StartActUtils {
      * @param map
      * @return
      */
-    public static Intent mapToIntent(ActBean actBean, Map<String, Object> map) {
+    public static Intent mapToIntent(ActParams actBean, Map<String, Object> map) {
         Intent intent = new Intent(actBean.getContext(), actBean.getClazz());
         Bundle bundle = new Bundle();
         if (map != null && map.size() > 0) {

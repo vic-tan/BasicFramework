@@ -1,11 +1,11 @@
-package com.tanlifei.common.bean;
+package com.tanlifei.common.bean.params;
 
 import android.content.Context;
 
 /**
  * Created by tanlifei on 16/6/30.
  */
-public class ActBean {
+public class ActParams {
     private Context context;
     private Class<?> clazz;//要跳转activity的类名
 
@@ -19,11 +19,11 @@ public class ActBean {
 
 
 
-    public ActBean(Context context) {
+    public ActParams(Context context) {
         this.context = context;
     }
 
-    public ActBean(Context context,  Class<?> clazz) {
+    public ActParams(Context context, Class<?> clazz) {
         this.context = context;
         this.clazz = clazz;
     }

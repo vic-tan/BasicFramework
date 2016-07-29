@@ -13,7 +13,7 @@ import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
-import com.tanlifei.common.bean.NotifyParams;
+import com.tanlifei.common.bean.params.NotifyParams;
 
 import java.util.ArrayList;
 

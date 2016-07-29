@@ -8,7 +8,7 @@ import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
 import com.tanlifei.support.kprogresshud.KProgressHUD;
 import com.tanlifei.support.okhttp.callback.Callback;
-import com.tanlifei.support.okhttp.json.BaseJson;
+import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.support.utils.StringUtils;
 
 import okhttp3.Call;

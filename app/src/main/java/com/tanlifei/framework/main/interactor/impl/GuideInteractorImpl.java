@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 
 import com.tanlifei.framework.R;
-import com.tanlifei.framework.main.interactor.GuideInteractor;
+import com.tanlifei.framework.main.interactor.IGuideInteractor;
 import com.tanlifei.support.utils.InflaterUtils;
 import com.tanlifei.support.utils.ListUtils;
 
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by tanlifei on 16/5/12.
  */
-public class GuideInteractorImpl implements GuideInteractor {
+public class GuideInteractorImpl implements IGuideInteractor {
 
     private List<View> guideViews;
     private List<View> guideIndicatorViews;

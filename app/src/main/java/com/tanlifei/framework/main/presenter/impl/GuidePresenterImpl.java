@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tanlifei.framework.main.interactor.GuideInteractor;
+import com.tanlifei.framework.main.interactor.IGuideInteractor;
 import com.tanlifei.framework.main.interactor.impl.GuideInteractorImpl;
-import com.tanlifei.framework.main.presenter.GuidePresenter;
+import com.tanlifei.framework.main.presenter.IGuidePresenter;
 import com.tanlifei.framework.main.ui.view.GuideView;
 
 import java.util.List;
@@ -14,10 +14,10 @@ import java.util.List;
 /**
  * Created by tanlifei on 16/5/12.
  */
-public class GuidePresenterImpl implements GuidePresenter {
+public class GuidePresenterImpl implements IGuidePresenter {
 
     private GuideView guideView;
-    private GuideInteractor interactor;
+    private IGuideInteractor interactor;
     private Context mContext;
 
     public GuidePresenterImpl(GuideView guideView, Context mContext) {

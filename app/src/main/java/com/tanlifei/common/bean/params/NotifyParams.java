@@ -1,4 +1,4 @@
-package com.tanlifei.common.bean;
+package com.tanlifei.common.bean.params;
 
 import android.app.PendingIntent;
 

@@ -20,5 +20,7 @@ public class UrlConstants {
     public static final String APP_VERSION_UPDATE = DOMAIN_NAME + "/jingpin/20";
 
 
+    public static final String NEW_GAME = "http://api150.aiyouyou.paojiao.cn/v6/game/list.do";
+
 }
 

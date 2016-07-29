@@ -1,4 +1,4 @@
-package com.tanlifei.support.okhttp.json;
+package com.tanlifei.common.bean;
 
 /**
  * json 最外层数据基本结构实体

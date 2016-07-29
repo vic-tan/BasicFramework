@@ -3,10 +3,10 @@ package com.tanlifei.framework.main.ui.activity;
 import android.os.Handler;
 import android.os.Message;
 
-import com.tanlifei.common.bean.ActBean;
+import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.framework.main.presenter.SplashPresenter;
+import com.tanlifei.framework.main.presenter.ISplashPresenter;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.SplashView;
 import com.tanlifei.support.utils.StartActUtils;
@@ -28,7 +28,7 @@ public class SplashActivity extends BaseActivity implements SplashView {
     public static final int HANDLE_WHAT_TWO = 2;
     public static final int DELAYED = 3000;
     public static final boolean IS_HAS_LOADING_DATA = false;//是否有加载数据页的过程
-    private SplashPresenter presenter;
+    private ISplashPresenter presenter;
 
 
     Handler handler = new Handler() {
@@ -55,8 +55,8 @@ public class SplashActivity extends BaseActivity implements SplashView {
     }
 
     private void start(Class clazz) {
-        StartActUtils.start(new ActBean(mContext, clazz));
-        StartActUtils.finish(new ActBean(mContext, SplashActivity_.class));
+        StartActUtils.start(new ActParams(mContext, clazz));
+        StartActUtils.finish(new ActParams(mContext, SplashActivity_.class));
     }
 
     @Override
