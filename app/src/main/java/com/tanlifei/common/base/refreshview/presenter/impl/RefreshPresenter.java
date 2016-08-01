@@ -54,7 +54,7 @@ public class RefreshPresenter implements IRefreshInPresenter,
         if (fromStart) {
             page = 1;
         }
-        map.put("page", page + "");
+        map.put(JsonConstants.REQUEST_TASK_LIST_PARAM_PAGE_SIZE, page + "");
         interactor.requestPageData(url, map, this);
     }
 

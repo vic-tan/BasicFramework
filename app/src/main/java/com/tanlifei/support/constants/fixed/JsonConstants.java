@@ -9,7 +9,7 @@ package com.tanlifei.support.constants.fixed;
 public class JsonConstants {
 
     // 分页参数
-    public static final String REQUEST_TASK_LIST_PARAM_PAGE_SIZE = "pageSize";//每页数的key值
+    public static final String REQUEST_TASK_LIST_PARAM_PAGE_SIZE = "page";//每页数的key值
     public static final String REQUEST_TASK_LIST_PARAM_PAGE_NUMBER = "pageNumber";//当前页数的key值
     public static final int PAGE_SIZE = 10; // 每页显示 的数据条数
     public static final int COMMUNITY_MEMBER_PAGE_SIZE = 40; // 每页显示 的数据条数

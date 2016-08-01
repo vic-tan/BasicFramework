@@ -42,15 +42,15 @@ public class ToastUtils {
     }
 
     public static void show(Context context,int resId, Object... args) {
-        show(String.format(context.getResources().getString(resId), args), DURATION);
+        show(context,String.format(context.getResources().getString(resId), args), DURATION);
     }
 
-    public static void show( String format, Object... args) {
-        show(String.format(format, args), DURATION);
+    public static void show(Context context ,String format, Object... args) {
+        show(context,String.format(format, args), DURATION);
     }
 
     public static void show( Context context,int resId, int duration, Object... args) {
-        show(String.format(context.getResources().getString(resId), args), duration);
+        show(context,String.format(context.getResources().getString(resId), args), duration);
     }
 
 

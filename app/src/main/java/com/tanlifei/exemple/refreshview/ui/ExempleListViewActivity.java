@@ -16,6 +16,7 @@ import com.tanlifei.common.bean.PageBean;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.exemple.refreshview.bean.GameInfo;
 import com.tanlifei.framework.R;
+import com.tanlifei.support.constants.fixed.JsonConstants;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 
 import org.androidannotations.annotations.AfterViews;
@@ -94,7 +95,7 @@ public class ExempleListViewActivity extends BaseActivity implements RefreshView
 
     public Map<String, String> params(int page) {
         Map<String, String> map = new HashMap<>();
-        map.put("page", page + "");
+        map.put(JsonConstants.REQUEST_TASK_LIST_PARAM_PAGE_SIZE, page + "");
         map.put("limit", 12 + "");
         return map;
     }

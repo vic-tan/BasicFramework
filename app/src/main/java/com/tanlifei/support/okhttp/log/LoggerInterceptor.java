@@ -2,6 +2,8 @@ package com.tanlifei.support.okhttp.log;
 
 import android.text.TextUtils;
 
+import com.tanlifei.framework.main.ui.BaseApplication;
+import com.tanlifei.support.localinterfacetest.JsonReader;
 import com.tanlifei.support.utils.Logger;
 
 import java.io.IOException;
@@ -14,6 +16,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okio.Buffer;
+
 
 /**
  * Created by tanlifei on 16/3/1.
@@ -71,10 +74,10 @@ public class LoggerInterceptor implements Interceptor
                         if (isText(mediaType))
                         {
                             String resp = body.string();
-                           /*if (JsonReader.getInstance().getJsonReader(clone.request().url().toString())) {
+                           if (JsonReader.getInstance().getJsonReader(clone.request().url().toString())) {
                                 String responseBody = JsonReader.getInstance().getJsonReaderFileContent(BaseApplication.appContext, clone.request().url().toString());
                                 resp =  responseBody;
-                            }*/
+                            }
                             Logger.d(tag, "" + resp);
                             Logger.json(tag, "" + resp);
                             body = ResponseBody.create(mediaType, resp);

@@ -11,4 +11,32 @@
 
     <!-- list item 按下时的背景色 -->
     <color name="main_home_list_item_bg_pressed">#eaeaef</color>
+
+
+    <!-- —————————————————— 提示框颜色 ——————————————————————————————— -->
+    <!-- 中间提示框 -->
+    <!-- 提示框的背影色 -->
+    <color name="common_prompt_dialog_content_bg">#fff5f5f9</color>
+    <!-- 提示框的windows背影边框色 -->
+    <color name="common_prompt_dialog_windowp_bg">#a0000000</color>
+    <!-- 提示框按标题色 -->
+    <color name="common_prompt_dialog_title_color">#61AEDC</color>
+    <!-- 提示框按内容色 -->
+    <color name="common_prompt_dialog_content_color">#383838</color>
+    <!-- 提示框按标题与内容之间的线色 -->
+    <color name="common_prompt_dialog_title_line_color">#61AEDC</color>
+    <!-- 提示框按内容与按钮之间的线色 -->
+    <color name="common_prompt_dialog_content_btn_line_color">#DCDCDC</color>
+    <!-- 提示框按钮字体色 -->
+    <color name="common_prompt_dialog_btn_color">#8a000000</color>
+    <!-- 提示框按钮默认色 -->
+    <color name="common_prompt_dialog_btn_nor">#ff85D3EF</color>
+    <!-- 提示框按钮点击色 -->
+    <color name="common_prompt_dialog_btn_pre">#ffE3E3E3</color>
+
+    <!-- 中间列表提示框 -->
+    <!-- 提示框按标题色 -->
+    <color name="common_prompt_dialog_list_title_color">#ffffff</color>
+    <!-- 提示框按标题背景色 -->
+    <color name="common_prompt_dialog_list_title_bg_color">#303030</color>
 </resources>

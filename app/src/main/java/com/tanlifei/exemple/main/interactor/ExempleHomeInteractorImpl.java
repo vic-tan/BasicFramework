@@ -1,6 +1,7 @@
 package com.tanlifei.exemple.main.interactor;
 
 import com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMainActivity;
+import com.tanlifei.exemple.dialog.ui.ExempleDialogSimpleHomeActivity;
 import com.tanlifei.exemple.kprogresshud.ExempleKProgresshudMainActivity;
 import com.tanlifei.exemple.main.bean.ExempleHomeListBean;
 import com.tanlifei.exemple.okhttp.ExempleOkHttpMainActivity;
@@ -27,7 +28,7 @@ public class ExempleHomeInteractorImpl implements ExempleHomeInteractor {
 
         list.add(new ExempleHomeListBean("OkHttp公用请求示例", ExempleOkHttpMainActivity.class, "APP开发中常见的请求接口过程中，界面显示，及跳转方式.."));
         list.add(new ExempleHomeListBean("下拉上拉刷新", ExempleRefreshViewMainActivity.class, "APP开发中常见的请求接口过程中，界面显示，及跳转方式.."));
-
+        list.add(new ExempleHomeListBean("公用的Dailog", ExempleDialogSimpleHomeActivity.class, "分为常用一个按钮，和两个按钮，底部上弹，实现简单，自定义布局，适配所有android分辨率机型。"));
         return list;
     }
 
