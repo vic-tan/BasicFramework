@@ -13,7 +13,7 @@ import com.tanlifei.common.base.refreshview.presenter.impl.RefreshPresenter;
 import com.tanlifei.common.base.refreshview.ui.RefreshView;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.bean.PageBean;
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.refreshview.bean.GameInfo;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.JsonConstants;
@@ -40,7 +40,7 @@ import cn.finalteam.loadingviewfinal.PtrFrameLayout;
  * Created by tanlifei on 16/1/19.
  */
 @EActivity(R.layout.exemple_acitivity_ptr_listview)
-public class ExempleListViewActivity extends BaseActivity implements RefreshView,IRefreshInConfiguration {
+public class ExempleListViewActivity extends BaseActionBarActivity implements RefreshView,IRefreshInConfiguration {
     public static final String TAG = ExempleListViewActivity.class.getSimpleName();
 
 
@@ -61,6 +61,8 @@ public class ExempleListViewActivity extends BaseActivity implements RefreshView
 
     @AfterViews
     void init() {
+        initActionBar();
+        actionBarView.setActionbarTitle("ListView 上拉下拉刷新");
         presenter = new RefreshPresenter(mContext, this,this);
         mGameList = new ArrayList<>();
         mNewGameListAdapter = new CommonAdapter<GameInfo>(mContext, mGameList, R.layout.exemple_refresh_adapter_list_item) {

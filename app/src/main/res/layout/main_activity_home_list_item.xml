@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/main_list_item_name"
         android:layout_width="match_parent"
-        android:layout_height="118px"
+        android:layout_height="148px"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="40px"
         android:gravity="center_vertical"

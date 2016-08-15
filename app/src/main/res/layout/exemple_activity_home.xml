@@ -5,13 +5,13 @@
     android:background="@android:color/white">
 
 
-    <include layout="@layout/common_actionbar_standard_view" />
+    <include layout="@layout/common_actionbar_title_view" />
 
     <ListView
         android:id="@+id/main_lv_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/actionbar_rlly_root"
+        android:layout_below="@id/actionbar"
         android:cacheColorHint="@android:color/transparent"
         android:divider="@null"
         android:listSelector="@drawable/mian_selector_home_list_item_bg"

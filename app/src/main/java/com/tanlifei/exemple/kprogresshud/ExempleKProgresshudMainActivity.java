@@ -29,18 +29,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.kprogresshud.KProgressHUD;
 
 
-public class ExempleKProgresshudMainActivity extends BaseActivity implements View.OnClickListener {
+public class ExempleKProgresshudMainActivity extends BaseActionBarActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exemple_kprogresshud_activity_main);
-
+        super.initActionBar();
+        actionBarView.setActionbarTitle("公用加载框架示范");
         Button indeterminate = (Button) findViewById(R.id.indeterminate);
         indeterminate.setOnClickListener(this);
 
@@ -67,6 +68,7 @@ public class ExempleKProgresshudMainActivity extends BaseActivity implements Vie
 
         Button customColor = (Button) findViewById(R.id.custom_color_animate);
         customColor.setOnClickListener(this);
+
     }
 
     @Override

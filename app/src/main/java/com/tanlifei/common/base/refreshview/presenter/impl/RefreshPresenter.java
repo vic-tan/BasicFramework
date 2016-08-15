@@ -9,7 +9,7 @@ import com.tanlifei.common.base.refreshview.presenter.IRefreshInConfiguration;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInPresenter;
 import com.tanlifei.common.base.refreshview.ui.RefreshView;
 import com.tanlifei.common.bean.BaseJson;
-import com.tanlifei.exemple.refreshview.utils.EmptyViewUtils;
+import com.tanlifei.common.base.refreshview.ui.EmptyView;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.JsonConstants;
 import com.tanlifei.support.utils.GsonJsonUtils;
@@ -69,18 +69,18 @@ public class RefreshPresenter implements IRefreshInPresenter,
     @Override
     public void onBefore(Request request) {
         if (ListUtils.isEmpty(configuration.getList())) {
-            EmptyViewUtils.showLoading(refreshView.getRefreshEmptyView());
+            EmptyView.showLoading(refreshView.getRefreshEmptyView());
         }
     }
 
     @Override
     public void onError(Call call, Exception e) {
         if (ListUtils.isEmpty(configuration.getList()) && !NetUtils.isConnected(mContext)) {//没有数据,且没有网络 提示布局
-            EmptyViewUtils.showNetErrorEmpty(refreshView.getRefreshEmptyView());
+            EmptyView.showNetErrorEmpty(refreshView.getRefreshEmptyView());
         } else if (!ListUtils.isEmpty(configuration.getList()) && !NetUtils.isConnected(mContext)) {//有数据且没有网络，提示Toast
             ToastUtils.show(mContext, R.string.common_net_error);
         } else if (ListUtils.isEmpty(configuration.getList())) {//没有数据
-            EmptyViewUtils.showNoDataEmpty(refreshView.getRefreshEmptyView());
+            EmptyView.showNoDataEmpty(refreshView.getRefreshEmptyView());
         }
     }
 
@@ -112,18 +112,18 @@ public class RefreshPresenter implements IRefreshInPresenter,
     @Override
     public void onPageBefore(Request request) {
         if (ListUtils.isEmpty(configuration.getList())) {
-            EmptyViewUtils.showLoading(refreshView.getRefreshEmptyView());
+            EmptyView.showLoading(refreshView.getRefreshEmptyView());
         }
     }
 
     @Override
     public void onPageError(Call call, Exception e) {
         if (ListUtils.isEmpty(configuration.getList()) && !NetUtils.isConnected(mContext)) {//没有数据,且没有网络 提示布局
-            EmptyViewUtils.showNetErrorEmpty(refreshView.getRefreshEmptyView());
+            EmptyView.showNetErrorEmpty(refreshView.getRefreshEmptyView());
         } else if (!ListUtils.isEmpty(configuration.getList()) && !NetUtils.isConnected(mContext)) {//有数据且没有网络，提示Toast
             ToastUtils.show(mContext, R.string.common_net_error);
         } else if (ListUtils.isEmpty(configuration.getList()) && NetUtils.isConnected(mContext)) {//没有数据
-            EmptyViewUtils.showNoDataEmpty(refreshView.getRefreshEmptyView());
+            EmptyView.showNoDataEmpty(refreshView.getRefreshEmptyView());
         } else {
             if (null != refreshView.getDataView() && refreshView.getDataView() instanceof ListViewFinal) {
                 ((ListViewFinal) refreshView.getDataView()).showFailUI();

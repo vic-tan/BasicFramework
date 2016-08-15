@@ -7,7 +7,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogCustomBubblePopup;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
@@ -15,7 +15,7 @@ import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.support.view.dialog.base.popup.BubblePopup;
 
 
-public class ExempleDialogBubblePopupActivity extends BaseActivity implements View.OnClickListener{
+public class ExempleDialogBubblePopupActivity extends BaseActionBarActivity implements View.OnClickListener{
     TextView mTvTopLeft;
     TextView mTvTopRight;
     TextView mTvBottomLeft;
@@ -27,6 +27,8 @@ public class ExempleDialogBubblePopupActivity extends BaseActivity implements Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exemple_dialog_bubble_popup);
+        initActionBar();
+        actionBarView.setActionbarTitle("Bubble Popup分类");
         mTvTopLeft = (TextView) ViewFindUtils.find(this, R.id.tv_top_left);
         mTvTopRight = (TextView) ViewFindUtils.find(this, R.id.tv_top_right);
         mTvBottomLeft = (TextView) ViewFindUtils.find(this, R.id.tv_bottom_left);

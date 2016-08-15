@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ————————————————————————————————————— actionbar 颜色常量   ——————————————————————————————————————————————————— -->
+
     <!-- ————————————————————————————————————— app所有字体颜色常量   ——————————————————————————————————————————————————— -->
-    <color name="common_text_color_actionbar_title">#ffffff</color> <!-- actionbar 标题字体大小 -->
-    <color name="common_text_color_actionbar_opt">#ffffff</color> <!-- actionbar 右边操作按钮字体大小 -->
+    <color name="common_text_color_actionbar_title">#ffffff</color> <!-- actionbar 字体颜色 -->
+    <color name="common_actionbar_bg_color">#00C15C</color> <!-- actionbar 标题字体 -->
     <color name="common_text_color_expandable">#666666</color> <!-- expandable 字体大小 -->
 
     <!-- ————————————————————————————————————— kprogresshud加载框常量   ——————————————————————————————————————————————————— -->
@@ -12,6 +14,9 @@
     <!-- list item 按下时的背景色 -->
     <color name="main_home_list_item_bg_pressed">#eaeaef</color>
 
+    <!-- —————————————————— button 颜色 ——————————————————————————————— -->
+    <color name="common_button_bg_normal_color">@color/common_actionbar_bg_color</color> <!-- 标准button 默认颜色 -->
+    <color name="common_button_bg_pressd_color">#8000C15C</color> <!-- 标准button 点击颜色 -->
 
     <!-- —————————————————— 提示框颜色 ——————————————————————————————— -->
     <!-- 中间提示框 -->

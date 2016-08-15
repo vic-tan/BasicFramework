@@ -6,7 +6,7 @@ import android.widget.ListView;
 import com.tanlifei.common.base.adapter.CommonAdapter;
 import com.tanlifei.common.base.adapter.ViewHolder;
 import com.tanlifei.common.bean.params.ActParams;
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.main.ExempleHomeActivity_;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
@@ -23,7 +23,7 @@ import java.util.List;
  * Created by tanlifei on 16/1/19.
  */
 @EActivity(R.layout.main_activity_home)
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActionBarActivity {
 
     public static final String TAG = HomeActivity.class.getSimpleName();
 
@@ -39,7 +39,8 @@ public class HomeActivity extends BaseActivity {
 
     @AfterViews
     void init() {
-        super.initActionBar();
+        initActionBar();
+        actionBarView.setActionbarTitle("首页");
         addList();
         mList.setAdapter(new CommonAdapter<String>(this, list, R.layout.main_activity_home_list_item) {
             @Override
@@ -73,9 +74,5 @@ public class HomeActivity extends BaseActivity {
         exitApp();
     }
 
-    @Override
-    protected String setActionBarTitle() {
-        return "首页";
-    }
 
 }

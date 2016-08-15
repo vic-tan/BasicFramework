@@ -1,4 +1,4 @@
-package com.tanlifei.exemple.refreshview.utils;
+package com.tanlifei.common.base.refreshview.ui;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +12,7 @@ import com.tanlifei.framework.R;
  * Author:pengjianbo
  * Date:16/3/9 上午11:54
  */
-public class EmptyViewUtils {
+public class EmptyView {
 
     public static void showLoading(ViewGroup emptyView) {
         if(emptyView == null) {

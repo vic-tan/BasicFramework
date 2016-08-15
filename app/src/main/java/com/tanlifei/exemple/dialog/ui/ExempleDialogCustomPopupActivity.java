@@ -6,14 +6,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
 import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.support.view.dialog.base.popup.BasePopup;
 
 
-public class ExempleDialogCustomPopupActivity extends BaseActivity implements View.OnClickListener{
+public class ExempleDialogCustomPopupActivity extends BaseActionBarActivity implements View.OnClickListener{
     TextView mTvTopLeft;
     TextView mTvTopRight;
     TextView mTvBottomLeft;
@@ -26,6 +26,8 @@ public class ExempleDialogCustomPopupActivity extends BaseActivity implements Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exemple_dialog_custom_popup);
+        initActionBar();
+        actionBarView.setActionbarTitle("Custom Dialog分类");
 
         mTvTopLeft = (TextView) ViewFindUtils.find(this, R.id.tv_top_left);
         mTvTopRight = (TextView) ViewFindUtils.find(this, R.id.tv_top_right);

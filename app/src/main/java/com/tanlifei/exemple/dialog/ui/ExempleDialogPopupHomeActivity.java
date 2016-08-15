@@ -1,48 +1,46 @@
 package com.tanlifei.exemple.dialog.ui;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.base.adapter.CommonAdapter;
+import com.tanlifei.common.base.adapter.ViewHolder;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.framework.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class ExempleDialogPopupHomeActivity extends BaseActivity {
-    private Context mContext = this;
-    private final String[] mItems = {"Custom Popup", "BubblePopup"};
+public class ExempleDialogPopupHomeActivity extends BaseActionBarActivity {
+    private final List<String> mItems = new ArrayList<>();
     private final Class<?>[] mClazzs = {ExempleDialogCustomPopupActivity.class, ExempleDialogBubblePopupActivity.class};
-    private DisplayMetrics mDisplayMetrics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDisplayMetrics = getResources().getDisplayMetrics();
-
-        ListView lv = new ListView(mContext);
-        lv.setCacheColorHint(Color.TRANSPARENT);
-        lv.setBackgroundColor(Color.WHITE);
-        lv.setFadingEdgeLength(0);
-        lv.setAdapter(new SimpleHomeAdapter());
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mItems.add("Custom Popup");
+        mItems.add("BubblePopup");
+        setContentView(R.layout.exemple_base_adapter_activity_simple_home);
+        initActionBar();
+        actionBarView.setActionbarTitle("Popup分类");
+        ListView lv = (ListView) findViewById(R.id.main_lv_list);
+        lv.setAdapter(new CommonAdapter<String>(this, mItems, R.layout.main_activity_home_list_item) {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(mContext, mClazzs[position]);
-                startActivity(intent);
+            public void convert(final ViewHolder holder, String bean) {
+                holder.setText(R.id.main_list_item_name, bean);
+                holder.getConvertView().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(mContext, mClazzs[holder.getPosition()]);
+                        startActivity(intent);
+                    }
+                });
+
             }
         });
-
-        setContentView(lv);
     }
 
     @Override
@@ -50,37 +48,4 @@ public class ExempleDialogPopupHomeActivity extends BaseActivity {
         return ExempleDialogPopupHomeActivity.class;
     }
 
-    class SimpleHomeAdapter extends BaseAdapter {
-        @Override
-        public int getCount() {
-            return mItems.length;
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-
-            int padding = (int) (mDisplayMetrics.density * 10);
-
-            TextView tv = new TextView(mContext);
-            tv.setText(mItems[position]);
-            tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, 18);
-            tv.setTextColor(Color.parseColor("#468ED0"));
-            // tv.setGravity(Gravity.CENTER);
-            tv.setPadding(padding, padding, padding, padding);
-            AbsListView.LayoutParams lp = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT,
-                    AbsListView.LayoutParams.WRAP_CONTENT);
-            tv.setLayoutParams(lp);
-            return tv;
-        }
-    }
 }

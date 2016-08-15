@@ -9,7 +9,8 @@ import com.tanlifei.common.ui.activity.BaseActivity;
  * Created by tanlifei on 16/1/19.
  */
 public class LoadingActivity extends BaseActivity {
-    public static final  String TAG = LoadingActivity.class.getSimpleName();
+    public static final String TAG = LoadingActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <cn.finalteam.loadingviewfinal.PtrClassicFrameLayout
-        android:id="@+id/ptr_layout"
-        app:ptr_pull_to_fresh="false"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <include layout="@layout/common_actionbar_title_view" />
 
-        <cn.finalteam.loadingviewfinal.ListViewFinal
-            android:id="@+id/lv_games"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/actionbar"
+        android:background="@android:color/white">
+
+        <cn.finalteam.loadingviewfinal.PtrClassicFrameLayout
+            android:id="@+id/ptr_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:cacheColorHint="#00000000"
-            android:divider="@null"
-            app:loadMoreMode="scroll" />
+            app:ptr_pull_to_fresh="false">
 
-    </cn.finalteam.loadingviewfinal.PtrClassicFrameLayout>
+            <cn.finalteam.loadingviewfinal.ListViewFinal
+                android:id="@+id/lv_games"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                app:loadMoreMode="scroll" />
 
-    <include layout="@layout/exemple_refresh_layout_empty_view"/>
-</FrameLayout>
+        </cn.finalteam.loadingviewfinal.PtrClassicFrameLayout>
+
+        <include layout="@layout/exemple_refresh_layout_empty_view" />
+    </FrameLayout>
+</RelativeLayout>

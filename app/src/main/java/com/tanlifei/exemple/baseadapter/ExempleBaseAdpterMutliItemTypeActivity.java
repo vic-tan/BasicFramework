@@ -1,8 +1,9 @@
 package com.tanlifei.exemple.baseadapter;
 
-import android.app.ListActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.baseadapter.adapter.ExempleBaseAdpterChatAdapter;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterChatMessage;
 import com.tanlifei.framework.R;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 /**
  * Created by tanlifei on 15/9/4.
  */
-public class ExempleBaseAdpterMutliItemTypeActivity extends ListActivity
+public class ExempleBaseAdpterMutliItemTypeActivity extends BaseActionBarActivity
 {
     private ArrayList<ExempleBaseAdpterChatMessage> mDatas = new ArrayList<>();
 
@@ -22,10 +23,19 @@ public class ExempleBaseAdpterMutliItemTypeActivity extends ListActivity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.exemple_dialog_activity_home);
         initDatas();
-        getListView().setDivider(null);
+        initActionBar();
+        actionBarView.setActionbarTitle("多样布局");
+        ListView lv = (ListView) findViewById(R.id.main_lv_list);
+        lv.setDivider(null);
 
-        setListAdapter(new ExempleBaseAdpterChatAdapter(this,mDatas));
+        lv.setAdapter(new ExempleBaseAdpterChatAdapter(this,mDatas));
+    }
+
+    @Override
+    protected Class<?> childClassName() {
+        return ExempleBaseAdpterMutliItemTypeActivity.class;
     }
 
 

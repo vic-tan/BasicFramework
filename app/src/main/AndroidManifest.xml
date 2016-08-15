@@ -44,7 +44,7 @@
         <!-- —————————————————————————————————— 示例  —————————————————————————————————————— -->
 
         <activity android:name="com.tanlifei.exemple.main.ExempleHomeActivity_" />
-
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarMainActivity" />
         <!-- 所有公用的adapter -->
         <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMainActivity" /><!-- 主界面 -->
         <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdapterSingleItemTypeActivity" /> <!-- 单个布局的adapter -->
@@ -58,8 +58,7 @@
 
         <!-- 下拉上拉 -->
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRefreshViewMainActivity" /><!--下拉上拉 示范 -->
-        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewActivity_"/><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewActivity_"/>
 
         <!-- dialog -->
 

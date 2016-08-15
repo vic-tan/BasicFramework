@@ -3,14 +3,15 @@ package com.tanlifei.common.ui.activity;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.framework.R;
+import com.tanlifei.support.utils.ResUtils;
 import com.tanlifei.support.utils.StartActUtils;
 import com.zhy.autolayout.AutoLayoutActivity;
 
@@ -20,34 +21,33 @@ import com.zhy.autolayout.AutoLayoutActivity;
 public abstract class BaseActivity extends AutoLayoutActivity {
 
     protected Context mContext;
-    protected TextView mActionbarOpt;
-    protected TextView mActionbarTitle;
-    protected LinearLayout mActionbarBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         baseRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
+        setTranslucentStatus();
         mContext = this;
     }
 
 
-    protected void initActionBar() {
-        mActionbarTitle = (TextView) findViewById(R.id.actionbar_tv_title);
-        mActionbarTitle.setText(setActionBarTitle());
-        mActionbarOpt = (TextView) findViewById(R.id.actionbar_right_opt);
-        mActionbarBack = (LinearLayout) findViewById(R.id.actionbar_rlly_lift);
-        if (null != mActionbarBack) {
-            mActionbarBack.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    actionBack();
-                }
-            });
+    /**
+     * 导航栏显示中状态栏一样的颜色
+     */
+    private void setTranslucentStatus() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ResUtils.getColor(R.color.common_actionbar_bg_color));
+            window.setNavigationBarColor(ResUtils.getColor(R.color.common_actionbar_bg_color));
         }
     }
 
-    protected abstract Class<?> childClassName();
 
     /**
      * 显示横竖屏
@@ -57,10 +57,11 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     protected void baseRequestedOrientation(int requestedOrientation) {
         if (requestedOrientation == -1) {
             return;
-        }else {
+        } else {
             setRequestedOrientation(requestedOrientation);
         }
     }
+
 
     /**
      * 返回操作 子类可以覆盖此方法做特殊业务
@@ -69,14 +70,6 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         StartActUtils.finish(new ActParams(BaseActivity.this, childClassName()));
     }
 
-    /**
-     * 设置标题
-     *
-     * @return
-     */
-    protected String setActionBarTitle() {
-        return "请设置标题";
-    }
 
     @Override
     public void onBackPressed() {
@@ -85,22 +78,13 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     }
 
     /**
-     * 当右边有操作按钮时， 重新设置标题右对齐方式，默认为了居中，向右添加140px 与返回键宽一样
-     */
-    protected void reSetActionbarTitlemargins() {
-        if (null != mActionbarTitle) {
-            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mActionbarTitle.getLayoutParams();
-            params.setMargins(0, 0, 0, 0);
-            mActionbarTitle.requestLayout();
-        }
-    }
-
-    /**
      * 退出App
      */
-    public void exitApp() {
+    protected void exitApp() {
 
     }
+
+    protected abstract Class<?> childClassName();
 
 
 }

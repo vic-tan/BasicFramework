@@ -1,12 +1,13 @@
 package com.tanlifei.exemple.baseadapter;
 
-import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.tanlifei.common.base.adapter.CommonAdapter;
 import com.tanlifei.common.base.adapter.ViewHolder;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterBean;
 import com.tanlifei.framework.R;
 
@@ -16,15 +17,18 @@ import java.util.List;
 /**
  * Created by tanlifei on 15/9/4.
  */
-public class ExempleBaseAdapterSingleItemTypeActivity extends ListActivity {
+public class ExempleBaseAdapterSingleItemTypeActivity extends BaseActionBarActivity {
     private List<ExempleBaseAdpterBean> mDatas;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.exemple_dialog_activity_home);
         initDatas();
-
-        setListAdapter(new CommonAdapter<ExempleBaseAdpterBean>(this, mDatas,
+        initActionBar();
+        actionBarView.setActionbarTitle("单一布局");
+        ListView lv = (ListView) findViewById(R.id.main_lv_list);
+        lv.setAdapter(new CommonAdapter<ExempleBaseAdpterBean>(this, mDatas,
                 R.layout.exemple_activity_base_adapter_single) {
             @Override
             public void convert(final ViewHolder holder, final ExempleBaseAdpterBean bean) {
@@ -44,7 +48,10 @@ public class ExempleBaseAdapterSingleItemTypeActivity extends ListActivity {
         });
     }
 
-
+    @Override
+    protected Class<?> childClassName() {
+        return ExempleBaseAdapterSingleItemTypeActivity.class;
+    }
 
 
     private void initDatas() {

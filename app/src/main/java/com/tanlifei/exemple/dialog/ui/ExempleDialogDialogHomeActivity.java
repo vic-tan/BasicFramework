@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.dialog.adapter.ExempleDialogHomeAdapter;
 import com.tanlifei.exemple.dialog.adapter.ExempleDialogTestAdapter;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogCustomBaseDialog;
@@ -28,7 +28,7 @@ import com.tanlifei.support.view.dialog.widget.NormalListDialog;
 
 import java.util.ArrayList;
 
-public class ExempleDialogDialogHomeActivity extends BaseActivity implements ExpandableListView.OnChildClickListener {
+public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity implements ExpandableListView.OnChildClickListener {
     private Context mContext = this;
     public static String[] mGroups = {"Default Inner Dialog", "Custom Dialog", "Default Inner Anim", "Custom Anim"};
     public static String[][] mChilds = {
@@ -78,7 +78,8 @@ public class ExempleDialogDialogHomeActivity extends BaseActivity implements Exp
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.exemple_dialog_home);
-
+        initActionBar();
+        actionBarView.setActionbarTitle("Dialog分类");
         mMenuItems.add(new DialogMenuItem("收藏", R.mipmap.exemple_dialog_winstyle_favor));
         mMenuItems.add(new DialogMenuItem("下载", R.mipmap.exemple_dialog_winstyle_download));
         mMenuItems.add(new DialogMenuItem("分享", R.mipmap.exemple_dialog_winstyle_share));

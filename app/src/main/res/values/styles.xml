@@ -3,8 +3,26 @@
     <!-- Base application theme. -->
     <style name="AppTheme" >
         <item name="android:windowNoTitle">true</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
+    <!-- Base application button theme. -->
+    <!--  公用的button 矩形 -->
+    <style name="base_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">120px</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">40px</item>
+    </style>
 
+    <!--  公用的button 矩形 -->
+    <style name="base_button_rectangle" parent="base_button">
+        <item name="android:background">@drawable/common_button_rectangle_bg</item>
+    </style>
 
+    <!--  公用的button 圆角形 -->
+    <style name="base_button_corners" parent="base_button">
+        <item name="android:background">@drawable/common_button_corners_bg</item>
+    </style>
+    
 </resources>

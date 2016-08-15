@@ -30,18 +30,20 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.tanlifei.common.bean.params.ActParams;
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.kprogresshud.KProgressHUD;
 import com.tanlifei.support.utils.StartActUtils;
 
 
-public class ExempleRefreshViewMainActivity extends BaseActivity implements View.OnClickListener {
+public class ExempleRefreshViewMainActivity extends BaseActionBarActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exemple_refresh_view_activity_main);
+        initActionBar();
+        actionBarView.setActionbarTitle("列表刷新");
 
         Button listView = (Button) findViewById(R.id.listView);
         listView.setOnClickListener(this);

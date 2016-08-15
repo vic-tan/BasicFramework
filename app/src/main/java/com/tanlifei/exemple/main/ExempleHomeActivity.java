@@ -7,7 +7,7 @@ import android.widget.ListView;
 import com.tanlifei.common.base.adapter.CommonAdapter;
 import com.tanlifei.common.base.adapter.ViewHolder;
 import com.tanlifei.common.bean.params.ActParams;
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.main.bean.ExempleHomeListBean;
 import com.tanlifei.exemple.main.presenter.ExempleHomePresenter;
 import com.tanlifei.framework.R;
@@ -23,7 +23,7 @@ import org.androidannotations.annotations.ViewById;
  * Created by tanlifei on 16/1/19.
  */
 @EActivity(R.layout.exemple_activity_home)
-public class ExempleHomeActivity extends BaseActivity {
+public class ExempleHomeActivity extends BaseActionBarActivity {
 
     public static final String TAG = ExempleHomeActivity.class.getSimpleName();
     private SparseBooleanArray mConvertTextCollapsedStatus = new SparseBooleanArray();
@@ -35,6 +35,7 @@ public class ExempleHomeActivity extends BaseActivity {
     @AfterViews
     void init() {
         super.initActionBar();
+        actionBarView.setActionbarTitle("示例列表");
         presenter = new com.tanlifei.exemple.main.presenter.ExempleHomePresenterImpl();
         mList.setAdapter(new CommonAdapter<ExempleHomeListBean>(this, presenter.addList(), R.layout.exemple_activity_home_list_item) {
             @Override
@@ -71,8 +72,5 @@ public class ExempleHomeActivity extends BaseActivity {
         exitApp();
     }
 
-    @Override
-    protected String setActionBarTitle() {
-        return "示例列表";
-    }
+
 }

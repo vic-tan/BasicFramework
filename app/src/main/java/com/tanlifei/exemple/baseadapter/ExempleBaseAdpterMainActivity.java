@@ -2,18 +2,21 @@ package com.tanlifei.exemple.baseadapter;
 
 import android.os.Bundle;
 import android.view.View;
+
 import com.tanlifei.common.bean.params.ActParams;
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
 
-public class ExempleBaseAdpterMainActivity extends BaseActivity {
+public class ExempleBaseAdpterMainActivity extends BaseActionBarActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exemple_activity_base_adapter_main);
+        initActionBar();
+        actionBarView.setActionbarTitle("公用Adpter");
     }
 
     @Override
@@ -22,16 +25,12 @@ public class ExempleBaseAdpterMainActivity extends BaseActivity {
     }
 
     public void A(View v) {
-        StartActUtils.start(new ActParams(mContext, ExempleBaseAdapterSingleItemTypeActivity.class));
-    }
-
-    public void B(View v) {
         StartActUtils.start(new ActParams(mContext, ExempleBaseAdpterMutliItemTypeActivity.class));
     }
 
-
-    @Override
-    protected String setActionBarTitle() {
-        return "公用adapter";
+    public void B(View v) {
+        StartActUtils.start(new ActParams(mContext, ExempleBaseAdapterSingleItemTypeActivity.class));
     }
+
+
 }

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/actionbar_rlly_root"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/common_actionbar_standard_height"
+    android:layout_alignParentTop="true"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/actionbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/common_text_size_actionbar_title"
+        tools:text="请设置标题" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/actionbar_back_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/common_actionbar_back_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/actionbar_back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40px"
+                android:layout_marginRight="9px"
+                android:src="@mipmap/actionbar_icon_back"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/actionbar_back_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="30px"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                tools:text="返回"
+                android:textSize="@dimen/common_text_size_actionbar_opt"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/actionbar_opt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/actionbar_opt_right_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15px"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                tools:text="操作1"
+                android:textSize="@dimen/common_text_size_actionbar_opt"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/actionbar_opt_left_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15px"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                tools:text="操作2"
+                android:textSize="@dimen/common_text_size_actionbar_opt"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/actionbar_opt_right_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15px"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                tools:text="操作图片1"
+                android:textSize="@dimen/common_text_size_actionbar_opt"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/actionbar_opt_left_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15px"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                tools:text="操作图片2"
+                android:textSize="@dimen/common_text_size_actionbar_opt"
+                android:visibility="visible" />
+        </LinearLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+</com.zhy.autolayout.AutoFrameLayout>
