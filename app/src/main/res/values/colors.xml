@@ -4,6 +4,7 @@
 
     <!-- ————————————————————————————————————— app所有字体颜色常量   ——————————————————————————————————————————————————— -->
     <color name="common_text_color_actionbar_title">#ffffff</color> <!-- actionbar 字体颜色 -->
+    <color name="common_text_color_actionbar_title_pressed">#80ffffff</color> <!-- actionbar 字体选中颜色 -->
     <color name="common_actionbar_bg_color">#00C15C</color> <!-- actionbar 标题字体 -->
     <color name="common_text_color_expandable">#666666</color> <!-- expandable 字体大小 -->
 
@@ -16,7 +17,7 @@
 
     <!-- —————————————————— button 颜色 ——————————————————————————————— -->
     <color name="common_button_bg_normal_color">@color/common_actionbar_bg_color</color> <!-- 标准button 默认颜色 -->
-    <color name="common_button_bg_pressd_color">#8000C15C</color> <!-- 标准button 点击颜色 -->
+    <color name="common_button_bg_pressed_color">#8000C15C</color> <!-- 标准button 点击颜色 -->
 
     <!-- —————————————————— 提示框颜色 ——————————————————————————————— -->
     <!-- 中间提示框 -->

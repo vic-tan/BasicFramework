@@ -1,5 +1,6 @@
 package com.tanlifei.support.view.actionbar;
 
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.view.View;
@@ -27,7 +28,7 @@ public class BaseActionBarView {
     <attr name="abv_back_iconDrawableDimiss" format="boolean" /><!--actionbar 返回图标是否显示 -->
     <attr name="abv_back_dimiss" format="boolean" /><!--actionbar 返回文字和图标是否显示 -->
 
-    <!-- 右边操作view ,提供两个文字view 和两个图片view, 它们在同一LinearLayout 上，顺序从左到右为abv_opt_right_text ,abv_opt_left_text,abv_opt_right_iconDrawable,abv_opt_left_iconDrawable -->
+    <!-- 右边操作view ,提供两个文字view 和两个图片view, 它们在同一LinearLayout 上，顺序从左到右为abv_opt_right_text ,abv_opt_right_iconDrawable,abv_opt_left_text,abv_opt_left_iconDrawable -->
     <attr name="abv_opt_right_text" format="string" /><!--actionbar 操作文字1-->
     <attr name="abv_opt_right_textColor" format="color" /><!--actionbar 操作文字1颜色-->
     <attr name="abv_opt_right_textSize" format="dimension" /><!--actionbar 操作文字1字体大小 单位 px-->
@@ -101,7 +102,7 @@ public class BaseActionBarView {
     /**
      * 返回文字颜色 默认白色
      */
-    protected int back_textColor;
+    protected ColorStateList back_textColor;
 
     /**
      * 返回文字字体大小 单位 px
@@ -113,10 +114,10 @@ public class BaseActionBarView {
      */
     protected boolean back_text_dimiss = false;
 
-    /**
+   /* *//**
      * 返回图标是否显示 默认显示
-     */
-    protected boolean back_iconDrawableDimiss = false;
+     *//*
+    protected boolean back_iconDrawableDimiss = false;*/
 
     /**
      * 返回文字和图标是否显示 默认显示
@@ -133,7 +134,7 @@ public class BaseActionBarView {
     /**
      * 操作文字1颜色 默认白色
      */
-    protected int opt_right_textColor;
+    protected ColorStateList opt_right_textColor;
 
     /**
      * 操作文字1字体大小 单位 px
@@ -148,7 +149,7 @@ public class BaseActionBarView {
     /**
      * 操作文字2颜色 默认白色
      */
-    protected int opt_left_textColor;
+    protected ColorStateList opt_left_textColor;
 
     /**
      * 操作文字2字体大小 单位 px
@@ -191,20 +192,20 @@ public class BaseActionBarView {
         if(StringUtils.isEmpty(back_text)){
             back_text = "返回";
         }
-        back_textColor = typedArray.getColor(R.styleable.ActionBarView_abv_back_textColor, DEFAULT_COLOR);
+        back_textColor = typedArray.getColorStateList(R.styleable.ActionBarView_abv_back_textColor);
         back_textSize = typedArray.getDimensionPixelSize(R.styleable.ActionBarView_abv_back_textSize, (int)DEFAULT_BACK_TEXT_SIZE);
         back_text_dimiss = typedArray.getBoolean(R.styleable.ActionBarView_abv_back_text_dimiss, false);
-        back_iconDrawableDimiss = typedArray.getBoolean(R.styleable.ActionBarView_abv_back_iconDrawableDimiss, false);
+       // back_iconDrawableDimiss = typedArray.getBoolean(R.styleable.ActionBarView_abv_back_iconDrawableDimiss, false);
         ;
         back_dimiss = typedArray.getBoolean(R.styleable.ActionBarView_abv_back_dimiss, false);
 
 
          /*--------------- 操作设置 --------------*/
         opt_right_text = typedArray.getString(R.styleable.ActionBarView_abv_opt_right_text);
-        opt_right_textColor = typedArray.getColor(R.styleable.ActionBarView_abv_opt_right_textColor, DEFAULT_COLOR);
+        opt_right_textColor = typedArray.getColorStateList(R.styleable.ActionBarView_abv_opt_right_textColor);
         opt_right_textSize = typedArray.getDimensionPixelSize(R.styleable.ActionBarView_abv_opt_right_textSize, (int)DEFAULT_OPT_TEXT_SIZE);
+        opt_left_textColor = typedArray.getColorStateList(R.styleable.ActionBarView_abv_opt_left_textColor);
         opt_left_text = typedArray.getString(R.styleable.ActionBarView_abv_opt_left_text);
-        opt_left_textColor = typedArray.getColor(R.styleable.ActionBarView_abv_opt_left_textColor, DEFAULT_COLOR);
         opt_left_textSize = typedArray.getDimensionPixelSize(R.styleable.ActionBarView_abv_opt_left_textSize, (int)DEFAULT_OPT_TEXT_SIZE);
 
 

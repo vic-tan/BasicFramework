@@ -62,6 +62,30 @@ public class CornerUtils {
     }
 
     /**
+     * set btn selector with corner drawable for special position
+     */
+    public static StateListDrawable btnSelector(Drawable normal, Drawable press) {
+        StateListDrawable bg = new StateListDrawable();
+        bg.addState(new int[]{-android.R.attr.state_pressed}, normal);
+        bg.addState(new int[]{android.R.attr.state_pressed}, press);
+        return bg;
+    }
+
+    /**
+     * set btn selector with corner drawable for special position
+     */
+    public static StateListDrawable btnSelector(int normalColor, int pressColor) {
+        StateListDrawable bg = new StateListDrawable();
+        Drawable normal = null;
+        Drawable pressed = null;
+        normal = cornerDrawable(normalColor, new float[]{0, 0, 0, 0, 0, 0, 0, 0});
+        pressed = cornerDrawable(pressColor, new float[]{0, 0, 0, 0, 0, 0, 0, 0});
+        bg.addState(new int[]{-android.R.attr.state_pressed}, normal);
+        bg.addState(new int[]{android.R.attr.state_pressed}, pressed);
+        return bg;
+    }
+
+    /**
      * set ListView item selector with corner drawable for the last position
      * (ListView的item点击效果,只处理最后一项圆角处理)
      */

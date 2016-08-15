@@ -26,8 +26,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
+import com.tanlifei.support.utils.StartActUtils;
 
 
 public class ExempleActionBarMainActivity extends BaseActionBarActivity implements View.OnClickListener {
@@ -55,14 +57,7 @@ public class ExempleActionBarMainActivity extends BaseActionBarActivity implemen
         Button barDeterminate = (Button) findViewById(R.id.bar_determinate);
         barDeterminate.setOnClickListener(this);
 
-        Button customView = (Button) findViewById(R.id.custom_view);
-        customView.setOnClickListener(this);
 
-        Button dimBackground = (Button) findViewById(R.id.dim_background);
-        dimBackground.setOnClickListener(this);
-
-        Button customColor = (Button) findViewById(R.id.custom_color_animate);
-        customColor.setOnClickListener(this);
         super.initActionBar();
     }
 
@@ -76,32 +71,24 @@ public class ExempleActionBarMainActivity extends BaseActionBarActivity implemen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.indeterminate:
-
+                StartActUtils.start(new ActParams(mContext, ExempleActionBarOneActivity.class));
                 break;
             case R.id.label_indeterminate:
-
+                StartActUtils.start(new ActParams(mContext, ExempleActionBarTwoActivity.class));
                 break;
             case R.id.detail_indeterminate:
-
+                StartActUtils.start(new ActParams(mContext, ExempleActionBarThreeActivity.class));
                 break;
             case R.id.determinate:
-
+                StartActUtils.start(new ActParams(mContext, ExempleActionBarFourActivity.class));
                 break;
             case R.id.annular_determinate:
-
+                StartActUtils.start(new ActParams(mContext, ExempleActionBarFiveActivity.class));
                 break;
             case R.id.bar_determinate:
-
+                StartActUtils.start(new ActParams(mContext, ExempleActionBarSixActivity.class));
                 break;
-            case R.id.custom_view:
 
-                break;
-            case R.id.dim_background:
-
-                break;
-            case R.id.custom_color_animate:
-
-                break;
         }
     }
 

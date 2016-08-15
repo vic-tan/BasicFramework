@@ -1,5 +1,6 @@
 package com.tanlifei.support.utils;
 
+import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 
 import com.tanlifei.framework.main.ui.BaseApplication;
@@ -89,6 +90,10 @@ public class ResUtils {
 
     public static int getColor(int id) {
         return BaseApplication.appContext.getResources().getColor(id);
+    }
+
+    public static ColorStateList getColorStateList(int id) {
+        return BaseApplication.appContext.getResources().getColorStateList(id);
     }
 
     //************************************************ arrays values************************************************************//

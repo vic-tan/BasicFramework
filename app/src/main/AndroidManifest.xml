@@ -43,8 +43,19 @@
 
         <!-- —————————————————————————————————— 示例  —————————————————————————————————————— -->
 
+
+
         <activity android:name="com.tanlifei.exemple.main.ExempleHomeActivity_" />
+        <!-- 所有公用的ActionBar -->
         <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarMainActivity" />
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarOneActivity" />
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarTwoActivity" />
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarThreeActivity" />
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarFourActivity" />
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarFiveActivity" />
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarSixActivity" />
+
+
         <!-- 所有公用的adapter -->
         <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMainActivity" /><!-- 主界面 -->
         <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdapterSingleItemTypeActivity" /> <!-- 单个布局的adapter -->
