@@ -76,6 +76,7 @@ public class PostFormBuilder extends OkHttpRequestBuilder implements HasParamsab
     public PostFormBuilder params(Map<String, String> params)
     {
         this.params = params;
+        Logger.json(LoggerConstants.OKHTTP_PARAMS,new Gson().toJson(params));
         return this;
     }
 
@@ -99,6 +100,7 @@ public class PostFormBuilder extends OkHttpRequestBuilder implements HasParamsab
             params = new LinkedHashMap<>();
         }
         params.put(key, val);
+        Logger.json(LoggerConstants.OKHTTP_PARAMS,"{'"+key+"':'"+val+"'}");
         return this;
     }
 

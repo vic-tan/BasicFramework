@@ -7,7 +7,7 @@
     android:background="@mipmap/main_guide_view_four">
 
 
-    <com.tanlifei.support.view.injection.SelectorImageButton
+    <com.tanlifei.support.widget.injection.SelectorImageButton
         android:id="@+id/imgBtn_start"
         android:layout_width="270px"
         android:layout_height="90px"

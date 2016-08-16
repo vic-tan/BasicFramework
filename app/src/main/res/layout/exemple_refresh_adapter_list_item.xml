@@ -41,7 +41,6 @@
             android:layout_toRightOf="@id/ic_game_icon"
             android:isIndicator="true"
             android:numStars="5"
-            android:progressDrawable="@drawable/exemple_rating_bar_list"
             android:rating="3" />
 
         <TextView

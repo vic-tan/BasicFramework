@@ -33,7 +33,7 @@ public class ActivityManager {
      */
     public void addActivity(Activity activity){
         if(activityStack==null){
-            activityStack=new Stack<Activity>();
+            activityStack=new Stack<>();
         }
         activityStack.add(activity);
     }
@@ -69,7 +69,7 @@ public class ActivityManager {
         }
         if(activity!=null){
             activityStack.remove(activity);
-            activity.finish();
+            StartActUtils.finish(activity);
             activity=null;
         }
     }
@@ -85,7 +85,7 @@ public class ActivityManager {
         while (iterator.hasNext()) {
             Activity activity = iterator.next();
             if(activity != null && activity.getClass().equals(cls) ){
-                activity.finish();
+                StartActUtils.finish(activity);
                 iterator.remove();
             }
         }
@@ -102,7 +102,7 @@ public class ActivityManager {
         while (iterator.hasNext()) {
             Activity activity = iterator.next();
             if(activity != null && !activity.isFinishing()){
-                activity.finish();
+                StartActUtils.finish(activity);
             }
         }
         activityStack.clear();

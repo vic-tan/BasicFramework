@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.tanlifei.support.view.textview.expandable.ExpandableTextView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tanlifei.support.widget.textview.expandable.ExpandableTextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
     android:id="@+id/expand_text_view"
     android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         android:layout_marginTop="20px"
         android:clickable="false"
         android:fontFamily="@string/font_family"
-        android:textColor="@color/common_text_color_expandable"
+        android:textColor="@color/common_text_desc_color"
         android:textSize="@dimen/common_text_size_expandable" />
 
 
@@ -43,4 +43,4 @@
     </RelativeLayout>
 
 
-</com.tanlifei.support.view.textview.expandable.ExpandableTextView>
+</com.tanlifei.support.widget.textview.expandable.ExpandableTextView>

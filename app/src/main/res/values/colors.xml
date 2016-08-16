@@ -6,7 +6,8 @@
     <color name="common_text_color_actionbar_title">#ffffff</color> <!-- actionbar 字体颜色 -->
     <color name="common_text_color_actionbar_title_pressed">#80ffffff</color> <!-- actionbar 字体选中颜色 -->
     <color name="common_actionbar_bg_color">#00C15C</color> <!-- actionbar 标题字体 -->
-    <color name="common_text_color_expandable">#666666</color> <!-- expandable 字体大小 -->
+    <color name="common_text_desc_color">#666666</color> <!--  字体颜色 -->
+    <color name="common_text_title_color">#293b5f</color><!--  标题字体颜色 -->
 
     <!-- ————————————————————————————————————— kprogresshud加载框常量   ——————————————————————————————————————————————————— -->
     <color name="kprogresshud_default_color">#b1000000</color><!--windons窗体滤镜背景色-->

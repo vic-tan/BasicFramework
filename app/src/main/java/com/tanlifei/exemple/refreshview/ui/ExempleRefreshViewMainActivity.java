@@ -82,11 +82,7 @@ public class ExempleRefreshViewMainActivity extends BaseActionBarActivity implem
                 StartActUtils.start(mContext,ExempleListViewActivity_.class);
                 break;
             case R.id.label_indeterminate:
-                hud = KProgressHUD.create(this)
-                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                        .setLabel("Please wait")
-                        .setCancellable(true);
-                scheduleDismiss();
+                StartActUtils.start(mContext,ExempleListViewAndAdActivity_.class);
                 break;
             case R.id.detail_indeterminate:
                 hud = KProgressHUD.create(this)

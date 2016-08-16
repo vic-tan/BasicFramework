@@ -14,16 +14,15 @@ import com.tanlifei.common.base.refreshview.ui.RefreshView;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.bean.PageBean;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
-import com.tanlifei.exemple.refreshview.bean.GameInfo;
+import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.constants.fixed.JsonConstants;
 import com.tanlifei.support.constants.fixed.UrlConstants;
+import com.tanlifei.support.utils.DateFormatUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,7 +39,7 @@ import cn.finalteam.loadingviewfinal.PtrFrameLayout;
  * Created by tanlifei on 16/1/19.
  */
 @EActivity(R.layout.exemple_acitivity_ptr_listview)
-public class ExempleListViewActivity extends BaseActionBarActivity implements RefreshView,IRefreshInConfiguration {
+public class ExempleListViewActivity extends BaseActionBarActivity implements RefreshView, IRefreshInConfiguration {
     public static final String TAG = ExempleListViewActivity.class.getSimpleName();
 
 
@@ -50,12 +49,9 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
     FrameLayout mFlEmptyView;
     @ViewById(R.id.lv_games)
     public ListViewFinal mLvGames;
-    private List<GameInfo> mGameList;
-    private CommonAdapter<GameInfo> mNewGameListAdapter;
+    private List<TrainBean> mGameList;
+    private CommonAdapter<TrainBean> mNewGameListAdapter;
     private IRefreshInPresenter presenter;
-
-    private int mPage = 1;
-
 
 
 
@@ -63,17 +59,15 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
     void init() {
         initActionBar();
         actionBarView.setActionbarTitle("ListView 上拉下拉刷新");
-        presenter = new RefreshPresenter(mContext, this,this);
+        presenter = new RefreshPresenter(mContext, this, this);
         mGameList = new ArrayList<>();
-        mNewGameListAdapter = new CommonAdapter<GameInfo>(mContext, mGameList, R.layout.exemple_refresh_adapter_list_item) {
+        mNewGameListAdapter = new CommonAdapter<TrainBean>(mContext, mGameList, R.layout.train_open_list_item) {
             @Override
-            public void convert(ViewHolder holder, GameInfo bean) {
-                FanImageLoader.create(bean.getCoverUrl()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.ic_game_icon));
-                holder.setText(R.id.tv_game_name, bean.getName());
-                holder.setRating(R.id.rb_game_rank, bean.getTaskScore() / 2.0f);
-                holder.setText(R.id.tv_game_socre, new DecimalFormat("#0.0").format(bean.getTaskScore()) + "分");
-                holder.setText(R.id.tv_game_player_number, "热度:" + String.valueOf(bean.getPlayerCount()));
-                holder.setText(R.id.tv_game_comment_number, "评论数:" + String.valueOf(bean.getCommentCount()));
+            public void convert(ViewHolder holder, final TrainBean bean) {
+                FanImageLoader.create(bean.getCover()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.cover));
+                holder.setText(R.id.title, bean.getName());
+                holder.setText(R.id.desc, "开始时间:" + DateFormatUtils.format(bean.getBegin_time(), DateFormatUtils.FormatType.DAY) + "\r\n"
+                        + "结束时间:" + DateFormatUtils.format(bean.getEnd_time(), DateFormatUtils.FormatType.DAY));
             }
         };
         mLvGames.setAdapter(mNewGameListAdapter);
@@ -81,14 +75,14 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
         mPtrLayout.setOnRefreshListener(new OnDefaultRefreshListener() {
             @Override
             public void onRefreshBegin(PtrFrameLayout frame) {
-                presenter.requestPageData(UrlConstants.NEW_GAME,params(1),true);
+                presenter.requestPageData(UrlConstants.LIST_URL, params(1), true);
             }
         });
         mPtrLayout.setLastUpdateTimeRelateObject(this);
         mLvGames.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void loadMore() {
-                presenter.requestPageData(UrlConstants.NEW_GAME,params(1),false);
+                presenter.requestPageData(UrlConstants.LIST_URL, params(1), false);
             }
         });
         mPtrLayout.autoRefresh();
@@ -97,11 +91,13 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
 
     public Map<String, String> params(int page) {
         Map<String, String> map = new HashMap<>();
-        map.put(JsonConstants.REQUEST_TASK_LIST_PARAM_PAGE_SIZE, page + "");
-        map.put("limit", 12 + "");
+        map.put("json", "{\n" +
+                "    \"sid\": \"ipeiban2016\",\n" +
+                "    \"pageNumber\": " + page + ",\n" +
+                "    \"pageSize\": 10\n" +
+                "}");
         return map;
     }
-
 
 
     @Override
@@ -121,7 +117,7 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
 
     @Override
     public Class<?> parseClassName() {
-        return GameInfo.class;
+        return TrainBean.class;
     }
 
     @Override

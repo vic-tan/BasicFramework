@@ -25,55 +25,55 @@
                 android:id="@+id/listView"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
-                android:text="ListView"/>
+                android:text="listView 标准上拉下拉" />
 
             <Button
                 android:id="@+id/label_indeterminate"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
-                android:text="With label and cancellable" />
+                android:text="listView 标准上拉下拉带广告轮播" />
 
             <Button
                 android:id="@+id/detail_indeterminate"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
-                android:text="With details"/>
+                android:text="With details" />
 
             <Button
                 android:id="@+id/determinate"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
-                android:text="Determinate"/>
+                android:text="Determinate" />
 
             <Button
                 android:id="@+id/annular_determinate"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
-                android:text="Annular determinate"/>
+                android:text="Annular determinate" />
 
             <Button
                 android:id="@+id/bar_determinate"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
-                android:text="Bar determinate"/>
+                android:text="Bar determinate" />
 
             <Button
                 android:id="@+id/custom_view"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
-                android:text="Custom view"/>
+                android:text="Custom view" />
 
             <Button
                 android:id="@+id/dim_background"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
-                android:text="Dim background"/>
+                android:text="Dim background" />
 
             <Button
                 android:id="@+id/custom_color_animate"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
-                android:text="Custom color and speed"/>
+                android:text="Custom color and speed" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

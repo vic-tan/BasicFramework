@@ -7,9 +7,10 @@ import com.tanlifei.common.base.refreshview.interactor.IRefreshViewInteractor;
 import com.tanlifei.common.base.refreshview.interactor.impl.RefreshViewInteractorImpl;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInConfiguration;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInPresenter;
+import com.tanlifei.common.base.refreshview.ui.EmptyView;
 import com.tanlifei.common.base.refreshview.ui.RefreshView;
 import com.tanlifei.common.bean.BaseJson;
-import com.tanlifei.common.base.refreshview.ui.EmptyView;
+import com.tanlifei.common.bean.BasePageListBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.JsonConstants;
 import com.tanlifei.support.utils.GsonJsonUtils;
@@ -54,7 +55,12 @@ public class RefreshPresenter implements IRefreshInPresenter,
         if (fromStart) {
             page = 1;
         }
-        map.put(JsonConstants.REQUEST_TASK_LIST_PARAM_PAGE_SIZE, page + "");
+        //TODO 要做处理
+        map.put("json", "{\n" +
+                "    \"sid\": \"ipeiban2016\",\n" +
+                "    \"pageNumber\": " + page + ",\n" +
+                "    \"pageSize\": 10\n" +
+                "}");
         interactor.requestPageData(url, map, this);
     }
 
@@ -144,9 +150,10 @@ public class RefreshPresenter implements IRefreshInPresenter,
             configuration.getList().clear();
         }
         page = page + 1;
+        BasePageListBean basePageListBean = new Gson().fromJson(new Gson().toJson(bean.getData()), BasePageListBean.class);
         List newGameResponse = null;
         try {
-            newGameResponse = GsonJsonUtils.fromJsonArray(new Gson().toJson(bean.getData()), configuration.parseClassName());
+            newGameResponse = GsonJsonUtils.fromJsonArray(new Gson().toJson(basePageListBean.getList()), configuration.parseClassName());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -180,5 +187,28 @@ public class RefreshPresenter implements IRefreshInPresenter,
             }
         }
         configuration.getAdapter().notifyDataSetChanged();
+    }
+
+    public String getDate(){
+        return  "{\n" +
+                "    \"data\": {\n" +
+                "        \"pageSize\": 10,\n" +
+                "        \"pageNumber\": 1,\n" +
+                "        \"list\": [\n" +
+                "            {\n" +
+                "                \"class_status\": \"2\",\n" +
+                "                \"id\": \"8a987d5155b47f520155be577d260179\",\n" +
+                "                \"applied_count\": 8,\n" +
+                "                \"address\": \"广州唯品大学\",\n" +
+                "                \"name\": \"2016《培训》直达号--唯品大学（广州站）\",\n" +
+                "                \"standard_fee\": 1800\n" +
+                "            }\n" +
+                "        ],\n" +
+                "        \"totalRow\": 48,\n" +
+                "        \"totalPage\": 5\n" +
+                "    },\n" +
+                "    \"code\": \"0000\",\n" +
+                "    \"msg\": \"操作成功\"\n" +
+                "}";
     }
 }
