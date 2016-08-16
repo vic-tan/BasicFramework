@@ -26,10 +26,9 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     protected void onCreate(Bundle savedInstanceState) {
         baseRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
+        mContext = this;
         ActivityManager.getActivityManager().addActivity(this);
         setTranslucentStatus();
-        mContext = this;
-
     }
 
 

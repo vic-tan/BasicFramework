@@ -6,7 +6,7 @@ import android.os.Handler;
 import com.tanlifei.framework.main.presenter.ISplashPresenter;
 import com.tanlifei.framework.main.ui.activity.SplashActivity;
 import com.tanlifei.framework.main.ui.view.SplashView;
-import com.tanlifei.support.utils.SPUtils;
+import com.tanlifei.support.utils.AppCacheUtils;
 
 
 /**
@@ -26,7 +26,7 @@ public class SplashPresenterImpl implements ISplashPresenter {
 
     @Override
     public void delayedStart(Handler handler) {
-        if (SPUtils.getBoolean(FIRST_LAUNCHER_APP_TAG, true)) {//第一次打开应用
+        if (AppCacheUtils.getInstance(mContext).getBoolean(FIRST_LAUNCHER_APP_TAG, true)) {//第一次打开应用
             handler.sendMessageDelayed(handler.obtainMessage(SplashActivity.HANDLE_WHAT_ZERO), SplashActivity.DELAYED);
         } else {
             if (SplashActivity.IS_HAS_LOADING_DATA)//有加载数据页时过程

@@ -10,7 +10,7 @@ import com.tanlifei.support.constants.fixed.OnOffConstants;
 import com.tanlifei.support.constants.level.OnOffLevel;
 import com.tanlifei.support.exception.CrashHandler;
 import com.tanlifei.support.okhttp.OkHttpUtils;
-import com.tanlifei.support.utils.FileUtils;
+import com.tanlifei.support.utils.io.FileUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -59,8 +59,8 @@ public class BaseApplication extends Application {
         if (OnOffConstants.UNCAUGHT_EX_LEVEL == OnOffLevel.OFF) {//不写入
             return;
         }
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(getApplicationContext());// 注册crashHandler
+        CrashHandler.getInstance().init(this).setCrashSave(true)
+                .setCrashSaveTargetFolder(GlobalConstants.CRASH_PATH);
     }
 
     //创建数据表
