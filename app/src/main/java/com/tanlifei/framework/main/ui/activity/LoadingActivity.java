@@ -24,8 +24,4 @@ public class LoadingActivity extends BaseActivity {
         exitApp();
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return LoadingActivity.class;
-    }
 }

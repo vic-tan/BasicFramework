@@ -42,9 +42,4 @@ public class ExempleDialogSimpleHomeActivity extends BaseActionBarActivity {
         });
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleDialogSimpleHomeActivity.class;
-    }
-
 }

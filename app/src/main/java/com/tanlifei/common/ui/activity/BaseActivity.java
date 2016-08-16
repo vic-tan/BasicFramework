@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.framework.R;
+import com.tanlifei.support.utils.ActivityManager;
 import com.tanlifei.support.utils.ResUtils;
 import com.tanlifei.support.utils.StartActUtils;
 import com.zhy.autolayout.AutoLayoutActivity;
@@ -26,8 +26,10 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     protected void onCreate(Bundle savedInstanceState) {
         baseRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
+        ActivityManager.getActivityManager().addActivity(this);
         setTranslucentStatus();
         mContext = this;
+
     }
 
 
@@ -67,9 +69,15 @@ public abstract class BaseActivity extends AutoLayoutActivity {
      * 返回操作 子类可以覆盖此方法做特殊业务
      */
     protected void actionBack() {
-        StartActUtils.finish(new ActParams(BaseActivity.this, childClassName()));
+        StartActUtils.finish(mContext);
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityManager.getActivityManager().finishActivity(this);
+    }
 
     @Override
     public void onBackPressed() {
@@ -81,10 +89,9 @@ public abstract class BaseActivity extends AutoLayoutActivity {
      * 退出App
      */
     protected void exitApp() {
-
+        //finish所有页面和kill app
+        ActivityManager.getActivityManager().appExit(this);
     }
-
-    protected abstract Class<?> childClassName();
 
 
 }

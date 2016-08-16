@@ -57,10 +57,6 @@ public class ExempleActionBarSixActivity extends BaseActionBarActivity {
         });
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleActionBarSixActivity.class;
-    }
 
 
 }

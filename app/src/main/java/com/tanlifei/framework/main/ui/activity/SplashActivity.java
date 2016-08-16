@@ -3,7 +3,6 @@ package com.tanlifei.framework.main.ui.activity;
 import android.os.Handler;
 import android.os.Message;
 
-import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.presenter.ISplashPresenter;
@@ -55,12 +54,8 @@ public class SplashActivity extends BaseActivity implements SplashView {
     }
 
     private void start(Class clazz) {
-        StartActUtils.start(new ActParams(mContext, clazz));
-        StartActUtils.finish(new ActParams(mContext, SplashActivity_.class));
+        StartActUtils.start(mContext, clazz);
+        StartActUtils.finish(mContext);
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return SplashActivity_.class;
-    }
 }

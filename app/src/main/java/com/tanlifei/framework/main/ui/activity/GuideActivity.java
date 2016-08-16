@@ -4,7 +4,6 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.adapter.GuideAdapter;
@@ -47,8 +46,8 @@ public class GuideActivity extends BaseActivity implements GuideView,
     @Override
     public void onClick(View v) {
         SPUtils.putBoolean(SplashPresenterImpl.FIRST_LAUNCHER_APP_TAG, false);//设置为已打开过该应用了
-        StartActUtils.start(new ActParams(mContext, HomeActivity_.class));
-        StartActUtils.finish(new ActParams(mContext, GuideActivity_.class));
+        StartActUtils.start(mContext, HomeActivity_.class);
+        StartActUtils.finish(mContext);
     }
 
     @Override
@@ -67,12 +66,6 @@ public class GuideActivity extends BaseActivity implements GuideView,
     @Override
     public void onPageScrollStateChanged(int state) {
 
-    }
-
-
-    @Override
-    protected Class<?> childClassName() {
-        return GuideActivity_.class;
     }
 
     /**

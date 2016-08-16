@@ -33,10 +33,6 @@ public class ExempleBaseAdpterMutliItemTypeActivity extends BaseActionBarActivit
         lv.setAdapter(new ExempleBaseAdpterChatAdapter(this,mDatas));
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleBaseAdpterMutliItemTypeActivity.class;
-    }
 
 
     private void initDatas()

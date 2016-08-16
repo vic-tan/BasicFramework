@@ -68,7 +68,7 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
         mNewGameListAdapter = new CommonAdapter<GameInfo>(mContext, mGameList, R.layout.exemple_refresh_adapter_list_item) {
             @Override
             public void convert(ViewHolder holder, GameInfo bean) {
-                FanImageLoader.create(bean.getIconUrl()).setAllRes(R.mipmap.ic_launcher).into(holder.getView(R.id.ic_game_icon));
+                FanImageLoader.create(bean.getCoverUrl()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.ic_game_icon));
                 holder.setText(R.id.tv_game_name, bean.getName());
                 holder.setRating(R.id.rb_game_rank, bean.getTaskScore() / 2.0f);
                 holder.setText(R.id.tv_game_socre, new DecimalFormat("#0.0").format(bean.getTaskScore()) + "分");
@@ -102,11 +102,6 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
         return map;
     }
 
-
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleListViewActivity_.class;
-    }
 
 
     @Override

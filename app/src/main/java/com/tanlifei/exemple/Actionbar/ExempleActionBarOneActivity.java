@@ -46,10 +46,5 @@ public class ExempleActionBarOneActivity extends BaseActionBarActivity {
         //actionBarView.setActionbarBackDimiss(true);
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleActionBarOneActivity.class;
-    }
-
 
 }

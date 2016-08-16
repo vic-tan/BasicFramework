@@ -57,12 +57,6 @@ public class ExempleActionBarFourActivity extends BaseActionBarActivity  {
         });
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleActionBarFourActivity.class;
-    }
-
-
 
 
 }

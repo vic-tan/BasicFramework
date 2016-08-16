@@ -3,7 +3,6 @@ package com.tanlifei.exemple.baseadapter;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
@@ -19,17 +18,13 @@ public class ExempleBaseAdpterMainActivity extends BaseActionBarActivity {
         actionBarView.setActionbarTitle("公用Adpter");
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleBaseAdpterMainActivity.class;
-    }
 
     public void A(View v) {
-        StartActUtils.start(new ActParams(mContext, ExempleBaseAdpterMutliItemTypeActivity.class));
+        StartActUtils.start(mContext, ExempleBaseAdpterMutliItemTypeActivity.class);
     }
 
     public void B(View v) {
-        StartActUtils.start(new ActParams(mContext, ExempleBaseAdapterSingleItemTypeActivity.class));
+        StartActUtils.start(mContext, ExempleBaseAdapterSingleItemTypeActivity.class);
     }
 
 

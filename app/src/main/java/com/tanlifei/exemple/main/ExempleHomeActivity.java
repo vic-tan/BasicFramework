@@ -6,7 +6,6 @@ import android.widget.ListView;
 
 import com.tanlifei.common.base.adapter.CommonAdapter;
 import com.tanlifei.common.base.adapter.ViewHolder;
-import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.main.bean.ExempleHomeListBean;
 import com.tanlifei.exemple.main.presenter.ExempleHomePresenter;
@@ -46,23 +45,19 @@ public class ExempleHomeActivity extends BaseActionBarActivity {
                 holder.getView(R.id.expand_text_view).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        StartActUtils.start(new ActParams(mContext, bean.getClazz()));
+                        StartActUtils.start(mContext, bean.getClazz());
                     }
                 });
                 holder.setOnClickListener(R.id.mexemple_list_item_name, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        StartActUtils.start(new ActParams(mContext, bean.getClazz()));
+                        StartActUtils.start(mContext, bean.getClazz());
                     }
                 });
             }
         });
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleHomeActivity_.class;
-    }
 
     /**
      * 退出App

@@ -44,10 +44,6 @@ public class ExempleDialogCustomPopupActivity extends BaseActionBarActivity impl
         mQuickCustomPopup = new SimpleCustomPop(mContext);
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleDialogCustomPopupActivity.class;
-    }
 
     @Override
     public void onClick(View v) {

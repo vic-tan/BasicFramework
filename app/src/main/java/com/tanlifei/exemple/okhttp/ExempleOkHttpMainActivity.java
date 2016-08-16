@@ -30,10 +30,6 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
         actionBarView.setActionbarTitle("OKHttp请求示例");
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleOkHttpMainActivity.class;
-    }
 
     public void A(View v) {
         if (!NetUtils.isConnected(mContext)) {

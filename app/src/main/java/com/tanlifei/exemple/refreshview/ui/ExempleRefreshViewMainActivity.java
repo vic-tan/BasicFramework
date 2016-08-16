@@ -29,7 +29,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.kprogresshud.KProgressHUD;
@@ -73,10 +72,6 @@ public class ExempleRefreshViewMainActivity extends BaseActionBarActivity implem
         customColor.setOnClickListener(this);
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleRefreshViewMainActivity.class;
-    }
 
     private KProgressHUD hud;
 
@@ -84,7 +79,7 @@ public class ExempleRefreshViewMainActivity extends BaseActionBarActivity implem
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.listView:
-                StartActUtils.start(new ActParams(mContext,ExempleListViewActivity_.class));
+                StartActUtils.start(mContext,ExempleListViewActivity_.class);
                 break;
             case R.id.label_indeterminate:
                 hud = KProgressHUD.create(this)

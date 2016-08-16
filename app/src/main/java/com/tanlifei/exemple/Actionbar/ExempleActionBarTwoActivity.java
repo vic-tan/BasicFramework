@@ -46,11 +46,6 @@ public class ExempleActionBarTwoActivity extends BaseActionBarActivity  {
         //actionBarView.setActionbarBackText("取消");
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleActionBarTwoActivity.class;
-    }
-
 
 
 

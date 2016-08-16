@@ -26,7 +26,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
@@ -61,32 +60,27 @@ public class ExempleActionBarMainActivity extends BaseActionBarActivity implemen
         super.initActionBar();
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleActionBarMainActivity.class;
-    }
-
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.indeterminate:
-                StartActUtils.start(new ActParams(mContext, ExempleActionBarOneActivity.class));
+                StartActUtils.start(mContext, ExempleActionBarOneActivity.class);
                 break;
             case R.id.label_indeterminate:
-                StartActUtils.start(new ActParams(mContext, ExempleActionBarTwoActivity.class));
+                StartActUtils.start(mContext, ExempleActionBarTwoActivity.class);
                 break;
             case R.id.detail_indeterminate:
-                StartActUtils.start(new ActParams(mContext, ExempleActionBarThreeActivity.class));
+                StartActUtils.start(mContext, ExempleActionBarThreeActivity.class);
                 break;
             case R.id.determinate:
-                StartActUtils.start(new ActParams(mContext, ExempleActionBarFourActivity.class));
+                StartActUtils.start(mContext, ExempleActionBarFourActivity.class);
                 break;
             case R.id.annular_determinate:
-                StartActUtils.start(new ActParams(mContext, ExempleActionBarFiveActivity.class));
+                StartActUtils.start(mContext, ExempleActionBarFiveActivity.class);
                 break;
             case R.id.bar_determinate:
-                StartActUtils.start(new ActParams(mContext, ExempleActionBarSixActivity.class));
+                StartActUtils.start(mContext, ExempleActionBarSixActivity.class);
                 break;
 
         }

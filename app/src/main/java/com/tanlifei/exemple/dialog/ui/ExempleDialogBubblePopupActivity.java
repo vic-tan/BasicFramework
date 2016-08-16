@@ -42,10 +42,6 @@ public class ExempleDialogBubblePopupActivity extends BaseActionBarActivity impl
         mTvCenter.setOnClickListener(this);
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleDialogBubblePopupActivity.class;
-    }
 
     @Override
     public void onClick(View v) {

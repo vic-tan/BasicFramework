@@ -71,10 +71,6 @@ public class ExempleKProgresshudMainActivity extends BaseActionBarActivity imple
 
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleKProgresshudMainActivity.class;
-    }
 
     private KProgressHUD hud;
 

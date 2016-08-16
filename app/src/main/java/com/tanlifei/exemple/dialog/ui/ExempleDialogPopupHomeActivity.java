@@ -43,9 +43,5 @@ public class ExempleDialogPopupHomeActivity extends BaseActionBarActivity {
         });
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleDialogPopupHomeActivity.class;
-    }
 
 }

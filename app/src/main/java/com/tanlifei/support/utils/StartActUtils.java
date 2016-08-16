@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 
-import com.tanlifei.common.bean.params.ActParams;
 import com.tanlifei.framework.R;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -21,25 +19,22 @@ import java.util.Map;
  * @date 2015-01-26 下午3:30:25
  */
 public class StartActUtils {
-    public static Map<String, Context> stackAct = new HashMap<>();
-
 
     /**
      * 找开activity
      *
      * @param intent
      */
-    public static void start(ActParams actBean, Intent intent) {
-        actManage(actBean.getContext(), actBean.getClazz().getSimpleName(), true);
-        actBean.getContext().startActivity(intent);
-        ((Activity) actBean.getContext()).overridePendingTransition(R.anim.common_activity_start_anim, R.anim.common_activity_finish_main);
+    public static void start(Context mContext, Intent intent) {
+        mContext.startActivity(intent);
+        ((Activity) mContext).overridePendingTransition(R.anim.common_activity_start_anim, R.anim.common_activity_finish_main);
     }
 
     /**
      * 找开activity
      */
-    public static void start(ActParams actBean) {
-        start(actBean, new Intent(actBean.getContext(), actBean.getClazz()));
+    public static void start(Context mContext,Class<?> clazz) {
+        start(mContext,new Intent(mContext, clazz));
     }
 
     /**
@@ -47,10 +42,10 @@ public class StartActUtils {
      *
      * @param bundle
      */
-    public static void start(ActParams actBean, Bundle bundle) {
-        Intent intent = new Intent(actBean.getContext(), actBean.getClazz());
+    public static void start(Context mContext,Class<?> clazz, Bundle bundle) {
+        Intent intent = new Intent(mContext, clazz);
         intent.putExtras(bundle);
-        start(actBean, intent);
+        start(mContext, intent);
     }
 
     /**
@@ -58,12 +53,12 @@ public class StartActUtils {
      *
      * @param value : Parcelable
      */
-    public static void start(ActParams actBean, String paramsKey, Parcelable value) {
-        Intent intent = new Intent(actBean.getContext(), actBean.getClazz());
+    public static void start(Context mContext,Class<?> clazz, String paramsKey, Parcelable value) {
+        Intent intent = new Intent(mContext, clazz);
         Bundle bundle = new Bundle();
         bundle.putParcelable(paramsKey, value);
         intent.putExtras(bundle);
-        start(actBean, intent);
+        start(mContext, intent);
     }
 
 
@@ -72,12 +67,12 @@ public class StartActUtils {
      *
      * @param value : serializeEntity
      */
-    public static void start(ActParams actBean, String paramsKey, Serializable value) {
-        Intent intent = new Intent(actBean.getContext(), actBean.getClazz());
+    public static void start(Context mContext,Class<?> clazz, String paramsKey, Serializable value) {
+        Intent intent = new Intent(mContext, clazz);
         Bundle bundle = new Bundle();
         bundle.putSerializable(paramsKey, value);
         intent.putExtras(bundle);
-        start(actBean, intent);
+        start(mContext, intent);
     }
 
     /**
@@ -85,8 +80,8 @@ public class StartActUtils {
      *
      * @param map
      */
-    public static void start(ActParams actBean, Map<String, Object> map) {
-        start(actBean, mapToIntent(actBean, map));
+    public static void start(Context mContext, Class<?> clazz, Map<String, Object> map) {
+        start(mContext, mapToIntent(mContext,clazz, map));
     }
 
 
@@ -99,9 +94,8 @@ public class StartActUtils {
      * @Description: 用一句话描述该文件做什么
      * @throws:throws
      */
-    public static void forResult(ActParams actBean, Intent intent, int requestCode) {
-        actManage(actBean.getContext(), actBean.getClazz().getSimpleName(), true);
-        ((Activity) actBean.getContext()).startActivityForResult(intent, requestCode);
+    public static void forResult(Context mContext, Intent intent, int requestCode) {
+        ((Activity) mContext).startActivityForResult(intent, requestCode);
     }
 
     /**
@@ -111,10 +105,9 @@ public class StartActUtils {
      * @Description: 用一句话描述该文件做什么
      * @throws:throws
      */
-    public static void finish(ActParams actBean) {
-        actManage(actBean.getContext(), actBean.getClazz().getSimpleName(), false);
-        ((Activity) actBean.getContext()).finish();
-        ((Activity) actBean.getContext()).overridePendingTransition(R.anim.activity_open_main, R.anim.activity_close_next);
+    public static void finish(Context mContext) {
+        ((Activity) mContext).finish();
+        ((Activity) mContext).overridePendingTransition(R.anim.activity_open_main, R.anim.activity_close_next);
     }
 
 
@@ -124,8 +117,8 @@ public class StartActUtils {
      * @param map
      * @return
      */
-    public static Intent mapToIntent(ActParams actBean, Map<String, Object> map) {
-        Intent intent = new Intent(actBean.getContext(), actBean.getClazz());
+    public static Intent mapToIntent(Context mContext,Class<?> clazz, Map<String, Object> map) {
+        Intent intent = new Intent(mContext, clazz);
         Bundle bundle = new Bundle();
         if (map != null && map.size() > 0) {
             for (String key : map.keySet()) {
@@ -152,33 +145,5 @@ public class StartActUtils {
         }
         return intent.putExtras(bundle);
     }
-
-    /**
-     * 保存或者移除打开的act
-     *
-     * @param isStart
-     */
-    public static void actManage(Context context, String stackActKey, boolean isStart) {
-        if (null == stackAct) {
-            stackAct = new HashMap<>();
-        }
-        if (StringUtils.isEmpty(stackActKey)) {
-            return;
-        }
-        if (isStart) {//启动activity
-            if (!stackAct.containsKey(stackActKey)) {
-                stackAct.put(stackActKey, context);
-                return;
-            }
-        } else {//关闭activity
-            if (stackAct.containsKey(stackActKey)) {
-                stackAct.remove(stackActKey);
-                return;
-            }
-        }
-    }
-
-
-
 
 }

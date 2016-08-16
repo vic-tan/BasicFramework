@@ -48,10 +48,6 @@ public class ExempleBaseAdapterSingleItemTypeActivity extends BaseActionBarActiv
         });
     }
 
-    @Override
-    protected Class<?> childClassName() {
-        return ExempleBaseAdapterSingleItemTypeActivity.class;
-    }
 
 
     private void initDatas() {
