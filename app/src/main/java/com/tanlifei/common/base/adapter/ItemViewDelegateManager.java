@@ -3,7 +3,7 @@ package com.tanlifei.common.base.adapter;
 import android.support.v4.util.SparseArrayCompat;
 
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
-import com.tanlifei.common.base.adapter.recycler.ViewHolder;
+import com.tanlifei.common.base.adapter.recycler.RvViewHolder;
 
 
 /**
@@ -84,7 +84,7 @@ public class ItemViewDelegateManager<T>
                 "No AbsItemViewDelegate added that matches position=" + position + " in data source");
     }
 
-    public void convert(ViewHolder holder, T item, int position)
+    public void convert(RvViewHolder holder, T item, int position)
     {
         int delegatesCount = delegates.size();
         for (int i = 0; i < delegatesCount; i++)

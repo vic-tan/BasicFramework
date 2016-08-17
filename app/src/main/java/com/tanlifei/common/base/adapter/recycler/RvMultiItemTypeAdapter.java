@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by zhy on 16/4/9.
  */
-public class RvMultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
+public class RvMultiItemTypeAdapter<T> extends RecyclerView.Adapter<RvViewHolder> {
     protected Context mContext;
     protected List<T> mDatas;
 
@@ -35,20 +35,20 @@ public class RvMultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> 
 
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RvViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ItemViewDelegate itemViewDelegate = mItemViewDelegateManager.getItemViewDelegate(viewType);
         int layoutId = itemViewDelegate.getItemViewLayoutId();
-        ViewHolder holder = ViewHolder.createViewHolder(mContext, parent, layoutId);
+        RvViewHolder holder = RvViewHolder.createViewHolder(mContext, parent, layoutId);
         onViewHolderCreated(holder,holder.getConvertView());
         setListener(parent, holder, viewType);
         return holder;
     }
 
-    public void onViewHolderCreated(ViewHolder holder, View itemView){
+    public void onViewHolderCreated(RvViewHolder holder, View itemView){
 
     }
 
-    public void convert(ViewHolder holder, T t) {
+    public void convert(RvViewHolder holder, T t) {
         mItemViewDelegateManager.convert(holder, t, holder.getAdapterPosition());
     }
 
@@ -57,7 +57,7 @@ public class RvMultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> 
     }
 
 
-    protected void setListener(final ViewGroup parent, final ViewHolder viewHolder, int viewType) {
+    protected void setListener(final ViewGroup parent, final RvViewHolder viewHolder, int viewType) {
         if (!isEnabled(viewType)) return;
         viewHolder.getConvertView().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +82,7 @@ public class RvMultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(RvViewHolder holder, int position) {
         convert(holder, mDatas.get(position));
     }
 

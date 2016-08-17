@@ -2,7 +2,7 @@ package com.tanlifei.exemple.baseadapter.adapter;
 
 import com.tanlifei.common.base.adapter.ItemViewDelegate;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
-import com.tanlifei.common.base.adapter.recycler.ViewHolder;
+import com.tanlifei.common.base.adapter.recycler.RvViewHolder;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterChatMessage;
 import com.tanlifei.framework.R;
 
@@ -25,7 +25,7 @@ public class ExempleMsgComingItemDelagate implements ItemViewDelegate<ExempleBas
     }
 
     @Override
-    public void convert(ViewHolder holder, ExempleBaseAdpterChatMessage exempleBaseAdpterChatMessage, int position) {
+    public void convert(RvViewHolder holder, ExempleBaseAdpterChatMessage exempleBaseAdpterChatMessage, int position) {
 
     }
 

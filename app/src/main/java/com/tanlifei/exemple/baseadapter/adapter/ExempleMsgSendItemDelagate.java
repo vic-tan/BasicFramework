@@ -2,7 +2,7 @@ package com.tanlifei.exemple.baseadapter.adapter;
 
 import com.tanlifei.common.base.adapter.ItemViewDelegate;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
-import com.tanlifei.common.base.adapter.recycler.ViewHolder;
+import com.tanlifei.common.base.adapter.recycler.RvViewHolder;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterChatMessage;
 import com.tanlifei.framework.R;
 
@@ -25,7 +25,7 @@ public class ExempleMsgSendItemDelagate implements ItemViewDelegate<ExempleBaseA
     }
 
     @Override
-    public void convert(ViewHolder holder, ExempleBaseAdpterChatMessage chatMessage, int position) {
+    public void convert(RvViewHolder holder, ExempleBaseAdpterChatMessage chatMessage, int position) {
         holder.setText(R.id.chat_send_content, chatMessage.getContent());
         holder.setText(R.id.chat_send_name, chatMessage.getName());
         holder.setImageResource(R.id.chat_send_icon, chatMessage.getIcon());

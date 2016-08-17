@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 
 import com.tanlifei.common.base.adapter.ItemViewDelegate;
+import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 
 import java.util.List;
 
@@ -40,15 +41,20 @@ public abstract class RvCommonAdapter<T> extends RvMultiItemTypeAdapter<T>
             }
 
             @Override
-            public void convert(ViewHolder holder, T t, int position)
+            public void convert(RvViewHolder holder, T t, int position)
             {
                 RvCommonAdapter.this.convert(holder, t, position);
+            }
+
+            @Override
+            public void convert(AbsViewHolder holder, T t, int position) {
+
             }
 
         });
     }
 
-    protected abstract void convert(ViewHolder holder, T t, int position);
+    protected abstract void convert(RvViewHolder holder, T t, int position);
 
 
 }
