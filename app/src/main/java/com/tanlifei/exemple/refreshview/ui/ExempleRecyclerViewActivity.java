@@ -1,12 +1,12 @@
 package com.tanlifei.exemple.refreshview.ui;
 
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
-import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 
 import com.fans.loader.FanImageLoader;
-import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
-import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
+import com.tanlifei.common.base.adapter.recycler.RvCommonAdapter;
+import com.tanlifei.common.base.adapter.recycler.RvViewHolder;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInConfiguration;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInPresenter;
 import com.tanlifei.common.base.refreshview.presenter.impl.RefreshPresenter;
@@ -50,20 +50,19 @@ public class ExempleRecyclerViewActivity extends BaseActionBarActivity implement
     @ViewById(R.id.lv_games)
     public RecyclerViewFinal mLvGames;
     private List<TrainBean> mGameList;
-    private AbsCommonAdapter<TrainBean> mNewGameListAdapter;
+    private RvCommonAdapter<TrainBean> mNewGameListAdapter;
     private IRefreshInPresenter presenter;
-
 
 
     @AfterViews
     void init() {
         initActionBar();
-        actionBarView.setActionbarTitle("RecyclerView 上拉下拉刷新");
+        actionBarView.setActionbarTitle("RecyclerView 刷新");
         presenter = new RefreshPresenter(mContext, this, this);
         mGameList = new ArrayList<>();
-        mNewGameListAdapter = new AbsCommonAdapter<TrainBean>(mContext, R.layout.train_open_list_item, mGameList) {
+        mNewGameListAdapter = new RvCommonAdapter<TrainBean>(mContext, R.layout.train_open_list_item, mGameList) {
             @Override
-            protected void convert(AbsViewHolder holder, TrainBean bean, int position) {
+            protected void convert(RvViewHolder holder, TrainBean bean, int position) {
                 FanImageLoader.create(bean.getCover()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.cover));
                 holder.setText(R.id.title, bean.getName());
                 holder.setText(R.id.desc, "开始时间:" + DateFormatUtils.format(bean.getBegin_time(), DateFormatUtils.FormatType.DAY) + "\r\n"
@@ -71,7 +70,10 @@ public class ExempleRecyclerViewActivity extends BaseActionBarActivity implement
             }
 
         };
-       // mLvGames.setAdapter(mNewGameListAdapter);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mLvGames.setLayoutManager(linearLayoutManager);
+        mLvGames.setAdapter(mNewGameListAdapter);
         mLvGames.setEmptyView(mFlEmptyView);
         mPtrLayout.setOnRefreshListener(new OnDefaultRefreshListener() {
             @Override
@@ -127,8 +129,8 @@ public class ExempleRecyclerViewActivity extends BaseActionBarActivity implement
     }
 
     @Override
-    public BaseAdapter getAdapter() {
-        return mNewGameListAdapter;
+    public void after() {
+        mNewGameListAdapter.notifyDataSetChanged();
     }
 
     @Override

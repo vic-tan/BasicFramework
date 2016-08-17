@@ -108,7 +108,7 @@ public class RefreshPresenter implements IRefreshInPresenter,
     @Override
     public void onAfter() {
         refreshView.getRefreshPtrLayoutView().onRefreshComplete();
-        configuration.getAdapter().notifyDataSetChanged();
+        configuration.after();
     }
 
 
@@ -186,29 +186,7 @@ public class RefreshPresenter implements IRefreshInPresenter,
                 ((ScrollViewFinal) refreshView.getDataView()).onLoadMoreComplete();
             }
         }
-        configuration.getAdapter().notifyDataSetChanged();
+        configuration.after();
     }
 
-    public String getDate(){
-        return  "{\n" +
-                "    \"data\": {\n" +
-                "        \"pageSize\": 10,\n" +
-                "        \"pageNumber\": 1,\n" +
-                "        \"list\": [\n" +
-                "            {\n" +
-                "                \"class_status\": \"2\",\n" +
-                "                \"id\": \"8a987d5155b47f520155be577d260179\",\n" +
-                "                \"applied_count\": 8,\n" +
-                "                \"address\": \"广州唯品大学\",\n" +
-                "                \"name\": \"2016《培训》直达号--唯品大学（广州站）\",\n" +
-                "                \"standard_fee\": 1800\n" +
-                "            }\n" +
-                "        ],\n" +
-                "        \"totalRow\": 48,\n" +
-                "        \"totalPage\": 5\n" +
-                "    },\n" +
-                "    \"code\": \"0000\",\n" +
-                "    \"msg\": \"操作成功\"\n" +
-                "}";
-    }
 }

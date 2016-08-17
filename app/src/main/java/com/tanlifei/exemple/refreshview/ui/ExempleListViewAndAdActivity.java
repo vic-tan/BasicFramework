@@ -2,7 +2,6 @@ package com.tanlifei.exemple.refreshview.ui;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 
 import com.fans.loader.FanImageLoader;
@@ -171,8 +170,8 @@ public class ExempleListViewAndAdActivity extends BaseActionBarActivity implemen
     }
 
     @Override
-    public BaseAdapter getAdapter() {
-        return mNewGameListAdapter;
+    public void after() {
+        mNewGameListAdapter.notifyDataSetChanged();
     }
 
     @Override

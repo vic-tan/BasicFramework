@@ -1,7 +1,5 @@
 package com.tanlifei.common.base.refreshview.presenter;
 
-import android.widget.BaseAdapter;
-
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.bean.PageBean;
 
@@ -31,11 +29,9 @@ public interface IRefreshInConfiguration {
 
 
     /**
-     * 设置Adapter
-     *
-     * @return ListAdapter 返回类型
+     * 所有请求完成成最的调用的方法
      */
-    BaseAdapter getAdapter();
+    void after();
 
 
     /**
