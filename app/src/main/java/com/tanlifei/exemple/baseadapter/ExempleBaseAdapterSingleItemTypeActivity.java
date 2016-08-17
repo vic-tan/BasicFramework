@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.tanlifei.common.base.adapter.CommonAdapter;
-import com.tanlifei.common.base.adapter.ViewHolder;
+import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
+import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterBean;
 import com.tanlifei.framework.R;
@@ -28,26 +28,26 @@ public class ExempleBaseAdapterSingleItemTypeActivity extends BaseActionBarActiv
         initActionBar();
         actionBarView.setActionbarTitle("单一布局");
         ListView lv = (ListView) findViewById(R.id.main_lv_list);
-        lv.setAdapter(new CommonAdapter<ExempleBaseAdpterBean>(this, mDatas,
-                R.layout.exemple_activity_base_adapter_single) {
+        lv.setAdapter(new AbsCommonAdapter<ExempleBaseAdpterBean>(this,
+                R.layout.exemple_activity_base_adapter_single, mDatas) {
             @Override
-            public void convert(final ViewHolder holder, final ExempleBaseAdpterBean bean) {
-                holder.setText(R.id.id_title, bean.getTitle())
-                        .setText(R.id.id_desc, bean.getDesc())
-                        .setText(R.id.id_time, bean.getTime())
-                        .setText(R.id.id_phone, bean.getPhone());
+            protected void convert(AbsViewHolder holder, final ExempleBaseAdpterBean exempleBaseAdpterBean, int position) {
+                holder.setText(R.id.id_title, exempleBaseAdpterBean.getTitle())
+                        .setText(R.id.id_desc, exempleBaseAdpterBean.getDesc())
+                        .setText(R.id.id_time, exempleBaseAdpterBean.getTime())
+                        .setText(R.id.id_phone, exempleBaseAdpterBean.getPhone());
 
                 holder.setOnClickListener(R.id.id_title, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(ExempleBaseAdapterSingleItemTypeActivity.this, bean.getTitle(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ExempleBaseAdapterSingleItemTypeActivity.this, exempleBaseAdpterBean.getTitle(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
 
+
         });
     }
-
 
 
     private void initDatas() {

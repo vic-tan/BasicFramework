@@ -1,4 +1,4 @@
-package com.tanlifei.common.base.adapter;
+package com.tanlifei.common.base.adapter.pagerview;
 
 import android.content.Context;
 import android.view.LayoutInflater;

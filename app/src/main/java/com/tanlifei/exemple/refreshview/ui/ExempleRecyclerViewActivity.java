@@ -28,19 +28,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.finalteam.loadingviewfinal.ListViewFinal;
 import cn.finalteam.loadingviewfinal.OnDefaultRefreshListener;
 import cn.finalteam.loadingviewfinal.OnLoadMoreListener;
 import cn.finalteam.loadingviewfinal.PtrClassicFrameLayout;
 import cn.finalteam.loadingviewfinal.PtrFrameLayout;
+import cn.finalteam.loadingviewfinal.RecyclerViewFinal;
 
 /**
  * 加载资源数据界面
  * Created by tanlifei on 16/1/19.
  */
-@EActivity(R.layout.exemple_acitivity_ptr_listview)
-public class ExempleListViewActivity extends BaseActionBarActivity implements RefreshView, IRefreshInConfiguration {
-    public static final String TAG = ExempleListViewActivity.class.getSimpleName();
+@EActivity(R.layout.exemple_acitivity_ptr_recycler)
+public class ExempleRecyclerViewActivity extends BaseActionBarActivity implements RefreshView, IRefreshInConfiguration {
+    public static final String TAG = ExempleRecyclerViewActivity.class.getSimpleName();
 
 
     @ViewById(R.id.ptr_layout)
@@ -48,7 +48,7 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
     @ViewById(R.id.fl_empty_view)
     FrameLayout mFlEmptyView;
     @ViewById(R.id.lv_games)
-    public ListViewFinal mLvGames;
+    public RecyclerViewFinal mLvGames;
     private List<TrainBean> mGameList;
     private AbsCommonAdapter<TrainBean> mNewGameListAdapter;
     private IRefreshInPresenter presenter;
@@ -58,7 +58,7 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
     @AfterViews
     void init() {
         initActionBar();
-        actionBarView.setActionbarTitle("ListView 上拉下拉刷新");
+        actionBarView.setActionbarTitle("RecyclerView 上拉下拉刷新");
         presenter = new RefreshPresenter(mContext, this, this);
         mGameList = new ArrayList<>();
         mNewGameListAdapter = new AbsCommonAdapter<TrainBean>(mContext, R.layout.train_open_list_item, mGameList) {
@@ -71,7 +71,7 @@ public class ExempleListViewActivity extends BaseActionBarActivity implements Re
             }
 
         };
-        mLvGames.setAdapter(mNewGameListAdapter);
+       // mLvGames.setAdapter(mNewGameListAdapter);
         mLvGames.setEmptyView(mFlEmptyView);
         mPtrLayout.setOnRefreshListener(new OnDefaultRefreshListener() {
             @Override

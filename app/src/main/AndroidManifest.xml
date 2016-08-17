@@ -80,6 +80,7 @@
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRefreshViewMainActivity" /><!--下拉上拉 示范 -->
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewAndAdActivity_" />
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewActivity_" />
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRecyclerViewActivity_" />
 
         <!-- dialog -->
 

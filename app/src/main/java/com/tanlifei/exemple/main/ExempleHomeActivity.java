@@ -4,8 +4,8 @@ import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.ListView;
 
-import com.tanlifei.common.base.adapter.CommonAdapter;
-import com.tanlifei.common.base.adapter.ViewHolder;
+import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
+import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.main.bean.ExempleHomeListBean;
 import com.tanlifei.exemple.main.presenter.ExempleHomePresenter;
@@ -36,12 +36,12 @@ public class ExempleHomeActivity extends BaseActionBarActivity {
         super.initActionBar();
         actionBarView.setActionbarTitle("示例列表");
         presenter = new com.tanlifei.exemple.main.presenter.ExempleHomePresenterImpl();
-        mList.setAdapter(new CommonAdapter<ExempleHomeListBean>(this, presenter.addList(), R.layout.exemple_activity_home_list_item) {
+        mList.setAdapter(new AbsCommonAdapter<ExempleHomeListBean>(this, R.layout.exemple_activity_home_list_item, presenter.addList()) {
             @Override
-            public void convert(ViewHolder holder, final ExempleHomeListBean bean) {
+            protected void convert(AbsViewHolder holder, final ExempleHomeListBean bean, int position) {
                 holder.setText(R.id.mexemple_list_item_name, bean.getTitle());
                 ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setmClickType(ExpandableTextView.ClickFooter);
-                ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setConvertText(mConvertTextCollapsedStatus, holder.getPosition(), bean.getDesc());
+                ((ExpandableTextView) holder.getView(R.id.expand_text_view)).setConvertText(mConvertTextCollapsedStatus, position, bean.getDesc());
                 holder.getView(R.id.expand_text_view).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

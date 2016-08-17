@@ -7,8 +7,8 @@ import android.widget.FrameLayout;
 
 import com.fans.loader.FanImageLoader;
 import com.google.gson.Gson;
-import com.tanlifei.common.base.adapter.CommonAdapter;
-import com.tanlifei.common.base.adapter.ViewHolder;
+import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
+import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInConfiguration;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInPresenter;
 import com.tanlifei.common.base.refreshview.presenter.impl.RefreshPresenter;
@@ -56,7 +56,7 @@ public class ExempleListViewAndAdActivity extends BaseActionBarActivity implemen
     @ViewById(R.id.lv_games)
     public ListViewFinal mLvGames;
     private List<TrainBean> mGameList;
-    private CommonAdapter<TrainBean> mNewGameListAdapter;
+    private AbsCommonAdapter<TrainBean> mNewGameListAdapter;
     private IRefreshInPresenter presenter;
     private List<BannerBaen> mBannerBaenList;
 
@@ -101,9 +101,9 @@ public class ExempleListViewAndAdActivity extends BaseActionBarActivity implemen
         actionBarView.setActionbarTitle("listView 标准上拉下拉带广告轮播");
         presenter = new RefreshPresenter(mContext, this, this);
         mGameList = new ArrayList<>();
-        mNewGameListAdapter = new CommonAdapter<TrainBean>(mContext, mGameList, R.layout.train_open_list_item) {
+        mNewGameListAdapter = new AbsCommonAdapter<TrainBean>(mContext, R.layout.train_open_list_item, mGameList) {
             @Override
-            public void convert(ViewHolder holder, final TrainBean bean) {
+            protected void convert(AbsViewHolder holder, TrainBean bean, int position) {
                 FanImageLoader.create(bean.getCover()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.cover));
                 holder.setText(R.id.title, bean.getName());
                 holder.setText(R.id.desc, "开始时间:" + DateFormatUtils.format(bean.getBegin_time(), DateFormatUtils.FormatType.DAY) + "\r\n"

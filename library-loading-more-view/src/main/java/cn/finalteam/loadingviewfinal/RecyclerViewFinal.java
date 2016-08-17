@@ -272,6 +272,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
         mHeaderAndFooterRecyclerViewAdapter.removeHeader(headerView);
     }
 
+
     /**
      * 点击more view加载更多
      */

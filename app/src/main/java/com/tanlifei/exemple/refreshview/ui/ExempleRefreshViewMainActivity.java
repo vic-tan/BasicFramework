@@ -85,11 +85,7 @@ public class ExempleRefreshViewMainActivity extends BaseActionBarActivity implem
                 StartActUtils.start(mContext,ExempleListViewAndAdActivity_.class);
                 break;
             case R.id.detail_indeterminate:
-                hud = KProgressHUD.create(this)
-                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                        .setLabel("Please wait")
-                        .setDetailsLabel("Downloading data");
-                scheduleDismiss();
+                StartActUtils.start(mContext,ExempleRecyclerViewActivity_.class);
                 break;
             case R.id.determinate:
                 hud = KProgressHUD.create(ExempleRefreshViewMainActivity.this)

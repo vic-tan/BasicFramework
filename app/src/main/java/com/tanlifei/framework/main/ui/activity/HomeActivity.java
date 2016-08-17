@@ -3,8 +3,8 @@ package com.tanlifei.framework.main.ui.activity;
 import android.view.View;
 import android.widget.ListView;
 
-import com.tanlifei.common.base.adapter.CommonAdapter;
-import com.tanlifei.common.base.adapter.ViewHolder;
+import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
+import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.main.ExempleHomeActivity_;
 import com.tanlifei.framework.R;
@@ -41,21 +41,20 @@ public class HomeActivity extends BaseActionBarActivity {
         initActionBar();
         actionBarView.setActionbarTitle("首页");
         addList();
-        mList.setAdapter(new CommonAdapter<String>(this, list, R.layout.main_activity_home_list_item) {
+        mList.setAdapter(new AbsCommonAdapter<String>(this, R.layout.main_activity_home_list_item, list) {
             @Override
-            public void convert(final ViewHolder holder, String bean) {
-                holder.setText(R.id.main_list_item_name, bean);
+            protected void convert(final AbsViewHolder holder, String s, final int position) {
+                holder.setText(R.id.main_list_item_name, s);
                 holder.getConvertView().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        switch (holder.getPosition()) {
+                        switch (position) {
                             case 0:
                                 StartActUtils.start(mContext, ExempleHomeActivity_.class);
                                 break;
                         }
                     }
                 });
-
             }
         });
     }
