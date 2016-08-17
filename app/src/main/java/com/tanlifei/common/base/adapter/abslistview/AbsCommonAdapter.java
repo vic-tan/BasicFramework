@@ -52,7 +52,7 @@ public abstract class AbsCommonAdapter<T> extends AbsMultiItemTypeAdapter<T>
         });
     }
 
-    protected abstract void convert(RvViewHolder holder, T t, int position);
+    protected abstract void convert(AbsViewHolder holder, T t, int position);
 
 
 }
