@@ -151,7 +151,7 @@ public class SelectorInjection {
             Drawable pressedDrawable;
             if (mPressed instanceof LayerDrawable
                     && (pressedDrawable = ((LayerDrawable) mPressed).findDrawableByLayerId(android.R.id.background)) instanceof GradientDrawable) {
-                // 如果是layer-list
+                // 如果是layer-mRefreshList
                 setPressedColor(mIsSmart, (GradientDrawable) pressedDrawable, mNormalColor, mPressedColor);
                 setStroke((GradientDrawable) pressedDrawable, mStrokeColor, mStrokeWidth);
             }
@@ -174,7 +174,7 @@ public class SelectorInjection {
             Drawable checkedDrawable;
             if (mChecked instanceof LayerDrawable
                     && (checkedDrawable = ((LayerDrawable) mChecked).findDrawableByLayerId(android.R.id.background)) instanceof GradientDrawable) {
-                // 如果是layer-list
+                // 如果是layer-mRefreshList
                 ((GradientDrawable) checkedDrawable).setColor(mCheckedColor);
                 setStroke((GradientDrawable) checkedDrawable, mCheckedStrokeColor, mCheckedStrokeWidth);
             }
@@ -196,7 +196,7 @@ public class SelectorInjection {
             Drawable normalDrawable;
             if (mNormal instanceof LayerDrawable
                     && (normalDrawable = ((LayerDrawable) mNormal).findDrawableByLayerId(android.R.id.background)) instanceof GradientDrawable) {
-                // 如果是layer-list
+                // 如果是layer-mRefreshList
                 ((GradientDrawable) normalDrawable).setColor(mNormalColor);
                 setStroke((GradientDrawable) normalDrawable, mStrokeColor, mStrokeWidth);
             }

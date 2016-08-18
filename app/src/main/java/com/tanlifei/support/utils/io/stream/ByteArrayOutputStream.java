@@ -54,7 +54,7 @@ public class ByteArrayOutputStream extends OutputStream {
     /** A singleton empty byte array. */
     private static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
 
-    /** The list of buffers, which grows and never reduces. */
+    /** The mRefreshList of buffers, which grows and never reduces. */
     private final List<byte[]> buffers = new ArrayList<byte[]>();
     /** The index of the current buffer. */
     private int currentBufferIndex;

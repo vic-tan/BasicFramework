@@ -15,7 +15,7 @@ public class JsonConstants {
     public static final int COMMUNITY_MEMBER_PAGE_SIZE = 40; // 每页显示 的数据条数
 
 
-    public static final String JSON_LIST = "list";
+    public static final String JSON_LIST = "mRefreshList";
     public static final String json_data = "data";
     public static String JSON_RESULT = "result";//请求接口返回结果
     public static String JSON_RESULT_SUCCEE = "1";//请求接口返回结果为成功

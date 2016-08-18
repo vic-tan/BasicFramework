@@ -1,88 +1,43 @@
 package com.tanlifei.exemple.refreshview.ui;
 
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.fans.loader.FanImageLoader;
-import com.google.gson.Gson;
 import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
-import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.BaseAbsRefreshActivity;
-import com.tanlifei.exemple.refreshview.adapter.BannerAdapter;
-import com.tanlifei.exemple.refreshview.bean.BannerBaen;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.DateFormatUtils;
-import com.tanlifei.support.utils.GsonJsonUtils;
-import com.tanlifei.support.widget.viewpager.ChildViewPager;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.finalteam.loadingviewfinal.ListViewFinal;
+import cn.finalteam.loadingviewfinal.GridViewFinal;
 import cn.finalteam.loadingviewfinal.OnLoadMoreListener;
 
 /**
  * 加载资源数据界面
  * Created by tanlifei on 16/1/19.
  */
-@EActivity(R.layout.exemple_acitivity_ptr_listview)
-public class ExempleListViewAndAdActivity extends BaseAbsRefreshActivity {
+@EActivity(R.layout.exemple_acitivity_ptr_gridview)
+public class ExempleGridViewActivity extends BaseAbsRefreshActivity {
     @ViewById(R.id.ptr_root_layout)
     RelativeLayout ptrRootLayout;
     @ViewById(R.id.lv_games)
-    ListViewFinal mLvGames;
-    private List<BannerBaen> mBannerBaenList;
-
-    void initBanner() {
-        View v = LayoutInflater.from(this).inflate(R.layout.common_layout_viewpager, null);
-        ChildViewPager vp = (ChildViewPager) v.findViewById(R.id.vp_banner);
-        vp.setInterval(3000);
-        vp.startAutoScroll();
-        vp.setAdapter(new BannerAdapter(this,mBannerBaenList));
-        mLvGames.addHeaderView(v);
-        mPtrLayout.disableWhenHorizontalMove(true);
-    }
-
-    private String getBannerDate() {
-        return "{\n" +
-                "    \"data\": [\n" +
-                "        {\n" +
-                "            \"id\": \"8a987d5155b47f520155be577d260179\",\n" +
-                "            \"name\": \"2016《培训》直达号--唯品大学（广州站）\",\n" +
-                "            \"image\": \"http://www.ipeiban.com.cn/mstatic/M00/00/0A/Chj90Vd84M2EPAtdAAAAAL8WRus720.jpg\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"id\": \"8a987d51551412a10155490db7a0102f\",\n" +
-                "            \"name\": \"2016中国企业培训服务会展-成都站\",\n" +
-                "            \"image\": \"http://www.ipeiban.com.cn/mstatic/M00/00/12/Chj9rFdg1KuEAzxHAAAAAF5-3BU070.jpg\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"id\": \"8a987d51551412a10155299141f6056d\",\n" +
-                "            \"name\": \"2016《培训》直达号--苏宁大学（南京站）\",\n" +
-                "            \"image\": \"http://www.ipeiban.com.cn/mstatic/M00/00/04/Chj90VdWatGEf7SGAAAAAH3FNXs021.jpg\"\n" +
-                "        }\n" +
-                "    ],\n" +
-                "    \"code\": \"0000\",\n" +
-                "    \"msg\": \"操作成功\"\n" +
-                "}";
-
-    }
+    GridViewFinal mLvGames;
 
     @AfterViews
     void init() {
-
         super.supperInit();
-        actionBarView.setActionbarTitle("listView 标准上拉下拉带广告轮播");
+        actionBarView.setActionbarTitle("GridView 上拉下拉刷新");
         mLvGames.setAdapter(mRefreshAdapter);
         mLvGames.setEmptyView(mFlEmptyView);
         mLvGames.setOnLoadMoreListener(new OnLoadMoreListener() {
@@ -91,12 +46,7 @@ public class ExempleListViewAndAdActivity extends BaseAbsRefreshActivity {
                 requestLoadMore();
             }
         });
-        mBannerBaenList = new ArrayList<>();
-        BaseJson bean = new Gson().fromJson(getBannerDate(), BaseJson.class);
-        mBannerBaenList = GsonJsonUtils.fromJsonArray(new Gson().toJson(bean.getData()), BannerBaen.class);
-        initBanner();
     }
-
 
     @Override
     public View getDataView() {
@@ -143,5 +93,4 @@ public class ExempleListViewAndAdActivity extends BaseAbsRefreshActivity {
 
         };
     }
-
 }

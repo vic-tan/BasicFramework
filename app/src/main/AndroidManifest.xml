@@ -81,6 +81,8 @@
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewAndAdActivity_" />
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewActivity_" />
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRecyclerViewActivity_" />
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleGridViewActivity_"/>
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleScrollViewActivity_"/>
 
         <!-- dialog -->
 

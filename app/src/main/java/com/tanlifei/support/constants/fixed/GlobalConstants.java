@@ -48,7 +48,7 @@ public class GlobalConstants {
     public static final float DIALOG_NORMAL_DIALOG_SCALE = 0.79f;
 
     /**
-     * 平常 list dialog 点屏幕大小的百分比
+     * 平常 mRefreshList dialog 点屏幕大小的百分比
      */
     public static final float DIALOG_NORMAL_LIST_DIALOG_SCALE = 0.7f;
 

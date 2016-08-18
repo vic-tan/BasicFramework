@@ -19,12 +19,15 @@
             android:layout_height="match_parent"
             app:ptr_pull_to_fresh="false">
 
-            <cn.finalteam.loadingviewfinal.RecyclerViewFinal
+            <cn.finalteam.loadingviewfinal.GridViewFinal
                 android:id="@+id/lv_games"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:cacheColorHint="#00000000"
                 android:divider="@null"
+                android:horizontalSpacing="10px"
+                android:numColumns="2"
+                android:verticalSpacing="20px"
                 app:loadMoreMode="scroll" />
 
         </cn.finalteam.loadingviewfinal.PtrClassicFrameLayout>

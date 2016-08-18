@@ -22,12 +22,9 @@
 
 package com.tanlifei.exemple.refreshview.ui;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
@@ -58,22 +55,7 @@ public class ExempleRefreshViewMainActivity extends BaseActionBarActivity implem
 
         Button annularDeterminate = (Button) findViewById(R.id.annular_determinate);
         annularDeterminate.setOnClickListener(this);
-
-        Button barDeterminate = (Button) findViewById(R.id.bar_determinate);
-        barDeterminate.setOnClickListener(this);
-
-        Button customView = (Button) findViewById(R.id.custom_view);
-        customView.setOnClickListener(this);
-
-        Button dimBackground = (Button) findViewById(R.id.dim_background);
-        dimBackground.setOnClickListener(this);
-
-        Button customColor = (Button) findViewById(R.id.custom_color_animate);
-        customColor.setOnClickListener(this);
     }
-
-
-    private KProgressHUD hud;
 
     @Override
     public void onClick(View v) {
@@ -88,78 +70,13 @@ public class ExempleRefreshViewMainActivity extends BaseActionBarActivity implem
                 StartActUtils.start(mContext,ExempleRecyclerViewActivity_.class);
                 break;
             case R.id.determinate:
-                hud = KProgressHUD.create(ExempleRefreshViewMainActivity.this)
-                        .setStyle(KProgressHUD.Style.PIE_DETERMINATE)
-                        .setLabel("Please wait");
-                simulateProgressUpdate();
+                StartActUtils.start(mContext,ExempleGridViewActivity_.class);
                 break;
             case R.id.annular_determinate:
-                hud = KProgressHUD.create(ExempleRefreshViewMainActivity.this)
-                        .setStyle(KProgressHUD.Style.ANNULAR_DETERMINATE)
-                        .setLabel("Please wait")
-                        .setDetailsLabel("Downloading data");
-                simulateProgressUpdate();
-                break;
-            case R.id.bar_determinate:
-                hud = KProgressHUD.create(ExempleRefreshViewMainActivity.this)
-                        .setStyle(KProgressHUD.Style.BAR_DETERMINATE)
-                        .setLabel("Please wait");
-                simulateProgressUpdate();
-                break;
-            case R.id.custom_view:
-                ImageView imageView = new ImageView(this);
-                imageView.setImageResource(R.mipmap.ic_launcher);
-                hud = KProgressHUD.create(this)
-                        .setCustomView(imageView)
-                        .setLabel("This is a custom view");
-                scheduleDismiss();
-                break;
-            case R.id.dim_background:
-                hud = KProgressHUD.create(this)
-                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                        .setDimAmount(0.5f);
-                scheduleDismiss();
-                break;
-            case R.id.custom_color_animate:
-                //noinspection deprecation
-                hud = KProgressHUD.create(this)
-                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                        .setWindowColor(Color.BLUE)
-                        .setAnimationSpeed(2);
-                scheduleDismiss();
+                StartActUtils.start(mContext,ExempleScrollViewActivity_.class);
                 break;
         }
 
-//        hud.show();
     }
 
-    private void simulateProgressUpdate() {
-        hud.setMaxProgress(100);
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            int currentProgress;
-
-            @Override
-            public void run() {
-                currentProgress += 1;
-                hud.setProgress(currentProgress);
-                if (currentProgress == 80) {
-                    hud.setLabel("Almost finish...");
-                }
-                if (currentProgress < 100) {
-                    handler.postDelayed(this, 50);
-                }
-            }
-        }, 100);
-    }
-
-    private void scheduleDismiss() {
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                hud.dismiss();
-            }
-        }, 2000);
-    }
 }

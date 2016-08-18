@@ -2,7 +2,7 @@ package com.tanlifei.common.bean;
 
 
 public class BasePageListBean<T> extends PageBean {
-    static final String LIST_KEY = "list";
+    static final String LIST_KEY = "mRefreshList";
     private T list;
 
     public T getList() {

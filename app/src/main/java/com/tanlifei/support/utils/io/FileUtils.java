@@ -1160,7 +1160,7 @@ public class FileUtils {
         // recurse
         File[] srcFiles = filter == null ? srcDir.listFiles() : srcDir.listFiles(filter);
         if (srcFiles == null) {  // null if abstract pathname does not denote a directory, or if an I/O error occurs
-            throw new IOException("Failed to list contents of " + srcDir);
+            throw new IOException("Failed to mRefreshList contents of " + srcDir);
         }
         if (destDir.exists()) {
             if (destDir.isDirectory() == false) {
@@ -1350,7 +1350,7 @@ public class FileUtils {
 
         File[] files = directory.listFiles();
         if (files == null) {  // null if security restricted
-            throw new IOException("Failed to list contents of " + directory);
+            throw new IOException("Failed to mRefreshList contents of " + directory);
         }
 
         IOException exception = null;
@@ -1477,7 +1477,7 @@ public class FileUtils {
      *
      * @param file     the file to read, must not be {@code null}
      * @param encoding the encoding to use, {@code null} means platform default
-     * @return the list of Strings representing each line in the file, never {@code null}
+     * @return the mRefreshList of Strings representing each line in the file, never {@code null}
      * @throws IOException in case of an I/O error
      * @since 2.3
      */
@@ -1496,7 +1496,7 @@ public class FileUtils {
      *
      * @param file     the file to read, must not be {@code null}
      * @param encoding the encoding to use, {@code null} means platform default
-     * @return the list of Strings representing each line in the file, never {@code null}
+     * @return the mRefreshList of Strings representing each line in the file, never {@code null}
      * @throws IOException                          in case of an I/O error
      * @throws java.nio.charset.UnsupportedCharsetException thrown instead of {@link UnsupportedEncodingException} in version 2.2 if the encoding is not
      *                                                      supported.
@@ -1511,7 +1511,7 @@ public class FileUtils {
      * The file is always closed.
      *
      * @param file the file to read, must not be {@code null}
-     * @return the list of Strings representing each line in the file, never {@code null}
+     * @return the mRefreshList of Strings representing each line in the file, never {@code null}
      * @throws IOException in case of an I/O error
      * @since 1.3
      */
@@ -1977,7 +1977,7 @@ public class FileUtils {
 
         File[] files = directory.listFiles();
         if (files == null) {  // null if security restricted
-            throw new IOException("Failed to list contents of " + directory);
+            throw new IOException("Failed to mRefreshList contents of " + directory);
         }
 
         IOException exception = null;

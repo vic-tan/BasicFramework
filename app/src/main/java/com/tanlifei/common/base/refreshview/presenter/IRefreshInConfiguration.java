@@ -37,5 +37,5 @@ public interface IRefreshInConfiguration {
     /**
      * 设置装载容器list
      */
-    List getList();
+    List getmRefreshList();
 }

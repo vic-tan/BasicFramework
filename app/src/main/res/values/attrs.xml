@@ -42,10 +42,8 @@
         <attr name="collapseDrawable" format="reference" />
         <!-- 点击事件的触发方式 -->
         <attr name="clickListenerType">
-            <!-- 点击区域为全部区域,包括TextView和图标 -->
-            <enum name="all" value="0"></enum>
-            <!-- 点击区域仅为图标区域 -->
-            <enum name="footer" value="1"></enum>
+            <enum name="all" value="0"/> <!-- 点击区域为全部区域,包括TextView和图标 -->
+            <enum name="footer" value="1"/><!-- 点击区域仅为图标区域 -->
         </attr>
     </declare-styleable>
 
@@ -70,7 +68,7 @@
     </declare-styleable>
 
 
-    <!-- —————————————————————————————————————————— 控件点击效果 jnjecion—————————————————————————————————————————— -->
+    <!-- —————————————————————————————————————————— 图片控件点击效果 jnjecion （不适合用代码更改图片切换时用）—————————————————————————————————————————— -->
     <color name="default_color">#00000000</color>
     <declare-styleable name="SelectorInjection">
         <attr name="in_normal_color" format="color" /><!-- 普通状态的颜色 -->
@@ -87,5 +85,12 @@
         <attr name="in_checked_stroke_width" format="dimension" /><!-- 选中后的描边宽度 -->
         <attr name="in_isSmart" format="boolean" /><!-- 是否是自动计算的 -->
         <attr name="in_isSrc" format="boolean" /> <!-- 是否将图片设置到src中 -->
+    </declare-styleable>
+
+    <!-- ——————————————————————————————————————————用LinearLayout实现的ListView，可解决多个ListView并存等问题—————————————————————————————————————————— -->
+
+    <declare-styleable name="LinearListView">
+        <attr name="android:entries"/>
+        <attr name="dividerThickness" format="dimension" />
     </declare-styleable>
 </resources>

@@ -11,6 +11,7 @@ import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.DateFormatUtils;
+import com.tanlifei.support.widget.linearlistview.LinearListView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -20,26 +21,29 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.finalteam.loadingviewfinal.ListViewFinal;
 import cn.finalteam.loadingviewfinal.OnLoadMoreListener;
+import cn.finalteam.loadingviewfinal.ScrollViewFinal;
 
 /**
  * 加载资源数据界面
  * Created by tanlifei on 16/1/19.
  */
-@EActivity(R.layout.exemple_acitivity_ptr_listview)
-public class ExempleListViewActivity extends BaseAbsRefreshActivity {
+@EActivity(R.layout.exemple_acitivity_ptr_scrollview)
+public class ExempleScrollViewActivity extends BaseAbsRefreshActivity {
     @ViewById(R.id.ptr_root_layout)
     RelativeLayout ptrRootLayout;
     @ViewById(R.id.lv_games)
-    ListViewFinal mLvGames;
+    ScrollViewFinal mLvGames;
+    @ViewById(R.id.linear_list_view)
+    LinearListView mLinearListView;
 
     @AfterViews
     void init() {
+        initActionBar();
+        actionBarView.setActionbarTitle("ScrollView 上拉下拉刷新");
         super.supperInit();
-        actionBarView.setActionbarTitle("ListView 上拉下拉刷新");
-        mLvGames.setAdapter(mRefreshAdapter);
-        mLvGames.setEmptyView(mFlEmptyView);
+        mLinearListView.setAdapter(mRefreshAdapter);
+        mLinearListView.setEmptyView(mFlEmptyView);
         mLvGames.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void loadMore() {

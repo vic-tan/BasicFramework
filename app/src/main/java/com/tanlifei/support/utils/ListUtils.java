@@ -165,7 +165,7 @@ public class ListUtils {
     }
 
     /**
-     * add distinct entry to list
+     * add distinct entry to mRefreshList
      *
      * @param <V>
      * @param sourceList
@@ -228,7 +228,7 @@ public class ListUtils {
 
 
     /**
-     * remove duplicate entries in list
+     * remove duplicate entries in mRefreshList
      *
      * @param <V>
      * @param sourceList
@@ -254,7 +254,7 @@ public class ListUtils {
     }
 
     /**
-     * add not null entry to list
+     * add not null entry to mRefreshList
      *
      * @param sourceList
      * @param value

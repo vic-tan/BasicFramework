@@ -74,18 +74,18 @@ public class RefreshPresenter implements IRefreshInPresenter,
      **/
     @Override
     public void onBefore(Request request) {
-        if (ListUtils.isEmpty(configuration.getList())) {
+        if (ListUtils.isEmpty(configuration.getmRefreshList())) {
             EmptyView.showLoading(refreshView.getRefreshEmptyView());
         }
     }
 
     @Override
     public void onError(Call call, Exception e) {
-        if (ListUtils.isEmpty(configuration.getList()) && !NetUtils.isConnected(mContext)) {//没有数据,且没有网络 提示布局
+        if (ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//没有数据,且没有网络 提示布局
             EmptyView.showNetErrorEmpty(refreshView.getRefreshEmptyView());
-        } else if (!ListUtils.isEmpty(configuration.getList()) && !NetUtils.isConnected(mContext)) {//有数据且没有网络，提示Toast
+        } else if (!ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//有数据且没有网络，提示Toast
             ToastUtils.show(mContext, R.string.common_net_error);
-        } else if (ListUtils.isEmpty(configuration.getList())) {//没有数据
+        } else if (ListUtils.isEmpty(configuration.getmRefreshList())) {//没有数据
             EmptyView.showNoDataEmpty(refreshView.getRefreshEmptyView());
         }
     }
@@ -93,7 +93,7 @@ public class RefreshPresenter implements IRefreshInPresenter,
     @Override
     public void onResponse(String response) {
         BaseJson bean = new Gson().fromJson(response.toString(), BaseJson.class);
-        configuration.getList().clear();
+        configuration.getmRefreshList().clear();
         List newGameResponse = null;
         try {
             newGameResponse = GsonJsonUtils.fromJsonArray(new Gson().toJson(bean.getData()), configuration.parseClassName());
@@ -101,13 +101,16 @@ public class RefreshPresenter implements IRefreshInPresenter,
             e.printStackTrace();
         }
         if (!ListUtils.isEmpty(newGameResponse)) {
-            configuration.getList().addAll(newGameResponse);
+            configuration.getmRefreshList().addAll(newGameResponse);
         }
     }
 
     @Override
     public void onAfter() {
         refreshView.getRefreshPtrLayoutView().onRefreshComplete();
+        if (ListUtils.isEmpty(configuration.getmRefreshList())) {//没有数据
+            EmptyView.showNoDataEmpty(refreshView.getRefreshEmptyView());
+        }
         configuration.after();
     }
 
@@ -117,18 +120,18 @@ public class RefreshPresenter implements IRefreshInPresenter,
      **/
     @Override
     public void onPageBefore(Request request) {
-        if (ListUtils.isEmpty(configuration.getList())) {
+        if (ListUtils.isEmpty(configuration.getmRefreshList())) {
             EmptyView.showLoading(refreshView.getRefreshEmptyView());
         }
     }
 
     @Override
     public void onPageError(Call call, Exception e) {
-        if (ListUtils.isEmpty(configuration.getList()) && !NetUtils.isConnected(mContext)) {//没有数据,且没有网络 提示布局
+        if (ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//没有数据,且没有网络 提示布局
             EmptyView.showNetErrorEmpty(refreshView.getRefreshEmptyView());
-        } else if (!ListUtils.isEmpty(configuration.getList()) && !NetUtils.isConnected(mContext)) {//有数据且没有网络，提示Toast
+        } else if (!ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//有数据且没有网络，提示Toast
             ToastUtils.show(mContext, R.string.common_net_error);
-        } else if (ListUtils.isEmpty(configuration.getList()) && NetUtils.isConnected(mContext)) {//没有数据
+        } else if (ListUtils.isEmpty(configuration.getmRefreshList()) && NetUtils.isConnected(mContext)) {//没有数据
             EmptyView.showNoDataEmpty(refreshView.getRefreshEmptyView());
         } else {
             if (null != refreshView.getDataView() && refreshView.getDataView() instanceof ListViewFinal) {
@@ -147,7 +150,7 @@ public class RefreshPresenter implements IRefreshInPresenter,
     public void onPageResponse(String response) {
         BaseJson bean = new Gson().fromJson(response.toString(), BaseJson.class);
         if (page == 1) {
-            configuration.getList().clear();
+            configuration.getmRefreshList().clear();
         }
         page = page + 1;
         BasePageListBean basePageListBean = new Gson().fromJson(new Gson().toJson(bean.getData()), BasePageListBean.class);
@@ -158,7 +161,7 @@ public class RefreshPresenter implements IRefreshInPresenter,
             e.printStackTrace();
         }
         if (!ListUtils.isEmpty(newGameResponse)) {
-            configuration.getList().addAll(newGameResponse);
+            configuration.getmRefreshList().addAll(newGameResponse);
         }
         if (null != refreshView.getDataView() && refreshView.getDataView() instanceof ListViewFinal) {
             ((ListViewFinal) refreshView.getDataView()).setHasLoadMore(newGameResponse.size() < JsonConstants.PAGE_SIZE ? false : true);
@@ -185,6 +188,9 @@ public class RefreshPresenter implements IRefreshInPresenter,
             } else if (null != refreshView.getDataView() && refreshView.getDataView() instanceof ScrollViewFinal) {
                 ((ScrollViewFinal) refreshView.getDataView()).onLoadMoreComplete();
             }
+        }
+        if (ListUtils.isEmpty(configuration.getmRefreshList())) {//没有数据
+            EmptyView.showNoDataEmpty(refreshView.getRefreshEmptyView());
         }
         configuration.after();
     }

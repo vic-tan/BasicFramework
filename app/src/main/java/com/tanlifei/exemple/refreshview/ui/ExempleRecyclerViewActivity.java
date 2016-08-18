@@ -2,18 +2,12 @@ package com.tanlifei.exemple.refreshview.ui;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 import com.fans.loader.FanImageLoader;
 import com.tanlifei.common.base.adapter.recycler.RvCommonAdapter;
 import com.tanlifei.common.base.adapter.recycler.RvViewHolder;
-import com.tanlifei.common.base.refreshview.presenter.IRefreshInConfiguration;
-import com.tanlifei.common.base.refreshview.presenter.IRefreshInPresenter;
-import com.tanlifei.common.base.refreshview.presenter.impl.RefreshPresenter;
-import com.tanlifei.common.base.refreshview.ui.RefreshView;
-import com.tanlifei.common.bean.BaseJson;
-import com.tanlifei.common.bean.PageBean;
-import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.common.ui.activity.BaseRvRefreshActivity;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
@@ -23,15 +17,11 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.finalteam.loadingviewfinal.OnDefaultRefreshListener;
 import cn.finalteam.loadingviewfinal.OnLoadMoreListener;
-import cn.finalteam.loadingviewfinal.PtrClassicFrameLayout;
-import cn.finalteam.loadingviewfinal.PtrFrameLayout;
 import cn.finalteam.loadingviewfinal.RecyclerViewFinal;
 
 /**
@@ -39,67 +29,30 @@ import cn.finalteam.loadingviewfinal.RecyclerViewFinal;
  * Created by tanlifei on 16/1/19.
  */
 @EActivity(R.layout.exemple_acitivity_ptr_recycler)
-public class ExempleRecyclerViewActivity extends BaseActionBarActivity implements RefreshView, IRefreshInConfiguration {
-    public static final String TAG = ExempleRecyclerViewActivity.class.getSimpleName();
+public class ExempleRecyclerViewActivity extends BaseRvRefreshActivity {
 
-
-    @ViewById(R.id.ptr_layout)
-    public PtrClassicFrameLayout mPtrLayout;
-    @ViewById(R.id.fl_empty_view)
-    FrameLayout mFlEmptyView;
+    @ViewById(R.id.ptr_root_layout)
+    RelativeLayout ptrRootLayout;
     @ViewById(R.id.lv_games)
     public RecyclerViewFinal mLvGames;
-    private List<TrainBean> mGameList;
-    private RvCommonAdapter<TrainBean> mNewGameListAdapter;
-    private IRefreshInPresenter presenter;
+
 
 
     @AfterViews
     void init() {
-        initActionBar();
+        super.supperInit();
         actionBarView.setActionbarTitle("RecyclerView 刷新");
-        presenter = new RefreshPresenter(mContext, this, this);
-        mGameList = new ArrayList<>();
-        mNewGameListAdapter = new RvCommonAdapter<TrainBean>(mContext, R.layout.train_open_list_item, mGameList) {
-            @Override
-            protected void convert(RvViewHolder holder, TrainBean bean, int position) {
-                FanImageLoader.create(bean.getCover()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.cover));
-                holder.setText(R.id.title, bean.getName());
-                holder.setText(R.id.desc, "开始时间:" + DateFormatUtils.format(bean.getBegin_time(), DateFormatUtils.FormatType.DAY) + "\r\n"
-                        + "结束时间:" + DateFormatUtils.format(bean.getEnd_time(), DateFormatUtils.FormatType.DAY));
-            }
-
-        };
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mLvGames.setLayoutManager(linearLayoutManager);
-        mLvGames.setAdapter(mNewGameListAdapter);
+        mLvGames.setAdapter(mRefreshAdapter);
         mLvGames.setEmptyView(mFlEmptyView);
-        mPtrLayout.setOnRefreshListener(new OnDefaultRefreshListener() {
-            @Override
-            public void onRefreshBegin(PtrFrameLayout frame) {
-                presenter.requestPageData(UrlConstants.LIST_URL, params(1), true);
-            }
-        });
-        mPtrLayout.setLastUpdateTimeRelateObject(this);
         mLvGames.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void loadMore() {
-                presenter.requestPageData(UrlConstants.LIST_URL, params(1), false);
+                requestLoadMore();
             }
         });
-        mPtrLayout.autoRefresh();
-    }
-
-
-    public Map<String, String> params(int page) {
-        Map<String, String> map = new HashMap<>();
-        map.put("json", "{\n" +
-                "    \"sid\": \"ipeiban2016\",\n" +
-                "    \"pageNumber\": " + page + ",\n" +
-                "    \"pageSize\": 10\n" +
-                "}");
-        return map;
     }
 
 
@@ -109,32 +62,43 @@ public class ExempleRecyclerViewActivity extends BaseActionBarActivity implement
     }
 
     @Override
-    public PtrClassicFrameLayout getRefreshPtrLayoutView() {
-        return mPtrLayout;
-    }
-
-    @Override
-    public FrameLayout getRefreshEmptyView() {
-        return mFlEmptyView;
-    }
-
-    @Override
     public Class<?> parseClassName() {
         return TrainBean.class;
     }
 
     @Override
-    public void customParseJson(BaseJson baseJson, PageBean pageBean) {
-
+    public View setPtrRootLayout() {
+        return ptrRootLayout;
     }
 
     @Override
-    public void after() {
-        mNewGameListAdapter.notifyDataSetChanged();
+    public String requestUrl() {
+        return UrlConstants.LIST_URL;
     }
 
     @Override
-    public List getList() {
-        return mGameList;
+    public Map<String, String> requestParams() {
+        Map<String, String> map = new HashMap<>();
+        map.put("json", "{\n" +
+                "    \"sid\": \"ipeiban2016\",\n" +
+                "    \"pageNumber\": " + 1 + ",\n" +
+                "    \"pageSize\": 10\n" +
+                "}");
+        return map;
+    }
+
+
+    @Override
+    public RvCommonAdapter setRefreshAdapter() {
+        return new RvCommonAdapter<TrainBean>(mContext, R.layout.train_open_list_item, (List<TrainBean>) mRefreshList) {
+            @Override
+            protected void convert(RvViewHolder holder, TrainBean bean, int position) {
+                FanImageLoader.create(bean.getCover()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.cover));
+                holder.setText(R.id.title, bean.getName());
+                holder.setText(R.id.desc, "开始时间:" + DateFormatUtils.format(bean.getBegin_time(), DateFormatUtils.FormatType.DAY) + "\r\n"
+                        + "结束时间:" + DateFormatUtils.format(bean.getEnd_time(), DateFormatUtils.FormatType.DAY));
+            }
+
+        };
     }
 }

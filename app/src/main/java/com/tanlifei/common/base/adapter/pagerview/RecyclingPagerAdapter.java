@@ -171,7 +171,7 @@ public abstract class RecyclingPagerAdapter extends PagerAdapter {
         }
 
         /**
-         * Put a view into the ScrapViews list. These views are unordered.
+         * Put a view into the ScrapViews mRefreshList. These views are unordered.
          *
          * @param scrap The view to add
          */
