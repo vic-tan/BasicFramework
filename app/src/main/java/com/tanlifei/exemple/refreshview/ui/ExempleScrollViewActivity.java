@@ -86,7 +86,7 @@ public class ExempleScrollViewActivity extends BaseAbsRefreshActivity {
 
     @Override
     public AbsCommonAdapter setRefreshAdapter() {
-        return new AbsCommonAdapter<TrainBean>(mContext, R.layout.train_open_list_item, (List<TrainBean>) mRefreshList) {
+        return new AbsCommonAdapter<TrainBean>(mContext, R.layout.exemple_refresh_list_item, (List<TrainBean>) mRefreshList) {
             @Override
             protected void convert(AbsViewHolder holder, TrainBean bean, int position) {
                 FanImageLoader.create(bean.getCover()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.cover));

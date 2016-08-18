@@ -27,7 +27,7 @@ public class SplashActivity extends BaseActivity implements SplashView {
     @AfterViews
     void init() {
         presenter = new SplashPresenterImpl(this, this);
-        presenter.delayedStart(DELAYED,IS_HAS_LOADING_DATA);
+        presenter.delayedStart(DELAYED, IS_HAS_LOADING_DATA);
     }
 
 
@@ -49,5 +49,13 @@ public class SplashActivity extends BaseActivity implements SplashView {
     @Override
     public void gotoHomeAct() {
         startAct(HomeActivity_.class);//进入首页
+    }
+
+    /**
+     * 退出App
+     */
+    @Override
+    public void onBackPressed() {
+        exitApp();
     }
 }

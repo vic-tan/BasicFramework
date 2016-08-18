@@ -102,7 +102,7 @@ public class ActivityManager {
         while (iterator.hasNext()) {
             Activity activity = iterator.next();
             if(activity != null && !activity.isFinishing()){
-                StartActUtils.finish(activity);
+                activity.finish();
             }
         }
         activityStack.clear();

@@ -90,7 +90,7 @@ public class ExempleRecyclerViewActivity extends BaseRvRefreshActivity {
 
     @Override
     public RvCommonAdapter setRefreshAdapter() {
-        return new RvCommonAdapter<TrainBean>(mContext, R.layout.train_open_list_item, (List<TrainBean>) mRefreshList) {
+        return new RvCommonAdapter<TrainBean>(mContext, R.layout.exemple_refresh_list_item, (List<TrainBean>) mRefreshList) {
             @Override
             protected void convert(RvViewHolder holder, TrainBean bean, int position) {
                 FanImageLoader.create(bean.getCover()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.cover));

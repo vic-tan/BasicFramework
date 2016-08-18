@@ -40,6 +40,7 @@ public class HomeActivity extends BaseActionBarActivity {
     void init() {
         initActionBar();
         actionBarView.setActionbarTitle("首页");
+        actionBarView.setActionbarBackDimiss(true);
         addList();
         mList.setAdapter(new AbsCommonAdapter<String>(this, R.layout.main_activity_home_list_item, list) {
             @Override

@@ -13,7 +13,11 @@ import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ActivityManager;
 import com.tanlifei.support.utils.ResUtils;
 import com.tanlifei.support.utils.StartActUtils;
+import com.tanlifei.support.utils.ToastUtils;
 import com.zhy.autolayout.AutoLayoutActivity;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by tanlifei on 15/12/17.
@@ -84,13 +88,30 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         actionBack();
     }
 
+    private Boolean isExit = false;
     /**
      * 退出App
      */
     protected void exitApp() {
-        //finish所有页面和kill app
-        ActivityManager.getActivityManager().appExit(this);
+        Timer tExit = null;
+        if (isExit == false) {
+            isExit = true; // 准备退出
+            ToastUtils.show(mContext,ResUtils.getStr(R.string.app_exit));
+            tExit = new Timer();
+            tExit.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    isExit = false; // 取消退出
+                }
+            }, 2000); // 如果2秒钟内没有按下返回键，则启动定时器取消掉刚才执行的任务
+        } else {
+            //finish所有页面和kill app
+            ActivityManager.getActivityManager().appExit(this);
+        }
     }
+
+
+
 
 
 }
