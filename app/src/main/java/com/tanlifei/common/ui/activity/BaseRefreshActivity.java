@@ -26,8 +26,8 @@ import cn.finalteam.loadingviewfinal.PtrFrameLayout;
  */
 public abstract class BaseRefreshActivity extends BaseActionBarActivity implements RefreshView, IRefreshInConfiguration {
 
-    protected PtrClassicFrameLayout mPtrLayout;
-    protected FrameLayout mFlEmptyView;
+    protected PtrClassicFrameLayout mPtrLayout;//在布局里id名字必为R.id.ptr_layout 建议引用ids.xml里定义的id
+    protected FrameLayout mFlEmptyView;//在布局里id名字必为fl_empty_view 建议引用ids.xml里定义的id
     protected IRefreshInPresenter presenter;
     protected List<?> mRefreshList;
 
@@ -52,7 +52,6 @@ public abstract class BaseRefreshActivity extends BaseActionBarActivity implemen
     public void customParseJson(BaseJson baseJson, PageBean pageBean) {
 
     }
-
 
 
     public List getmRefreshList() {

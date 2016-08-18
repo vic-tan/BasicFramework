@@ -24,7 +24,7 @@
         android:id="@+id/mVLineTitle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_prompt_dialog_content_btn_split_line_size"
-        android:textColor="@color/common_prompt_dialog_content_btn_line_color" />
+        android:textColor="@color/common_prompt_dialog_content_btn_line" />
 
     <ListView
         android:id="@+id/mlist"

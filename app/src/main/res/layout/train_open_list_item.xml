@@ -49,7 +49,7 @@
             android:layout_alignParentTop="true"
             android:singleLine="true"
             android:ellipsize="end"
-            android:textColor="@color/common_text_title_color"
+            android:textColor="@color/common_text_title"
             android:layout_toRightOf="@id/layout_cover" />
 
 
@@ -61,7 +61,7 @@
             android:layout_above="@id/layout_bottom"
             android:layout_below="@id/title"
             android:layout_toRightOf="@id/layout_cover"
-            android:textColor="@color/common_text_desc_color"
+            android:textColor="@color/common_text_desc"
             android:lineSpacingExtra="10px" />
 
     </RelativeLayout>

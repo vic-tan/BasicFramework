@@ -47,7 +47,7 @@ public class BaseActionBarView {
     /**
      * 字体体颜色 默认白色
      */
-    private int DEFAULT_COLOR = ResUtils.getColor(R.color.common_text_color_actionbar_title);
+    private int DEFAULT_COLOR = ResUtils.getColor(R.color.common_actionbar_title_normal);
     /**
      * 默认背影颜色红色
      */

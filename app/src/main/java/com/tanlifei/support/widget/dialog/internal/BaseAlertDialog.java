@@ -103,7 +103,7 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
     /**
      * btn press color(按钮点击颜色)
      */
-    protected int mBtnPressColor = ResUtils.getColor(R.color.common_prompt_dialog_btn_pre);// #85D3EF,#ffcccccc,#E3E3E3
+    protected int mBtnPressColor = ResUtils.getColor(R.color.common_prompt_dialog_btn_pressed);// #85D3EF,#ffcccccc,#E3E3E3
     /**
      * left btn click listener(左按钮接口)
      */

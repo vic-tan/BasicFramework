@@ -28,7 +28,7 @@
         android:paddingLeft="35px"
         android:paddingRight="35px"
         android:paddingTop="35px"
-        android:textColor="@color/common_prompt_dialog_content_color"
+        android:textColor="@color/common_prompt_dialog_content"
         android:textSize="@dimen/common_dialog_content_size" />
 
 

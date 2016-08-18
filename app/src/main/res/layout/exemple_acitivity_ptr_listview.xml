@@ -14,7 +14,7 @@
         android:background="@android:color/white">
 
         <cn.finalteam.loadingviewfinal.PtrClassicFrameLayout
-            android:id="@+id/ptr_layout"
+            android:id="@id/ptr_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:ptr_pull_to_fresh="false">

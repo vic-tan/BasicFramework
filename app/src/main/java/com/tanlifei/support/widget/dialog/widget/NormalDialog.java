@@ -37,7 +37,7 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
     /**
      * title underline color(标题下划线颜色)
      */
-    private int mTitleLineColor = ResUtils.getColor(R.color.common_prompt_dialog_title_line_color);
+    private int mTitleLineColor = ResUtils.getColor(R.color.common_prompt_dialog_title_line);
     /**
      * title underline height(标题下划线高度)
      */
@@ -46,7 +46,7 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
     /**
      * btn divider line color(对话框之间的分割线颜色(水平+垂直))
      */
-    private int mDividerColor = ResUtils.getColor(R.color.common_prompt_dialog_content_btn_line_color);
+    private int mDividerColor = ResUtils.getColor(R.color.common_prompt_dialog_content_btn_line);
 
 
 

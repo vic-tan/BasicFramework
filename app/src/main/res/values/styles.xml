@@ -1,12 +1,13 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" >
+    <!-- ———————————————————————— theme 样式 ———————————————————————————————————————————— -->
+    <style name="AppTheme">
         <item name="android:windowNoTitle">true</item>
         <item name="android:fitsSystemWindows">true</item>
     </style>
 
-    <!-- Base application button theme. -->
+
+    <!-- ———————————————————————— button 样式 ———————————————————————————————————————————— -->
     <!--  公用的button 矩形 -->
     <style name="base_button">
         <item name="android:layout_width">match_parent</item>
@@ -25,5 +26,5 @@
     <style name="base_button_corners" parent="base_button">
         <item name="android:background">@drawable/common_button_corners_bg</item>
     </style>
-    
+
 </resources>

@@ -2,12 +2,13 @@
     <string name="app_name">BasicFramework</string>
     <string name="font_family">sans-serif-light</string><!--字体样式-->
 
-    <!-- 正在加载框 -->
+    <!-- —————————————————— 正在加载框  ——————————————————————————————— -->
     <string name="common_dialog_loading">加载中..</string>
     <string name="common_net_error">网络异常,请检查你的网络无误后再重试</string>
     <string name="common_data_error">加载失败,请重试</string>
     <string name="common_empty_data">^_^没有任何数据</string>
 
+    <!-- —————————————————— 对话框按钮文字 ——————————————————————————————— -->
     <string name="common_prompt_dialog_default_title">温馨提示</string>
     <string name="common_cancel">取消</string>
     <string name="common_enter">确定</string>
@@ -17,5 +18,5 @@
     <string name="auto_update_new_update_available">发现新版本</string>
     <string name="auto_update_new_update_available_content">发现新版本%1$s,是否下载更新?</string>
     <string name="auto_update_dialog_positive_button">立即下载</string>
-    <string name="auto_update_dialog_negative_button">取消</string>
+    <string name="auto_update_dialog_negative_button">@string/common_cancel</string>
 </resources>

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-
     <!-- ——————————————————————————————————————————ActionBarView 自定义类 —————————————————————————————————————————— -->
-
     <declare-styleable name="ActionBarView">
         <!-- 标题及背影设置 -->
         <attr name="abv_backgroundColor" format="color" /><!--actionbar 背影颜色-->
@@ -32,8 +29,10 @@
         <attr name="abv_opt_left_iconDrawable_normol" format="reference" /><!--actionbar 操作图片2 未选中时显示-->
         <attr name="abv_opt_left_iconDrawable_pressed" format="reference" /><!--actionbar 操作图片2 选中时显示-->
     </declare-styleable>
-    <!-- ——————————————————————————————————————————ExpandableTextView 伸缩—————————————————————————————————————————— -->
 
+
+
+    <!-- ——————————————————————————————————————————ExpandableTextView 伸缩—————————————————————————————————————————— -->
     <declare-styleable name="ExpandableTextView">
         <attr name="maxCollapsedLines" format="integer" />
         <attr name="animDuration" format="integer" />
@@ -42,13 +41,13 @@
         <attr name="collapseDrawable" format="reference" />
         <!-- 点击事件的触发方式 -->
         <attr name="clickListenerType">
-            <enum name="all" value="0"/> <!-- 点击区域为全部区域,包括TextView和图标 -->
-            <enum name="footer" value="1"/><!-- 点击区域仅为图标区域 -->
+            <enum name="all" value="0" /> <!-- 点击区域为全部区域,包括TextView和图标 -->
+            <enum name="footer" value="1" /><!-- 点击区域仅为图标区域 -->
         </attr>
     </declare-styleable>
 
-    <!-- —————————————————————————————————————————— Round 圆角 View  —————————————————————————————————————————— -->
 
+    <!-- —————————————————————————————————————————— Round 圆角 View  —————————————————————————————————————————— -->
     <!-- 以下是重用attr的正确姿势,一切为了在布局中可以自动提示--><!-- 圆角矩形背景色 -->
     <declare-styleable name="RoundTextView">
         <attr name="rv_backgroundColor" format="color" /><!-- 圆角矩形背景色press -->
@@ -68,7 +67,8 @@
     </declare-styleable>
 
 
-    <!-- —————————————————————————————————————————— 图片控件点击效果 jnjecion （不适合用代码更改图片切换时用）—————————————————————————————————————————— -->
+
+    <!-- ————————————————————————————————————————— 图片控件点击效果 jnjecion （不适合用代码更改图片切换时用）———————————————————————— -->
     <color name="default_color">#00000000</color>
     <declare-styleable name="SelectorInjection">
         <attr name="in_normal_color" format="color" /><!-- 普通状态的颜色 -->
@@ -87,10 +87,11 @@
         <attr name="in_isSrc" format="boolean" /> <!-- 是否将图片设置到src中 -->
     </declare-styleable>
 
-    <!-- ——————————————————————————————————————————用LinearLayout实现的ListView，可解决多个ListView并存等问题—————————————————————————————————————————— -->
 
+
+    <!-- ——————————————————————————————————————————用LinearLayout实现的ListView，可解决多个ListView并存等问题—————————————————————— -->
     <declare-styleable name="LinearListView">
-        <attr name="android:entries"/>
+        <attr name="android:entries" />
         <attr name="dividerThickness" format="dimension" />
     </declare-styleable>
 </resources>
