@@ -4,12 +4,12 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="180px">
 
         <LinearLayout
             android:id="@+id/ptr_classic_header_rotate_view_header_text"
-            android:layout_width="450px"
+            android:layout_width="400px"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
@@ -19,7 +19,7 @@
                 android:id="@+id/ptr_classic_header_rotate_view_header_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#666666"
+                android:textColor="#293b5f"
                 android:textSize="36px" />
 
             <TextView
@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6px"
-                android:textColor="#999999"
+                android:textColor="#666666"
                 android:textSize="30px" />
         </LinearLayout>
 
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="30px"
+            android:layout_marginRight="10px"
             android:layout_toLeftOf="@+id/ptr_classic_header_rotate_view_header_text">
 
             <ImageView
@@ -45,20 +45,14 @@
                 android:layout_gravity="center"
                 android:src="@drawable/ptr_rotate_arrow" />
 
-            <ProgressBar
-                android:id="@+id/ptr_classic_header_rotate_view_progressbar"
-                style="@android:style/Widget.ProgressBar.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center" />
-
 
             <ImageView
-                android:id="@+id/img_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/ptr_classic_header_rotate_view_progressbar"
+                android:layout_width="60px"
+                android:layout_height="60px"
                 android:layout_gravity="center"
-                android:background="@drawable/common_zxy_logo"/>
+                android:background="@drawable/progress_large"/>
+
 
         </FrameLayout>
     </RelativeLayout>

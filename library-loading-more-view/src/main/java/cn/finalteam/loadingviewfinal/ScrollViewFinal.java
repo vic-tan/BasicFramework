@@ -18,7 +18,7 @@ import cn.finalteam.loadingviewfinal.loadingview.R;
  * Author:pengjianbo
  * Date:16/3/7 下午8:05
  */
-public class ScrollViewFinal extends ScrollView implements OnScrollBottomListener{
+public class ScrollViewFinal extends ScrollView implements OnScrollBottomListener {
     /**
      * 加载更多UI
      */
@@ -127,13 +127,14 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
 
     @Override
     public void onScorllBootom() {
-        if(mHasLoadMore && mLoadMoreMode == LoadMoreMode.SCROLL) {
+        if (mHasLoadMore && mLoadMoreMode == LoadMoreMode.SCROLL) {
             executeLoadMore();
         }
     }
 
     /**
      * 设置LoadMoreView
+     *
      * @param loadMoreView
      */
     public void setLoadMoreView(ILoadMoreView loadMoreView) {
@@ -141,7 +142,8 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
             try {
                 removeFooterView(mLoadMoreView.getFooterView());
                 mAddLoadMoreFooterFlag = false;
-            } catch (Exception e){}
+            } catch (Exception e) {
+            }
         }
         mLoadMoreView = loadMoreView;
         mLoadMoreView.getFooterView().setOnClickListener(new OnMoreViewClickListener());
@@ -149,6 +151,7 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
 
     /**
      * 设置加载更多模式
+     *
      * @param mode
      */
     public void setLoadMoreMode(LoadMoreMode mode) {
@@ -157,6 +160,7 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
 
     /**
      * 设置没有更多数据了，是否隐藏fooler view
+     *
      * @param hide
      */
     public void setNoLoadMoreHideView(boolean hide) {
@@ -191,25 +195,26 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
     /**
      * 显示加载中UI
      */
-    void showLoadingUI(){
+    void showLoadingUI() {
         mHasLoadFail = false;
         mLoadMoreView.showLoading();
     }
 
     /**
      * 是否有更多
+     *
      * @param hasLoadMore
      */
     public void setHasLoadMore(boolean hasLoadMore) {
         mHasLoadMore = hasLoadMore;
         if (!mHasLoadMore) {
             showNoMoreUI();
-            if(mNoLoadMoreHideView) {
+            if (mNoLoadMoreHideView) {
                 mAddLoadMoreFooterFlag = false;
                 removeFooterView(mLoadMoreView.getFooterView());
             }
         } else {
-            if(!mAddLoadMoreFooterFlag) {
+            if (!mAddLoadMoreFooterFlag) {
                 mAddLoadMoreFooterFlag = true;
                 addFooterView(mLoadMoreView.getFooterView());
             }
@@ -220,6 +225,7 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
 
     /**
      * 设置加载更多事件回调
+     *
      * @param loadMoreListener
      */
     public void setOnLoadMoreListener(OnLoadMoreListener loadMoreListener) {
@@ -241,7 +247,7 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
      * 加载更多
      */
     void executeLoadMore() {
-        if(!mLoadMoreLock && mHasLoadMore) {
+        if (!mLoadMoreLock && mHasLoadMore) {
             if (mOnLoadMoreListener != null) {
                 mOnLoadMoreListener.loadMore();
             }
@@ -254,14 +260,14 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
     protected void onFinishInflate() {
         super.onFinishInflate();
         View view = getChildAt(0);
-        if ( view instanceof LinearLayout) {
+        if (view instanceof LinearLayout) {
             mSvContentView = (LinearLayout) view;
-            for(int i = 0; i < mHeaderViewTempList.size(); i++) {
+            for (int i = 0; i < mHeaderViewTempList.size(); i++) {
                 View headerView = mHeaderViewTempList.get(i);
                 mSvContentView.addView(headerView, i, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             }
 
-            for(int i = 0; i < mFooterViewTempList.size(); i++) {
+            for (int i = 0; i < mFooterViewTempList.size(); i++) {
                 View footerView = mFooterViewTempList.get(i);
                 mSvContentView.addView(footerView, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             }
@@ -272,7 +278,7 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
 
     public void addFooterView(View view) {
         mFooterViewTempList.add(view);
-        if(mSvContentView != null) {
+        if (mSvContentView != null) {
             int childCount = mSvContentView.getChildCount();
             mSvContentView.addView(view, childCount);
         }
@@ -280,7 +286,7 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
 
     public void removeFooterView(View view) {
         mFooterViewTempList.remove(view);
-        if(mSvContentView != null) {
+        if (mSvContentView != null) {
             mSvContentView.removeView(view);
         }
     }
@@ -305,7 +311,7 @@ public class ScrollViewFinal extends ScrollView implements OnScrollBottomListene
     class OnMoreViewClickListener implements OnClickListener {
         @Override
         public void onClick(View view) {
-            if(mHasLoadMore) {
+            if (mHasLoadMore) {
                 executeLoadMore();
             }
         }

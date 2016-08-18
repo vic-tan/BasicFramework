@@ -22,7 +22,7 @@ import cn.finalteam.loadingviewfinal.loadingview.R;
  * Author:pengjianbo
  * Date:16/3/7 下午6:40
  */
-public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomListener{
+public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomListener {
     /**
      * 加载更多UI
      */
@@ -123,7 +123,8 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 //        super.setAdapter(adapter);
         try {
             adapter.unregisterAdapterDataObserver(mDataObserver);
-        } catch (Exception e){}
+        } catch (Exception e) {
+        }
 
         adapter.registerAdapterDataObserver(mDataObserver);
         mHeaderAndFooterRecyclerViewAdapter.setAdapter(adapter);
@@ -131,13 +132,14 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 
     @Override
     public void onScorllBootom() {
-        if(mHasLoadMore && mLoadMoreMode == LoadMoreMode.SCROLL) {
+        if (mHasLoadMore && mLoadMoreMode == LoadMoreMode.SCROLL) {
             executeLoadMore();
         }
     }
 
     /**
      * 设置recyclerview emptyview
+     *
      * @param emptyView
      */
     public void setEmptyView(View emptyView) {
@@ -146,6 +148,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 
     /**
      * 设置LoadMoreView
+     *
      * @param loadMoreView
      */
     public void setLoadMoreView(ILoadMoreView loadMoreView) {
@@ -153,7 +156,8 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
             try {
                 removeFooterView(mLoadMoreView.getFooterView());
                 mAddLoadMoreFooterFlag = false;
-            } catch (Exception e){}
+            } catch (Exception e) {
+            }
         }
         mLoadMoreView = loadMoreView;
         mLoadMoreView.getFooterView().setOnClickListener(new OnMoreViewClickListener());
@@ -161,6 +165,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 
     /**
      * 设置加载更多模式
+     *
      * @param mode
      */
     public void setLoadMoreMode(LoadMoreMode mode) {
@@ -169,6 +174,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 
     /**
      * 设置没有更多数据了，是否隐藏fooler view
+     *
      * @param hide
      */
     public void setNoLoadMoreHideView(boolean hide) {
@@ -203,25 +209,26 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
     /**
      * 显示加载中UI
      */
-    void showLoadingUI(){
+    void showLoadingUI() {
         mHasLoadFail = false;
         mLoadMoreView.showLoading();
     }
 
     /**
      * 是否有更多
+     *
      * @param hasLoadMore
      */
     public void setHasLoadMore(boolean hasLoadMore) {
         mHasLoadMore = hasLoadMore;
         if (!mHasLoadMore) {
             showNoMoreUI();
-            if(mNoLoadMoreHideView) {
+            if (mNoLoadMoreHideView) {
                 removeFooterView(mLoadMoreView.getFooterView());
                 mAddLoadMoreFooterFlag = false;
             }
         } else {
-            if(!mAddLoadMoreFooterFlag) {
+            if (!mAddLoadMoreFooterFlag) {
                 mAddLoadMoreFooterFlag = true;
                 addFooterView(mLoadMoreView.getFooterView());
             }
@@ -231,6 +238,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 
     /**
      * 设置加载更多事件回调
+     *
      * @param loadMoreListener
      */
     public void setOnLoadMoreListener(OnLoadMoreListener loadMoreListener) {
@@ -250,6 +258,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 
     /**
      * 添加footer view
+     *
      * @param footerView
      */
     public void addFooterView(View footerView) {
@@ -258,6 +267,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 
     /**
      * 添加header view
+     *
      * @param headerView
      */
     public void addHeaderView(View headerView) {
@@ -279,7 +289,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
     class OnMoreViewClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            if(mHasLoadMore) {
+            if (mHasLoadMore) {
                 executeLoadMore();
             }
         }
@@ -289,7 +299,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
      * 加载更多
      */
     void executeLoadMore() {
-        if(!mLoadMoreLock && mHasLoadMore) {
+        if (!mLoadMoreLock && mHasLoadMore) {
             if (mOnLoadMoreListener != null) {
                 mOnLoadMoreListener.loadMore();
             }
@@ -300,6 +310,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 
     /**
      * 设置OnItemClickListener
+     *
      * @param listener
      */
     public void setOnItemClickListener(HeaderAndFooterRecyclerViewAdapter.OnItemClickListener listener) {
@@ -308,6 +319,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
 
     /**
      * 设置OnItemLongClickListener
+     *
      * @param listener
      */
     public void setOnItemLongClickListener(HeaderAndFooterRecyclerViewAdapter.OnItemLongClickListener listener) {
@@ -403,9 +415,9 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
     private RecyclerView.AdapterDataObserver mDataObserver = new RecyclerView.AdapterDataObserver() {
         @Override
         public void onChanged() {
-            Adapter<?> adapter =  getAdapter();
-            if(adapter != null && mEmptyView != null) {
-                if(adapter.getItemCount() == 0) {
+            Adapter<?> adapter = getAdapter();
+            if (adapter != null && mEmptyView != null) {
+                if (adapter.getItemCount() == 0) {
                     mEmptyView.setVisibility(View.VISIBLE);
                     setVisibility(View.GONE);
                 } else {

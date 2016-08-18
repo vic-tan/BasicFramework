@@ -7,17 +7,18 @@
     android:gravity="center"
     android:padding="30px">
 
-    <ProgressBar
+
+    <ImageView
         android:id="@+id/pb_loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@android:style/Widget.ProgressBar.Small"/>
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:background="@drawable/progress_large"/>
 
     <TextView
         android:id="@+id/tv_loading_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#666666"
+        android:textColor="#293b5f"
         android:textSize="40px"
         android:text="加载中…"
         android:layout_marginLeft="24px"/>

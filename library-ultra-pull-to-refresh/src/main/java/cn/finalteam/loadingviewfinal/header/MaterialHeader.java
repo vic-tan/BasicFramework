@@ -132,7 +132,7 @@ public class MaterialHeader extends View implements PtrUIHandler {
     }
 
     /**
-     * prepare for loading
+     * prepare for progress_larg
      *
      * @param frame
      */

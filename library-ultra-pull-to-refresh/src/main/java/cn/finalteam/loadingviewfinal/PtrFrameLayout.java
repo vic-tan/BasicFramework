@@ -556,7 +556,7 @@ public class PtrFrameLayout extends ViewGroup {
     }
 
     /**
-     * If at the top and not in loading, reset
+     * If at the top and not in progress_larg, reset
      */
     private boolean tryToNotifyReset() {
         if ((mStatus == PTR_STATUS_COMPLETE || mStatus == PTR_STATUS_PREPARE) && mPtrIndicator.isInStartPosition()) {
@@ -765,7 +765,7 @@ public class PtrFrameLayout extends ViewGroup {
     }
 
     /**
-     * loading will last at least for so long
+     * progress_larg will last at least for so long
      *
      * @param time
      */

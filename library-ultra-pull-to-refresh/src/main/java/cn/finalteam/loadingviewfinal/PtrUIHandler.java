@@ -16,7 +16,7 @@ public interface PtrUIHandler {
     public void onUIReset(PtrFrameLayout frame);
 
     /**
-     * prepare for loading
+     * prepare for progress_larg
      *
      * @param frame
      */

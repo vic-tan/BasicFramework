@@ -15,7 +15,7 @@ public interface IRefreshViewInteractor {
      */
     interface OnLoadDataListener {//请求首页加载接口回调
          void onBefore(Request request) ;
-         void onError(Call call, Exception e);
+         void onError(Call call, Exception e,boolean fromStart);
          void onResponse(String response) ;
          void onAfter() ;
     }
@@ -25,7 +25,7 @@ public interface IRefreshViewInteractor {
      */
     interface OnLoadPageDataListener {//请求首页加载接口回调
         void onPageBefore(Request request) ;
-        void onPageError(Call call, Exception e);
+        void onPageError(Call call, Exception e,boolean fromStart);
         void onPageResponse(String response) ;
         void onPageAfter() ;
     }
@@ -36,7 +36,7 @@ public interface IRefreshViewInteractor {
      * @param map
      * @param listener
      */
-    void requestPageData(String url,Map<String, String> map, OnLoadPageDataListener listener);
+    void requestPageData(String url,Map<String, String> map, boolean fromStart, OnLoadPageDataListener listener);
 
     /**
      * 不分显示数据
@@ -44,5 +44,5 @@ public interface IRefreshViewInteractor {
      * @param map
      * @param listener
      */
-    void requestData(String url,Map<String, String> map, OnLoadDataListener listener);
+    void requestData(String url,Map<String, String> map, boolean fromStart, OnLoadDataListener listener);
 }

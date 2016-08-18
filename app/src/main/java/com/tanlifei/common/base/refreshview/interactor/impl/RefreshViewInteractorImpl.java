@@ -15,7 +15,7 @@ import okhttp3.Request;
 public class RefreshViewInteractorImpl implements IRefreshViewInteractor{
 
     @Override
-    public void requestPageData(String url, Map<String, String> map, final OnLoadPageDataListener listener) {
+    public void requestPageData(String url, Map<String, String> map, final boolean fromStart, final OnLoadPageDataListener listener) {
 
         OkHttpUtils.post().url(url).params(map).build().execute(new StringCallback() {
             @Override
@@ -25,7 +25,7 @@ public class RefreshViewInteractorImpl implements IRefreshViewInteractor{
 
             @Override
             public void onError(Call call, Exception e) {
-                listener.onPageError(call,e);
+                listener.onPageError(call,e,fromStart);
             }
 
 
@@ -43,7 +43,7 @@ public class RefreshViewInteractorImpl implements IRefreshViewInteractor{
     }
 
     @Override
-    public void requestData(String url, Map<String, String> map, final OnLoadDataListener listener) {
+    public void requestData(String url, Map<String, String> map, final boolean fromStart, final OnLoadDataListener listener) {
         OkHttpUtils.post().url(url).params(map).build().execute(new StringCallback() {
 
             @Override
@@ -53,7 +53,7 @@ public class RefreshViewInteractorImpl implements IRefreshViewInteractor{
 
             @Override
             public void onError(Call call, Exception e) {
-                listener.onError(call,e);
+                listener.onError(call,e,fromStart);
             }
 
 

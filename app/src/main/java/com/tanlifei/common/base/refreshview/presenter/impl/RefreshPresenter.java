@@ -51,7 +51,7 @@ public class RefreshPresenter implements IRefreshInPresenter,
 
 
     @Override
-    public void requestPageData(String url, Map<String, String> map,boolean fromStart) {
+    public void requestPageData(String url, Map<String, String> map, boolean fromStart) {
         if (fromStart) {
             page = 1;
         }
@@ -61,12 +61,12 @@ public class RefreshPresenter implements IRefreshInPresenter,
                 "    \"pageNumber\": " + page + ",\n" +
                 "    \"pageSize\": 10\n" +
                 "}");
-        interactor.requestPageData(url, map, this);
+        interactor.requestPageData(url, map, fromStart, this);
     }
 
     @Override
     public void requestData(String url, Map<String, String> map) {
-        interactor.requestData(url, map, this);
+        interactor.requestData(url, map, true, this);
     }
 
     /**
@@ -80,13 +80,16 @@ public class RefreshPresenter implements IRefreshInPresenter,
     }
 
     @Override
-    public void onError(Call call, Exception e) {
+    public void onError(Call call, Exception e, boolean fromStart) {
         if (ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//没有数据,且没有网络 提示布局
             EmptyView.showNetErrorEmpty(refreshView.getRefreshEmptyView());
-        } else if (!ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//有数据且没有网络，提示Toast
-            ToastUtils.show(mContext, R.string.common_net_error);
-        } else if (ListUtils.isEmpty(configuration.getmRefreshList())) {//没有数据
+        } else if (ListUtils.isEmpty(configuration.getmRefreshList()) && NetUtils.isConnected(mContext)) {//没有数据,有网络
             EmptyView.showNoDataEmpty(refreshView.getRefreshEmptyView());
+        } else if (!ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//有数据,且没有网络
+            ToastUtils.show(mContext, R.string.common_net_error);
+        } else {//有数据,有网络
+            ToastUtils.show(mContext, R.string.common_data_error);
+
         }
     }
 
@@ -126,14 +129,18 @@ public class RefreshPresenter implements IRefreshInPresenter,
     }
 
     @Override
-    public void onPageError(Call call, Exception e) {
-        if (ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//没有数据,且没有网络 提示布局
-            EmptyView.showNetErrorEmpty(refreshView.getRefreshEmptyView());
-        } else if (!ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//有数据且没有网络，提示Toast
-            ToastUtils.show(mContext, R.string.common_net_error);
-        } else if (ListUtils.isEmpty(configuration.getmRefreshList()) && NetUtils.isConnected(mContext)) {//没有数据
-            EmptyView.showNoDataEmpty(refreshView.getRefreshEmptyView());
-        } else {
+    public void onPageError(Call call, Exception e, boolean fromStart) {
+        if (fromStart) {//下拉
+            if (ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//没有数据,且没有网络 提示布局
+                EmptyView.showNetErrorEmpty(refreshView.getRefreshEmptyView());
+            } else if (ListUtils.isEmpty(configuration.getmRefreshList()) && NetUtils.isConnected(mContext)) {//没有数据,有网络
+                EmptyView.showNoDataEmpty(refreshView.getRefreshEmptyView());
+            } else if (!ListUtils.isEmpty(configuration.getmRefreshList()) && !NetUtils.isConnected(mContext)) {//有数据,且没有网络
+                ToastUtils.show(mContext, R.string.common_net_error);
+            } else {//有数据,有网络
+                ToastUtils.show(mContext, R.string.common_data_error);
+            }
+        } else {//更多
             if (null != refreshView.getDataView() && refreshView.getDataView() instanceof ListViewFinal) {
                 ((ListViewFinal) refreshView.getDataView()).showFailUI();
             } else if (null != refreshView.getDataView() && refreshView.getDataView() instanceof GridViewFinal) {

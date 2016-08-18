@@ -21,7 +21,7 @@ import cn.finalteam.loadingviewfinal.PtrClassicFrameLayout;
 import cn.finalteam.loadingviewfinal.PtrFrameLayout;
 
 /**
- * 列表刷新基类，继承基本
+ * RecylerView 和 AbsListView 列表刷新基类，继承基本
  * Created by tanlifei on 16/8/18.
  */
 public abstract class BaseRefreshActivity extends BaseActionBarActivity implements RefreshView, IRefreshInConfiguration {
