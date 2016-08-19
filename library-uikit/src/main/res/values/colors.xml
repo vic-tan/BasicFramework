@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- ————————————————————————————————————— kprogresshud加载框常量   ——————————————————————————————————————————————————— -->
+    <color name="kprogresshud_default_color">#b1000000</color><!--windons窗体滤镜背景色-->
+    <color name="kprogresshud_grey_color">#449E9E9E</color><!--加载框窗体背景色-->
+
+</resources>

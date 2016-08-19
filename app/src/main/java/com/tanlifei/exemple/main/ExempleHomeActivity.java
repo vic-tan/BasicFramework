@@ -11,7 +11,7 @@ import com.tanlifei.exemple.main.bean.ExempleHomeListBean;
 import com.tanlifei.exemple.main.presenter.ExempleHomePresenter;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
-import com.tanlifei.uikit.expandable.ExpandableTextView;
+import com.uikit.expandable.ExpandableTextView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

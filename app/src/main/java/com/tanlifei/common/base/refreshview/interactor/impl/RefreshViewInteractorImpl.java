@@ -2,7 +2,7 @@ package com.tanlifei.common.base.refreshview.interactor.impl;
 
 import com.tanlifei.common.base.refreshview.interactor.IRefreshViewInteractor;
 import com.support.okhttp.OkHttpUtils;
-import com.tanlifei.support.callback.StringCallback;
+import com.tanlifei.support.http.StringCallback;
 
 import java.util.Map;
 

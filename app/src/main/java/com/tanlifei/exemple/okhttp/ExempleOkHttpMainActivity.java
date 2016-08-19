@@ -8,7 +8,7 @@ import com.support.okhttp.callback.Callback;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.callback.loading.LoadingStandardCallback;
+import com.tanlifei.support.http.loading.LoadingStandardCallback;
 import com.tanlifei.support.utils.NetUtils;
 import com.tanlifei.support.utils.ToastUtils;
 

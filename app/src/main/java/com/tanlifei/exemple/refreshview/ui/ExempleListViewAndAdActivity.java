@@ -19,7 +19,7 @@ import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.DateFormatUtils;
-import com.tanlifei.uikit.viewpager.ChildViewPager;
+import com.uikit.viewpager.ChildViewPager;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

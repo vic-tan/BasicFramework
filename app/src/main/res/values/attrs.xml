@@ -31,19 +31,7 @@
     </declare-styleable>
 
 
-    <!-- ——————————————————————————————————————————ExpandableTextView 伸缩—————————————————————————————————————————— -->
-    <declare-styleable name="ExpandableTextView">
-        <attr name="maxCollapsedLines" format="integer" />
-        <attr name="animDuration" format="integer" />
-        <attr name="animAlphaStart" format="float" />
-        <attr name="expandDrawable" format="reference" />
-        <attr name="collapseDrawable" format="reference" />
-        <!-- 点击事件的触发方式 -->
-        <attr name="clickListenerType">
-            <enum name="all" value="0" /> <!-- 点击区域为全部区域,包括TextView和图标 -->
-            <enum name="footer" value="1" /><!-- 点击区域仅为图标区域 -->
-        </attr>
-    </declare-styleable>
+
 
 
     <!-- —————————————————————————————————————————— Round 圆角 View  —————————————————————————————————————————— -->
@@ -84,14 +72,6 @@
         <attr name="in_isSmart" format="boolean" /><!-- 是否是自动计算的 -->
         <attr name="in_isSrc" format="boolean" /> <!-- 是否将图片设置到src中 -->
     </declare-styleable>
-
-
-    <!-- ——————————————————————————————————————————用LinearLayout实现的ListView，可解决多个ListView并存等问题—————————————————————— -->
-    <declare-styleable name="LinearListView">
-        <attr name="android:entries" />
-        <attr name="dividerThickness" format="dimension" />
-    </declare-styleable>
-
 
 
 </resources>
