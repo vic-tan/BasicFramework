@@ -77,6 +77,11 @@ public abstract class DialogCallback extends Callback<BaseJson> {
     public void onError(Call call, Exception e) {
         super.onError(call, e);
         hud.dismiss();
+        try {
+            throw new AppException(mContext, e);
+        } catch (AppException e1) {
+            e1.printStackTrace();
+        }
     }
 
     public abstract void onCusResponse(BaseJson response);

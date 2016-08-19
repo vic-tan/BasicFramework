@@ -65,10 +65,10 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
     }
 
     public void C(View v) {
-        if (!NetUtils.isConnected(mContext)) {
+       /* if (!NetUtils.isConnected(mContext)) {
             ToastUtils.show(mContext, "没有网络!!");
             return;
-        }
+        }*/
         OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new ProcessCallback(mContext, new HttpListener() {
             @Override
             public void onAfter() {

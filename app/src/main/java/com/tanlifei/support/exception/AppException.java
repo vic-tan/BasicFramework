@@ -28,9 +28,14 @@ public class AppException extends Exception {
             ToastUtils.show(mContext, "在另一台设备登录");
         } else {
             ToastUtils.show(mContext, msgCode);
-            Logger.d(TAG, msgCode);
+            Logger.e(TAG, msgCode);
         }
 
+    }
+
+    public AppException(Context mContext, Exception e) {
+        super(e.getMessage());
+        Logger.e(TAG, e.toString());
     }
 
 }

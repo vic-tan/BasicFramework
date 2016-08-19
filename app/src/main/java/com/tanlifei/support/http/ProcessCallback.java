@@ -67,5 +67,10 @@ public class ProcessCallback extends Callback<BaseJson>
     public void onError(Call call, Exception e) {
         super.onError(call, e);
         httpListener.onError(call,e);
+        try {
+            throw new AppException(mContext, e);
+        } catch (AppException e1) {
+            e1.printStackTrace();
+        }
     }
 }

@@ -9,8 +9,8 @@ import okhttp3.Request;
  * Created by tanlifei on 16/8/19.
  */
 public interface HttpListener {
-    void onAfter() ;
     void onBefore(Request request);
-    void onError(Call call, Exception e);
     void onCusResponse(BaseJson response);
+    void onError(Call call, Exception e);
+    void onAfter() ;
 }
