@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.support.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/common_prompt_dialog_content_bg"
@@ -18,7 +18,7 @@
         android:textSize="@dimen/common_dialog_title_size" />
 
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <com.support.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="60px"
         android:minHeight="60px"
@@ -34,9 +34,9 @@
             android:paddingRight="35px"
             android:textColor="#666666"
             android:textSize="@dimen/common_dialog_btn_text_size" />
-    </com.zhy.autolayout.AutoLinearLayout>
+    </com.support.autolayout.AutoLinearLayout>
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <com.support.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15px"
@@ -71,6 +71,6 @@
             android:textSize="@dimen/common_dialog_btn_text_size" />
 
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </com.support.autolayout.AutoLinearLayout>
 
-</com.zhy.autolayout.AutoLinearLayout>
+</com.support.autolayout.AutoLinearLayout>

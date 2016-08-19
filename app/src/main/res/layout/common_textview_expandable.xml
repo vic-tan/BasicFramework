@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.tanlifei.support.widget.textview.expandable.ExpandableTextView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tanlifei.uikit.expandable.ExpandableTextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
     android:id="@+id/expand_text_view"
     android:layout_width="match_parent"
@@ -43,4 +43,4 @@
     </RelativeLayout>
 
 
-</com.tanlifei.support.widget.textview.expandable.ExpandableTextView>
+</com.tanlifei.uikit.expandable.ExpandableTextView>

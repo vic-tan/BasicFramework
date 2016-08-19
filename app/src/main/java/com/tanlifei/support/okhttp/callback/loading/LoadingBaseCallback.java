@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
-import com.tanlifei.support.kprogresshud.KProgressHUD;
+import com.tanlifei.uikit.kprogresshud.KProgressHUD;
 import com.tanlifei.support.okhttp.callback.Callback;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.support.utils.StringUtils;

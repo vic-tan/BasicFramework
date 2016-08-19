@@ -31,7 +31,6 @@
     </declare-styleable>
 
 
-
     <!-- ——————————————————————————————————————————ExpandableTextView 伸缩—————————————————————————————————————————— -->
     <declare-styleable name="ExpandableTextView">
         <attr name="maxCollapsedLines" format="integer" />
@@ -67,7 +66,6 @@
     </declare-styleable>
 
 
-
     <!-- ————————————————————————————————————————— 图片控件点击效果 jnjecion （不适合用代码更改图片切换时用）———————————————————————— -->
     <color name="default_color">#00000000</color>
     <declare-styleable name="SelectorInjection">
@@ -88,10 +86,12 @@
     </declare-styleable>
 
 
-
     <!-- ——————————————————————————————————————————用LinearLayout实现的ListView，可解决多个ListView并存等问题—————————————————————— -->
     <declare-styleable name="LinearListView">
         <attr name="android:entries" />
         <attr name="dividerThickness" format="dimension" />
     </declare-styleable>
+
+
+
 </resources>

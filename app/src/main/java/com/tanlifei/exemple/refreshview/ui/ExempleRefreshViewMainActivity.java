@@ -28,7 +28,6 @@ import android.widget.Button;
 
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.kprogresshud.KProgressHUD;
 import com.tanlifei.support.utils.StartActUtils;
 
 

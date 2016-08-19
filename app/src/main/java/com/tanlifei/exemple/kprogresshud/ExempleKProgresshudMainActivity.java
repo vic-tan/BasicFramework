@@ -31,7 +31,7 @@ import android.widget.ImageView;
 
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.kprogresshud.KProgressHUD;
+import com.tanlifei.uikit.kprogresshud.KProgressHUD;
 
 
 public class ExempleKProgresshudMainActivity extends BaseActionBarActivity implements View.OnClickListener {

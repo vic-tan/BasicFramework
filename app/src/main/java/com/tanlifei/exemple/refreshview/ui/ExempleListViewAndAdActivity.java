@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.fans.loader.FanImageLoader;
 import com.google.gson.Gson;
 import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
@@ -15,9 +14,12 @@ import com.tanlifei.exemple.refreshview.bean.BannerBaen;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
+import com.support.imageloader.FanImageLoader;
+import com.support.refresh.more.ListViewFinal;
+import com.support.refresh.more.OnLoadMoreListener;
 import com.tanlifei.support.utils.DateFormatUtils;
 import com.tanlifei.support.utils.GsonJsonUtils;
-import com.tanlifei.support.widget.viewpager.ChildViewPager;
+import com.tanlifei.uikit.viewpager.ChildViewPager;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -27,9 +29,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import cn.finalteam.loadingviewfinal.ListViewFinal;
-import cn.finalteam.loadingviewfinal.OnLoadMoreListener;
 
 /**
  * 加载资源数据界面

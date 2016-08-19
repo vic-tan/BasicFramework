@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.support.autolayout.AutoLayoutActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ActivityManager;
 import com.tanlifei.support.utils.ResUtils;
 import com.tanlifei.support.utils.StartActUtils;
 import com.tanlifei.support.utils.ToastUtils;
-import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;

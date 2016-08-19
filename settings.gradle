@@ -2,7 +2,4 @@ include ':app'
 /*
  * 项目第三方库
  */
-include ':library-autolayout'//适配机型库
-include ':library-image-loader'//基于universal-image-loader 更深层封装
-include ':library-ultra-pull-to-refresh'//上下接刷新
-include ':library-loading-more-view'//加载更多
+include ':library-support'//适配机型库

@@ -12,7 +12,7 @@ import com.tanlifei.exemple.dialog.extra.ExempleDialogCustomBubblePopup;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
 import com.tanlifei.support.utils.ViewFindUtils;
-import com.tanlifei.support.widget.dialog.base.popup.BubblePopup;
+import com.tanlifei.uikit.dialog.base.popup.BubblePopup;
 
 
 public class ExempleDialogBubblePopupActivity extends BaseActionBarActivity implements View.OnClickListener{

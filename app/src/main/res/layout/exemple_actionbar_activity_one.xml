@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.support.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:abv="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +7,12 @@
     android:background="@android:color/white">
 
 
-    <com.tanlifei.support.widget.actionbar.ActionBarView
+    <com.tanlifei.uikit.actionbar.ActionBarView
         android:id="@+id/actionbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_actionbar_standard_height"
         abv:abv_back_dimiss="true"
         abv:abv_title_text="标题" />
 
-</com.zhy.autolayout.AutoRelativeLayout>
+</com.support.autolayout.AutoRelativeLayout>
 

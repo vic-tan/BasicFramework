@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ViewFindUtils;
-import com.tanlifei.support.widget.actionbar.ActionBarView;
-import com.tanlifei.support.widget.actionbar.OnBackClickListener;
+import com.tanlifei.uikit.actionbar.ActionBarView;
+import com.tanlifei.uikit.actionbar.OnBackClickListener;
 
 /**
  * Created by tanlifei on 15/12/17.

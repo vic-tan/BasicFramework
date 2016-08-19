@@ -10,20 +10,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/library-autolayout" />
-            <option value="$PROJECT_DIR$/library-image-loader" />
-            <option value="$PROJECT_DIR$/library-loading-more-view" />
-            <option value="$PROJECT_DIR$/library-ultra-pull-to-refresh" />
+            <option value="$PROJECT_DIR$/library-support" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/library-autolayout" />
-            <option value="$PROJECT_DIR$/library-image-loader" />
-            <option value="$PROJECT_DIR$/library-loading-more-view" />
-            <option value="$PROJECT_DIR$/library-ultra-pull-to-refresh" />
+            <option value="$PROJECT_DIR$/library-support" />
           </set>
         </option>
       </GradleProjectSettings>

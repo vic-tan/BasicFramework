@@ -16,9 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import cn.finalteam.loadingviewfinal.OnDefaultRefreshListener;
-import cn.finalteam.loadingviewfinal.PtrClassicFrameLayout;
-import cn.finalteam.loadingviewfinal.PtrFrameLayout;
+import com.support.refresh.header.OnDefaultRefreshListener;
+import com.support.refresh.header.PtrClassicFrameLayout;
+import com.support.refresh.header.PtrFrameLayout;
 
 /**
  * RecylerView 和 AbsListView 列表刷新基类，继承基本

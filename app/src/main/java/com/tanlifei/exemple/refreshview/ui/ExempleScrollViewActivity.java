@@ -3,7 +3,7 @@ package com.tanlifei.exemple.refreshview.ui;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.fans.loader.FanImageLoader;
+import com.support.imageloader.FanImageLoader;
 import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.BaseAbsRefreshActivity;
@@ -11,7 +11,7 @@ import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.DateFormatUtils;
-import com.tanlifei.support.widget.linearlistview.LinearListView;
+import com.tanlifei.uikit.linearlistview.LinearListView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -21,8 +21,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.finalteam.loadingviewfinal.OnLoadMoreListener;
-import cn.finalteam.loadingviewfinal.ScrollViewFinal;
+import com.support.refresh.more.OnLoadMoreListener;
+import com.support.refresh.more.ScrollViewFinal;
 
 /**
  * 加载资源数据界面

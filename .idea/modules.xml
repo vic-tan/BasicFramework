@@ -4,10 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BasicFramework.iml" filepath="$PROJECT_DIR$/BasicFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library-autolayout/library-autolayout.iml" filepath="$PROJECT_DIR$/library-autolayout/library-autolayout.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library-image-loader/library-image-loader.iml" filepath="$PROJECT_DIR$/library-image-loader/library-image-loader.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library-loading-more-view/library-loading-more-view.iml" filepath="$PROJECT_DIR$/library-loading-more-view/library-loading-more-view.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library-ultra-pull-to-refresh/library-ultra-pull-to-refresh.iml" filepath="$PROJECT_DIR$/library-ultra-pull-to-refresh/library-ultra-pull-to-refresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-support/library-support.iml" filepath="$PROJECT_DIR$/library-support/library-support.iml" />
     </modules>
   </component>
 </project>

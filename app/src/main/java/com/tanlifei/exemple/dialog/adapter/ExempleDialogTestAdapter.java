@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.tanlifei.support.widget.dialog.bean.DialogMenuItem;
+import com.tanlifei.uikit.dialog.bean.DialogMenuItem;
 
 import java.util.ArrayList;
 

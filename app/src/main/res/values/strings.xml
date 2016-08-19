@@ -8,6 +8,7 @@
     <string name="common_data_error">加载失败,请重试</string>
     <string name="common_empty_data">^_^没有任何数据</string>
 
+
     <!-- —————————————————— 对话框按钮文字 ——————————————————————————————— -->
     <string name="common_prompt_dialog_default_title">温馨提示</string>
     <string name="common_cancel">取消</string>

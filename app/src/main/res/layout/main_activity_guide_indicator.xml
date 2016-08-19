@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.support.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingLeft="10px"
@@ -10,4 +10,4 @@
         android:layout_width="15px"
         android:layout_height="15px"
         android:background="@drawable/main_selector_guide_indicator" />
-</com.zhy.autolayout.AutoRelativeLayout>
+</com.support.autolayout.AutoRelativeLayout>

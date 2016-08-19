@@ -41,10 +41,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'org.androidannotations:androidannotations:4.0.0'
-    compile project(':library-autolayout')
-    compile project(':library-image-loader')
-    compile project(':library-ultra-pull-to-refresh')
-    compile project(':library-loading-more-view')
+    compile project(':library-support')
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 
 }

@@ -4,7 +4,7 @@ package com.tanlifei.framework.main.ui;
 import android.app.Application;
 import android.content.Context;
 
-import com.fans.loader.FanImageLoader;
+import com.support.imageloader.FanImageLoader;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.OnOffConstants;
 import com.tanlifei.support.constants.level.OnOffLevel;

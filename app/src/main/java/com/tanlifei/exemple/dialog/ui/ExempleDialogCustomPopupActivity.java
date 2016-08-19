@@ -10,7 +10,7 @@ import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
 import com.tanlifei.support.utils.ViewFindUtils;
-import com.tanlifei.support.widget.dialog.base.popup.BasePopup;
+import com.tanlifei.uikit.dialog.base.popup.BasePopup;
 
 
 public class ExempleDialogCustomPopupActivity extends BaseActionBarActivity implements View.OnClickListener{

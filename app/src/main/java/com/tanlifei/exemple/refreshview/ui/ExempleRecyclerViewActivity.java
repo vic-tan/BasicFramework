@@ -4,13 +4,15 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.fans.loader.FanImageLoader;
 import com.tanlifei.common.base.adapter.recycler.RvCommonAdapter;
 import com.tanlifei.common.base.adapter.recycler.RvViewHolder;
 import com.tanlifei.common.ui.activity.BaseRvRefreshActivity;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
+import com.support.imageloader.FanImageLoader;
+import com.support.refresh.more.OnLoadMoreListener;
+import com.support.refresh.more.RecyclerViewFinal;
 import com.tanlifei.support.utils.DateFormatUtils;
 
 import org.androidannotations.annotations.AfterViews;
@@ -20,9 +22,6 @@ import org.androidannotations.annotations.ViewById;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import cn.finalteam.loadingviewfinal.OnLoadMoreListener;
-import cn.finalteam.loadingviewfinal.RecyclerViewFinal;
 
 /**
  * 加载资源数据界面

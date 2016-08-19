@@ -3,7 +3,7 @@ package com.tanlifei.common.base.refreshview.ui;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import cn.finalteam.loadingviewfinal.PtrClassicFrameLayout;
+import com.support.refresh.header.PtrClassicFrameLayout;
 
 /**
  * Created by tanlifei on 16/5/12.

@@ -4,7 +4,7 @@
     android:layout_height="180dp"
     android:orientation="vertical">
 
-    <com.tanlifei.support.widget.viewpager.ChildViewPager
+    <com.tanlifei.uikit.viewpager.ChildViewPager
         android:id="@+id/vp_banner"
         android:layout_width="match_parent"
         android:layout_height="550px" />
