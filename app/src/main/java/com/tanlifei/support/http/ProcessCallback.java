@@ -1,45 +1,36 @@
-package com.tanlifei.support.http.loading;
+package com.tanlifei.support.http;
 
 import android.content.Context;
 
 import com.google.gson.Gson;
 import com.support.okhttp.callback.Callback;
-import com.tanlifei.support.utils.StringUtils;
 import com.tanlifei.common.bean.BaseJson;
-import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
-import com.uikit.kprogresshud.KProgressHUD;
+import com.tanlifei.support.utils.StringUtils;
 
 import okhttp3.Call;
 import okhttp3.Request;
 import okhttp3.Response;
 
-
 /**
- * 提示框加载基类，
- * 所有的提示框都得继承本类，
+ * 每个方法都返回给调用者
  * Created by tanlifei on 15/12/14.
  */
-public abstract class LoadingBaseCallback extends Callback<BaseJson> {
-
-    protected KProgressHUD hud;
-    protected Context mContext;
-
-    public LoadingBaseCallback(Context mContext) {
+public class ProcessCallback extends Callback<BaseJson>
+{
+    private Context mContext;
+    private HttpListener httpListener;
+    public ProcessCallback(Context mContext,HttpListener httpListener) {
         this.mContext = mContext;
-        hud = KProgressHUD.create(mContext)
-                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                .setDimAmount(0.5f)
-                .setLabel(mContext.getResources().getString(R.string.common_dialog_loading))
-                .setCancellable(true);
+        this.httpListener = httpListener;
     }
 
 
     @Override
     public void onAfter() {
         super.onAfter();
-        hud.dismiss();
+        httpListener.onAfter();
     }
 
     @Override
@@ -56,30 +47,25 @@ public abstract class LoadingBaseCallback extends Callback<BaseJson> {
                 throw new AppException(mContext, ExceptionConstants.CODE_DATA_ERROR);
             }
             if (StringUtils.isEquals(response.getCode(),ExceptionConstants.CODE_SUCCEE)){
-                onCusResponse(response);
+                httpListener.onCusResponse(response);
             }else{
-                throw new AppException(mContext, response.getCode());
+                throw new AppException(mContext, response.getMsg());
             }
         } catch (AppException e) {
             e.printStackTrace();
         } finally {
-            hud.dismiss();
         }
     }
 
     @Override
     public void onBefore(Request request) {
         super.onBefore(request);
-        hud.show();
+        httpListener.onBefore(request);
     }
 
     @Override
     public void onError(Call call, Exception e) {
         super.onError(call, e);
-        hud.dismiss();
+        httpListener.onError(call,e);
     }
-
-    public abstract void onCusResponse(BaseJson response);
-
-
 }

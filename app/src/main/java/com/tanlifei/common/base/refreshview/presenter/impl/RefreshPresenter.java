@@ -61,12 +61,12 @@ public class RefreshPresenter implements IRefreshInPresenter,
                 "    \"pageNumber\": " + page + ",\n" +
                 "    \"pageSize\": 10\n" +
                 "}");
-        interactor.requestPageData(url, map, fromStart, this);
+        interactor.requestPageData(mContext,url, map, fromStart, this);
     }
 
     @Override
     public void requestData(String url, Map<String, String> map) {
-        interactor.requestData(url, map, true, this);
+        interactor.requestData(mContext,url, map, true, this);
     }
 
     /**
@@ -94,12 +94,11 @@ public class RefreshPresenter implements IRefreshInPresenter,
     }
 
     @Override
-    public void onResponse(String response) {
-        BaseJson bean = new Gson().fromJson(response.toString(), BaseJson.class);
+    public void onResponse(BaseJson baseJson) {
         configuration.getmRefreshList().clear();
         List newGameResponse = null;
         try {
-            newGameResponse = GsonJsonUtils.fromJsonArray(new Gson().toJson(bean.getData()), configuration.parseClassName());
+            newGameResponse = GsonJsonUtils.fromJsonArray(new Gson().toJson(baseJson.getData()), configuration.parseClassName());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -154,13 +153,12 @@ public class RefreshPresenter implements IRefreshInPresenter,
     }
 
     @Override
-    public void onPageResponse(String response) {
-        BaseJson bean = new Gson().fromJson(response.toString(), BaseJson.class);
+    public void onPageResponse(BaseJson baseJson) {
         if (page == 1) {
             configuration.getmRefreshList().clear();
         }
         page = page + 1;
-        BasePageListBean basePageListBean = new Gson().fromJson(new Gson().toJson(bean.getData()), BasePageListBean.class);
+        BasePageListBean basePageListBean = new Gson().fromJson(new Gson().toJson(baseJson.getData()), BasePageListBean.class);
         List newGameResponse = null;
         try {
             newGameResponse = GsonJsonUtils.fromJsonArray(new Gson().toJson(basePageListBean.getList()), configuration.parseClassName());

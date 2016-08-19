@@ -27,6 +27,7 @@ public class SplashActivity extends BaseActivity implements SplashView {
     @AfterViews
     void init() {
         presenter = new SplashPresenterImpl(this, this);
+        presenter.checkAppUpdate();
         presenter.delayedStart(DELAYED, IS_HAS_LOADING_DATA);
     }
 

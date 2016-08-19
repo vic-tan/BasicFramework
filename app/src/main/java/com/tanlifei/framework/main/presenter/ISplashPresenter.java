@@ -6,4 +6,5 @@ package com.tanlifei.framework.main.presenter;
 public interface ISplashPresenter {
 
     void delayedStart(long delayed,boolean isLoadingData);//多少秒间隔启动,是否有加载资源过度界面
+    void checkAppUpdate();//检测应用升级
 }

@@ -4,18 +4,22 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.support.okhttp.OkHttpUtils;
-import com.support.okhttp.callback.Callback;
+import com.support.utils.Logger;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.http.loading.LoadingStandardCallback;
+import com.tanlifei.support.http.DialogCallback;
+import com.tanlifei.support.http.HttpListener;
+import com.tanlifei.support.http.ProcessCallback;
+import com.tanlifei.support.http.ResultCallback;
 import com.tanlifei.support.utils.NetUtils;
 import com.tanlifei.support.utils.ToastUtils;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import okhttp3.Response;
+import okhttp3.Call;
+import okhttp3.Request;
 
 public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
 
@@ -27,7 +31,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exemple_activity_okhttp_main);
         initActionBar();
-        actionBarView.setActionbarTitle("OKHttp请求示例");
+        actionBarView.setActionbarTitle("Http请求示例");
     }
 
 
@@ -36,16 +40,14 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
             ToastUtils.show(mContext, "没有网络!!");
             return;
         }
-        OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new Callback() {
-            @Override
-            public Object parseNetworkResponse(Response response) throws Exception {
-                return response.body();
-            }
+        OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new ResultCallback(mContext) {
 
             @Override
-            public void onResponse(Object response) {
-                ToastUtils.show(mContext, response.toString());
+            public void onCusResponse(BaseJson response) {
+                ToastUtils.show(mContext, response.getData().toString());
             }
+
+
         });
     }
 
@@ -54,7 +56,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
             ToastUtils.show(mContext, "没有网络!!");
             return;
         }
-        OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new LoadingStandardCallback(mContext) {
+        OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new DialogCallback(mContext) {
             @Override
             public void onCusResponse(BaseJson response) {
                 ToastUtils.show(mContext, response.getData() + "");
@@ -67,12 +69,31 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
             ToastUtils.show(mContext, "没有网络!!");
             return;
         }
-        OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new LoadingStandardCallback(mContext) {
+        OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new ProcessCallback(mContext, new HttpListener() {
+            @Override
+            public void onAfter() {
+                Logger.d("onAfter");
+                ToastUtils.show(mContext, "onAfter");
+            }
+
+            @Override
+            public void onBefore(Request request) {
+                Logger.d("onBefore");
+                ToastUtils.show(mContext, "onBefore");
+            }
+
+            @Override
+            public void onError(Call call, Exception e) {
+                Logger.d("onError");
+                ToastUtils.show(mContext, "onError");
+            }
+
             @Override
             public void onCusResponse(BaseJson response) {
-                ToastUtils.show(mContext, response.getData() + "");
+                Logger.d("onCusResponse");
+                ToastUtils.show(mContext, "onCusResponse");
             }
-        });
+        }));
     }
 
 

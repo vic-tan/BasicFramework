@@ -27,21 +27,21 @@
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
                 android:onClick="A"
-                android:text="普通请求" />
+                android:text="ResultCallback 结果请求" />
 
             <Button
                 android:id="@+id/B"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
                 android:onClick="B"
-                android:text="加载框架请求"/>
+                android:text="DialogCallback 加载框请求"/>
 
             <Button
                 android:id="@+id/C"
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
                 android:onClick="C"
-                android:text="提示框请求"/>
+                android:text="ProcessCallback 过程请求"/>
         </LinearLayout>
 
         <!--   <LinearLayout

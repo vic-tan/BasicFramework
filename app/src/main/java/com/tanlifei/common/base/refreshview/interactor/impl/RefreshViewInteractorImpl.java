@@ -1,8 +1,12 @@
 package com.tanlifei.common.base.refreshview.interactor.impl;
 
-import com.tanlifei.common.base.refreshview.interactor.IRefreshViewInteractor;
+import android.content.Context;
+
 import com.support.okhttp.OkHttpUtils;
-import com.tanlifei.support.http.StringCallback;
+import com.tanlifei.common.base.refreshview.interactor.IRefreshViewInteractor;
+import com.tanlifei.common.bean.BaseJson;
+import com.tanlifei.support.http.HttpListener;
+import com.tanlifei.support.http.ProcessCallback;
 
 import java.util.Map;
 
@@ -15,9 +19,15 @@ import okhttp3.Request;
 public class RefreshViewInteractorImpl implements IRefreshViewInteractor{
 
     @Override
-    public void requestPageData(String url, Map<String, String> map, final boolean fromStart, final OnLoadPageDataListener listener) {
+    public void requestPageData(Context context, String url, Map<String, String> map, final boolean fromStart, final OnLoadPageDataListener listener) {
 
-        OkHttpUtils.post().url(url).params(map).build().execute(new StringCallback() {
+
+        OkHttpUtils.post().url(url).params(map).build().execute(new ProcessCallback(context, new HttpListener() {
+            @Override
+            public void onAfter() {
+                listener.onPageAfter();
+            }
+
             @Override
             public void onBefore(Request request) {
                 listener.onPageBefore(request);
@@ -28,23 +38,20 @@ public class RefreshViewInteractorImpl implements IRefreshViewInteractor{
                 listener.onPageError(call,e,fromStart);
             }
 
-
             @Override
-            public void onResponse(String response) {
+            public void onCusResponse(BaseJson response) {
                 listener.onPageResponse(response);
             }
-
-            @Override
-            public void onAfter() {
-                listener.onPageAfter();
-            }
-        });
-
+        }));
     }
 
     @Override
-    public void requestData(String url, Map<String, String> map, final boolean fromStart, final OnLoadDataListener listener) {
-        OkHttpUtils.post().url(url).params(map).build().execute(new StringCallback() {
+    public void requestData(Context context,String url, Map<String, String> map, final boolean fromStart, final OnLoadDataListener listener) {
+        OkHttpUtils.post().url(url).params(map).build().execute(new ProcessCallback(context, new HttpListener() {
+            @Override
+            public void onAfter() {
+                listener.onAfter();
+            }
 
             @Override
             public void onBefore(Request request) {
@@ -53,19 +60,13 @@ public class RefreshViewInteractorImpl implements IRefreshViewInteractor{
 
             @Override
             public void onError(Call call, Exception e) {
-                listener.onError(call,e,fromStart);
+                listener.onError(call, e, fromStart);
             }
 
-
             @Override
-            public void onResponse(String response) {
+            public void onCusResponse(BaseJson response) {
                 listener.onResponse(response);
             }
-
-            @Override
-            public void onAfter() {
-                listener.onAfter();
-            }
-        });
+        }));
     }
 }

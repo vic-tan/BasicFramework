@@ -27,6 +27,7 @@ public class AppException extends Exception {
         } else if (StringUtils.isEquals(msgCode, ExceptionConstants.CODE_VALUE_0014)) {
             ToastUtils.show(mContext, "在另一台设备登录");
         } else {
+            ToastUtils.show(mContext, msgCode);
             Logger.d(TAG, msgCode);
         }
 
