@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ViewFindUtils;
-import com.tanlifei.support.utils.CornerUtils;
-import com.tanlifei.uikit.dialog.base.dialog.BaseDialog;
+import com.support.utils.CornerUtils;
+import com.uikit.dialog.base.dialog.BaseDialog;
 
 
 public class ExempleDialogCustomBaseDialog extends BaseDialog<ExempleDialogCustomBaseDialog> {

@@ -18,13 +18,13 @@ import com.tanlifei.exemple.dialog.extra.ExempleDialogShareBottomDialog;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogShareTopDialog;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
-import com.tanlifei.uikit.dialog.bean.DialogMenuItem;
-import com.tanlifei.uikit.dialog.listener.OnBtnClickL;
-import com.tanlifei.uikit.dialog.listener.OnOperItemClickL;
-import com.tanlifei.uikit.dialog.widget.ActionSheetDialog;
-import com.tanlifei.uikit.dialog.widget.MaterialDialog;
-import com.tanlifei.uikit.dialog.widget.NormalDialog;
-import com.tanlifei.uikit.dialog.widget.NormalListDialog;
+import com.uikit.dialog.bean.DialogMenuItem;
+import com.uikit.dialog.listener.OnBtnClickL;
+import com.uikit.dialog.listener.OnOperItemClickL;
+import com.uikit.dialog.widget.ActionSheetDialog;
+import com.uikit.dialog.widget.MaterialDialog;
+import com.uikit.dialog.widget.NormalDialog;
+import com.uikit.dialog.widget.NormalListDialog;
 
 import java.util.ArrayList;
 

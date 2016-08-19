@@ -2,6 +2,7 @@ package com.tanlifei.support.utils;
 
 import android.content.Context;
 
+import com.support.utils.StorageUtils;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.utils.io.FileUtils;
 

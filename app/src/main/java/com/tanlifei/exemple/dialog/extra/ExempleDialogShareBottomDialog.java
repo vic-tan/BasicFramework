@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
-import com.tanlifei.uikit.dialog.base.dialog.BottomBaseDialog;
+import com.uikit.dialog.base.dialog.BottomBaseDialog;
 
 
 public class ExempleDialogShareBottomDialog extends BottomBaseDialog<ExempleDialogShareBottomDialog> {

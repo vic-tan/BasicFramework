@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
-import com.tanlifei.uikit.dialog.base.popup.BaseBubblePopup;
+import com.uikit.dialog.base.popup.BaseBubblePopup;
 
 
 public class ExempleDialogCustomBubblePopup extends BaseBubblePopup<ExempleDialogCustomBubblePopup> {
