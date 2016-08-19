@@ -1,4 +1,4 @@
-package com.tanlifei.uikit.injection;
+package com.uikit.injection;
 
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -9,7 +9,7 @@ import android.graphics.drawable.StateListDrawable;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.tanlifei.framework.R;
+import com.uikit.R;
 
 
 /**

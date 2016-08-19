@@ -1,20 +1,20 @@
-package com.tanlifei.uikit.roundview;
+package com.uikit.roundview;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.support.autolayout.AutoLinearLayout;
+import com.support.autolayout.AutoRelativeLayout;
 
-/** 用于需要圆角矩形框背景的LinearLayout的情况,减少直接使用LinearLayout时引入的shape资源文件 */
-public class RoundLinearLayout extends AutoLinearLayout {
+/** 用于需要圆角矩形框背景的RelativeLayout的情况,减少直接使用RelativeLayout时引入的shape资源文件 */
+public class RoundRelativeLayout extends AutoRelativeLayout {
     private RoundViewDelegate delegate;
 
-    public RoundLinearLayout(Context context) {
+    public RoundRelativeLayout(Context context) {
         this(context, null);
     }
 
-    public RoundLinearLayout(Context context, AttributeSet attrs) {
+    public RoundRelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         delegate = new RoundViewDelegate(this, context, attrs);
     }
@@ -26,6 +26,7 @@ public class RoundLinearLayout extends AutoLinearLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         if (delegate.isWidthHeightEqual() && getWidth() > 0 && getHeight() > 0) {
             int max = Math.max(getWidth(), getHeight());
             int measureSpec = View.MeasureSpec.makeMeasureSpec(max, View.MeasureSpec.EXACTLY);

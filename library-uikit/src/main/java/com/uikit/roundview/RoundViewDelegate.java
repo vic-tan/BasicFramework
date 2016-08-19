@@ -1,4 +1,4 @@
-package com.tanlifei.uikit.roundview;
+package com.uikit.roundview;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -11,7 +11,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tanlifei.framework.R;
+import com.uikit.R;
 
 
 public class RoundViewDelegate {

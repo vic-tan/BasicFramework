@@ -1,4 +1,4 @@
-package com.tanlifei.uikit.injection;
+package com.uikit.injection;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.widget.Checkable;
 import android.widget.ImageButton;
 
-import com.tanlifei.framework.R;
+import com.uikit.R;
 
 
 public class SelectorImageButton extends ImageButton implements Checkable {

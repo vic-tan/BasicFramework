@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- ————————————————————————————————————————— 图片控件点击效果 jnjecion （不适合用代码更改图片切换时用）———————————————————————— -->
+    <color name="default_color">#00000000</color>
+    <declare-styleable name="SelectorInjection">
+        <attr name="in_normal_color" format="color" /><!-- 普通状态的颜色 -->
+        <attr name="in_pressed_color" format="color" /><!-- 按下后的颜色 -->
+        <attr name="in_checked_color" format="color" /><!-- 选中后的颜色 -->
+        <attr name="in_normal_drawable" format="reference" /><!-- 常规状态下-->
+        <attr name="in_pressed_drawable" format="reference" /><!-- 按下/获得焦点 -->
+        <attr name="in_checked_drawable" format="reference" /><!-- 选中时 -->
+        <attr name="in_stroke_color" format="color" /><!-- 边界描边的颜色 -->
+        <attr name="in_stroke_width" format="dimension" /><!-- 外界描边的宽度 -->
+        <attr name="in_pressed_stroke_color" format="color" /><!-- 按下后的描边颜色-->
+        <attr name="in_pressed_stroke_width" format="dimension" /><!-- 按下后的描边宽度-->
+        <attr name="in_checked_stroke_color" format="color" /><!-- 选中后的描边颜色 -->
+        <attr name="in_checked_stroke_width" format="dimension" /><!-- 选中后的描边宽度 -->
+        <attr name="in_isSmart" format="boolean" /><!-- 是否是自动计算的 -->
+        <attr name="in_isSrc" format="boolean" /> <!-- 是否将图片设置到src中 -->
+    </declare-styleable>
+
+
+    <!-- —————————————————————————————————————————— Round 圆角 View  —————————————————————————————————————————— -->
+    <!-- 以下是重用attr的正确姿势,一切为了在布局中可以自动提示--><!-- 圆角矩形背景色 -->
+    <declare-styleable name="RoundTextView">
+        <attr name="rv_backgroundColor" format="color" /><!-- 圆角矩形背景色press -->
+        <attr name="rv_backgroundPressColor" format="color" /><!-- 圆角弧度,单位dp-->
+        <attr name="rv_cornerRadius" format="dimension" /><!-- 圆角弧度,单位dp-->
+        <attr name="rv_strokeWidth" format="dimension" /><!-- 圆角边框颜色-->
+        <attr name="rv_strokeColor" format="color" /><!-- 圆角边框颜色press -->
+        <attr name="rv_strokePressColor" format="color" /><!-- 文字颜色press-->
+        <attr name="rv_textPressColor" format="color" /><!-- 圆角弧度是高度一半-->
+        <attr name="rv_isRadiusHalfHeight" format="boolean" /><!-- 圆角矩形宽高相等,取较宽高中大值-->
+        <attr name="rv_isWidthHeightEqual" format="boolean" /><!-- 圆角弧度,单位dp,TopLeft-->
+        <attr name="rv_cornerRadius_TL" format="dimension" /><!-- 圆角弧度,单位dp,TopRight-->
+        <attr name="rv_cornerRadius_TR" format="dimension" /><!-- 圆角弧度,单位dp,BottomLeft-->
+        <attr name="rv_cornerRadius_BL" format="dimension" /><!-- 圆角弧度,单位dp,BottomRight-->
+        <attr name="rv_cornerRadius_BR" format="dimension" /><!-- 是否有Ripple效果,api21+有效-->
+        <attr name="rv_isRippleEnable" format="boolean" />
+    </declare-styleable>
+
+
     <!-- ——————————————————————————————————————————ExpandableTextView 伸缩—————————————————————————————————————————— -->
     <declare-styleable name="ExpandableTextView">
         <attr name="maxCollapsedLines" format="integer" />

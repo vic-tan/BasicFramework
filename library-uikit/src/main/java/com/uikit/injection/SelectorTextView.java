@@ -1,4 +1,4 @@
-package com.tanlifei.uikit.injection;
+package com.uikit.injection;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -7,7 +7,7 @@ import android.view.Gravity;
 import android.widget.Checkable;
 import android.widget.TextView;
 
-import com.tanlifei.framework.R;
+import com.uikit.R;
 
 
 public class SelectorTextView extends TextView implements Checkable {

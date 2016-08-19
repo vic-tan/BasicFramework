@@ -1,20 +1,20 @@
-package com.tanlifei.uikit.roundview;
+package com.uikit.roundview;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.support.autolayout.AutoRelativeLayout;
+import com.support.autolayout.AutoFrameLayout;
 
-/** 用于需要圆角矩形框背景的RelativeLayout的情况,减少直接使用RelativeLayout时引入的shape资源文件 */
-public class RoundRelativeLayout extends AutoRelativeLayout {
+/** 用于需要圆角矩形框背景的FrameLayout的情况,减少直接使用FrameLayout时引入的shape资源文件 */
+public class RoundFrameLayout extends AutoFrameLayout {
     private RoundViewDelegate delegate;
 
-    public RoundRelativeLayout(Context context) {
+    public RoundFrameLayout(Context context) {
         this(context, null);
     }
 
-    public RoundRelativeLayout(Context context, AttributeSet attrs) {
+    public RoundFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         delegate = new RoundViewDelegate(this, context, attrs);
     }
@@ -26,7 +26,6 @@ public class RoundRelativeLayout extends AutoRelativeLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         if (delegate.isWidthHeightEqual() && getWidth() > 0 && getHeight() > 0) {
             int max = Math.max(getWidth(), getHeight());
             int measureSpec = View.MeasureSpec.makeMeasureSpec(max, View.MeasureSpec.EXACTLY);
