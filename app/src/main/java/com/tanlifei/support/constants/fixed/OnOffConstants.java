@@ -17,10 +17,5 @@ public class OnOffConstants {
      */
     public static final OnOffLevel UNCAUGHT_EX_LEVEL = OnOffLevel.OFF;// 全局未捕获异常是否打开
 
-    /**
-     * 是否开启日志状态
-     */
-    public static final OnOffLevel LOG_LEVEL = OnOffLevel.ON;// log日志是否打开
-
 
 }

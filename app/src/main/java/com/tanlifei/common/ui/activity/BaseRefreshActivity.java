@@ -3,6 +3,10 @@ package com.tanlifei.common.ui.activity;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.support.refresh.header.OnDefaultRefreshListener;
+import com.support.refresh.header.PtrClassicFrameLayout;
+import com.support.refresh.header.PtrFrameLayout;
+import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInConfiguration;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInPresenter;
 import com.tanlifei.common.base.refreshview.presenter.impl.RefreshPresenter;
@@ -10,15 +14,10 @@ import com.tanlifei.common.base.refreshview.ui.RefreshView;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.bean.PageBean;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.ViewFindUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import com.support.refresh.header.OnDefaultRefreshListener;
-import com.support.refresh.header.PtrClassicFrameLayout;
-import com.support.refresh.header.PtrFrameLayout;
 
 /**
  * RecylerView 和 AbsListView 列表刷新基类，继承基本

@@ -3,6 +3,12 @@ package com.tanlifei.common.base.refreshview.presenter.impl;
 import android.content.Context;
 
 import com.google.gson.Gson;
+import com.support.refresh.more.GridViewFinal;
+import com.support.refresh.more.ListViewFinal;
+import com.support.refresh.more.RecyclerViewFinal;
+import com.support.refresh.more.ScrollViewFinal;
+import com.tanlifei.support.utils.GsonJsonUtils;
+import com.tanlifei.support.utils.ListUtils;
 import com.tanlifei.common.base.refreshview.interactor.IRefreshViewInteractor;
 import com.tanlifei.common.base.refreshview.interactor.impl.RefreshViewInteractorImpl;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInConfiguration;
@@ -13,18 +19,12 @@ import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.bean.BasePageListBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.JsonConstants;
-import com.tanlifei.support.utils.GsonJsonUtils;
-import com.tanlifei.support.utils.ListUtils;
 import com.tanlifei.support.utils.NetUtils;
 import com.tanlifei.support.utils.ToastUtils;
 
 import java.util.List;
 import java.util.Map;
 
-import com.support.refresh.more.GridViewFinal;
-import com.support.refresh.more.ListViewFinal;
-import com.support.refresh.more.RecyclerViewFinal;
-import com.support.refresh.more.ScrollViewFinal;
 import okhttp3.Call;
 import okhttp3.Request;
 

@@ -9,7 +9,7 @@ import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.OnOffConstants;
 import com.tanlifei.support.constants.level.OnOffLevel;
 import com.tanlifei.support.exception.CrashHandler;
-import com.tanlifei.support.okhttp.OkHttpUtils;
+import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.support.utils.io.FileUtils;
 
 import java.util.concurrent.TimeUnit;

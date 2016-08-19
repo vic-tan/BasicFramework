@@ -7,13 +7,13 @@ import android.os.Build;
 import android.view.View;
 import android.widget.TextView;
 
+import com.support.autolayout.utils.AutoUtils;
+import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.utils.CornerUtils;
 import com.tanlifei.support.utils.ResUtils;
-import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.uikit.dialog.base.dialog.BaseDialog;
-import com.support.autolayout.utils.AutoUtils;
 
 
 /**

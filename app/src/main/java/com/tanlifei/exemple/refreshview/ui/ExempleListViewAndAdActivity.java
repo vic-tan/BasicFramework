@@ -5,6 +5,10 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.google.gson.Gson;
+import com.support.imageloader.FanImageLoader;
+import com.support.refresh.more.ListViewFinal;
+import com.support.refresh.more.OnLoadMoreListener;
+import com.tanlifei.support.utils.GsonJsonUtils;
 import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.bean.BaseJson;
@@ -14,11 +18,7 @@ import com.tanlifei.exemple.refreshview.bean.BannerBaen;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
-import com.support.imageloader.FanImageLoader;
-import com.support.refresh.more.ListViewFinal;
-import com.support.refresh.more.OnLoadMoreListener;
 import com.tanlifei.support.utils.DateFormatUtils;
-import com.tanlifei.support.utils.GsonJsonUtils;
 import com.tanlifei.uikit.viewpager.ChildViewPager;
 
 import org.androidannotations.annotations.AfterViews;

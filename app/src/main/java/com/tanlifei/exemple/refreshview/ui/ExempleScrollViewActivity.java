@@ -4,6 +4,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.support.imageloader.FanImageLoader;
+import com.support.refresh.more.OnLoadMoreListener;
+import com.support.refresh.more.ScrollViewFinal;
 import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.BaseAbsRefreshActivity;
@@ -20,9 +22,6 @@ import org.androidannotations.annotations.ViewById;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.support.refresh.more.OnLoadMoreListener;
-import com.support.refresh.more.ScrollViewFinal;
 
 /**
  * 加载资源数据界面

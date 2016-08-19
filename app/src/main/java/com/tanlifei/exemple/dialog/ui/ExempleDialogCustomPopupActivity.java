@@ -6,10 +6,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
-import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.uikit.dialog.base.popup.BasePopup;
 
 
@@ -29,11 +29,11 @@ public class ExempleDialogCustomPopupActivity extends BaseActionBarActivity impl
         initActionBar();
         actionBarView.setActionbarTitle("Custom Dialog分类");
 
-        mTvTopLeft = (TextView) ViewFindUtils.find(this, R.id.tv_top_left);
-        mTvTopRight = (TextView) ViewFindUtils.find(this, R.id.tv_top_right);
-        mTvBottomLeft = (TextView) ViewFindUtils.find(this, R.id.tv_bottom_left);
-        mTvBottomRight = (TextView) ViewFindUtils.find(this, R.id.tv_bottom_right);
-        mTvCenter = (TextView) ViewFindUtils.find(this, R.id.tv_center);
+        mTvTopLeft =ViewFindUtils.find(this, R.id.tv_top_left);
+        mTvTopRight = ViewFindUtils.find(this, R.id.tv_top_right);
+        mTvBottomLeft =  ViewFindUtils.find(this, R.id.tv_bottom_left);
+        mTvBottomRight = ViewFindUtils.find(this, R.id.tv_bottom_right);
+        mTvCenter =  ViewFindUtils.find(this, R.id.tv_center);
 
         mTvTopLeft.setOnClickListener(this);
         mTvTopRight.setOnClickListener(this);

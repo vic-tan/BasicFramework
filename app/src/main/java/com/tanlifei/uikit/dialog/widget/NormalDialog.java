@@ -7,11 +7,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.support.autolayout.AutoLinearLayout;
+import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.CornerUtils;
 import com.tanlifei.support.utils.InflaterUtils;
 import com.tanlifei.support.utils.ResUtils;
-import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.uikit.dialog.internal.BaseAlertDialog;
 
 

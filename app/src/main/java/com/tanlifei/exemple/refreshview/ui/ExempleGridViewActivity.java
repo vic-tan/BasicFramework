@@ -3,15 +3,15 @@ package com.tanlifei.exemple.refreshview.ui;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.support.imageloader.FanImageLoader;
+import com.support.refresh.more.GridViewFinal;
+import com.support.refresh.more.OnLoadMoreListener;
 import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.BaseAbsRefreshActivity;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
-import com.support.imageloader.FanImageLoader;
-import com.support.refresh.more.GridViewFinal;
-import com.support.refresh.more.OnLoadMoreListener;
 import com.tanlifei.support.utils.DateFormatUtils;
 
 import org.androidannotations.annotations.AfterViews;

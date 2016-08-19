@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.CornerUtils;
 import com.tanlifei.support.utils.ViewFindUtils;
+import com.tanlifei.support.utils.CornerUtils;
 import com.tanlifei.uikit.dialog.base.dialog.BaseDialog;
 
 

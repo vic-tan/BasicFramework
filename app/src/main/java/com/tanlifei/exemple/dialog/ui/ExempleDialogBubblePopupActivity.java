@@ -7,11 +7,11 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogCustomBubblePopup;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
-import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.uikit.dialog.base.popup.BubblePopup;
 
 

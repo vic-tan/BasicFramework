@@ -3,12 +3,12 @@ package com.tanlifei.exemple.okhttp;
 import android.os.Bundle;
 import android.view.View;
 
+import com.support.okhttp.OkHttpUtils;
+import com.support.okhttp.callback.Callback;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.okhttp.OkHttpUtils;
-import com.tanlifei.support.okhttp.callback.Callback;
-import com.tanlifei.support.okhttp.callback.loading.LoadingStandardCallback;
+import com.tanlifei.support.callback.loading.LoadingStandardCallback;
 import com.tanlifei.support.utils.NetUtils;
 import com.tanlifei.support.utils.ToastUtils;
 

@@ -17,12 +17,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.utils.CornerUtils;
 import com.tanlifei.support.utils.InflaterUtils;
 import com.tanlifei.support.utils.ResUtils;
-import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.uikit.dialog.base.dialog.BaseDialog;
 import com.tanlifei.uikit.dialog.bean.DialogMenuItem;
 import com.tanlifei.uikit.dialog.listener.OnOperItemClickL;

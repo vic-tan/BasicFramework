@@ -3,6 +3,7 @@ package com.tanlifei.support.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
+
 import java.util.Iterator;
 import java.util.Stack;
 
