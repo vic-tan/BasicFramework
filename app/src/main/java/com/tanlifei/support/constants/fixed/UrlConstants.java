@@ -17,7 +17,7 @@ public class UrlConstants {
 
 
     //app版本升级
-    public static final String APP_VERSION_UPDATE = DOMAIN_NAME + "/jingpin/20";
+    public static final String APP_VERSION_UPDATE = "http://2ctest.zhixueyun.com/zxy-mobile/ask/tagList";
 
 
    // public static final String NEW_GAME = "http://api150.aiyouyou.paojiao.cn/v6/game/list.do";

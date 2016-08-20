@@ -1,7 +1,6 @@
 package com.uikit.dialog.widget;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -9,7 +8,6 @@ import android.widget.TextView;
 
 import com.support.autolayout.AutoLinearLayout;
 import com.support.utils.CornerUtils;
-
 import com.uikit.R;
 import com.uikit.dialog.internal.BaseAlertDialog;
 
@@ -56,13 +54,13 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
         mTitleLineHeight = context.getResources().getDimension(R.dimen.common_prompt_dialog_title_btn_split_line_size);
         mDividerColor = context.getResources().getColor(R.color.common_prompt_dialog_content_btn_line);
         /** default value*/
-        mTitleTextColor = Color.parseColor("#61AEDC");
+        mTitleTextColor = context.getResources().getColor(R.color.common_prompt_dialog_title_color);
         mTitleTextSize = context.getResources().getDimension(R.dimen.common_dialog_title_size);
-        mContentTextColor = Color.parseColor("#383838");
+        mContentTextColor = context.getResources().getColor(R.color.common_prompt_dialog_content);
         mContentTextSize = context.getResources().getDimension(R.dimen.common_dialog_content_size);
-        mLeftBtnTextColor = Color.parseColor("#8a000000");
-        mRightBtnTextColor = Color.parseColor("#8a000000");
-        mMiddleBtnTextColor = Color.parseColor("#8a000000");
+        mLeftBtnTextColor = context.getResources().getColor(R.color.common_prompt_dialog_btn);
+        mRightBtnTextColor = context.getResources().getColor(R.color.common_prompt_dialog_btn);
+        mMiddleBtnTextColor = context.getResources().getColor(R.color.common_prompt_dialog_btn);
         /** default value*/
     }
 

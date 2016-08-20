@@ -187,7 +187,7 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
             @Override
             public void onClick(View v) {
                 if (mOnBtnLeftClickL != null) {
-                    mOnBtnLeftClickL.onBtnClick();
+                    mOnBtnLeftClickL.onBtnClick(v, BaseAlertDialog.this);
                 } else {
                     dismiss();
                 }
@@ -198,7 +198,7 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
             @Override
             public void onClick(View v) {
                 if (mOnBtnRightClickL != null) {
-                    mOnBtnRightClickL.onBtnClick();
+                    mOnBtnRightClickL.onBtnClick(v,BaseAlertDialog.this);
                 } else {
                     dismiss();
                 }
@@ -209,7 +209,7 @@ public abstract class BaseAlertDialog<T extends BaseAlertDialog<T>> extends Base
             @Override
             public void onClick(View v) {
                 if (mOnBtnMiddleClickL != null) {
-                    mOnBtnMiddleClickL.onBtnClick();
+                    mOnBtnMiddleClickL.onBtnClick(v,BaseAlertDialog.this);
                 } else {
                     dismiss();
                 }

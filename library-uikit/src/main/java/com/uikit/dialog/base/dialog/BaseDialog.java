@@ -18,6 +18,7 @@ import android.view.WindowManager.LayoutParams;
 
 import com.nineoldandroids.animation.Animator;
 import com.support.autolayout.AutoLinearLayout;
+import com.support.utils.Logger;
 import com.uikit.dialog.BaseAnimatorSet;
 import com.uikit.dialog.StatusBarUtils;
 
@@ -174,6 +175,12 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
                 }
             }
         });
+        mOnCreateView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     /**
@@ -243,7 +250,7 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
 
     @Override
     public void show() {
-        Log.d(mTag, "show");
+        Logger.d(mTag, "show");
         super.show();
     }
 
@@ -251,24 +258,24 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(mTag, "onStart");
+        Logger.d(mTag, "onStart");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(mTag, "onStop");
+        Logger.d(mTag, "onStop");
     }
 
     @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        Log.d(mTag, "onDetachedFromWindow");
+        Logger.d(mTag, "onDetachedFromWindow");
     }
 
     @Override
     public void dismiss() {
-        Log.d(mTag, "dismiss");
+        Logger.d(mTag, "dismiss");
         if (mDismissAnim != null) {
             mDismissAnim.listener(new BaseAnimatorSet.AnimatorListener() {
                 @Override

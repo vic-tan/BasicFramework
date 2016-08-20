@@ -193,6 +193,8 @@ public class AppCacheUtils {
         }
     }
 
+
+
     public int getInt(String key, int defValue) {
         String sValue = getString(key);
         if (!StringUtils.isEmpty(sValue)) {

@@ -1,5 +1,6 @@
 package com.tanlifei.exemple.dialog.ui;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -187,14 +188,14 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
         dialog.setOnBtnClickL(
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext, "left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext,"right");
                         dialog.dismiss();
                     }
@@ -210,14 +211,14 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
         dialog.setOnBtnClickL(
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext,"left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext,"right");
                         dialog.dismiss();
                     }
@@ -228,6 +229,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
     private void NormalDialogCustomAttr() {
         final NormalDialog dialog = new NormalDialog(mContext);
         dialog.isTitleShow(false)//
+
                 .bgColor(Color.parseColor("#383838"))//
                 .cornerRadius(20)//
                 .content("是否确定退出程序?")//
@@ -243,14 +245,14 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
         dialog.setOnBtnClickL(
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext,"left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext,"right");
                         dialog.dismiss();
                     }
@@ -266,7 +268,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
 
         dialog.setOnBtnClickL(new OnBtnClickL() {
             @Override
-            public void onBtnClick() {
+            public void onBtnClick(View v, Dialog dialog) {
                 ToastUtils.show(mContext,"middle");
                 dialog.dismiss();
             }
@@ -283,21 +285,21 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
         dialog.setOnBtnClickL(
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext,"left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show( mContext,"right");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show( mContext,"middle");
                         dialog.dismiss();
                     }
@@ -316,14 +318,14 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
         dialog.setOnBtnClickL(
                 new OnBtnClickL() {//left btn click listener
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show( mContext,"left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {//right btn click listener
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext,"right");
                         dialog.dismiss();
                     }
@@ -343,14 +345,14 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
         dialog.setOnBtnClickL(
                 new OnBtnClickL() {//left btn click listener
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext, "left");
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {//right btn click listener
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show(mContext,"right");
                         dialog.dismiss();
                     }
@@ -358,7 +360,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
                 ,
                 new OnBtnClickL() {//middle btn click listener
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         ToastUtils.show( mContext,"middle");
                         dialog.dismiss();
                     }
@@ -376,7 +378,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
 
         dialog.setOnBtnClickL(new OnBtnClickL() {
             @Override
-            public void onBtnClick() {
+            public void onBtnClick(View v, Dialog dialog) {
                 ToastUtils.show( mContext,"middle");
                 dialog.dismiss();
             }
@@ -510,13 +512,13 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
         dialog.setOnBtnClickL(
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog) {
                         dialog.dismiss();
                     }
                 },
                 new OnBtnClickL() {
                     @Override
-                    public void onBtnClick() {
+                    public void onBtnClick(View v, Dialog dialog2) {
                         dialog.superDismiss();
                         finish();
                     }

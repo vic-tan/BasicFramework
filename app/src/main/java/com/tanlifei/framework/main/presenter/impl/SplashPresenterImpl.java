@@ -44,9 +44,4 @@ public class SplashPresenterImpl implements ISplashPresenter {
             }
         }.start();
     }
-
-    @Override
-    public void checkAppUpdate(){
-
-    }
 }

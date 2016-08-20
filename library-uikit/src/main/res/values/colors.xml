@@ -11,9 +11,9 @@
     <!-- 中间提示框 -->
     <color name="common_prompt_dialog_content_bg">#fff5f5f9</color> <!-- 提示框的背影色 -->
     <color name="common_prompt_dialog_windowp_bg">#a0000000</color><!-- 提示框的windows背影边框色 -->
-    <color name="common_prompt_dialog_title_color">#61AEDC</color> <!-- 提示框按标题色 -->
+    <color name="common_prompt_dialog_title_color">#8a000000</color> <!-- 提示框按标题色 -->
     <color name="common_prompt_dialog_content">#383838</color><!-- 提示框按内容色 -->
-    <color name="common_prompt_dialog_title_line">#61AEDC</color> <!-- 提示框按标题与内容之间的线色 -->
+    <color name="common_prompt_dialog_title_line">#DCDCDC</color> <!-- 提示框按标题与内容之间的线色 -->
     <color name="common_prompt_dialog_content_btn_line">#DCDCDC</color><!-- 提示框按内容与按钮之间的线色 -->
     <color name="common_prompt_dialog_btn">#8a000000</color><!-- 提示框按钮字体色 -->
     <color name="common_prompt_dialog_btn_normal">#ff85D3EF</color> <!-- 提示框按钮默认色 -->

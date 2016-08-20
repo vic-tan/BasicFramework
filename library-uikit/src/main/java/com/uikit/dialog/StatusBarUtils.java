@@ -2,7 +2,8 @@ package com.uikit.dialog;
 
 import android.content.Context;
 import android.text.TextUtils;
-import android.util.Log;
+
+import com.support.utils.Logger;
 
 /**
  * StatusBar Utils handle with special FlymeOS4.x/Android4.4.4
@@ -15,7 +16,7 @@ public class StatusBarUtils {
         if (resourceId > 0) {
             statusBarHeight = context.getResources().getDimensionPixelSize(resourceId);
         }
-        Log.d(StatusBarUtils.class.getSimpleName(), "statusBarHeight--->" + statusBarHeight);
+        Logger.d(StatusBarUtils.class.getSimpleName(), "statusBarHeight--->" + statusBarHeight);
         if (isFlymeOs4x()) {
             return 2 * statusBarHeight;
         }

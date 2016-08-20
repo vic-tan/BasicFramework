@@ -1,5 +1,7 @@
 package com.tanlifei.framework.main.ui.activity;
 
+import android.app.Dialog;
+import android.text.Html;
 import android.view.View;
 import android.widget.ListView;
 
@@ -8,7 +10,14 @@ import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.exemple.main.ExempleHomeActivity_;
 import com.tanlifei.framework.R;
+import com.tanlifei.framework.main.bean.AppUpdateBean;
+import com.tanlifei.framework.main.presenter.impl.AppUpdatePresenterImpl;
+import com.tanlifei.support.utils.AppCacheUtils;
+import com.tanlifei.support.utils.AppUtils;
 import com.tanlifei.support.utils.StartActUtils;
+import com.tanlifei.support.utils.ToastUtils;
+import com.uikit.dialog.DialogTools;
+import com.uikit.dialog.listener.OnBtnClickL;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -41,6 +50,7 @@ public class HomeActivity extends BaseActionBarActivity {
         initActionBar();
         actionBarView.setActionbarTitle("首页");
         actionBarView.setActionbarBackDimiss(true);
+        appUpdate();
         addList();
         mList.setAdapter(new AbsCommonAdapter<String>(this, R.layout.main_activity_home_list_item, list) {
             @Override
@@ -60,6 +70,23 @@ public class HomeActivity extends BaseActionBarActivity {
         });
     }
 
+    private void appUpdate() {
+        AppUpdateBean appUpdateBean = (AppUpdateBean) AppCacheUtils.getInstance(mContext).getObject(AppUpdatePresenterImpl.CHECK_APP_UPDATE_TAG);
+        if (null != appUpdateBean && appUpdateBean.getVersion_code() > AppUtils.getVersionCode(mContext)) {
+            DialogTools.getInstance(mContext).title("版本升级").content(Html.fromHtml(appUpdateBean.getDesc()).toString()).setOnBtnClickL(new OnBtnClickL() {
+                @Override
+                public void onBtnClick(View v, Dialog dialog) {
+                    dialog.dismiss();
+                }
+            }, new OnBtnClickL() {
+                @Override
+                public void onBtnClick(View v, Dialog dialog) {
+                    dialog.dismiss();
+                }
+            }).show();
+        }
+
+    }
 
     /**
      * 退出App
