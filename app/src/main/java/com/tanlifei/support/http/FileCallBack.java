@@ -73,7 +73,7 @@ public abstract class FileCallBack extends Callback<File>
                     public void run()
                     {
 
-                        inProgress(finalSum * 1.0f / total,total);
+                        inProgress(finalSum * 1.0f ,total);
                     }
                 });
             }

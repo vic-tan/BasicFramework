@@ -1,6 +1,7 @@
 package com.uikit.dialog;
 
 import android.content.Context;
+import android.content.DialogInterface;
 
 import com.uikit.dialog.listener.OnBtnClickL;
 import com.uikit.dialog.widget.NormalDialog;
@@ -39,7 +40,7 @@ public class DialogTools {
     }
 
     public DialogTools title(String title) {
-        dialog.setTitle(title);
+        dialog.title(title);
         return this;
     }
 
@@ -107,6 +108,11 @@ public class DialogTools {
 
     public DialogTools setOnBtnClickL(OnBtnClickL... onBtnClickLs) {
         dialog.setOnBtnClickL(onBtnClickLs);
+        return this;
+    }
+
+    public DialogTools setOnDismissListener(DialogInterface.OnDismissListener listener){
+        dialog.setOnDismissListener(listener);
         return this;
     }
 

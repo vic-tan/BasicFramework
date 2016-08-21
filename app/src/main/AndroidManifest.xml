@@ -51,6 +51,11 @@
             android:name="design_height"
             android:value="1920" />
 
+        <service android:name=".main.ui.service.CheckAppUpdateService" /><!--检查app 升级服务-->
+        <service android:name=".main.ui.service.AppDownloadService" /><!--下载app servce-->
+        <activity
+            android:name=".main.ui.activity.AppUpdateActivity_"
+            android:theme="@style/AppUpdateDialogStyle" />
         <!-- —————————————————————————————————— 示例  —————————————————————————————————————— -->
 
 
@@ -81,8 +86,8 @@
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewAndAdActivity_" />
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewActivity_" />
         <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRecyclerViewActivity_" />
-        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleGridViewActivity_"/>
-        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleScrollViewActivity_"/>
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleGridViewActivity_" />
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleScrollViewActivity_" />
 
         <!-- dialog -->
 
@@ -93,7 +98,7 @@
         <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogBubblePopupActivity" />
 
         <!-- FanImageLoader -->
-        <activity android:name="com.tanlifei.exemple.fanImageloader.ExempleFanImageLoaderActivity_"/>
+        <activity android:name="com.tanlifei.exemple.fanImageloader.ExempleFanImageLoaderActivity_" />
 
         <meta-data
             android:name="com.google.android.gms.version"

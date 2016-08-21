@@ -8,11 +8,13 @@ import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.presenter.IAppUpdatePresenter;
+import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.UrlConstants;
+import com.tanlifei.support.http.FileCallBack;
 import com.tanlifei.support.http.ResultCallback;
-import com.tanlifei.support.utils.AppCacheUtils;
 import com.tanlifei.support.utils.AppUtils;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,8 +40,7 @@ public class AppUpdatePresenterImpl implements IAppUpdatePresenter {
     }
 
     @Override
-    public void checkAppUpdate() {
-        AppCacheUtils.getInstance(mContext).remove(CHECK_APP_UPDATE_TAG);
+    public AppUpdateBean checkAppUpdate() {
         OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new ResultCallback(mContext) {
             @Override
             public void onCusResponse(BaseJson response) {
@@ -47,18 +48,41 @@ public class AppUpdatePresenterImpl implements IAppUpdatePresenter {
                 saveAppUpdate(response);
             }
         });
+        return null;
     }
 
-    private void saveAppUpdate(BaseJson baseJson){
+    @Override
+    public void appDownload(AppUpdateBean updateBean) {
+        OkHttpUtils.post().url(updateBean.getUrl()).build().execute(new FileCallBack(GlobalConstants.DOWNLOAD_PATH, updateBean.getName()) {
+            @Override
+            public void inProgress(float progress, long total) {
+
+            }
+
+            @Override
+            public void onResponse(File response) {
+
+            }
+        });
+    }
+
+    private AppUpdateBean saveAppUpdate(BaseJson baseJson) {
+        AppUpdateBean appUpdateBean;
         try {
-            AppUpdateBean appUpdateBean = new Gson().fromJson(new Gson().toJson(baseJson.getData()),AppUpdateBean.class);
-            if(appUpdateBean.getVersion_code()> AppUtils.getVersionCode(mContext)){//是否升级
-                AppCacheUtils.getInstance(mContext).put(CHECK_APP_UPDATE_TAG,appUpdateBean);
-            }else{
-                AppCacheUtils.getInstance(mContext).remove(CHECK_APP_UPDATE_TAG);
+            appUpdateBean = new Gson().fromJson(new Gson().toJson(baseJson.getData()), AppUpdateBean.class);
+            if (null == appUpdateBean) {
+                return null;
+            }
+            if (appUpdateBean.getVersion_code() > AppUtils.getVersionCode(mContext)) {//是否升级
+                return appUpdateBean;
+            } else {
+                return null;
             }
         } catch (JsonSyntaxException e) {
             e.printStackTrace();
+
+        } finally {
+            return null;
         }
     }
 
@@ -84,7 +108,7 @@ public class AppUpdatePresenterImpl implements IAppUpdatePresenter {
                 "                官方微博：@灵犀官方微博\"\n" +
                 "    }\n" +
                 "}";
-        BaseJson baseJson = new Gson().fromJson(str,BaseJson.class);
+        BaseJson baseJson = new Gson().fromJson(str, BaseJson.class);
         return baseJson;
 
     }

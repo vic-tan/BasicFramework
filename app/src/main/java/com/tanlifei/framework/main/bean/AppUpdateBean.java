@@ -1,11 +1,12 @@
 package com.tanlifei.framework.main.bean;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Created by tanlifei on 16/8/19.
  */
-public class AppUpdateBean implements Serializable {
+public class AppUpdateBean implements Parcelable {
     /**
      * version_code : 12
      * version_name : 1.0.1
@@ -61,4 +62,40 @@ public class AppUpdateBean implements Serializable {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.version_code);
+        dest.writeString(this.version_name);
+        dest.writeString(this.name);
+        dest.writeString(this.url);
+        dest.writeString(this.desc);
+    }
+
+    public AppUpdateBean() {
+    }
+
+    protected AppUpdateBean(Parcel in) {
+        this.version_code = in.readInt();
+        this.version_name = in.readString();
+        this.name = in.readString();
+        this.url = in.readString();
+        this.desc = in.readString();
+    }
+
+    public static final Parcelable.Creator<AppUpdateBean> CREATOR = new Parcelable.Creator<AppUpdateBean>() {
+        @Override
+        public AppUpdateBean createFromParcel(Parcel source) {
+            return new AppUpdateBean(source);
+        }
+
+        @Override
+        public AppUpdateBean[] newArray(int size) {
+            return new AppUpdateBean[size];
+        }
+    };
 }

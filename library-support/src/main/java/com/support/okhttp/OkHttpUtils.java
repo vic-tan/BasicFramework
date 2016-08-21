@@ -200,6 +200,7 @@ public class OkHttpUtils
                     sendSuccessResultCallback(o, finalCallback);
                 } catch (Exception e)
                 {
+                    e.printStackTrace();
                     sendFailResultCallback(call, e, finalCallback);
                 }
 

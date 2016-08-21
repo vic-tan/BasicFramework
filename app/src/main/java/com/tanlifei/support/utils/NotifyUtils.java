@@ -224,7 +224,7 @@ public class NotifyUtils {
     /**
      * 有进度条的通知，可以设置为模糊进度或者精确进度
      */
-    public void notifyDownloadProgress(NotifyParams params, boolean isDone, int totalLength, int currentLength) {
+    public void notifyDownloadProgress(NotifyParams params, boolean isDone, long totalLength, float currentLength) {
         cBuilder.setSmallIcon(params.getSmallIcon());// 设置顶部状态栏的小图标
         cBuilder.setTicker(params.getTicker());// 在顶部状态栏中的提示信息
         cBuilder.setContentTitle(params.getTitle());// 设置通知中心的标题
@@ -248,7 +248,7 @@ public class NotifyUtils {
             cBuilder.setContentText("下载完成").setProgress(0, 0, false);
             sent();
         } else {
-            cBuilder.setProgress(totalLength, currentLength, false);
+            cBuilder.setProgress((int)totalLength, (int)currentLength, false);
             sent();
         }
     }

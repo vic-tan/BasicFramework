@@ -2,9 +2,7 @@ package com.tanlifei.framework.main.ui.activity;
 
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.framework.main.presenter.IAppUpdatePresenter;
 import com.tanlifei.framework.main.presenter.ISplashPresenter;
-import com.tanlifei.framework.main.presenter.impl.AppUpdatePresenterImpl;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.SplashView;
 import com.tanlifei.support.utils.StartActUtils;
@@ -24,13 +22,11 @@ public class SplashActivity extends BaseActivity implements SplashView {
     public static final long DELAYED = 3000;
     public static final boolean IS_HAS_LOADING_DATA = false;//是否有加载数据过度界面
     private ISplashPresenter presenter;
-    IAppUpdatePresenter appUpdatePresenter;
+
 
 
     @AfterViews
     void init() {
-        appUpdatePresenter = new AppUpdatePresenterImpl(mContext);
-        appUpdatePresenter.checkAppUpdate();
         presenter = new SplashPresenterImpl(this, this);
         presenter.delayedStart(DELAYED, IS_HAS_LOADING_DATA);
     }
