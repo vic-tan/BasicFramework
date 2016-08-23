@@ -8,21 +8,12 @@ package com.tanlifei.support.constants.fixed;
  * @date 2015年8月13日 上午11:30:51
  */
 public class UrlConstants {
-
-
-    // 域名
-    //public static final String DOMAIN_NAME = "http://www.ipeiban.com.cn/mlds";
-    //test域名
-    public static final String DOMAIN_NAME = "http://2ctest.zhixueyun.com/zxy-mobile";
-
-
+    //域名
+    public static final String DOMAIN_NAME = "http://www.ipeiban.com.cn/zxy-mobile";
     //app版本升级
-    public static final String APP_VERSION_UPDATE = "http://2ctest.zhixueyun.com/zxy-mobile/ask/tagList";
-
-
-   // public static final String NEW_GAME = "http://api150.aiyouyou.paojiao.cn/v6/game/list.do";
-
-    public static final String LIST_URL= "http://www.ipeiban.com.cn/zxy-mobile/train/class/publicList";
+    public static final String APP_VERSION_UPDATE = DOMAIN_NAME + "/ask/tagList";
+    //分页测试列表
+    public static final String LIST_URL = DOMAIN_NAME + "/train/class/publicList";
 
 }
 

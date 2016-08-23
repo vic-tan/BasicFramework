@@ -1,17 +1,16 @@
 package com.tanlifei.framework.main.ui.service;
 
-import android.app.Service;
+import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.support.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
-import com.tanlifei.framework.main.ui.activity.AppUpdateActivity_;
+import com.tanlifei.framework.main.ui.activity.AppServiceActivity;
+import com.tanlifei.framework.main.ui.activity.AppServiceActivity_;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.ResultCallback;
 import com.tanlifei.support.utils.AppUtils;
@@ -24,24 +23,18 @@ import java.util.Map;
  * app 版本升级
  * Created by tanlifei on 16/2/22.
  */
-public class CheckAppUpdateService extends Service {
+public class CheckAppUpdateService extends IntentService {
+
+
+    public CheckAppUpdateService(){
+        super("CheckAppUpdateService");
+    }
+
 
 
     @Override
-    public void onCreate() {
+    protected void onHandleIntent(Intent intent) {
         appUpdate();
-        super.onCreate();
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        return super.onStartCommand(intent, flags, startId);
-    }
-
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
     }
 
     /**
@@ -66,10 +59,11 @@ public class CheckAppUpdateService extends Service {
         try {
             AppUpdateBean appUpdateBean = new Gson().fromJson(new Gson().toJson(baseJson.getData()), AppUpdateBean.class);
             if (null != appUpdateBean && appUpdateBean.getVersion_code() > AppUtils.getVersionCode(this)) {//是否升级
-                Intent intent = new Intent(getBaseContext(), AppUpdateActivity_.class);
+                Intent intent = new Intent(getBaseContext(), AppServiceActivity_.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("bean", appUpdateBean);
+                bundle.putString(AppServiceActivity.INTENT_TAG, "appUpdate");
                 intent.putExtras(bundle);
                 getApplication().startActivity(intent);
             }
@@ -94,7 +88,7 @@ public class CheckAppUpdateService extends Service {
                 "        \"version_code\": \"12\",\n" +
                 "        \"version_name\": \"1.0.1\",\n" +
                 "        \"name\": \"test\",\n" +
-                "        \"url\":\"http://gh-game.oss-cn-hangzhou.aliyuncs.com/1435814701749842.apk\",\n" +
+                "        \"url\":\"http://apk.hiapk.com/appdown/cc.pacer.androidapp?webparams=sviptodoc291cmNlPTkz\",\n" +
                 "        \"desc\":\"灵犀Android<br>\n" +
                 "                3.1.2298版产品更新计划<br>\n" +
                 "                一、版本信息<br>\n" +

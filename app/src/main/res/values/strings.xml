@@ -10,4 +10,12 @@
 
     <!-- —————————————————— app 文字 ——————————————————————————————— -->
     <string name="app_exit">再按一次退出程序</string>
+
+
+    <!-- —————————————————— app 版本更新提示文字 ——————————————————————————————— -->
+    <string name="app_update_done">更新完成</string>
+    <string name="app_update_downloading_title">正在更新版本</string>
+    <string name="app_update_downloading_desc">正在更新中</string>
+    <string name="app_update_notify">您有一条新通知</string>
+    <string name="app_update_dialog_title">版本升级</string>
 </resources>

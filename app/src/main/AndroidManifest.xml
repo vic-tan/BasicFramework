@@ -1,26 +1,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tanlifei.framework">
+          package="com.tanlifei.framework">
 
 
     <!-- 网络相关权限 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <!--在SDCard中创建与删除文件权限-->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     <!--往SDCard写入数据权限-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!--从SDCard读取数据权限-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!--读取设备信息权限-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!--获取WIFI权限-->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <!--获取手机任务信息（进程,app列表）-->
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
     <!--检查是否wifi网络 (CrashHanler保存日志信息用到)-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 
     <application
@@ -36,73 +36,81 @@
             android:name=".main.ui.activity.SplashActivity_"
             android:largeHeap="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".main.ui.activity.GuideActivity_" />
-        <activity android:name=".main.ui.activity.HomeActivity_" />
+        <activity android:name=".main.ui.activity.GuideActivity_"/>
+        <activity android:name=".main.ui.activity.HomeActivity_"/>
 
         <!-- 当前应用分辨率参考标准 -->
         <meta-data
             android:name="design_width"
-            android:value="1080" />
+            android:value="1080"/>
         <meta-data
             android:name="design_height"
-            android:value="1920" />
+            android:value="1920"/>
 
-        <service android:name=".main.ui.service.CheckAppUpdateService" /><!--检查app 升级服务-->
-        <service android:name=".main.ui.service.AppDownloadService" /><!--下载app servce-->
+        <service android:name=".main.ui.service.CheckAppUpdateService"/><!--检查app 升级服务-->
+        <service android:name=".main.ui.service.AppDownloadService"/><!--下载app servce-->
         <activity
-            android:name=".main.ui.activity.AppUpdateActivity_"
-            android:theme="@style/AppUpdateDialogStyle" />
+            android:name=".main.ui.activity.AppServiceActivity_"
+            android:theme="@style/AppUpdateDialogStyle"/>
+
+        <receiver android:name=".main.ui.service.AppUpdateBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.com.tanlifei.framework.broadcastreceiver.action.APPUPDATEACTION"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </receiver>
         <!-- —————————————————————————————————— 示例  —————————————————————————————————————— -->
 
 
-        <activity android:name="com.tanlifei.exemple.main.ExempleHomeActivity_" />
+        <activity android:name="com.tanlifei.exemple.main.ExempleHomeActivity_"/>
         <!-- 所有公用的ActionBar -->
-        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarMainActivity" />
-        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarOneActivity" />
-        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarTwoActivity" />
-        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarThreeActivity" />
-        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarFourActivity" />
-        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarFiveActivity" />
-        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarSixActivity" />
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarMainActivity"/>
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarOneActivity"/>
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarTwoActivity"/>
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarThreeActivity"/>
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarFourActivity"/>
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarFiveActivity"/>
+        <activity android:name="com.tanlifei.exemple.actionbar.ExempleActionBarSixActivity"/>
 
 
         <!-- 所有公用的adapter -->
-        <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMainActivity" /><!-- 主界面 -->
-        <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdapterSingleItemTypeActivity" /> <!-- 单个布局的adapter -->
-        <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMutliItemTypeActivity" /><!-- 多个布局的adapter -->
+        <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMainActivity"/><!-- 主界面 -->
+        <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdapterSingleItemTypeActivity"/> <!-- 单个布局的adapter -->
+        <activity android:name="com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMutliItemTypeActivity"/><!-- 多个布局的adapter -->
 
         <!-- 所有公用的加载框 -->
-        <activity android:name="com.tanlifei.exemple.kprogresshud.ExempleKProgresshudMainActivity" /><!-- 主界面 -->
+        <activity android:name="com.tanlifei.exemple.kprogresshud.ExempleKProgresshudMainActivity"/><!-- 主界面 -->
 
         <!-- 所有公用的请求框 -->
-        <activity android:name="com.tanlifei.exemple.okhttp.ExempleOkHttpMainActivity" /><!--http 示范 -->
+        <activity android:name="com.tanlifei.exemple.okhttp.ExempleOkHttpMainActivity"/><!--http 示范 -->
 
         <!-- 下拉上拉 -->
-        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRefreshViewMainActivity" /><!--下拉上拉 示范 -->
-        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewAndAdActivity_" />
-        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewActivity_" />
-        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRecyclerViewActivity_" />
-        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleGridViewActivity_" />
-        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleScrollViewActivity_" />
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRefreshViewMainActivity"/><!--下拉上拉 示范 -->
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewAndAdActivity_"/>
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleListViewActivity_"/>
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleRecyclerViewActivity_"/>
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleGridViewActivity_"/>
+        <activity android:name="com.tanlifei.exemple.refreshview.ui.ExempleScrollViewActivity_"/>
 
         <!-- dialog -->
 
-        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogSimpleHomeActivity" />
-        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogPopupHomeActivity" />
-        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogDialogHomeActivity" />
-        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogCustomPopupActivity" />
-        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogBubblePopupActivity" />
+        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogSimpleHomeActivity"/>
+        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogPopupHomeActivity"/>
+        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogDialogHomeActivity"/>
+        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogCustomPopupActivity"/>
+        <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogBubblePopupActivity"/>
 
         <!-- FanImageLoader -->
-        <activity android:name="com.tanlifei.exemple.fanImageloader.ExempleFanImageLoaderActivity_" />
+        <activity android:name="com.tanlifei.exemple.fanImageloader.ExempleFanImageLoaderActivity_"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+            android:value="@integer/google_play_services_version"/>
     </application>
 
 </manifest>

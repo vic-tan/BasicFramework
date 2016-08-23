@@ -1,9 +1,13 @@
 package com.tanlifei.support.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
+
+import java.io.File;
 
 /**
  * 跟App相关的辅助类
@@ -77,6 +81,26 @@ public class AppUtils
             e.printStackTrace();
             return 0;
         }
+    }
+
+    /**
+     * install package normal by system intent
+     *
+     * @param context
+     * @param filePath file path of package
+     * @return whether apk exist
+     */
+    public static boolean installNormal(Context context, String filePath) {
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        File file = new File(filePath);
+        if (file == null || !file.exists() || !file.isFile() || file.length() <= 0) {
+            return false;
+        }
+
+        i.setDataAndType(Uri.parse("file://" + filePath), "application/vnd.android.package-archive");
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
+        return true;
     }
 
 }

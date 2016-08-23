@@ -65,6 +65,7 @@ public class HomeActivity extends BaseActionBarActivity {
     }
 
 
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

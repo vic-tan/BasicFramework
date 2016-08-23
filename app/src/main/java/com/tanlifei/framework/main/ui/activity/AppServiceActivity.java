@@ -13,6 +13,8 @@ import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
 import com.tanlifei.support.utils.AppUtils;
+import com.tanlifei.support.utils.ResUtils;
+import com.tanlifei.support.utils.StringUtils;
 import com.uikit.dialog.DialogTools;
 import com.uikit.dialog.listener.OnBtnClickL;
 
@@ -21,22 +23,38 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Fullscreen;
 
 /**
- * app升级界面
+ * app服务类， 用于服务中间处理，比较从后台开一人服务，在界面显示提示，如升级，网络断开提示之类
  * Created by tanlifei on 16/1/19.
  */
 @Fullscreen //全屏
 @EActivity(R.layout.main_activity_app_update)
-public class AppUpdateActivity extends BaseActivity {
+public class AppServiceActivity extends BaseActivity {
+
+
+    /**
+     * 必须传入一个tag 来区分从哪个后台入进
+     */
+    public static String INTENT_TAG = "tag";
 
     @AfterViews
     void init() {
-        appUpdate((AppUpdateBean) getIntent().getParcelableExtra("bean"));
+        String tag = getIntent().getStringExtra(INTENT_TAG);
+        if (!StringUtils.isEmpty(tag) && StringUtils.isEquals(tag, "appUpdate")) {//app 版本升级业务处理
+            appUpdate((AppUpdateBean) getIntent().getParcelableExtra("bean"));
+        } else {
+            finish();
+        }
 
     }
 
+    /**
+     * app 版本升级业务处理
+     *
+     * @param appUpdateBean
+     */
     private void appUpdate(final AppUpdateBean appUpdateBean) {
         if (null != appUpdateBean && appUpdateBean.getVersion_code() > AppUtils.getVersionCode(mContext)) {
-            DialogTools.getInstance(mContext).title("版本升级").content(Html.fromHtml(appUpdateBean.getDesc()).toString()).setOnBtnClickL(new OnBtnClickL() {
+            DialogTools.getInstance(mContext).title(ResUtils.getStr(R.string.app_update_dialog_title)).content(Html.fromHtml(appUpdateBean.getDesc()).toString()).setOnBtnClickL(new OnBtnClickL() {
                 @Override
                 public void onBtnClick(View v, Dialog dialog) {
                     dialog.dismiss();
@@ -54,6 +72,7 @@ public class AppUpdateActivity extends BaseActivity {
             }).setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
+                    stopService(new Intent(mContext, AppDownloadService.class));
                     finish();
                 }
             }).show();
@@ -63,6 +82,7 @@ public class AppUpdateActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopService(new Intent(mContext, CheckAppUpdateService.class));//查检升级服务
+        stopService(new Intent(mContext, CheckAppUpdateService.class));//停止查检升级服务
+
     }
 }

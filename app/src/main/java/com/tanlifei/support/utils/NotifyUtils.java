@@ -14,6 +14,7 @@ import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.tanlifei.common.bean.params.NotifyParams;
+import com.tanlifei.framework.R;
 
 import java.util.ArrayList;
 
@@ -245,8 +246,9 @@ public class NotifyUtils {
 
         cBuilder.setDefaults(defaults);
         if (isDone) {
-            cBuilder.setContentText("下载完成").setProgress(0, 0, false);
+            cBuilder.setContentText(ResUtils.getStr(R.string.app_update_done)).setProgress(0, 0, false);
             sent();
+            nm.cancel(this.NOTIFICATION_ID);
         } else {
             cBuilder.setProgress((int)totalLength, (int)currentLength, false);
             sent();

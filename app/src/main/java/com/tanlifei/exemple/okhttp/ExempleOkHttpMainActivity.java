@@ -8,6 +8,7 @@ import com.support.utils.Logger;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.BaseActionBarActivity;
 import com.tanlifei.framework.R;
+import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.DialogCallback;
 import com.tanlifei.support.http.HttpListener;
 import com.tanlifei.support.http.ProcessCallback;
@@ -24,7 +25,6 @@ import okhttp3.Request;
 public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
 
 
-    String url = "http://2ctest.zhixueyun.com/zxy-mobile/ask/tagList";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
             ToastUtils.show(mContext, "没有网络!!");
             return;
         }
-        OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new ResultCallback(mContext) {
+        OkHttpUtils.post().url(UrlConstants.LIST_URL).paramsForJson(tagList()).build().execute(new ResultCallback(mContext) {
 
             @Override
             public void onCusResponse(BaseJson response) {
@@ -56,7 +56,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
             ToastUtils.show(mContext, "没有网络!!");
             return;
         }
-        OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new DialogCallback(mContext) {
+        OkHttpUtils.post().url(UrlConstants.LIST_URL).paramsForJson(tagList()).build().execute(new DialogCallback(mContext) {
             @Override
             public void onCusResponse(BaseJson response) {
                 ToastUtils.show(mContext, response.getData() + "");
@@ -65,11 +65,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
     }
 
     public void C(View v) {
-       /* if (!NetUtils.isConnected(mContext)) {
-            ToastUtils.show(mContext, "没有网络!!");
-            return;
-        }*/
-        OkHttpUtils.post().url(url).paramsForJson(tagList()).build().execute(new ProcessCallback(mContext, new HttpListener() {
+        OkHttpUtils.post().url(UrlConstants.LIST_URL).paramsForJson(tagList()).build().execute(new ProcessCallback(mContext, new HttpListener() {
             @Override
             public void onAfter() {
                 Logger.d("onAfter");
