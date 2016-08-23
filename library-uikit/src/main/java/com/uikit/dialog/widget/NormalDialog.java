@@ -81,8 +81,6 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
 
         mVLineVertical = mLlContainer.findViewById(R.id.mVLineVertical);
         mVLineVertical2 = mLlContainer.findViewById(R.id.mVLineVertical2);
-
-
         return mLlContainer;
     }
 
@@ -113,6 +111,12 @@ public class NormalDialog extends BaseAlertDialog<NormalDialog> {
         mTvBtnLeft.setBackgroundDrawable(CornerUtils.btnSelector(mCornerRadius, mBgColor, mBtnPressColor, 0));
         mTvBtnRight.setBackgroundDrawable(CornerUtils.btnSelector(mCornerRadius, mBgColor, mBtnPressColor, 1));
         mTvBtnMiddle.setBackgroundDrawable(CornerUtils.btnSelector(mBtnNum == 1 ? mCornerRadius : 0, mBgColor, mBtnPressColor, -1));
+        mOnCreateView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 

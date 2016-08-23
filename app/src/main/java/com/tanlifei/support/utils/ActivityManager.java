@@ -76,6 +76,20 @@ public class ActivityManager {
     }
 
     /**
+     * 结束指定的Activity默认动画
+     */
+    public void finishActivityDefultAnim(Activity activity){
+        if( activityStack == null ) {
+            return;
+        }
+        if(activity!=null){
+            activityStack.remove(activity);
+            activity.finish();
+            activity=null;
+        }
+    }
+
+    /**
      * 结束指定类名的Activity
      */
     public void finishActivity(Class<?> cls){

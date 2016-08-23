@@ -175,12 +175,7 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
                 }
             }
         });
-        mOnCreateView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
 
     /**
@@ -264,18 +259,18 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
     @Override
     protected void onStop() {
         super.onStop();
-        Logger.d(mTag, "onStop");
+//        Logger.d(mTag, "onStop");
     }
 
     @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        Logger.d(mTag, "onDetachedFromWindow");
+        // Logger.d(mTag, "onDetachedFromWindow");
     }
 
     @Override
     public void dismiss() {
-        Logger.d(mTag, "dismiss");
+        // Logger.d(mTag, "dismiss");
         if (mDismissAnim != null) {
             mDismissAnim.listener(new BaseAnimatorSet.AnimatorListener() {
                 @Override

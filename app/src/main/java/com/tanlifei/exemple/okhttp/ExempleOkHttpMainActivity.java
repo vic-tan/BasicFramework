@@ -40,7 +40,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
             ToastUtils.show(mContext, "没有网络!!");
             return;
         }
-        OkHttpUtils.post().url(UrlConstants.LIST_URL).paramsForJson(tagList()).build().execute(new ResultCallback(mContext) {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new ResultCallback(mContext) {
 
             @Override
             public void onCusResponse(BaseJson response) {
@@ -56,7 +56,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
             ToastUtils.show(mContext, "没有网络!!");
             return;
         }
-        OkHttpUtils.post().url(UrlConstants.LIST_URL).paramsForJson(tagList()).build().execute(new DialogCallback(mContext) {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new DialogCallback(mContext) {
             @Override
             public void onCusResponse(BaseJson response) {
                 ToastUtils.show(mContext, response.getData() + "");
@@ -65,7 +65,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
     }
 
     public void C(View v) {
-        OkHttpUtils.post().url(UrlConstants.LIST_URL).paramsForJson(tagList()).build().execute(new ProcessCallback(mContext, new HttpListener() {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new ProcessCallback(mContext, new HttpListener() {
             @Override
             public void onAfter() {
                 Logger.d("onAfter");

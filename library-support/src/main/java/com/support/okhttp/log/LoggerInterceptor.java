@@ -64,7 +64,8 @@ public class LoggerInterceptor implements Interceptor {
                                 String responseBody = JsonReader.getInstance().getJsonReaderFileContent(BaseApplication.appContext, clone.request().url().toString());
                                 resp =  responseBody;
                             }*/
-                            Logger.d(tag, "" + resp);
+                            Logger.d(tag, "" + clone.request().url().toString());
+                            Logger.d(tag, "" + resp+"");
                             Logger.json(tag, "" + resp);
                             body = ResponseBody.create(mediaType, resp);
                             return response.newBuilder().body(body).build();

@@ -1,17 +1,19 @@
 package com.tanlifei.framework.main.ui.activity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 
-import com.tanlifei.common.ui.activity.BaseActivity;
+import com.support.autolayout.AutoLayoutActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
+import com.tanlifei.support.utils.ActivityManager;
 import com.tanlifei.support.utils.AppUtils;
 import com.tanlifei.support.utils.ResUtils;
 import com.tanlifei.support.utils.StringUtils;
@@ -28,13 +30,20 @@ import org.androidannotations.annotations.Fullscreen;
  */
 @Fullscreen //全屏
 @EActivity(R.layout.main_activity_app_update)
-public class AppServiceActivity extends BaseActivity {
+public class AppServiceActivity extends AutoLayoutActivity {
 
-
+    protected Context mContext;
     /**
      * 必须传入一个tag 来区分从哪个后台入进
      */
     public static String INTENT_TAG = "tag";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mContext = this;
+        ActivityManager.getActivityManager().addActivity(this);
+    }
 
     @AfterViews
     void init() {
@@ -42,7 +51,7 @@ public class AppServiceActivity extends BaseActivity {
         if (!StringUtils.isEmpty(tag) && StringUtils.isEquals(tag, "appUpdate")) {//app 版本升级业务处理
             appUpdate((AppUpdateBean) getIntent().getParcelableExtra("bean"));
         } else {
-            finish();
+            ActivityManager.getActivityManager().finishActivityDefultAnim(this);
         }
 
     }
@@ -73,7 +82,7 @@ public class AppServiceActivity extends BaseActivity {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
                     stopService(new Intent(mContext, AppDownloadService.class));
-                    finish();
+                    ActivityManager.getActivityManager().finishActivityDefultAnim(AppServiceActivity.this);
                 }
             }).show();
         }
@@ -83,6 +92,13 @@ public class AppServiceActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         stopService(new Intent(mContext, CheckAppUpdateService.class));//停止查检升级服务
+        ActivityManager.getActivityManager().finishActivityDefultAnim(this);
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        ActivityManager.getActivityManager().finishActivityDefultAnim(this);
     }
 }
