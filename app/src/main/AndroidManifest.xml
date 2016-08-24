@@ -106,7 +106,7 @@
         <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogBubblePopupActivity"/>
 
         <!-- FanImageLoader -->
-        <activity android:name="com.tanlifei.exemple.fanImageloader.ExempleFanImageLoaderActivity_"/>
+        <activity android:name="com.tanlifei.exemple.photo.fanImageloader.ExempleFanImageLoaderActivity_"/>
 
         <meta-data
             android:name="com.google.android.gms.version"

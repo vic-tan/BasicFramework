@@ -1,4 +1,4 @@
-package com.tanlifei.exemple.fanImageloader;
+package com.tanlifei.exemple.photo.fanImageloader;
 
 import android.view.View;
 import android.widget.RelativeLayout;

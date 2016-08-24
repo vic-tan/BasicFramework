@@ -74,7 +74,6 @@ public class FileCoder {
         try {
             File f = new File(strFile);
             if (f.exists()) {
-                long start = System.currentTimeMillis();
                 RandomAccessFile raf = new RandomAccessFile(f, "rw");
                 long totalLen = raf.length();
 
@@ -101,7 +100,6 @@ public class FileCoder {
                 if (!isEncrypt) {
                     AppCacheUtils.getInstance(mContext).put("last_decrypt_file", strFile);
                 }
-                long end = System.currentTimeMillis();
                 return true;
             }
         } catch (Exception e) {
