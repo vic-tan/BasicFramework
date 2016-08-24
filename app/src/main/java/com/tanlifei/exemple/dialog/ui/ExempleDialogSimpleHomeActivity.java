@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
-import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 
 import java.util.ArrayList;

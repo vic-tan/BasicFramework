@@ -12,7 +12,7 @@ import com.tanlifei.support.utils.GsonJsonUtils;
 import com.tanlifei.common.base.adapter.abslistview.AbsCommonAdapter;
 import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.bean.BaseJson;
-import com.tanlifei.common.ui.activity.BaseAbsRefreshActivity;
+import com.tanlifei.common.ui.activity.refreshview.BaseAbsRefreshActivity;
 import com.tanlifei.exemple.refreshview.adapter.BannerAdapter;
 import com.tanlifei.exemple.refreshview.bean.BannerBaen;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;

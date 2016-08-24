@@ -26,7 +26,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
 

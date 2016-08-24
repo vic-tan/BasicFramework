@@ -35,14 +35,14 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         ActivityManager.getActivityManager().addActivity(this);
-        setTranslucentStatus();
+        setTranslucentStatus(R.color.common_actionbar_bg_color);
     }
 
 
     /**
      * 导航栏显示中状态栏一样的颜色
      */
-    private void setTranslucentStatus() {
+    protected void setTranslucentStatus(int color) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
@@ -51,8 +51,8 @@ public abstract class BaseActivity extends AutoLayoutActivity {
                     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(ResUtils.getColor(R.color.common_actionbar_bg_color));
-            window.setNavigationBarColor(ResUtils.getColor(R.color.common_actionbar_bg_color));
+            window.setStatusBarColor(ResUtils.getColor(color));
+            window.setNavigationBarColor(ResUtils.getColor(color));
         }
     }
 

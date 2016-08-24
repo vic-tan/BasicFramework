@@ -105,8 +105,11 @@
         <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogCustomPopupActivity"/>
         <activity android:name="com.tanlifei.exemple.dialog.ui.ExempleDialogBubblePopupActivity"/>
 
+        <!-- Photo -->
+        <activity android:name="com.tanlifei.exemple.photo.ExemplePhotoMainActivity"/>
         <!-- FanImageLoader -->
         <activity android:name="com.tanlifei.exemple.photo.fanImageloader.ExempleFanImageLoaderActivity_"/>
+        <activity android:name="com.tanlifei.common.ui.activity.photoview.BaseBrowsePhotoActivity"/>
 
         <meta-data
             android:name="com.google.android.gms.version"

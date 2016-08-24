@@ -3,10 +3,10 @@ package com.tanlifei.exemple.main.interactor;
 import com.tanlifei.exemple.actionbar.ExempleActionBarMainActivity;
 import com.tanlifei.exemple.baseadapter.ExempleBaseAdpterMainActivity;
 import com.tanlifei.exemple.dialog.ui.ExempleDialogSimpleHomeActivity;
-import com.tanlifei.exemple.photo.fanImageloader.ExempleFanImageLoaderActivity_;
 import com.tanlifei.exemple.kprogresshud.ExempleKProgresshudMainActivity;
 import com.tanlifei.exemple.main.bean.ExempleHomeListBean;
 import com.tanlifei.exemple.okhttp.ExempleOkHttpMainActivity;
+import com.tanlifei.exemple.photo.ExemplePhotoMainActivity;
 import com.tanlifei.exemple.refreshview.ui.ExempleRefreshViewMainActivity;
 
 import java.util.ArrayList;
@@ -32,8 +32,7 @@ public class ExempleHomeInteractorImpl implements ExempleHomeInteractor {
         list.add(new ExempleHomeListBean("OkHttp公用请求示例", ExempleOkHttpMainActivity.class, "APP开发中常见的请求接口过程中，界面显示，及跳转方式.."));
         list.add(new ExempleHomeListBean("下拉上拉刷新", ExempleRefreshViewMainActivity.class, "APP开发中常见的请求接口过程中，界面显示，及跳转方式.."));
         list.add(new ExempleHomeListBean("公用的Dailog", ExempleDialogSimpleHomeActivity.class, "分为常用一个按钮，和两个按钮，底部上弹，实现简单，自定义布局，适配所有android分辨率机型。"));
-        list.add(new ExempleHomeListBean("图片浏览器", ExempleDialogSimpleHomeActivity.class, "分为常用一个按钮，和两个按钮，底部上弹，实现简单，自定义布局，适配所有android分辨率机型。"));
-        list.add(new ExempleHomeListBean("公用的图片缓存及特效", ExempleFanImageLoaderActivity_.class, "简化了开源框架Universal-Image-Loader，并添加了一些特效"));
+        list.add(new ExempleHomeListBean("图片相关应用", ExemplePhotoMainActivity.class, "分为常用图片加载缓存，图片显示特效，图片浏览等"));
         return list;
     }
 

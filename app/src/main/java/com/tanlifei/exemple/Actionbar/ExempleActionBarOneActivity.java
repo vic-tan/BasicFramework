@@ -24,7 +24,7 @@ package com.tanlifei.exemple.actionbar;
 
 import android.os.Bundle;
 
-import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 
 

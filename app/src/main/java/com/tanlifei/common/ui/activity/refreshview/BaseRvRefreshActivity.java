@@ -1,4 +1,4 @@
-package com.tanlifei.common.ui.activity;
+package com.tanlifei.common.ui.activity.refreshview;
 
 import com.tanlifei.common.base.adapter.recycler.RvCommonAdapter;
 

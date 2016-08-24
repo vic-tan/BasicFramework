@@ -3,7 +3,7 @@ package com.tanlifei.exemple.baseadapter;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.baseadapter.adapter.ExempleBaseAdpterChatAdapter;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterChatMessage;
 import com.tanlifei.framework.R;

@@ -6,7 +6,7 @@ import android.view.View;
 import com.support.okhttp.OkHttpUtils;
 import com.support.utils.Logger;
 import com.tanlifei.common.bean.BaseJson;
-import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.DialogCallback;

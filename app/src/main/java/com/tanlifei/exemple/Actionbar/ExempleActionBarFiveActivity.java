@@ -25,7 +25,7 @@ package com.tanlifei.exemple.actionbar;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
 import com.tanlifei.uikit.actionbar.ActionBarOptViewTagLevel;

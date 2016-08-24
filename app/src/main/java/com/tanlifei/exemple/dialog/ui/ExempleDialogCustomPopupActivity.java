@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.tanlifei.support.utils.ViewFindUtils;
-import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ToastUtils;
 import com.uikit.dialog.base.popup.BasePopup;

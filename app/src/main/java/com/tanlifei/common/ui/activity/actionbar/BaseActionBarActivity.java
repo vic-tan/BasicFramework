@@ -1,9 +1,10 @@
-package com.tanlifei.common.ui.activity;
+package com.tanlifei.common.ui.activity.actionbar;
 
 
 import android.os.Bundle;
 import android.view.View;
 
+import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.uikit.actionbar.ActionBarView;

@@ -3,7 +3,7 @@ package com.tanlifei.exemple.baseadapter;
 import android.os.Bundle;
 import android.view.View;
 
-import com.tanlifei.common.ui.activity.BaseActionBarActivity;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.StartActUtils;
 

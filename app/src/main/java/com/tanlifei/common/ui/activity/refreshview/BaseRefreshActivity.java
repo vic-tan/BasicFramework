@@ -1,4 +1,4 @@
-package com.tanlifei.common.ui.activity;
+package com.tanlifei.common.ui.activity.refreshview;
 
 import android.view.View;
 import android.widget.FrameLayout;
@@ -6,6 +6,7 @@ import android.widget.FrameLayout;
 import com.support.refresh.header.OnDefaultRefreshListener;
 import com.support.refresh.header.PtrClassicFrameLayout;
 import com.support.refresh.header.PtrFrameLayout;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInConfiguration;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInPresenter;
