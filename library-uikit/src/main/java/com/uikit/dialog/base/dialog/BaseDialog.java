@@ -18,7 +18,6 @@ import android.view.WindowManager.LayoutParams;
 
 import com.nineoldandroids.animation.Animator;
 import com.support.autolayout.AutoLinearLayout;
-import com.support.utils.Logger;
 import com.uikit.dialog.BaseAnimatorSet;
 import com.uikit.dialog.StatusBarUtils;
 
@@ -144,7 +143,7 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(mTag, "onCreate");
+       // Log.d(mTag, "onCreate");
         mDisplayMetrics = mContext.getResources().getDisplayMetrics();
         mMaxHeight = mDisplayMetrics.heightPixels - StatusBarUtils.getHeight(mContext);
         // mMaxHeight = mDisplayMetrics.heightPixels;
@@ -245,7 +244,7 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
 
     @Override
     public void show() {
-        Logger.d(mTag, "show");
+//        Logger.d(mTag, "show");
         super.show();
     }
 
@@ -253,7 +252,7 @@ public abstract class BaseDialog<T extends BaseDialog<T>> extends Dialog {
     @Override
     protected void onStart() {
         super.onStart();
-        Logger.d(mTag, "onStart");
+       // Logger.d(mTag, "onStart");
     }
 
     @Override

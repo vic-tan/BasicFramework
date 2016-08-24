@@ -11,7 +11,7 @@ import com.tanlifei.framework.main.presenter.IGuidePresenter;
 import com.tanlifei.framework.main.presenter.impl.GuidePresenterImpl;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.GuideView;
-import com.tanlifei.support.utils.AppCacheUtils;
+import com.tanlifei.support.utils.SPUtils;
 import com.tanlifei.support.utils.StartActUtils;
 
 import org.androidannotations.annotations.AfterViews;
@@ -45,7 +45,7 @@ public class GuideActivity extends BaseActivity implements GuideView,
 
     @Override
     public void onClick(View v) {
-        AppCacheUtils.getInstance(mContext).put(SplashPresenterImpl.FIRST_LAUNCHER_APP_TAG, false);//设置为已打开过该应用了
+        SPUtils.getInstance(mContext).put(SplashPresenterImpl.FIRST_LAUNCHER_APP_TAG, false);//设置为已打开过该应用了
         StartActUtils.start(mContext, HomeActivity_.class);
         StartActUtils.finish(mContext);
     }

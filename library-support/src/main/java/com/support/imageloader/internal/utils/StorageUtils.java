@@ -1,18 +1,3 @@
-/*******************************************************************************
- * Copyright 2011-2014 Sergey Tarasevich
- * <p/>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p/>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *******************************************************************************/
 package com.support.imageloader.internal.utils;
 
 import android.content.Context;
@@ -25,15 +10,14 @@ import java.io.IOException;
 import static android.os.Environment.MEDIA_MOUNTED;
 
 /**
- * Provides application storage paths
- *
- * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
- * @since 1.0.0
+ * Desction:Provides application storage paths
+ * Author:pengjianbo
+ * Date:15/9/17 下午4:41
  */
 public final class StorageUtils {
 
     private static final String EXTERNAL_STORAGE_PERMISSION = "android.permission.WRITE_EXTERNAL_STORAGE";
-    private static final String INDIVIDUAL_DIR_NAME = "uil-images";
+    private static final String INDIVIDUAL_DIR_NAME = "cache";
 
     private StorageUtils() {
     }
@@ -46,10 +30,18 @@ public final class StorageUtils {
      * @param context Application context
      * @return Cache {@link File directory}.<br />
      * <b>NOTE:</b> Can be null in some unpredictable cases (if SD card is unmounted and
-     * {@link android.content.Context#getCacheDir() Context.getCacheDir()} returns null).
+     * {@link Context#getCacheDir() Context.getCacheDir()} returns null).
      */
     public static File getCacheDirectory(Context context) {
-        return getCacheDirectory(context, true);
+        return getCacheDirectory(context, true, "cache");
+    }
+
+    public static File getCacheDirectory(Context context,boolean isCache) {
+        return getCacheDirectory(context, isCache, "cache");
+    }
+
+    public static File getCacheDirectory(Context context, boolean isCache, String customDir) {
+        return getCacheDirectory(context, true, isCache, customDir);
     }
 
     /**
@@ -61,9 +53,9 @@ public final class StorageUtils {
      * @param preferExternal Whether prefer external location for cache
      * @return Cache {@link File directory}.<br />
      * <b>NOTE:</b> Can be null in some unpredictable cases (if SD card is unmounted and
-     * {@link android.content.Context#getCacheDir() Context.getCacheDir()} returns null).
+     * {@link Context#getCacheDir() Context.getCacheDir()} returns null).
      */
-    public static File getCacheDirectory(Context context, boolean preferExternal) {
+    public static File getCacheDirectory(Context context, boolean preferExternal, boolean cache, String customDir) {
         File appCacheDir = null;
         String externalStorageState;
         try {
@@ -74,14 +66,15 @@ public final class StorageUtils {
             externalStorageState = "";
         }
         if (preferExternal && MEDIA_MOUNTED.equals(externalStorageState) && hasExternalStoragePermission(context)) {
-            appCacheDir = getExternalCacheDir(context);
+            appCacheDir = getExternalCacheDir(context, cache, customDir);
         }
         if (appCacheDir == null) {
             appCacheDir = context.getCacheDir();
         }
         if (appCacheDir == null) {
-            String cacheDirPath = "/data/data/" + context.getPackageName() + "/cache/";
-            L.w("Can't define system cache directory! '%s' will be used.", cacheDirPath);
+            String cacheDirPath;
+            cacheDirPath = "/data/data/" + context.getPackageName() + "/" + customDir + "/";
+
             appCacheDir = new File(cacheDirPath);
         }
         return appCacheDir;
@@ -157,18 +150,16 @@ public final class StorageUtils {
         return appCacheDir;
     }
 
-    private static File getExternalCacheDir(Context context) {
+    private static File getExternalCacheDir(Context context, boolean cache, String customDir) {
         File dataDir = new File(new File(Environment.getExternalStorageDirectory(), "Android"), "data");
-        File appCacheDir = new File(new File(dataDir, context.getPackageName()), "cache");
+        File appCacheDir = new File(new File(dataDir, context.getPackageName()), customDir);
         if (!appCacheDir.exists()) {
             if (!appCacheDir.mkdirs()) {
-                L.w("Unable to create external cache directory");
                 return null;
             }
             try {
                 new File(appCacheDir, ".nomedia").createNewFile();
             } catch (IOException e) {
-                L.i("Can't create \".nomedia\" file in application external cache directory");
             }
         }
         return appCacheDir;

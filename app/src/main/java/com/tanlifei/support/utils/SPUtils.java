@@ -1,386 +1,414 @@
 package com.tanlifei.support.utils;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.util.Log;
 
-import com.tanlifei.framework.main.ui.BaseApplication;
+import com.support.imageloader.internal.utils.StorageUtils;
+import com.tanlifei.support.utils.io.FileUtils;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.StreamCorruptedException;
+import java.io.RandomAccessFile;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
+
 
 /**
- * SPUtils, easy to get or put data
- * <ul>
- * <strong>Preference Name</strong>
- * <li>you can change preference name by {@link #PREFERENCE_NAME}</li>
- * </ul>
- * <ul>
- * <strong>Put Value</strong>
- * <li>put string {@link #putString(String, String)}</li>
- * <li>put int {@link #putInt(,String, int)}</li>
- * <li>put long {@link #putLong(String, long)}</li>
- * <li>put float {@link #putFloat(String, float)}</li>
- * <li>put boolean {@link #putBoolean( String, boolean)}</li>
- * </ul>
- * <ul>
- * <strong>Get Value</strong>
- * <li>get string {@link #getString(String)}, {@link #getString(String, String)}</li>
- * <li>get int {@link #getInt(String)}, {@link #getInt(String, int)}</li>
- * <li>get long {@link #getLong(String)}, {@link #getLong(String, long)}</li>
- * <li>get float {@link #getFloat(String)}, {@link #getFloat(String, float)}</li>
- * <li>get boolean {@link #getBoolean( String)}, {@link #getBoolean(String, boolean)}</li>
- * </ul>
- *
- * @author tanlifei
- * @date 2015-01-26 下午3:30:25
+ * Desction:数据/配置存储类
+ * Author:pengjianbo
+ * Date:15/9/17 下午4:41
  */
 public class SPUtils {
 
-    public static String PREFERENCE_NAME = "zxy_share_data";
+
+    public static final String DEFAULT_CACHE_NAME = "appCache";
+
+    private File mCacheFile;
+    private static Map<String, SPUtils> mCacheUtilsMap = new HashMap<>();
+
+    private SPUtils(File cacheFile) {
+        mCacheFile =  cacheFile;
+        FileUtils.mkdirs(cacheFile);
+    }
+
+    public static SPUtils getInstance(Context ctx) {
+        File storeFile = StorageUtils.getCacheDirectory(ctx, false, DEFAULT_CACHE_NAME);
+        return getInstance(storeFile);
+    }
+
+    public static SPUtils getInstance(File file) {
+        SPUtils appCacheUtils = mCacheUtilsMap.get(file.getAbsolutePath());
+        if (appCacheUtils == null) {
+            appCacheUtils = new SPUtils(file);
+            mCacheUtilsMap.put(file.getAbsolutePath(), appCacheUtils);
+        }
+        return appCacheUtils;
+    }
+
+    public void put(String key, int value) {
+        put(key, value + "");
+    }
+
+    public void put(String key, float value) {
+        put(key, value + "");
+    }
+
+    public void put(String key, double value) {
+        put(key, value + "");
+    }
+
+    public void put(String key, boolean value) {
+        put(key, value + "");
+    }
+
+    public void put(String key, long value) {
+        put(key, value + "");
+    }
 
     /**
-     * put string preferences
+     * 保存 String数据 到 缓存中
      *
-     * @param key     The name of the preference to modify
-     * @param value   The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
+     * @param key 保存的key
+     * @param value 保存的String数据
      */
-    public static boolean putString(String key, String value) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString(key, value);
-        return editor.commit();
-    }
+    public void put(String key, String value) {
 
-    /**
-     * get string preferences
+        if (StringUtils.isEmpty(key)) {
+            return;
+        }
 
-     * @param key     The name of the preference to retrieve
-     * @return The preference value if it exists, or null. Throws ClassCastException if there is a preference with this
-     * name that is not a string
-     * @see #getString(String, String)
-     */
-    public static String getString(String key) {
-        return getString(key, null);
-    }
-
-    /**
-     * get string preferences
-     *
-     * @param key          The name of the preference to retrieve
-     * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     * this name that is not a string
-     */
-    public static String getString(String key, String defaultValue) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getString(key, defaultValue);
-    }
-
-    /**
-     * put int preferences
-     *
-     * @param key   The name of the preference to modify
-     * @param value The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
-     */
-    public static boolean putInt(String key, int value) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putInt(key, value);
-        return editor.commit();
-    }
-
-    /**
-     * get int preferences
-     *
-     * @param key The name of the preference to retrieve
-     * @return The preference value if it exists, or -1. Throws ClassCastException if there is a preference with this
-     * name that is not a int
-     * @see #getInt(String, int)
-     */
-    public static int getInt(String key) {
-        return getInt(key, -1);
-    }
-
-    /**
-     * get int preferences
-     *
-     * @param key          The name of the preference to retrieve
-     * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     * this name that is not a int
-     */
-    public static int getInt(String key, int defaultValue) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getInt(key, defaultValue);
-    }
-
-    /**
-     * put long preferences
-     *
-     * @param key   The name of the preference to modify
-     * @param value The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
-     */
-    public static boolean putLong(String key, long value) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putLong(key, value);
-        return editor.commit();
-    }
-
-    /**
-     * get long preferences
-     *
-     * @param key The name of the preference to retrieve
-     * @return The preference value if it exists, or -1. Throws ClassCastException if there is a preference with this
-     * name that is not a long
-     * @see #getLong(String, long)
-     */
-    public static long getLong(String key) {
-        return getLong(key, -1);
-    }
-
-    /**
-     * get long preferences
-     *
-     * @param key          The name of the preference to retrieve
-     * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     * this name that is not a long
-     */
-    public static long getLong(String key, long defaultValue) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getLong(key, defaultValue);
-    }
-
-    /**
-     * put float preferences
-     *
-     * @param key   The name of the preference to modify
-     * @param value The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
-     */
-    public static boolean putFloat(String key, float value) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putFloat(key, value);
-        return editor.commit();
-    }
-
-    /**
-     * get float preferences
-     *
-     * @param key The name of the preference to retrieve
-     * @return The preference value if it exists, or -1. Throws ClassCastException if there is a preference with this
-     * name that is not a float
-     * @see #getFloat(String, float)
-     */
-    public static float getFloat(String key) {
-        return getFloat(key, -1);
-    }
-
-    /**
-     * get float preferences
-     *
-     * @param key          The name of the preference to retrieve
-     * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     * this name that is not a float
-     */
-    public static float getFloat(String key, float defaultValue) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getFloat(key, defaultValue);
-    }
-
-    /**
-     * put boolean preferences
-     *
-     * @param key   The name of the preference to modify
-     * @param value The new value for the preference
-     * @return True if the new values were successfully written to persistent storage.
-     */
-    public static boolean putBoolean(String key, boolean value) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean(key, value);
-        return editor.commit();
-    }
-
-    /**
-     * get boolean preferences, default is false
-     *
-     * @param key The name of the preference to retrieve
-     * @return The preference value if it exists, or false. Throws ClassCastException if there is a preference with this
-     * name that is not a boolean
-     * @see #getBoolean(String, boolean)
-     */
-    public static boolean getBoolean(String key) {
-        return getBoolean(key, false);
-    }
-
-    /**
-     * get boolean preferences
-     *
-     * @param key          The name of the preference to retrieve
-     * @param defaultValue Value to return if this preference does not exist
-     * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     * this name that is not a boolean
-     */
-    public static boolean getBoolean(String key, boolean defaultValue) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return settings.getBoolean(key, defaultValue);
-    }
-
-    /**
-     * 清除某个key
-     * @param key
-     */
-    public static void clear_sharePref(String key) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.remove(key);
-        editor.commit();
-    }
-
-    /**
-     * 清空所有
-     *
-     * @param context
-     */
-    public static void clearAll(Context context) {
-        SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.clear();
-        editor.commit();
-    }
-
-
-    /**
-     * desc:保存对象
-     * @param key
-     * @param obj 要保存的对象，只能保存实现了serializable的对象
-     * modified:
-     */
-    public static void putObject(String key ,Object obj){
+        if ( StringUtils.isEmpty(value) ) {
+            value = "";
+        }
+        File file = newFile(key);
+        BufferedWriter out = null;
         try {
-
-            // 保存对象
-            SharedPreferences settings = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-            SharedPreferences.Editor sharedata = settings.edit();
-            //先将序列化结果写到byte缓存中，其实就分配一个内存空间
-            ByteArrayOutputStream bos=new ByteArrayOutputStream();
-            ObjectOutputStream os=new ObjectOutputStream(bos);
-            //将对象序列化写入byte缓存
-            os.writeObject(obj);
-            //将序列化的数据转为16进制保存
-            String bytesToHexString = bytesToHexString(bos.toByteArray());
-            //保存该16进制数组
-            sharedata.putString(key, bytesToHexString);
-            sharedata.commit();
+            out = new BufferedWriter(new FileWriter(file), 1024);
+            out.write(value);
         } catch (IOException e) {
             e.printStackTrace();
-            Log.e("", "保存obj失败");
-        }
-    }
-    /**
-     * desc:将数组转为16进制
-     * @param bArray
-     * @return
-     * modified:
-     */
-    public static String bytesToHexString(byte[] bArray) {
-        if(bArray == null){
-            return null;
-        }
-        if(bArray.length == 0){
-            return "";
-        }
-        StringBuffer sb = new StringBuffer(bArray.length);
-        String sTemp;
-        for (int i = 0; i < bArray.length; i++) {
-            sTemp = Integer.toHexString(0xFF & bArray[i]);
-            if (sTemp.length() < 2)
-                sb.append(0);
-            sb.append(sTemp.toUpperCase());
-        }
-        return sb.toString();
-    }
-    /**
-     * desc:获取保存的Object对象
-     * @param key
-     * @return
-     * modified:
-     */
-    public static  Object getObject(String key){
-        try {
-            SharedPreferences sharedata = BaseApplication.appContext.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-            if (sharedata.contains(key)) {
-                String string = sharedata.getString(key, "");
-                if(StringUtils.isEmpty(string)){
-                    return null;
-                }else{
-                    //将16进制的数据转为数组，准备反序列化
-                    byte[] stringToBytes = StringToBytes(string);
-                    ByteArrayInputStream bis=new ByteArrayInputStream(stringToBytes);
-                    ObjectInputStream is=new ObjectInputStream(bis);
-                    //返回反序列化得到的对象
-                    Object readObject = is.readObject();
-                    return readObject;
+        } finally {
+            if (out != null) {
+                try {
+                    out.flush();
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
-        } catch (StreamCorruptedException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
-        //所有异常返回null
-        return null;
-
     }
     /**
+     * 保存 byte数据 到 缓存中
      *
-     * @param data
-     * @return
-     * modified:
+     * @param key 保存的key
+     * @param value 保存的数据
      */
-    public static byte[] StringToBytes(String data){
-        String hexString=data.toUpperCase().trim();
-        if (hexString.length()%2!=0) {
+    public void put(String key, byte[] value) {
+        if(value == null || value.length == 0 || StringUtils.isEmpty(key)){
+            return;
+        }
+        File file = newFile(key);
+        FileOutputStream out = null;
+        try {
+            out = new FileOutputStream(file);
+            out.write(value);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (out != null) {
+                try {
+                    out.flush();
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /**
+     * 保存 JSONArray数据 到 缓存中
+     *
+     * @param key 保存的key
+     * @param value 保存的JSONArray数据
+     */
+    public void put(String key, JSONArray value) {
+        if(value == null){
+            return;
+        }
+        put(key, value.toString());
+    }
+
+    /**
+     * 保存 JSONObject数据 到 缓存中
+     *
+     * @param key 保存的key
+     * @param value 保存的JSON数据
+     */
+    public void put(String key, JSONObject value) {
+        if(value == null){
+            return;
+        }
+        put(key, value.toString());
+    }
+
+    /**
+     * 保存 Serializable数据到 缓存中
+     *
+     * @param key 保存的key
+     * @param value 保存的value
+     */
+    public void put(String key, Serializable value) {
+        if(StringUtils.isEmpty(key) || value == null) {
+            return;
+        }
+        ByteArrayOutputStream baos = null;
+        ObjectOutputStream oos = null;
+        try {
+            baos = new ByteArrayOutputStream();
+            oos = new ObjectOutputStream(baos);
+            oos.writeObject(value);
+            byte[] data = baos.toByteArray();
+            put(key, data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                oos.close();
+            } catch (IOException e) {
+            }
+        }
+    }
+
+    public int getInt(String key, int defValue) {
+        String sValue = getString(key);
+        if (!StringUtils.isEmpty(sValue)) {
+            try {
+                int iValue = Integer.parseInt(sValue);
+                return iValue;
+            } catch (Exception e) {
+            }
+        }
+
+        return defValue;
+    }
+
+    public float getFloat(String key, float defValue) {
+        String sValue = getString(key);
+        if (!StringUtils.isEmpty(sValue)) {
+            try {
+                float fValue = Float.parseFloat(sValue);
+                return fValue;
+            } catch (Exception e) {
+            }
+        }
+
+        return defValue;
+    }
+
+    public Double getDouble(String key, double defValue) {
+        String sValue = getString(key);
+        if (!StringUtils.isEmpty(sValue)) {
+            try {
+                double dValue = Double.parseDouble(sValue);
+                return dValue;
+            } catch (Exception e) {
+            }
+        }
+
+        return defValue;
+    }
+
+    public long getLong(String key, long defValue) {
+        String sValue = getString(key);
+        if (!StringUtils.isEmpty(sValue)) {
+            try {
+                long dValue = Long.parseLong(sValue);
+                return dValue;
+            } catch (Exception e) {
+            }
+        }
+
+        return defValue;
+    }
+
+    public boolean getBoolean(String key, boolean defValue) {
+        String sValue = getString(key);
+        if (!StringUtils.isEmpty(sValue)) {
+            try {
+                boolean bValue = Boolean.parseBoolean(sValue);
+                return bValue;
+            } catch (Exception e) {
+            }
+        }
+
+        return defValue;
+    }
+
+    /**
+     * 读取 String数据
+     *
+     * @return String 数据
+     */
+    public String getString(String key) {
+        if(StringUtils.isEmpty(key)) {
             return null;
         }
-        byte[] retData=new byte[hexString.length()/2];
-        for(int i=0;i<hexString.length();i++)
-        {
-            int int_ch;  // 两位16进制数转化后的10进制数
-            char hex_char1 = hexString.charAt(i); ////两位16进制数中的第一位(高位*16)
-            int int_ch1;
-            if(hex_char1 >= '0' && hex_char1 <='9')
-                int_ch1 = (hex_char1-48)*16;   //// 0 的Ascll - 48
-            else if(hex_char1 >= 'A' && hex_char1 <='F')
-                int_ch1 = (hex_char1-55)*16; //// A 的Ascll - 65
-            else
-                return null;
-            i++;
-            char hex_char2 = hexString.charAt(i); ///两位16进制数中的第二位(低位)
-            int int_ch2;
-            if(hex_char2 >= '0' && hex_char2 <='9')
-                int_ch2 = (hex_char2-48); //// 0 的Ascll - 48
-            else if(hex_char2 >= 'A' && hex_char2 <='F')
-                int_ch2 = hex_char2-55; //// A 的Ascll - 65
-            else
-                return null;
-            int_ch = int_ch1+int_ch2;
-            retData[i/2]=(byte) int_ch;//将转化后的数放入Byte里
+        File file = newFile(key);
+        if (!file.exists()) {
+            return null;
         }
-        return retData;
+        BufferedReader in = null;
+        String readString = "";
+        try {
+            in = new BufferedReader(new FileReader(file));
+            String currentLine;
+            while ((currentLine = in.readLine()) != null) {
+                readString += currentLine;
+            }
+            return readString;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return readString;
+    }
+
+    /**
+     * 读取 Serializable数据
+     *
+     * @return Serializable 数据
+     */
+    public Object getObject(String key) {
+        if ( StringUtils.isEmpty(key) ) {
+            return null;
+        }
+        byte[] data = getBinary(key);
+        if (data != null) {
+            ByteArrayInputStream bais = null;
+            ObjectInputStream ois = null;
+            try {
+                bais = new ByteArrayInputStream(data);
+                ois = new ObjectInputStream(bais);
+                Object reObject = ois.readObject();
+                return reObject;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            } finally {
+                try {
+                    if (bais != null) { bais.close(); }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    if (ois != null) { ois.close(); }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 获取 byte 数据
+     *
+     * @return byte 数据
+     */
+    public byte[] getBinary(String key) {
+        if ( StringUtils.isEmpty(key) ) {
+            return null;
+        }
+        RandomAccessFile rAFile = null;
+        byte[] byteArray = null;
+        try {
+            File file = newFile(key);
+            if (!file.exists()) { return null; }
+            rAFile = new RandomAccessFile(file, "r");
+            long fLength = rAFile.length();
+            if ( fLength != 0 ) {
+                byteArray = new byte[(int) rAFile.length()];
+                rAFile.read(byteArray);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (rAFile != null) {
+                try {
+                    rAFile.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return byteArray;
+    }
+
+    /**
+     * 读取JSONArray数据
+     *
+     * @return JSONArray数据
+     */
+    public JSONArray getJSONArray(String key) {
+        String JSONString = getString(key);
+        try {
+            JSONArray obj = new JSONArray(JSONString);
+            return obj;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 读取JSONObject数据
+     *
+     * @return JSONObject数据
+     */
+    public JSONObject getJSONObject(String key) {
+        String JSONString = getString(key);
+        try {
+            JSONObject obj = new JSONObject(JSONString);
+            return obj;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private File newFile(String key) {
+        return new File(mCacheFile, MD5Coder.getMD5Code(key));
+    }
+
+    /**
+     * 移除缓存
+     * @param key
+     */
+    public void remove(String key) {
+        try {
+            newFile(key).delete();
+        } catch (Exception e){}
     }
 }

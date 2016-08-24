@@ -57,6 +57,8 @@ public class HomeActivity extends BaseActionBarActivity {
                             case 0:
                                 StartActUtils.start(mContext, ExempleHomeActivity_.class);
                                 break;
+                            case 1:
+                                break;
                         }
                     }
                 });

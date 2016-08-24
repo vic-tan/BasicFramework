@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.tanlifei.framework.main.presenter.ISplashPresenter;
 import com.tanlifei.framework.main.ui.view.SplashView;
-import com.tanlifei.support.utils.AppCacheUtils;
 import com.tanlifei.support.utils.CountDownTimer;
+import com.tanlifei.support.utils.SPUtils;
 
 
 /**
@@ -32,7 +32,7 @@ public class SplashPresenterImpl implements ISplashPresenter {
 
             @Override
             public void onFinish() {
-                if (AppCacheUtils.getInstance(mContext).getBoolean(FIRST_LAUNCHER_APP_TAG, true)) {//第一次打开应用,进入引导页
+                if (SPUtils.getInstance(mContext).getBoolean(FIRST_LAUNCHER_APP_TAG, true)) {//第一次打开应用,进入引导页
                     launcher.gotoGuideAct();//进入引导页
                 } else {//进入正在加载数据页
                     if (isLoadingData) {//有加载数据页时过程
