@@ -1,8 +1,10 @@
-package com.tanlifei.support.utils;
+package com.tanlifei.support.utils.coder;
 
 import android.content.Context;
 
 import com.support.utils.Logger;
+import com.tanlifei.support.utils.AppCacheUtils;
+import com.tanlifei.support.utils.StringUtils;
 
 import java.io.File;
 import java.io.RandomAccessFile;
@@ -19,20 +21,20 @@ import java.nio.channels.FileChannel;
  * 解密算法 : 已经加密的文件再执行一次对文件的数据流的每个字节与加密解密key对应字符做异或运算.
  * this method can decrypt or doEncrypt a large file in 100 milliseconds,just have a try and see
  */
-public class FileEnDecryptManager {
+public class FileCoder {
 
     private String key = "tanlifei"; // 加密解密key(Encrypt or decrypt key)
     private final int REVERSE_LENGTH = 56;// 加解密长度(Encryption length)
 
-    private FileEnDecryptManager() {
+    private FileCoder() {
     }
 
-    private static FileEnDecryptManager instance = null;
+    private static FileCoder instance = null;
 
-    public static FileEnDecryptManager getInstance() {
-        synchronized (FileEnDecryptManager.class) {
+    public static FileCoder getInstance() {
+        synchronized (FileCoder.class) {
             if (instance == null)
-                instance = new FileEnDecryptManager();
+                instance = new FileCoder();
         }
         return instance;
     }
@@ -97,7 +99,7 @@ public class FileEnDecryptManager {
                 channel.close();
                 raf.close();
                 if (!isEncrypt) {
-                    SPUtils.getInstance(mContext).put("last_decrypt_file", strFile);
+                    AppCacheUtils.getInstance(mContext).put("last_decrypt_file", strFile);
                 }
                 long end = System.currentTimeMillis();
                 return true;
@@ -115,7 +117,7 @@ public class FileEnDecryptManager {
      */
     public boolean doDecrypt(Context mContext, String fileUrl) {
         try {
-            String save = SPUtils.getInstance(mContext).getString("last_decrypt_file");//是否有记录
+            String save = AppCacheUtils.getInstance(mContext).getString("last_decrypt_file");//是否有记录
             if (StringUtils.isEmpty(save)) {//第一次加密
                 return decrypt(mContext, fileUrl);
             } else {//上一次加密

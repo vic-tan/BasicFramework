@@ -23,6 +23,8 @@ import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
+import com.tanlifei.support.utils.coder.MD5Coder;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -58,25 +60,25 @@ public class AppCacheUtils {
 	private static Map<String, AppCacheUtils> mInstanceMap = new HashMap<String, AppCacheUtils>();
 	private ACacheManager mCache;
 
-	public static AppCacheUtils get(Context ctx) {
-		return get(ctx, "AppCacheUtils");
+	public static AppCacheUtils getInstance(Context ctx) {
+		return getInstance(ctx, "AppCacheUtils");
 	}
 
-	public static AppCacheUtils get(Context ctx, String cacheName) {
+	public static AppCacheUtils getInstance(Context ctx, String cacheName) {
 		File f = new File(ctx.getCacheDir(), cacheName);
-		return get(f, MAX_SIZE, MAX_COUNT);
+		return getInstance(f, MAX_SIZE, MAX_COUNT);
 	}
 
-	public static AppCacheUtils get(File cacheDir) {
-		return get(cacheDir, MAX_SIZE, MAX_COUNT);
+	public static AppCacheUtils getInstance(File cacheDir) {
+		return getInstance(cacheDir, MAX_SIZE, MAX_COUNT);
 	}
 
-	public static AppCacheUtils get(Context ctx, long max_zise, int max_count) {
+	public static AppCacheUtils getInstance(Context ctx, long max_zise, int max_count) {
 		File f = new File(ctx.getCacheDir(), "AppCacheUtils");
-		return get(f, max_zise, max_count);
+		return getInstance(f, max_zise, max_count);
 	}
 
-	public static AppCacheUtils get(File cacheDir, long max_zise, int max_count) {
+	public static AppCacheUtils getInstance(File cacheDir, long max_zise, int max_count) {
 		AppCacheUtils manager = mInstanceMap.get(cacheDir.getAbsoluteFile() + myPid());
 		if (manager == null) {
 			manager = new AppCacheUtils(cacheDir, max_zise, max_count);
@@ -149,7 +151,7 @@ public class AppCacheUtils {
 	 * @param key
 	 * @return String 数据
 	 */
-	public String getAsString(String key) {
+	public String getString(String key) {
 		File file = mCache.get(key);
 		if (!file.exists())
 			return null;
@@ -220,7 +222,7 @@ public class AppCacheUtils {
 	 * @return JSONObject数据
 	 */
 	public JSONObject getAsJSONObject(String key) {
-		String JSONString = getAsString(key);
+		String JSONString = getString(key);
 		try {
 			JSONObject obj = new JSONObject(JSONString);
 			return obj;
@@ -266,7 +268,7 @@ public class AppCacheUtils {
 	 * @return JSONArray数据
 	 */
 	public JSONArray getAsJSONArray(String key) {
-		String JSONString = getAsString(key);
+		String JSONString = getString(key);
 		try {
 			JSONArray obj = new JSONArray(JSONString);
 			return obj;
@@ -488,6 +490,95 @@ public class AppCacheUtils {
 		return Utils.Bytes2Bimap(getAsBinary(key));
 	}
 
+
+
+	public void put(String key, int value) {
+		put(key, value + "");
+	}
+
+	public void put(String key, float value) {
+		put(key, value + "");
+	}
+
+	public void put(String key, double value) {
+		put(key, value + "");
+	}
+
+	public void put(String key, boolean value) {
+		put(key, value + "");
+	}
+
+	public void put(String key, long value) {
+		put(key, value + "");
+	}
+
+
+	public int getInt(String key, int defValue) {
+		String sValue = getString(key);
+		if (!StringUtils.isEmpty(sValue)) {
+			try {
+				int iValue = Integer.parseInt(sValue);
+				return iValue;
+			} catch (Exception e) {
+			}
+		}
+
+		return defValue;
+	}
+
+	public float getFloat(String key, float defValue) {
+		String sValue = getString(key);
+		if (!StringUtils.isEmpty(sValue)) {
+			try {
+				float fValue = Float.parseFloat(sValue);
+				return fValue;
+			} catch (Exception e) {
+			}
+		}
+
+		return defValue;
+	}
+
+	public Double getDouble(String key, double defValue) {
+		String sValue = getString(key);
+		if (!StringUtils.isEmpty(sValue)) {
+			try {
+				double dValue = Double.parseDouble(sValue);
+				return dValue;
+			} catch (Exception e) {
+			}
+		}
+
+		return defValue;
+	}
+
+	public long getLong(String key, long defValue) {
+		String sValue = getString(key);
+		if (!StringUtils.isEmpty(sValue)) {
+			try {
+				long dValue = Long.parseLong(sValue);
+				return dValue;
+			} catch (Exception e) {
+			}
+		}
+
+		return defValue;
+	}
+
+	public boolean getBoolean(String key, boolean defValue) {
+		String sValue = getString(key);
+		if (!StringUtils.isEmpty(sValue)) {
+			try {
+				boolean bValue = Boolean.parseBoolean(sValue);
+				return bValue;
+			} catch (Exception e) {
+			}
+		}
+
+		return defValue;
+	}
+
+
 	// =======================================
 	// ============= drawable 数据 读写 =============
 	// =======================================
@@ -640,7 +731,7 @@ public class AppCacheUtils {
 		}
 
 		private File newFile(String key) {
-			return new File(cacheDir, key.hashCode() + "");
+			return new File(cacheDir, MD5Coder.getMD5Code(key));
 		}
 
 		private boolean remove(String key) {

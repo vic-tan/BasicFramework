@@ -1,4 +1,4 @@
-package com.tanlifei.support.utils;
+package com.tanlifei.support.utils.coder;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
