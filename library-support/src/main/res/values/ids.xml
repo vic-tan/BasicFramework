@@ -13,4 +13,8 @@
     <item type="id" name="scrollview" />
     <item type="id" name="view_content" />
     <item type="id" name="delete" />
+
+
+    <!-- ————————————————————————————————————————— galleryfinal ———————————————————————————————————————— -->
+    <item name="fab_label" type="id"/>
 </resources>

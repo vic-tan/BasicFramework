@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ————————————————————————————————————— actionbar 颜色常量   ——————————————————————————————————————————————————— -->
+    <color name="common_actionbar_bg_color">#00C15C</color> <!-- actionbar 标题字体 -->
+
+
+
+</resources>

@@ -3,10 +3,10 @@ package com.tanlifei.exemple.baseadapter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.support.adapter.abslistview.AbsCommonAdapter;
 import com.support.adapter.abslistview.AbsViewHolder;
+import com.support.utils.ToastUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterBean;
 import com.tanlifei.framework.R;
@@ -40,7 +40,7 @@ public class ExempleBaseAdapterSingleItemTypeActivity extends BaseActionBarActiv
                 holder.setOnClickListener(R.id.id_title, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(ExempleBaseAdapterSingleItemTypeActivity.this, exempleBaseAdpterBean.getTitle(), Toast.LENGTH_SHORT).show();
+                        ToastUtils.show(ExempleBaseAdapterSingleItemTypeActivity.this, exempleBaseAdpterBean.getTitle());
                     }
                 });
             }

@@ -14,7 +14,7 @@ import com.tanlifei.support.utils.StringUtils;
 import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.framework.R;
 import com.support.utils.CornerUtils;
-import com.tanlifei.support.utils.InflaterUtils;
+import com.support.utils.InflaterUtils;
 
 /**
  * 自定义的ActionBarView

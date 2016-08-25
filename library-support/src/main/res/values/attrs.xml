@@ -64,4 +64,20 @@
     <declare-styleable name="PtrClassicHeader">
         <attr name="ptr_rotate_ani_time" format="integer" />
     </declare-styleable>
+
+    <!-- ————————————————————————————————————————— galleryfinal ———————————————————————————————————————— -->
+
+    <declare-styleable name="GFFloatingActionButton">
+        <attr name="fabColorPressed" format="color"/>
+        <attr name="fabColorNormal" format="color"/>
+        <attr name="fabIcon" format="reference"/>
+        <attr name="fabTitle" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
 </resources>

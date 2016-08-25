@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.StartActUtils;
+import com.support.utils.StartActUtils;
 
 public class ExempleBaseAdpterMainActivity extends BaseActionBarActivity {
 

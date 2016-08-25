@@ -3,12 +3,13 @@ package com.tanlifei.exemple.photo;
 import android.os.Bundle;
 import android.view.View;
 
+import com.support.utils.StartActUtils;
 import com.tanlifei.common.bean.BasePhotoBean;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.common.ui.activity.photoview.BaseBrowsePhotoActivity;
 import com.tanlifei.exemple.photo.fanImageloader.ExempleFanImageLoaderActivity_;
+import com.tanlifei.exemple.photo.galleryfinal.ExempleGalleryFinalActivity_;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.StartActUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,11 +53,11 @@ public class ExemplePhotoMainActivity extends BaseActionBarActivity {
     }
 
     public void B(View v) {
-        BaseBrowsePhotoActivity.start(mContext,list,0);
+        BaseBrowsePhotoActivity.start(mContext, list, 0);
     }
 
     public void C(View v) {
-
+        StartActUtils.start(mContext, ExempleGalleryFinalActivity_.class);
     }
 
 

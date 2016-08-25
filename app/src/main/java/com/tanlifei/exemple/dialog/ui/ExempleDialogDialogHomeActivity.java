@@ -18,7 +18,7 @@ import com.tanlifei.exemple.dialog.extra.ExempleDialogIOSTaoBaoDialog;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogShareBottomDialog;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogShareTopDialog;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.ToastUtils;
+import com.support.utils.ToastUtils;
 import com.uikit.dialog.bean.DialogMenuItem;
 import com.uikit.dialog.listener.OnBtnClickL;
 import com.uikit.dialog.listener.OnOperItemClickL;

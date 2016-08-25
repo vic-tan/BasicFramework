@@ -12,7 +12,7 @@ import com.tanlifei.framework.main.presenter.impl.GuidePresenterImpl;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.GuideView;
 import com.tanlifei.support.utils.AppCacheUtils;
-import com.tanlifei.support.utils.StartActUtils;
+import com.support.utils.StartActUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

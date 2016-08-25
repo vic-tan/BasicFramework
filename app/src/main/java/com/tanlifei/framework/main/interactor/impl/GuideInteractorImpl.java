@@ -6,7 +6,7 @@ import android.view.View;
 import com.tanlifei.support.utils.ListUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.interactor.IGuideInteractor;
-import com.tanlifei.support.utils.InflaterUtils;
+import com.support.utils.InflaterUtils;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -10,7 +10,7 @@ import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.main.ExempleHomeActivity_;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
-import com.tanlifei.support.utils.StartActUtils;
+import com.support.utils.StartActUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

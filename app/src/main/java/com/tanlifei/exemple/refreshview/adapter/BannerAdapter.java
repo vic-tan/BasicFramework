@@ -9,7 +9,7 @@ import com.support.imageloader.FanImageLoader;
 import com.support.adapter.pagerview.RecyclingPagerAdapter;
 import com.tanlifei.exemple.refreshview.bean.BannerBaen;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.InflaterUtils;
+import com.support.utils.InflaterUtils;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <include layout="@layout/common_actionbar_title_view" />
+    <include layout="@layout/common_actionbar_title_view"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
                 android:onClick="A"
-                android:text="FanImageLoader(Universal-Image-Loader 改版) \n图片特效" />
+                android:text="FanImageLoader(Universal-Image-Loader 改版) \n图片特效"/>
 
             <Button
                 android:id="@+id/B"
@@ -41,7 +41,7 @@
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
                 android:onClick="C"
-                android:text="ProcessCallback 过程请求"/>
+                android:text="Galleryfinal 图片选择"/>
 
         </LinearLayout>
 

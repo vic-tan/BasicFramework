@@ -5,7 +5,7 @@ import android.content.Context;
 import com.support.utils.Logger;
 import com.tanlifei.support.utils.StringUtils;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
-import com.tanlifei.support.utils.ToastUtils;
+import com.support.utils.ToastUtils;
 
 /**
  * 本app自己定义的异常

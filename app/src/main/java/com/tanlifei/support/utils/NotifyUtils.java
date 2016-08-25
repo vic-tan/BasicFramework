@@ -11,8 +11,8 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
+import com.support.utils.ToastUtils;
 import com.tanlifei.common.bean.params.NotifyParams;
 import com.tanlifei.framework.R;
 
@@ -195,7 +195,7 @@ public class NotifyUtils {
         final int sdk = Build.VERSION.SDK_INT;
         if (sdk < Build.VERSION_CODES.JELLY_BEAN) {
             notifyNormalSingline(params);
-            Toast.makeText(mContext, "您的手机低于Android 4.1.2，不支持多行通知显示！！", Toast.LENGTH_SHORT).show();
+            ToastUtils.show(mContext, "您的手机低于Android 4.1.2，不支持多行通知显示！！");
         } else {
             //setBuilder(params.getPendingIntent(), params.getSmallIcon(), params.getTicker(), true, true, false);
             setBuilder(params);
@@ -300,7 +300,7 @@ public class NotifyUtils {
             cBuilder.addAction(params.getRightBtnIcon(),
                     params.getRightText(), params.getRightPendingIntent());
         } else {
-            Toast.makeText(mContext, "版本低于Andriod5.0，无法体验HeadUp样式通知", Toast.LENGTH_SHORT).show();
+            ToastUtils.show(mContext, "版本低于Andriod5.0，无法体验HeadUp样式通知");
         }
         sent();
     }

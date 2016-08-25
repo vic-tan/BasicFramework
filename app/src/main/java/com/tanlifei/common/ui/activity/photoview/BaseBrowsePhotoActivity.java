@@ -18,7 +18,7 @@ import com.support.imageloader.internal.core.listener.ImageLoadingListener;
 import com.tanlifei.common.bean.BasePhotoBean;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.StartActUtils;
+import com.support.utils.StartActUtils;
 
 import java.util.HashMap;
 import java.util.List;

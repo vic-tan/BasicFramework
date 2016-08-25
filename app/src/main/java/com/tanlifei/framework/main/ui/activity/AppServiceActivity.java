@@ -13,7 +13,7 @@ import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
-import com.tanlifei.support.utils.ActivityManager;
+import com.support.utils.ActivityManager;
 import com.tanlifei.support.utils.AppUtils;
 import com.tanlifei.support.utils.ResUtils;
 import com.tanlifei.support.utils.StringUtils;

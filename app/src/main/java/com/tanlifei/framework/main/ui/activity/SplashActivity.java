@@ -5,7 +5,7 @@ import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.presenter.ISplashPresenter;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.SplashView;
-import com.tanlifei.support.utils.StartActUtils;
+import com.support.utils.StartActUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

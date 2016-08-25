@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.ToastUtils;
+import com.support.utils.ToastUtils;
 import com.uikit.dialog.base.popup.BaseBubblePopup;
 
 
