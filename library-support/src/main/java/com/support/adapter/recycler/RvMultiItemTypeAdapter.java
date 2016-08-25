@@ -1,12 +1,12 @@
-package com.tanlifei.common.base.adapter.recycler;
+package com.support.adapter.recycler;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tanlifei.common.base.adapter.ItemViewDelegate;
-import com.tanlifei.common.base.adapter.ItemViewDelegateManager;
+import com.support.adapter.ItemViewDelegate;
+import com.support.adapter.ItemViewDelegateManager;
 
 import java.util.List;
 

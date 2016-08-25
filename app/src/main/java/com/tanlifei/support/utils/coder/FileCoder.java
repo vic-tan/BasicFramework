@@ -25,6 +25,7 @@ public class FileCoder {
 
     private String key = "tanlifei"; // 加密解密key(Encrypt or decrypt key)
     private final int REVERSE_LENGTH = 56;// 加解密长度(Encryption length)
+    private static String SAVE_KEY = "last_decrypt_file";
 
     private FileCoder() {
     }
@@ -98,7 +99,12 @@ public class FileCoder {
                 channel.close();
                 raf.close();
                 if (!isEncrypt) {
-                    AppCacheUtils.getInstance(mContext).put("last_decrypt_file", strFile);
+                    AppCacheUtils.getInstance(mContext).put(SAVE_KEY, strFile);
+                }else{
+                    String save = AppCacheUtils.getInstance(mContext).getString(SAVE_KEY);//是否有记录
+                    if(StringUtils.isEquals(save,strFile)){//如果这次加密的和上一次解密的是同一个文件，得把解密记录删了
+                        AppCacheUtils.getInstance(mContext).put(SAVE_KEY, "");
+                    }
                 }
                 return true;
             }
@@ -115,7 +121,7 @@ public class FileCoder {
      */
     public boolean doDecrypt(Context mContext, String fileUrl) {
         try {
-            String save = AppCacheUtils.getInstance(mContext).getString("last_decrypt_file");//是否有记录
+            String save = AppCacheUtils.getInstance(mContext).getString(SAVE_KEY);//是否有记录
             if (StringUtils.isEmpty(save)) {//第一次加密
                 return decrypt(mContext, fileUrl);
             } else {//上一次加密

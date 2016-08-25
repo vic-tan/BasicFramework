@@ -1,4 +1,4 @@
-package com.tanlifei.common.base.adapter.recycler;
+package com.support.adapter.abslistview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,7 +7,6 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v7.widget.RecyclerView;
 import android.text.util.Linkify;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -20,35 +19,43 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-public class RvViewHolder extends RecyclerView.ViewHolder
+public class AbsViewHolder
 {
     private SparseArray<View> mViews;
+    protected int mPosition;
     private View mConvertView;
     private Context mContext;
+    protected int mLayoutId;
 
-    public RvViewHolder(Context context, View itemView)
+
+    public AbsViewHolder(Context context, View itemView, ViewGroup parent, int position)
     {
-        super(itemView);
         mContext = context;
         mConvertView = itemView;
+        mPosition = position;
         mViews = new SparseArray<View>();
+        mConvertView.setTag(this);
     }
 
 
-    public static RvViewHolder createViewHolder(Context context, View itemView)
+    public static AbsViewHolder get(Context context, View convertView,
+                                    ViewGroup parent, int layoutId, int position)
     {
-        RvViewHolder holder = new RvViewHolder(context, itemView);
-        return holder;
+        if (convertView == null)
+        {
+            View itemView = LayoutInflater.from(context).inflate(layoutId, parent,
+                    false);
+            AbsViewHolder holder = new AbsViewHolder(context, itemView, parent, position);
+            holder.mLayoutId = layoutId;
+            return holder;
+        } else
+        {
+            AbsViewHolder holder = (AbsViewHolder) convertView.getTag();
+            holder.mPosition = position;
+            return holder;
+        }
     }
 
-    public static RvViewHolder createViewHolder(Context context,
-                                                ViewGroup parent, int layoutId)
-    {
-        View itemView = LayoutInflater.from(context).inflate(layoutId, parent,
-                false);
-        RvViewHolder holder = new RvViewHolder(context, itemView);
-        return holder;
-    }
 
     /**
      * 通过viewId获取控件
@@ -72,7 +79,24 @@ public class RvViewHolder extends RecyclerView.ViewHolder
         return mConvertView;
     }
 
+    public int getLayoutId()
+    {
+        return mLayoutId;
+    }
 
+    public void updatePosition(int position)
+    {
+        mPosition = position;
+    }
+
+    public int getItemPosition()
+    {
+        return mPosition;
+    }
+
+    public Context getContext(){
+        return mContext;
+    }
 
 
     /****以下为辅助方法*****/
@@ -84,56 +108,56 @@ public class RvViewHolder extends RecyclerView.ViewHolder
      * @param text
      * @return
      */
-    public RvViewHolder setText(int viewId, String text)
+    public AbsViewHolder setText(int viewId, String text)
     {
         TextView tv = getView(viewId);
         tv.setText(text);
         return this;
     }
 
-    public RvViewHolder setImageResource(int viewId, int resId)
+    public AbsViewHolder setImageResource(int viewId, int resId)
     {
         ImageView view = getView(viewId);
         view.setImageResource(resId);
         return this;
     }
 
-    public RvViewHolder setImageBitmap(int viewId, Bitmap bitmap)
+    public AbsViewHolder setImageBitmap(int viewId, Bitmap bitmap)
     {
         ImageView view = getView(viewId);
         view.setImageBitmap(bitmap);
         return this;
     }
 
-    public RvViewHolder setImageDrawable(int viewId, Drawable drawable)
+    public AbsViewHolder setImageDrawable(int viewId, Drawable drawable)
     {
         ImageView view = getView(viewId);
         view.setImageDrawable(drawable);
         return this;
     }
 
-    public RvViewHolder setBackgroundColor(int viewId, int color)
+    public AbsViewHolder setBackgroundColor(int viewId, int color)
     {
         View view = getView(viewId);
         view.setBackgroundColor(color);
         return this;
     }
 
-    public RvViewHolder setBackgroundRes(int viewId, int backgroundRes)
+    public AbsViewHolder setBackgroundRes(int viewId, int backgroundRes)
     {
         View view = getView(viewId);
         view.setBackgroundResource(backgroundRes);
         return this;
     }
 
-    public RvViewHolder setTextColor(int viewId, int textColor)
+    public AbsViewHolder setTextColor(int viewId, int textColor)
     {
         TextView view = getView(viewId);
         view.setTextColor(textColor);
         return this;
     }
 
-    public RvViewHolder setTextColorRes(int viewId, int textColorRes)
+    public AbsViewHolder setTextColorRes(int viewId, int textColorRes)
     {
         TextView view = getView(viewId);
         view.setTextColor(mContext.getResources().getColor(textColorRes));
@@ -141,7 +165,7 @@ public class RvViewHolder extends RecyclerView.ViewHolder
     }
 
     @SuppressLint("NewApi")
-    public RvViewHolder setAlpha(int viewId, float value)
+    public AbsViewHolder setAlpha(int viewId, float value)
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
         {
@@ -157,21 +181,21 @@ public class RvViewHolder extends RecyclerView.ViewHolder
         return this;
     }
 
-    public RvViewHolder setVisible(int viewId, boolean visible)
+    public AbsViewHolder setVisible(int viewId, boolean visible)
     {
         View view = getView(viewId);
         view.setVisibility(visible ? View.VISIBLE : View.GONE);
         return this;
     }
 
-    public RvViewHolder linkify(int viewId)
+    public AbsViewHolder linkify(int viewId)
     {
         TextView view = getView(viewId);
         Linkify.addLinks(view, Linkify.ALL);
         return this;
     }
 
-    public RvViewHolder setTypeface(Typeface typeface, int... viewIds)
+    public AbsViewHolder setTypeface(Typeface typeface, int... viewIds)
     {
         for (int viewId : viewIds)
         {
@@ -182,14 +206,14 @@ public class RvViewHolder extends RecyclerView.ViewHolder
         return this;
     }
 
-    public RvViewHolder setProgress(int viewId, int progress)
+    public AbsViewHolder setProgress(int viewId, int progress)
     {
         ProgressBar view = getView(viewId);
         view.setProgress(progress);
         return this;
     }
 
-    public RvViewHolder setProgress(int viewId, int progress, int max)
+    public AbsViewHolder setProgress(int viewId, int progress, int max)
     {
         ProgressBar view = getView(viewId);
         view.setMax(max);
@@ -197,21 +221,21 @@ public class RvViewHolder extends RecyclerView.ViewHolder
         return this;
     }
 
-    public RvViewHolder setMax(int viewId, int max)
+    public AbsViewHolder setMax(int viewId, int max)
     {
         ProgressBar view = getView(viewId);
         view.setMax(max);
         return this;
     }
 
-    public RvViewHolder setRating(int viewId, float rating)
+    public AbsViewHolder setRating(int viewId, float rating)
     {
         RatingBar view = getView(viewId);
         view.setRating(rating);
         return this;
     }
 
-    public RvViewHolder setRating(int viewId, float rating, int max)
+    public AbsViewHolder setRating(int viewId, float rating, int max)
     {
         RatingBar view = getView(viewId);
         view.setMax(max);
@@ -219,21 +243,21 @@ public class RvViewHolder extends RecyclerView.ViewHolder
         return this;
     }
 
-    public RvViewHolder setTag(int viewId, Object tag)
+    public AbsViewHolder setTag(int viewId, Object tag)
     {
         View view = getView(viewId);
         view.setTag(tag);
         return this;
     }
 
-    public RvViewHolder setTag(int viewId, int key, Object tag)
+    public AbsViewHolder setTag(int viewId, int key, Object tag)
     {
         View view = getView(viewId);
         view.setTag(key, tag);
         return this;
     }
 
-    public RvViewHolder setChecked(int viewId, boolean checked)
+    public AbsViewHolder setChecked(int viewId, boolean checked)
     {
         Checkable view = (Checkable) getView(viewId);
         view.setChecked(checked);
@@ -243,24 +267,24 @@ public class RvViewHolder extends RecyclerView.ViewHolder
     /**
      * 关于事件的
      */
-    public RvViewHolder setOnClickListener(int viewId,
-                                           View.OnClickListener listener)
+    public AbsViewHolder setOnClickListener(int viewId,
+                                            View.OnClickListener listener)
     {
         View view = getView(viewId);
         view.setOnClickListener(listener);
         return this;
     }
 
-    public RvViewHolder setOnTouchListener(int viewId,
-                                           View.OnTouchListener listener)
+    public AbsViewHolder setOnTouchListener(int viewId,
+                                            View.OnTouchListener listener)
     {
         View view = getView(viewId);
         view.setOnTouchListener(listener);
         return this;
     }
 
-    public RvViewHolder setOnLongClickListener(int viewId,
-                                               View.OnLongClickListener listener)
+    public AbsViewHolder setOnLongClickListener(int viewId,
+                                                View.OnLongClickListener listener)
     {
         View view = getView(viewId);
         view.setOnLongClickListener(listener);

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.support.imageloader.FanImageLoader;
-import com.tanlifei.common.base.adapter.pagerview.RecyclingPagerAdapter;
+import com.support.adapter.pagerview.RecyclingPagerAdapter;
 import com.tanlifei.exemple.refreshview.bean.BannerBaen;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.InflaterUtils;

@@ -1,4 +1,4 @@
-package com.tanlifei.common.base.adapter.pagerview;
+package com.support.adapter.pagerview;
 
 import android.os.Build;
 import android.support.v4.view.PagerAdapter;

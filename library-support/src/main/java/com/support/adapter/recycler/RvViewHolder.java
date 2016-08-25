@@ -1,4 +1,4 @@
-package com.tanlifei.common.base.adapter.abslistview;
+package com.support.adapter.recycler;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -20,43 +20,35 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-public class AbsViewHolder
+public class RvViewHolder extends RecyclerView.ViewHolder
 {
     private SparseArray<View> mViews;
-    protected int mPosition;
     private View mConvertView;
     private Context mContext;
-    protected int mLayoutId;
 
-
-    public AbsViewHolder(Context context, View itemView, ViewGroup parent, int position)
+    public RvViewHolder(Context context, View itemView)
     {
+        super(itemView);
         mContext = context;
         mConvertView = itemView;
-        mPosition = position;
         mViews = new SparseArray<View>();
-        mConvertView.setTag(this);
     }
 
 
-    public static AbsViewHolder get(Context context, View convertView,
-                                    ViewGroup parent, int layoutId, int position)
+    public static RvViewHolder createViewHolder(Context context, View itemView)
     {
-        if (convertView == null)
-        {
-            View itemView = LayoutInflater.from(context).inflate(layoutId, parent,
-                    false);
-            AbsViewHolder holder = new AbsViewHolder(context, itemView, parent, position);
-            holder.mLayoutId = layoutId;
-            return holder;
-        } else
-        {
-            AbsViewHolder holder = (AbsViewHolder) convertView.getTag();
-            holder.mPosition = position;
-            return holder;
-        }
+        RvViewHolder holder = new RvViewHolder(context, itemView);
+        return holder;
     }
 
+    public static RvViewHolder createViewHolder(Context context,
+                                                ViewGroup parent, int layoutId)
+    {
+        View itemView = LayoutInflater.from(context).inflate(layoutId, parent,
+                false);
+        RvViewHolder holder = new RvViewHolder(context, itemView);
+        return holder;
+    }
 
     /**
      * 通过viewId获取控件
@@ -80,24 +72,7 @@ public class AbsViewHolder
         return mConvertView;
     }
 
-    public int getLayoutId()
-    {
-        return mLayoutId;
-    }
 
-    public void updatePosition(int position)
-    {
-        mPosition = position;
-    }
-
-    public int getItemPosition()
-    {
-        return mPosition;
-    }
-
-    public Context getContext(){
-        return mContext;
-    }
 
 
     /****以下为辅助方法*****/
@@ -109,56 +84,56 @@ public class AbsViewHolder
      * @param text
      * @return
      */
-    public AbsViewHolder setText(int viewId, String text)
+    public RvViewHolder setText(int viewId, String text)
     {
         TextView tv = getView(viewId);
         tv.setText(text);
         return this;
     }
 
-    public AbsViewHolder setImageResource(int viewId, int resId)
+    public RvViewHolder setImageResource(int viewId, int resId)
     {
         ImageView view = getView(viewId);
         view.setImageResource(resId);
         return this;
     }
 
-    public AbsViewHolder setImageBitmap(int viewId, Bitmap bitmap)
+    public RvViewHolder setImageBitmap(int viewId, Bitmap bitmap)
     {
         ImageView view = getView(viewId);
         view.setImageBitmap(bitmap);
         return this;
     }
 
-    public AbsViewHolder setImageDrawable(int viewId, Drawable drawable)
+    public RvViewHolder setImageDrawable(int viewId, Drawable drawable)
     {
         ImageView view = getView(viewId);
         view.setImageDrawable(drawable);
         return this;
     }
 
-    public AbsViewHolder setBackgroundColor(int viewId, int color)
+    public RvViewHolder setBackgroundColor(int viewId, int color)
     {
         View view = getView(viewId);
         view.setBackgroundColor(color);
         return this;
     }
 
-    public AbsViewHolder setBackgroundRes(int viewId, int backgroundRes)
+    public RvViewHolder setBackgroundRes(int viewId, int backgroundRes)
     {
         View view = getView(viewId);
         view.setBackgroundResource(backgroundRes);
         return this;
     }
 
-    public AbsViewHolder setTextColor(int viewId, int textColor)
+    public RvViewHolder setTextColor(int viewId, int textColor)
     {
         TextView view = getView(viewId);
         view.setTextColor(textColor);
         return this;
     }
 
-    public AbsViewHolder setTextColorRes(int viewId, int textColorRes)
+    public RvViewHolder setTextColorRes(int viewId, int textColorRes)
     {
         TextView view = getView(viewId);
         view.setTextColor(mContext.getResources().getColor(textColorRes));
@@ -166,7 +141,7 @@ public class AbsViewHolder
     }
 
     @SuppressLint("NewApi")
-    public AbsViewHolder setAlpha(int viewId, float value)
+    public RvViewHolder setAlpha(int viewId, float value)
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
         {
@@ -182,21 +157,21 @@ public class AbsViewHolder
         return this;
     }
 
-    public AbsViewHolder setVisible(int viewId, boolean visible)
+    public RvViewHolder setVisible(int viewId, boolean visible)
     {
         View view = getView(viewId);
         view.setVisibility(visible ? View.VISIBLE : View.GONE);
         return this;
     }
 
-    public AbsViewHolder linkify(int viewId)
+    public RvViewHolder linkify(int viewId)
     {
         TextView view = getView(viewId);
         Linkify.addLinks(view, Linkify.ALL);
         return this;
     }
 
-    public AbsViewHolder setTypeface(Typeface typeface, int... viewIds)
+    public RvViewHolder setTypeface(Typeface typeface, int... viewIds)
     {
         for (int viewId : viewIds)
         {
@@ -207,14 +182,14 @@ public class AbsViewHolder
         return this;
     }
 
-    public AbsViewHolder setProgress(int viewId, int progress)
+    public RvViewHolder setProgress(int viewId, int progress)
     {
         ProgressBar view = getView(viewId);
         view.setProgress(progress);
         return this;
     }
 
-    public AbsViewHolder setProgress(int viewId, int progress, int max)
+    public RvViewHolder setProgress(int viewId, int progress, int max)
     {
         ProgressBar view = getView(viewId);
         view.setMax(max);
@@ -222,21 +197,21 @@ public class AbsViewHolder
         return this;
     }
 
-    public AbsViewHolder setMax(int viewId, int max)
+    public RvViewHolder setMax(int viewId, int max)
     {
         ProgressBar view = getView(viewId);
         view.setMax(max);
         return this;
     }
 
-    public AbsViewHolder setRating(int viewId, float rating)
+    public RvViewHolder setRating(int viewId, float rating)
     {
         RatingBar view = getView(viewId);
         view.setRating(rating);
         return this;
     }
 
-    public AbsViewHolder setRating(int viewId, float rating, int max)
+    public RvViewHolder setRating(int viewId, float rating, int max)
     {
         RatingBar view = getView(viewId);
         view.setMax(max);
@@ -244,21 +219,21 @@ public class AbsViewHolder
         return this;
     }
 
-    public AbsViewHolder setTag(int viewId, Object tag)
+    public RvViewHolder setTag(int viewId, Object tag)
     {
         View view = getView(viewId);
         view.setTag(tag);
         return this;
     }
 
-    public AbsViewHolder setTag(int viewId, int key, Object tag)
+    public RvViewHolder setTag(int viewId, int key, Object tag)
     {
         View view = getView(viewId);
         view.setTag(key, tag);
         return this;
     }
 
-    public AbsViewHolder setChecked(int viewId, boolean checked)
+    public RvViewHolder setChecked(int viewId, boolean checked)
     {
         Checkable view = (Checkable) getView(viewId);
         view.setChecked(checked);
@@ -268,24 +243,24 @@ public class AbsViewHolder
     /**
      * 关于事件的
      */
-    public AbsViewHolder setOnClickListener(int viewId,
-                                            View.OnClickListener listener)
+    public RvViewHolder setOnClickListener(int viewId,
+                                           View.OnClickListener listener)
     {
         View view = getView(viewId);
         view.setOnClickListener(listener);
         return this;
     }
 
-    public AbsViewHolder setOnTouchListener(int viewId,
-                                            View.OnTouchListener listener)
+    public RvViewHolder setOnTouchListener(int viewId,
+                                           View.OnTouchListener listener)
     {
         View view = getView(viewId);
         view.setOnTouchListener(listener);
         return this;
     }
 
-    public AbsViewHolder setOnLongClickListener(int viewId,
-                                                View.OnLongClickListener listener)
+    public RvViewHolder setOnLongClickListener(int viewId,
+                                               View.OnLongClickListener listener)
     {
         View view = getView(viewId);
         view.setOnLongClickListener(listener);

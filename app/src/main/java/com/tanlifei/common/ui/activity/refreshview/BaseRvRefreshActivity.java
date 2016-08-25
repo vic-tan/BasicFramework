@@ -1,6 +1,6 @@
 package com.tanlifei.common.ui.activity.refreshview;
 
-import com.tanlifei.common.base.adapter.recycler.RvCommonAdapter;
+import com.support.adapter.recycler.RvCommonAdapter;
 
 /**
  * RecylerView 列表刷新基类，继承基本

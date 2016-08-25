@@ -1,9 +1,9 @@
-package com.tanlifei.common.base.adapter;
+package com.support.adapter;
 
 import android.support.v4.util.SparseArrayCompat;
 
-import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
-import com.tanlifei.common.base.adapter.recycler.RvViewHolder;
+import com.support.adapter.abslistview.AbsViewHolder;
+import com.support.adapter.recycler.RvViewHolder;
 
 
 /**

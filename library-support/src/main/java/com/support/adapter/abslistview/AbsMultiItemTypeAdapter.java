@@ -1,4 +1,4 @@
-package com.tanlifei.common.base.adapter.abslistview;
+package com.support.adapter.abslistview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.tanlifei.common.base.adapter.ItemViewDelegate;
-import com.tanlifei.common.base.adapter.ItemViewDelegateManager;
+import com.support.adapter.ItemViewDelegate;
+import com.support.adapter.ItemViewDelegateManager;
 
 import java.util.List;
 

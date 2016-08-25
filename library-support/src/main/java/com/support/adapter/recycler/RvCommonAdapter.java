@@ -1,10 +1,10 @@
-package com.tanlifei.common.base.adapter.recycler;
+package com.support.adapter.recycler;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 
-import com.tanlifei.common.base.adapter.ItemViewDelegate;
-import com.tanlifei.common.base.adapter.abslistview.AbsViewHolder;
+import com.support.adapter.ItemViewDelegate;
+import com.support.adapter.abslistview.AbsViewHolder;
 
 import java.util.List;
 
