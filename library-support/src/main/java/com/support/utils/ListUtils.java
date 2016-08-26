@@ -1,4 +1,6 @@
-package com.tanlifei.support.utils;
+package com.support.utils;
+
+import com.support.galleryfinal.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;

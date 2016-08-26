@@ -3,7 +3,7 @@ package com.tanlifei.framework.main.interactor.impl;
 import android.content.Context;
 import android.view.View;
 
-import com.tanlifei.support.utils.ListUtils;
+import com.support.utils.ListUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.interactor.IGuideInteractor;
 import com.support.utils.InflaterUtils;

@@ -193,7 +193,7 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (mOnOperItemClickL != null) {
-                    mOnOperItemClickL.onOperItemClick(parent, view, position, id);
+                    mOnOperItemClickL.onOperItemClick(ActionSheetDialog.this,parent, view, position, id);
                 }
             }
         });

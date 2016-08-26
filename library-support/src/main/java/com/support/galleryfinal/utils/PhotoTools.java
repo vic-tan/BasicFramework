@@ -80,7 +80,6 @@ public class PhotoTools {
                     //int thumbImageColumn = cursor.getColumnIndex(MediaStore.Images.Thumbnails.DATA);
                     final int imageId = cursor.getInt(imageIdColumn);
                     final String path = cursor.getString(dataColumn);
-                    Log.d("aa",path);
                     //final String thumb = cursor.getString(thumbImageColumn);
                     File file = new File(path);
                     if ( (filterList == null || !filterList.contains(path)) && file.exists() && file.length() > 0 ) {

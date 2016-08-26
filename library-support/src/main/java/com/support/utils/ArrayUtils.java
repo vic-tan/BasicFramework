@@ -1,4 +1,4 @@
-package com.tanlifei.support.utils;
+package com.support.utils;
 
 /**
  * Array Utils

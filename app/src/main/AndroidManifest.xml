@@ -64,6 +64,14 @@
             </intent-filter>
 
         </receiver>
+
+
+        <!-- —————————————————————————————————— Photo  —————————————————————————————————————— -->
+
+        <activity android:name="com.tanlifei.common.ui.activity.photoview.BaseBrowsePhotoActivity"/>
+        <activity android:name="com.tanlifei.common.ui.activity.photoview.BaseDeletePhotoActivity"/>
+
+
         <!-- —————————————————————————————————— 示例  —————————————————————————————————————— -->
 
 
@@ -109,7 +117,7 @@
         <activity android:name="com.tanlifei.exemple.photo.ExemplePhotoMainActivity"/>
         <!-- FanImageLoader -->
         <activity android:name="com.tanlifei.exemple.photo.fanImageloader.ExempleFanImageLoaderActivity_"/>
-        <activity android:name="com.tanlifei.common.ui.activity.photoview.BaseBrowsePhotoActivity"/>
+
         <activity android:name="com.tanlifei.exemple.photo.galleryfinal.ExempleGalleryFinalActivity_"/>
 
         <meta-data

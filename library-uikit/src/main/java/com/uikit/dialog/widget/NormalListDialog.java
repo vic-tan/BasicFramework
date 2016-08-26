@@ -181,7 +181,7 @@ public class NormalListDialog extends BaseDialog<NormalListDialog> {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (mOnOperItemClickL != null) {
-                    mOnOperItemClickL.onOperItemClick(parent, view, position, id);
+                    mOnOperItemClickL.onOperItemClick(NormalListDialog.this,parent, view, position, id);
                 }
             }
         });

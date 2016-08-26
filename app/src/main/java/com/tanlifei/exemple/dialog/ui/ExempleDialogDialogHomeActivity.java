@@ -391,7 +391,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
                 .show();
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
-            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onOperItemClick(Dialog dialog, AdapterView<?> parent, View view, int position, long id) {
                 ToastUtils.show(mContext,mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
@@ -413,7 +413,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
 
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
-            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onOperItemClick(Dialog dialog, AdapterView<?> parent, View view, int position, long id) {
                 ToastUtils.show(mContext,mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
@@ -434,7 +434,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
 
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
-            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onOperItemClick(Dialog dialog, AdapterView<?> parent, View view, int position, long id) {
                 ToastUtils.show(mContext, mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
@@ -448,7 +448,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
                 .show();
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
-            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onOperItemClick(Dialog dialog, AdapterView<?> parent, View view, int position, long id) {
                 ToastUtils.show(mContext,mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
@@ -461,7 +461,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
                 .show();
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
-            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onOperItemClick(Dialog dialog, AdapterView<?> parent, View view, int position, long id) {
                 ToastUtils.show(mContext,mMenuItems.get(position).mOperName);
                 dialog.dismiss();
             }
@@ -478,7 +478,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
 
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
-            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onOperItemClick(Dialog dialog, AdapterView<?> parent, View view, int position, long id) {
                 ToastUtils.show(mContext, stringItems[position]);
                 dialog.dismiss();
             }
@@ -492,7 +492,7 @@ public class ExempleDialogDialogHomeActivity extends BaseActionBarActivity imple
 
         dialog.setOnOperItemClickL(new OnOperItemClickL() {
             @Override
-            public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onOperItemClick(Dialog dialog, AdapterView<?> parent, View view, int position, long id) {
                 ToastUtils.show(mContext,stringItems[position]);
                 dialog.dismiss();
             }

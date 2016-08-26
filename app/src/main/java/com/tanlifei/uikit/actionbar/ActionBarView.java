@@ -229,4 +229,31 @@ public class ActionBarView extends AutoFrameLayout {
     }
 
 
+    public LinearLayout getActionbar_back_layout() {
+        return actionbar_back_layout;
+    }
+
+    public TextView getActionbar_back_text() {
+        return actionbar_back_text;
+    }
+
+    public LinearLayout getActionbar_opt() {
+        return actionbar_opt;
+    }
+
+    public TextView getActionbar_opt_right_text() {
+        return actionbar_opt_right_text;
+    }
+
+    public TextView getActionbar_opt_left_text() {
+        return actionbar_opt_left_text;
+    }
+
+    public Button getActionbar_opt_right_icon() {
+        return actionbar_opt_right_icon;
+    }
+
+    public Button getActionbar_opt_left_icon() {
+        return actionbar_opt_left_icon;
+    }
 }

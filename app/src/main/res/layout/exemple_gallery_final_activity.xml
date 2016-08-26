@@ -22,13 +22,6 @@
             android:orientation="vertical">
 
 
-            <Button
-                android:id="@+id/btn_open_gallery"
-                style="@style/base_button_corners"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
-                android:text="选择图片"/>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,13 +31,14 @@
                 android:textStyle="bold"
                 />
 
-            <GridView
+            <com.uikit.list.NoneScrollGridView
                 android:id="@+id/lv_photo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:numColumns="3"
-                android:horizontalSpacing="2dp"
-                android:verticalSpacing="2dp"/>
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:horizontalSpacing="3dp"
+                android:numColumns="4"
+                android:verticalSpacing="3dp"/>
 
         </LinearLayout>
     </ScrollView>
