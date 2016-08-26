@@ -171,7 +171,7 @@ public class PhotoSelectActivity extends PhotoBaseActivity implements View.OnCli
 
     private void setTheme() {
         mIvBack.setImageResource(GalleryFinal.getGalleryTheme().getIconBack());
-        if (GalleryFinal.getGalleryTheme().getIconBack() == R.mipmap.ic_gf_back) {
+        if (GalleryFinal.getGalleryTheme().getIconBack() == R.mipmap.actionbar_icon_back) {
             mIvBack.setColorFilter(GalleryFinal.getGalleryTheme().getTitleBarIconColor());
         }
 
@@ -482,10 +482,13 @@ public class PhotoSelectActivity extends PhotoBaseActivity implements View.OnCli
         PhotoListAdapter.PhotoViewHolder holder = (PhotoListAdapter.PhotoViewHolder) view.getTag();
         if (holder != null) {
             if (checked) {
-                holder.mIvCheck.setBackgroundColor(GalleryFinal.getGalleryTheme().getCheckSelectedColor());
+                //holder.mIvCheck.setBackgroundColor(GalleryFinal.getGalleryTheme().getCheckSelectedColor());
+                holder.mIvCheck.setBackgroundDrawable(PhotoSelectActivity.this.getResources().getDrawable(R.drawable.bg_gf_check_pressed));
             } else {
-                holder.mIvCheck.setBackgroundColor(GalleryFinal.getGalleryTheme().getCheckNornalColor());
+                //holder.mIvCheck.setBackgroundColor(GalleryFinal.getGalleryTheme().getCheckNornalColor());
+                holder.mIvCheck.setBackgroundDrawable(PhotoSelectActivity.this.getResources().getDrawable(R.drawable.bg_gf_check_normal));
             }
+
         } else {
             mPhotoListAdapter.notifyDataSetChanged();
         }

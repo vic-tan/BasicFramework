@@ -30,6 +30,8 @@ import java.io.Serializable;
  */
 public class ThemeConfig implements Serializable{
 
+    public static final String THEME_COLOR = "#00C15C";
+
     //默认主题
     public static ThemeConfig DEFAULT = new ThemeConfig.Builder().build();
     //黑色主题
@@ -43,11 +45,11 @@ public class ThemeConfig implements Serializable{
 
     //绿色主题
     public static ThemeConfig GREEN = new ThemeConfig.Builder()
-            .setTitleBarBgColor(Color.parseColor("#00C15C"))
-            .setFabNornalColor(Color.parseColor("#00C15C"))
+            .setTitleBarBgColor(Color.parseColor(THEME_COLOR))
+            .setFabNornalColor(Color.parseColor(THEME_COLOR))
             .setFabPressedColor(Color.parseColor("#8000C15C"))
-            .setCheckSelectedColor(Color.parseColor("#00C15C"))
-            .setCropControlColor(Color.parseColor("#00C15C"))
+            .setCheckSelectedColor(Color.parseColor(THEME_COLOR))
+            .setCropControlColor(Color.parseColor(THEME_COLOR))
             .build();
 
 
@@ -101,13 +103,13 @@ public class ThemeConfig implements Serializable{
         private int titleBarTextColor = Color.WHITE;
         private int titleBarBgColor = Color.rgb(0x3F, 0x51, 0xB5);
         private int titleBarIconColor = Color.WHITE;
-        private int checkNornalColor = Color.rgb(0xd2, 0xd2, 0xd7);
-        private int checkSelectedColor = Color.rgb(0x3F, 0x51, 0xB5);
+        private int checkNornalColor = Color.parseColor("#CACACA");
+        private int checkSelectedColor = Color.parseColor(THEME_COLOR);
         private int fabNornalColor = Color.rgb(0x3F, 0x51, 0xB5);
         private int fabPressedColor = Color.rgb(0x30, 0x3f, 0x9f);
         private int cropControlColor = Color.rgb(0x3F, 0x51, 0xB5);
 
-        private int iconBack = R.mipmap.ic_gf_back;
+        private int iconBack = R.mipmap.actionbar_icon_back;
         private int iconCamera = R.mipmap.ic_gf_camera;
         private int iconCrop = R.mipmap.ic_gf_crop;
         private int iconRotate = R.mipmap.ic_gf_rotate;

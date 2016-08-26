@@ -164,7 +164,7 @@ public class BaseBrowsePhotoActivity extends BaseActivity {
         }
 
         public String getImgUrl(int position) {
-            return ((BasePhotoBean) list.get(position)).getUrl();
+            return isLocal ? "file://" + ((BasePhotoBean) list.get(position)).getUrl() : ((BasePhotoBean) list.get(position)).getUrl();
         }
 
         @Override

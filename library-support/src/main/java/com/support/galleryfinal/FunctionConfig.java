@@ -34,6 +34,7 @@ public class FunctionConfig implements Cloneable{
     protected boolean mutiSelect;
     protected int maxSize;
     protected boolean editPhoto;//编辑
+    protected boolean cameraEditPhoto;//拍照时是否编辑
     protected boolean crop;//裁剪
     private boolean rotate;//旋转
     private boolean camera;
@@ -52,6 +53,7 @@ public class FunctionConfig implements Cloneable{
         this.mutiSelect = builder.mutiSelect;
         this.maxSize = builder.maxSize;
         this.editPhoto = builder.editPhoto;
+        this.cameraEditPhoto = builder.cameraEditPhoto;
         this.crop = builder.crop;
         this.rotate = builder.rotate;
         this.camera = builder.camera;
@@ -71,6 +73,7 @@ public class FunctionConfig implements Cloneable{
         private boolean mutiSelect;
         private int maxSize;
         private boolean editPhoto;//编辑
+        private boolean cameraEditPhoto;
         private boolean crop;//裁剪
         private boolean rotate;//旋转
         private boolean camera;
@@ -97,6 +100,11 @@ public class FunctionConfig implements Cloneable{
 
         public Builder setEnableEdit(boolean enable) {
             this.editPhoto = enable;
+            return this;
+        }
+
+        public Builder setCameraEditPhoto(boolean enable){
+            this.cameraEditPhoto = enable;
             return this;
         }
 
@@ -237,6 +245,10 @@ public class FunctionConfig implements Cloneable{
 
     public boolean isEditPhoto() {
         return editPhoto;
+    }
+
+    public boolean isCameraEditPhoto(){
+        return cameraEditPhoto;
     }
 
     public boolean isCrop() {

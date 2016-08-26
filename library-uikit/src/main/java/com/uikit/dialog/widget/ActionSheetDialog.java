@@ -198,7 +198,7 @@ public class ActionSheetDialog extends BottomBaseDialog<ActionSheetDialog> {
             }
         });
 
-        mLv.setLayoutAnimation(mLac);
+        //mLv.setLayoutAnimation(mLac);
     }
 
     /** set title background color(设置标题栏背景色) */

@@ -68,7 +68,7 @@ public class PhotoPreviewActivity extends PhotoBaseActivity implements ViewPager
 
     private void setTheme() {
         mIvBack.setImageResource(mThemeConfig.getIconBack());
-        if (mThemeConfig.getIconBack() == R.mipmap.ic_gf_back) {
+        if (mThemeConfig.getIconBack() == R.mipmap.actionbar_icon_back) {
             mIvBack.setColorFilter(mThemeConfig.getTitleBarIconColor());
         }
 
