@@ -36,6 +36,7 @@ public class ExempleGalleryFinalActivity extends BaseActionBarActivity {
     private final int REQUEST_CODE_GALLERY = 1001;
     private final int REQUEST_CODE_CROP = 1002;
     private final int REQUEST_CODE_EDIT = 1003;
+    private int count = 10;
 
 
     @ViewById(R.id.lv_photo)
@@ -49,7 +50,7 @@ public class ExempleGalleryFinalActivity extends BaseActionBarActivity {
         actionBarView.setActionbarTitle("GalleryFinal 特效");
         mLvPhoto = (GridView) findViewById(R.id.lv_photo);
         mPhotoList = new ArrayList<>();
-        mChoosePhotoListAdapter = new PhotoChooseListApdater(mContext, mPhotoList, 10);
+        mChoosePhotoListAdapter = new PhotoChooseListApdater(mContext, mPhotoList, count);
         mLvPhoto.setAdapter(mChoosePhotoListAdapter);
         mLvPhoto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -75,13 +76,13 @@ public class ExempleGalleryFinalActivity extends BaseActionBarActivity {
                                                 .setEnableCrop(true)
                                                 .setEnableRotate(false)
                                                 .setCropSquare(true)
-                                                .setMutiSelectMaxSize(10)
+                                                .setMutiSelectMaxSize(count)
                                                 .setSelected(mPhotoList)
                                                 .setForceCrop(true)//启动强制裁剪功能,一进入编辑页面就开启图片裁剪，不需要用户手动点击裁剪，此功能只针对单选操作
                                                 .build();
                                         GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, functionConfig, mOnHanlderResultCallback);
                                     } else {
-                                        GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, 10, mOnHanlderResultCallback);
+                                        GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, count, mOnHanlderResultCallback);
                                     }
                                     break;
                                 case 1:

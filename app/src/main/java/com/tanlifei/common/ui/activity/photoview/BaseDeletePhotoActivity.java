@@ -185,12 +185,6 @@ public class BaseDeletePhotoActivity extends BaseActionBarActivity {
             holder.photoView = (PhotoView) view.findViewById(R.id.iv_photo);
             FanImageLoader.create("file://" + list.get(position).getPhotoPath()).setAllRes(com.support.R.mipmap.ic_gf_default_photo).into(holder.photoView);
             (container).addView(view, 0);
-           /* holder.photoView.setOnPhotoTapListener(new OnPhotoTapListener() {
-                @Override
-                public void onPhotoTap(View view, float x, float y) {
-                    StartActUtils.finish(mContext);
-                }
-            });*/
             return view;
         }
 

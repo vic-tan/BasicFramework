@@ -46,7 +46,7 @@ public class PhotoChooseListApdater extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder = null;
+        ViewHolder holder ;
         if (convertView == null) {
             convertView = InflaterUtils.inflate(mContext, R.layout.gf_adapter_photo_choose_list_item);
             holder = new ViewHolder();
@@ -60,15 +60,19 @@ public class PhotoChooseListApdater extends BaseAdapter {
     }
 
     private void displayData(final int position, ViewHolder holder) {
-        if (position == list.size()) {
-            FanImageLoader.create("drawable://" + R.mipmap.common_add_photo).setAllRes(R.mipmap.common_add_photo).into(holder.image);
-            if (position == maxSize) {
-                holder.image.setVisibility(View.GONE);
+        try {
+            if (position == list.size()) {
+                FanImageLoader.create("drawable://" + R.mipmap.common_add_photo).setAllRes(R.mipmap.common_add_photo).into(holder.image);
+                if (position == maxSize) {
+                    holder.image.setVisibility(View.GONE);
+                } else {
+                    holder.image.setVisibility(View.VISIBLE);
+                }
             } else {
-                holder.image.setVisibility(View.VISIBLE);
+                FanImageLoader.create("file://" + list.get(position).getPhotoPath()).setAllRes(R.mipmap.ic_gf_default_photo).into(holder.image);
             }
-        } else {
-            FanImageLoader.create("file://" + list.get(position).getPhotoPath()).setAllRes(R.mipmap.ic_gf_default_photo).into(holder.image);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
