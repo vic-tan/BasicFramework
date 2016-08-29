@@ -7,12 +7,11 @@ import android.content.Context;
 import com.support.galleryfinal.CoreConfig;
 import com.support.galleryfinal.FunctionConfig;
 import com.support.galleryfinal.GalleryFinal;
-import com.support.galleryfinal.GalleryFinalImageLoader;
 import com.support.galleryfinal.ThemeConfig;
+import com.support.galleryfinal.UILImageLoader;
 import com.support.imageloader.FanImageLoader;
 import com.support.okhttp.OkHttpUtils;
 import com.support.utils.io.FileUtils;
-import com.support.galleryfinal.UILImageLoader;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.OnOffConstants;
 import com.tanlifei.support.constants.level.OnOffLevel;
@@ -30,7 +29,6 @@ import java.util.concurrent.TimeUnit;
 public class BaseApplication extends Application {
 
     public static Context appContext;
-    public static FunctionConfig functionConfig;
 
     @Override
     public void onCreate() {
@@ -62,29 +60,9 @@ public class BaseApplication extends Application {
     }
 
     private void initGalleryFinal() {
-        //配置功能
-        functionConfig = new FunctionConfig.Builder()
-                .setEnableCamera(true)
-                .setEnableEdit(false)//开启编辑功能
-                .setCameraEditPhoto(true)//拍照完成后开启编辑功能
-                .setEnableCrop(false)//开启裁剪功能
-                .setEnableRotate(false)//开启旋转功能
-                .setEnableCamera(false)//开启相机功能
-                .setEnableCrop(true)
-                .setEnableRotate(false)
-                .setCropSquare(true)
-                .setCropReplaceSource(true)
-                .setForceCrop(true)//启动强制裁剪功能,一进入编辑页面就开启图片裁剪，不需要用户手动点击裁剪，此功能只针对单选操作
-                //.setForceCropEdit(false)//在开启强制裁剪功能时是否可以对图片进行编辑（也就是是否显示旋转图标和拍照图标）
-                //.setEnablePreview(false)//是否开启预览功能
-                //.setEnablePreview(true)
-                .build();
-
-        //配置imageloader
-        GalleryFinalImageLoader imageloader = new UILImageLoader();
-        CoreConfig coreConfig = new CoreConfig.Builder(appContext, imageloader, ThemeConfig.GREEN)
-                .setFunctionConfig(functionConfig)
-                .setEditPhotoCacheFolder(new File(GlobalConstants.IMAGES_TAKE_PHOTO_PATH))////配置编辑（裁剪和旋转）功能产生的cache文件保存目录
+        CoreConfig coreConfig = new CoreConfig.Builder(appContext, new UILImageLoader(), ThemeConfig.GREEN)
+                .setFunctionConfig(new FunctionConfig.Builder().build())
+                .setEditPhotoCacheFolder(new File(GlobalConstants.IMAGES_EDIT_PHOTO_PATH))////配置编辑（裁剪和旋转）功能产生的cache文件保存目录
                 .setTakePhotoFolder(new File(GlobalConstants.IMAGES_TAKE_PHOTO_PATH))//设置拍照保存目录
                 .setNoAnimcation(true)//关闭动画
                 .build();

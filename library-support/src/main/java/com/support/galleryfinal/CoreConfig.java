@@ -86,6 +86,8 @@ public class CoreConfig {
             this.animRes = R.anim.gf_flip_horizontal_in;
         }
 
+
+
         public Builder setTakePhotoFolder(File takePhotoFolder) {
             this.takePhotoFolder = takePhotoFolder;
             return this;

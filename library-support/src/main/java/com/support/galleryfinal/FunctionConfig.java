@@ -69,6 +69,8 @@ public class FunctionConfig implements Cloneable{
         this.preview = builder.preview;
     }
 
+    
+
     public static class Builder {
         private boolean mutiSelect;
         private int maxSize;

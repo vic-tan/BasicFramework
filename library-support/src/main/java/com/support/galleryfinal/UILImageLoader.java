@@ -51,8 +51,9 @@ public class UILImageLoader implements GalleryFinalImageLoader {
                 .bitmapConfig(mImageConfig)
                 .build();
         ImageSize imageSize = new ImageSize(width, height);
+        //FanImageLoader.clearDiskCache();
         FanImageLoader.create("file://" + path).setImageSize(imageSize).into(imageView);
-       // ImageLoader.getInstance().displayImage("file://" + path, new ImageViewAware(imageView), options, imageSize, null, null);
+        //FanImageLoader.getmImageLoader().getInstance().displayImage("file://" + path, new ImageViewAware(imageView), options, imageSize, null, null);
     }
 
     @Override

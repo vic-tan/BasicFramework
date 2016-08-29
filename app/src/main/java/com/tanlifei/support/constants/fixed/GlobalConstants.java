@@ -27,12 +27,12 @@ public class GlobalConstants {
     /**
      * 针对全局拍照编辑图片路径
      */
-    public static final String IMAGES_EDIT_PHOTO_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "basic_framework/images/edit_photo/";
+    public static final String IMAGES_EDIT_PHOTO_PATH = Environment.getExternalStorageDirectory() + "/DCIM/basic_framework/images/edit_photo/";
 
     /**
      * 针对全局拍照图片路径
      */
-    public static final String IMAGES_TAKE_PHOTO_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "basic_framework/images/take_photo/";
+    public static final String IMAGES_TAKE_PHOTO_PATH = Environment.getExternalStorageDirectory() + "/DCIM/basic_framework/images/take_photo/";
     /**
      * 文件下载保存路径
      */

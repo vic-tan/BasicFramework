@@ -128,6 +128,11 @@ public class ImageLoader {
         displayImage(uri, imageAware, null, null, null);
     }
 
+    public void displayImage(String uri, ImageAware imageAware, DisplayImageOptions options,
+                             ImageSize targetSize, ImageLoadingListener listener, ImageLoadingProgressListener progressListener) {
+        displayImage(uri, imageAware, options, listener, progressListener);
+    }
+
     /**
      * Adds display image task to execution pool. Image will be set to ImageAware when it's turn.<br />
      * Default {@linkplain DisplayImageOptions display image options} from {@linkplain ImageLoaderConfiguration

@@ -16,7 +16,6 @@ import com.support.utils.ToastUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.common.ui.activity.photoview.BaseDeletePhotoActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.framework.main.ui.BaseApplication;
 import com.uikit.dialog.listener.OnOperItemClickL;
 import com.uikit.dialog.widget.ActionSheetDialog;
 
@@ -43,6 +42,7 @@ public class ExempleGalleryFinalActivity extends BaseActionBarActivity {
     GridView mLvPhoto;
     private List<PhotoInfo> mPhotoList;
     private PhotoChooseListApdater mChoosePhotoListAdapter;
+    private FunctionConfig.Builder builder;
 
     @AfterViews
     void init() {
@@ -52,10 +52,23 @@ public class ExempleGalleryFinalActivity extends BaseActionBarActivity {
         mPhotoList = new ArrayList<>();
         mChoosePhotoListAdapter = new PhotoChooseListApdater(mContext, mPhotoList, count);
         mLvPhoto.setAdapter(mChoosePhotoListAdapter);
+        builder = new FunctionConfig.Builder();
+        builder.setEnableCamera(true)
+                .setEnableEdit(false)//开启编辑功能
+                .setCameraEditPhoto(true)//拍照完成后开启编辑功能
+                .setEnableCrop(false)//开启裁剪功能
+                .setEnableRotate(false)//开启旋转功能
+                .setEnableCamera(false)//开启相机功能
+                .setEnableCrop(true)
+                .setEnableRotate(false)
+                .setCropSquare(true)
+                .setMutiSelectMaxSize(count)
+                .setSelected(mPhotoList)
+                .setCropReplaceSource(true)
+                .setForceCrop(true);//启动强制裁剪功能,一进入编辑页面就开启图片裁剪，不需要用户手动点击裁剪，此功能只针对单选操作
         mLvPhoto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Logger.d("" + view.findViewById(R.id.iv_photo).getVisibility());
                 if (position == mPhotoList.size() && PhotoChooseListApdater.isDisplayAddbtn(view)) {
                     final String[] stringItems = {"相册多选", "相册单选", "拍照"};
                     final ActionSheetDialog dialog = new ActionSheetDialog(ExempleGalleryFinalActivity.this, stringItems, null);
@@ -66,31 +79,17 @@ public class ExempleGalleryFinalActivity extends BaseActionBarActivity {
                             switch (position) {
                                 case 0:
                                     if (!ListUtils.isEmpty(mPhotoList)) {
-                                        //配置功能
-                                        FunctionConfig functionConfig = new FunctionConfig.Builder()
-                                                .setEnableCamera(true)
-                                                .setEnableEdit(false)//开启编辑功能
-                                                .setCameraEditPhoto(true)//拍照完成后开启编辑功能
-                                                .setEnableCrop(false)//开启裁剪功能
-                                                .setEnableRotate(false)//开启旋转功能
-                                                .setEnableCamera(false)//开启相机功能
-                                                .setEnableCrop(true)
-                                                .setEnableRotate(false)
-                                                .setCropSquare(true)
-                                                .setMutiSelectMaxSize(count)
-                                                .setSelected(mPhotoList)
-                                                .setForceCrop(true)//启动强制裁剪功能,一进入编辑页面就开启图片裁剪，不需要用户手动点击裁剪，此功能只针对单选操作
-                                                .build();
-                                        GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, functionConfig, mOnHanlderResultCallback);
+                                        builder.setSelected(mPhotoList);
+                                        GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, builder.build(), mOnHanlderResultCallback);
                                     } else {
                                         GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, count, mOnHanlderResultCallback);
                                     }
                                     break;
                                 case 1:
-                                    GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, BaseApplication.functionConfig, mOnHanlderResultCallback);
+                                    GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, builder.build(), mOnHanlderResultCallback);
                                     break;
                                 case 2:
-                                    GalleryFinal.openCamera(REQUEST_CODE_CAMERA, BaseApplication.functionConfig, mOnHanlderResultCallback);
+                                    GalleryFinal.openCamera(REQUEST_CODE_CAMERA, builder.build(), mOnHanlderResultCallback);
                                     break;
                                 default:
                                     break;
@@ -105,59 +104,19 @@ public class ExempleGalleryFinalActivity extends BaseActionBarActivity {
         });
     }
 
-    public void A(View v) {
-        final String[] stringItems = {"相册多选", "相册单选", "拍照"};
-        final ActionSheetDialog dialog = new ActionSheetDialog(ExempleGalleryFinalActivity.this, stringItems, null);
-        dialog.isTitleShow(false).show();
-        dialog.setOnOperItemClickL(new OnOperItemClickL() {
-            @Override
-            public void onOperItemClick(Dialog dialog, AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        if (!ListUtils.isEmpty(mPhotoList)) {
-                            //配置功能
-                            FunctionConfig functionConfig = new FunctionConfig.Builder()
-                                    .setEnableCamera(true)
-                                    .setEnableEdit(false)//开启编辑功能
-                                    .setCameraEditPhoto(true)//拍照完成后开启编辑功能
-                                    .setEnableCrop(false)//开启裁剪功能
-                                    .setEnableRotate(false)//开启旋转功能
-                                    .setEnableCamera(false)//开启相机功能
-                                    .setEnableCrop(true)
-                                    .setEnableRotate(false)
-                                    .setCropSquare(true)
-                                    .setMutiSelectMaxSize(count)
-                                    .setSelected(mPhotoList)
-                                    .setForceCrop(true)//启动强制裁剪功能,一进入编辑页面就开启图片裁剪，不需要用户手动点击裁剪，此功能只针对单选操作
-                                    .build();
-                            GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, functionConfig, mOnHanlderResultCallback);
-                        } else {
-                            GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, count, mOnHanlderResultCallback);
-                        }
-                        break;
-                    case 1:
-                        GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, BaseApplication.functionConfig, mOnHanlderResultCallback);
-                        break;
-                    case 2:
-                        GalleryFinal.openCamera(REQUEST_CODE_CAMERA, BaseApplication.functionConfig, mOnHanlderResultCallback);
-                        break;
-                    default:
-                        break;
-                }
-                dialog.dismiss();
-            }
-        });
-    }
+
 
     private GalleryFinal.OnHanlderResultCallback mOnHanlderResultCallback = new GalleryFinal.OnHanlderResultCallback() {
         @Override
         public void onHanlderSuccess(int reqeustCode, List<PhotoInfo> resultList) {
+            for (int i = 0; i < resultList.size(); i++) {
+                Logger.d(resultList.get(i).getPhotoPath());
+            }
             if (resultList != null) {
                 if (reqeustCode == REQUEST_CODE_GALLERY) {//选择
                     mPhotoList.clear();
                     mPhotoList.addAll(resultList);
                 } else if (reqeustCode == REQUEST_CODE_CAMERA) {//照像
-                    Logger.d(resultList.get(0).getPhotoPath());
                     mPhotoList.addAll(resultList);
                 }
                 mChoosePhotoListAdapter.notifyDataSetChanged();

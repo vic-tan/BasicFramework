@@ -186,7 +186,8 @@ public class BaseDeletePhotoActivity extends BaseActionBarActivity {
             final Holder holder = new Holder();
             View view = LayoutInflater.from(container.getContext()).inflate(R.layout.common_photo_delete_view_item, null);
             holder.photoView = (PhotoView) view.findViewById(R.id.iv_photo);
-            FanImageLoader.create("file://" + list.get(position).getPhotoPath()).setAllRes(com.support.R.mipmap.ic_gf_default_photo).into(holder.photoView);
+            FanImageLoader.getmImageLoader().displayImage("file://" + list.get(position).getPhotoPath(),holder.photoView);
+           //FanImageLoader.create("file://" + list.get(position).getPhotoPath()).setAllRes(com.support.R.mipmap.ic_gf_default_photo).into(holder.photoView);
             (container).addView(view, 0);
             return view;
         }
