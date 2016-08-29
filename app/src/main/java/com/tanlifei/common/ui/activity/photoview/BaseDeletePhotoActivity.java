@@ -95,7 +95,12 @@ public class BaseDeletePhotoActivity extends BaseActionBarActivity {
                 new ActionSheetTools().getInstance(mContext, new String[]{"删除"}).isTitleShow(true).title("要删除这张图片吗?").show().setOnOperItemClickL(new OnOperItemClickL() {
                     @Override
                     public void onOperItemClick(Dialog dialog, AdapterView<?> parent, View view, int position, long id) {
-                        delete(dialog);
+                        try {
+                            dialog.dismiss();
+                            delete(dialog);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
             }
@@ -113,10 +118,10 @@ public class BaseDeletePhotoActivity extends BaseActionBarActivity {
         back();
     }
 
-    public void back(){
+    public void back() {
         Map<String, Object> map = new HashMap<>();
         map.put(INTENT_PARAMS_LIST, list);
-        StartActUtils.setResult((Activity) mContext,map,requestCode);
+        StartActUtils.setResult((Activity) mContext, map, requestCode);
         StartActUtils.finish(mContext);
     }
 
@@ -124,7 +129,6 @@ public class BaseDeletePhotoActivity extends BaseActionBarActivity {
     private void delete(Dialog dialog) {
         if (list.size() == 1) {//最后一张
             list.remove(currtentIndex);
-            dialog.dismiss();
             back();
         } else {
             if (currtentIndex == 0) {
@@ -136,7 +140,6 @@ public class BaseDeletePhotoActivity extends BaseActionBarActivity {
             }
             adapter.notifyDataSetChanged();
             changeDate();
-            dialog.dismiss();
         }
 
     }

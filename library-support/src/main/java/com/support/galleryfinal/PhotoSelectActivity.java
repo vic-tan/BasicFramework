@@ -128,7 +128,7 @@ public class PhotoSelectActivity extends PhotoBaseActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setTranslucentStatus(R.color.common_actionbar_bg_color);
         if ( GalleryFinal.getFunctionConfig() == null || GalleryFinal.getGalleryTheme() == null) {
             resultFailureDelayed(getString(R.string.please_reopen_gf), true);
         } else {
