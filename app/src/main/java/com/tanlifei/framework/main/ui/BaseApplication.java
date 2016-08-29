@@ -4,21 +4,11 @@ package com.tanlifei.framework.main.ui;
 import android.app.Application;
 import android.content.Context;
 
-import com.support.galleryfinal.CoreConfig;
-import com.support.galleryfinal.FunctionConfig;
-import com.support.galleryfinal.GalleryFinal;
-import com.support.galleryfinal.ThemeConfig;
-import com.support.galleryfinal.UILImageLoader;
-import com.support.imageloader.FanImageLoader;
-import com.support.okhttp.OkHttpUtils;
-import com.support.utils.io.FileUtils;
-import com.tanlifei.support.constants.fixed.GlobalConstants;
-import com.tanlifei.support.constants.fixed.OnOffConstants;
-import com.tanlifei.support.constants.level.OnOffLevel;
-import com.tanlifei.support.exception.CrashHandler;
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.tanlifei.support.utils.ConfigurationUtils;
 
 /**
  * 全局Application
@@ -34,66 +24,31 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         appContext = this;
-        initCreateFolders();//创建文件夹
-        setCrashHandler();//打开全局未捕获异常
-        initImageLoader();//初始化图片加载缓存 ImageLoader基本配置
-        initGalleryFinal();//初始化选择图片器
-        //inittDatabase();//创建数据表
-        initOKhttp();//初始化Okhttp*/
+        init();
+    }
+
+    public void init() {
+        ConfigurationUtils.initOKhttp(appContext);//初始化Okhttp
+        ConfigurationUtils.initImageLoader(appContext);//初始化图片加载缓存
+        ConfigurationUtils.initGalleryFinal(appContext);//初始化上传选择图片器
+        ConfigurationUtils.initCrashHandler(appContext);//设置是否开启全局未捕获异常
+        ConfigurationUtils.initCreateFolders(appContext);//创建文件夹
+
     }
 
     /**
-     * 初始化Okhttp
+     * ImageLoader初始化配置
+     * @param context
+     * @return
      */
-    private void initOKhttp() {
-        OkHttpUtils.getInstance().debug("OkHttpUtils", true).setConnectTimeout(15000, TimeUnit.MILLISECONDS);
-        OkHttpUtils.getInstance().setCertificates();
-    }
-
-    /**
-     * 初始化图片加载缓存 ImageLoader基本配置
-     */
-    private void initImageLoader() {
-        FanImageLoader.init(appContext, GlobalConstants.IMAGES_CACHE_PATH);
-
-
-    }
-
-    private void initGalleryFinal() {
-        CoreConfig coreConfig = new CoreConfig.Builder(appContext, new UILImageLoader(), ThemeConfig.GREEN)
-                .setFunctionConfig(new FunctionConfig.Builder().build())
-                .setEditPhotoCacheFolder(new File(GlobalConstants.IMAGES_EDIT_PHOTO_PATH))////配置编辑（裁剪和旋转）功能产生的cache文件保存目录
-                .setTakePhotoFolder(new File(GlobalConstants.IMAGES_TAKE_PHOTO_PATH))//设置拍照保存目录
-                .setNoAnimcation(true)//关闭动画
-                .build();
-        GalleryFinal.init(coreConfig);
+    public static ImageLoaderConfiguration configImageLoader(Context context) {
+        return new ImageLoaderConfiguration.Builder(context).threadPriority(3)
+                .denyCacheImageMultipleSizesInMemory()
+                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
+                .memoryCache(new LruMemoryCache(1024 * 1024 * 2))
+                .tasksProcessingOrder(QueueProcessingType.FIFO)
+                .diskCacheSize(1024 * 1024 * 50).build();
     }
 
 
-    /**
-     * 设置是否开启全局未捕获异常
-     */
-    private void setCrashHandler() {
-        if (OnOffConstants.UNCAUGHT_EX_LEVEL == OnOffLevel.OFF) {//不写入
-            return;
-        }
-        CrashHandler.getInstance().init(this).setCrashSave(true)
-                .setCrashSaveTargetFolder(GlobalConstants.CRASH_PATH);
-    }
-
-    //创建数据表
-    /*private void inittDatabase() {
-        Connector.getDatabase();//litepal创建数据表
-    }
-
-    /**
-     * 创建文件夹
-     */
-    private void initCreateFolders() {
-        FileUtils.makeFolders(GlobalConstants.CRASH_PATH);//针对全局未捕获异常，保存到本志文件路径
-        FileUtils.makeFolders(GlobalConstants.DOWNLOAD_PATH);//文件下载保存路径
-        FileUtils.makeFolders(GlobalConstants.IMAGES_CACHE_PATH);//针对全局图片缓存路径
-        FileUtils.makeFolders(GlobalConstants.IMAGES_EDIT_PHOTO_PATH);//针对全局图片缓存路径
-        FileUtils.makeFolders(GlobalConstants.IMAGES_TAKE_PHOTO_PATH);//针对全局拍照编辑图片路径
-    }
 }

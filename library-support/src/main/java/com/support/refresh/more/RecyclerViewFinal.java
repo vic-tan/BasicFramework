@@ -12,7 +12,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.support.R;
-import com.support.imageloader.FanImageLoader;
 
 import java.lang.reflect.Constructor;
 
@@ -379,7 +378,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
             if ((visibleItemCount > 0 && currentScrollState == RecyclerView.SCROLL_STATE_IDLE && (lastVisibleItemPosition) >= totalItemCount - 1)) {
                 onScorllBootom();
             }
-            switch (currentScrollState) {
+          /*  switch (currentScrollState) {
                 case RecyclerView.SCROLL_STATE_IDLE:
                     FanImageLoader.resume();
                     break;
@@ -388,7 +387,7 @@ public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomLis
                     break;
                 case RecyclerView.SCROLL_STATE_SETTLING:
                     FanImageLoader.pause();
-            }
+            }*/
         }
 
         /**

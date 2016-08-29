@@ -22,12 +22,6 @@
             android:paddingRight="16dp"
             android:paddingTop="16dp">
 
-            <Button
-                android:id="@+id/A"
-                style="@style/base_button_corners"
-                android:layout_marginBottom="10dp"
-                android:onClick="A"
-                android:text="FanImageLoader(Universal-Image-Loader 改版) \n图片特效"/>
 
             <Button
                 android:id="@+id/B"

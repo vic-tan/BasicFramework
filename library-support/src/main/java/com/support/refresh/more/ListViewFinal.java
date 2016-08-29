@@ -11,8 +11,8 @@ import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
 import com.support.R;
-import com.support.imageloader.FanImageLoader;
 
 import java.lang.reflect.Constructor;
 
@@ -310,7 +310,7 @@ public class ListViewFinal extends ListView implements OnScrollBottomListener {
                     && listView.getLastVisiblePosition() + 1 == listView.getCount()) {// 如果滚动到最后一行
                 onScorllBootom();
             }
-            switch (scrollState) {
+           /* switch (scrollState) {
                 case SCROLL_STATE_IDLE:
                     FanImageLoader.resume();
                     break;
@@ -319,7 +319,7 @@ public class ListViewFinal extends ListView implements OnScrollBottomListener {
                     break;
                 case SCROLL_STATE_FLING:
                     FanImageLoader.pause();
-            }
+            }*/
 
         }
 

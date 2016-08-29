@@ -12,13 +12,13 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.support.imageloader.FanImageLoader;
-import com.support.imageloader.internal.core.assist.FailReason;
-import com.support.imageloader.internal.core.listener.ImageLoadingListener;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.support.utils.ImageLoadUtils;
+import com.support.utils.StartActUtils;
 import com.tanlifei.common.bean.BasePhotoBean;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
-import com.support.utils.StartActUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -130,8 +130,7 @@ public class BaseBrowsePhotoActivity extends BaseActivity {
             View view = LayoutInflater.from(container.getContext()).inflate(R.layout.common_photo_view_item, null);
             holder.photoView = (PhotoView) view.findViewById(R.id.iv_photo);
             holder.load = (ProgressBar) view.findViewById(R.id.prg_load);
-
-            FanImageLoader.create(getImgUrl(position)).setImageLoadinglistener(new ImageLoadingListener() {
+            ImageLoadUtils.INSTANCE.loadImageView(holder.photoView, getImgUrl(position), new ImageLoadingListener() {
                 @Override
                 public void onLoadingStarted(String imageUri, View view) {
                     holder.load.setVisibility(View.VISIBLE);
@@ -151,8 +150,7 @@ public class BaseBrowsePhotoActivity extends BaseActivity {
                 public void onLoadingCancelled(String imageUri, View view) {
                     holder.load.setVisibility(View.GONE);
                 }
-            }).into(holder.photoView);
-
+            });
             (container).addView(view, 0);
             holder.photoView.setOnPhotoTapListener(new OnPhotoTapListener() {
                 @Override

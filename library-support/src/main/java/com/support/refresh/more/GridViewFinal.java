@@ -12,7 +12,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 
 import com.support.R;
-import com.support.imageloader.FanImageLoader;
 
 import java.lang.reflect.Constructor;
 
@@ -296,7 +295,7 @@ public class GridViewFinal extends GridViewSupport implements OnScrollBottomList
                     && listView.getLastVisiblePosition() + 1 == listView.getCount()) {// 如果滚动到最后一行
                 onScorllBootom();
             }
-            switch (scrollState) {
+           /* switch (scrollState) {
                 case SCROLL_STATE_IDLE:
                     FanImageLoader.resume();
                     break;
@@ -305,7 +304,7 @@ public class GridViewFinal extends GridViewSupport implements OnScrollBottomList
                     break;
                 case SCROLL_STATE_FLING:
                     FanImageLoader.pause();
-            }
+            }*/
         }
 
         @Override

@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import com.support.galleryfinal.model.PhotoInfo;
-import com.support.imageloader.FanImageLoader;
+import com.support.utils.ImageLoadUtils;
 import com.support.utils.StartActUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
@@ -186,8 +186,7 @@ public class BaseDeletePhotoActivity extends BaseActionBarActivity {
             final Holder holder = new Holder();
             View view = LayoutInflater.from(container.getContext()).inflate(R.layout.common_photo_delete_view_item, null);
             holder.photoView = (PhotoView) view.findViewById(R.id.iv_photo);
-            FanImageLoader.getmImageLoader().displayImage("file://" + list.get(position).getPhotoPath(),holder.photoView);
-           //FanImageLoader.create("file://" + list.get(position).getPhotoPath()).setAllRes(com.support.R.mipmap.ic_gf_default_photo).into(holder.photoView);
+            ImageLoadUtils.INSTANCE.loadImageView(holder.photoView,"file://" + list.get(position).getPhotoPath());
             (container).addView(view, 0);
             return view;
         }

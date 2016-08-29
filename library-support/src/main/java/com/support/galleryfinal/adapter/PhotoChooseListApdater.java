@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import com.support.R;
 import com.support.galleryfinal.model.PhotoInfo;
-import com.support.imageloader.FanImageLoader;
+import com.support.utils.ImageLoadUtils;
 import com.support.utils.InflaterUtils;
 import com.support.utils.ListUtils;
 
@@ -62,12 +62,12 @@ public class PhotoChooseListApdater extends BaseAdapter {
     private void displayData(final int position, ViewHolder holder) {
         try {
             if (position == list.size()) {
-                FanImageLoader.create("drawable://" + R.mipmap.common_add_photo).setAllRes(R.mipmap.common_add_photo).into(holder.image);
+                ImageLoadUtils.INSTANCE.loadImageView(holder.image, "drawable://" + R.mipmap.common_add_photo);
                 if (position == maxSize) {
                     holder.image.setVisibility(View.INVISIBLE);
                 }
             } else {
-                FanImageLoader.create("file://" + list.get(position).getPhotoPath()).setAllRes(R.mipmap.ic_gf_default_photo).into(holder.image);
+                ImageLoadUtils.INSTANCE.loadImageView(holder.image, "file://" + list.get(position).getPhotoPath());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -82,7 +82,7 @@ public class PhotoChooseListApdater extends BaseAdapter {
         private ImageView image;
     }
 
-    public static boolean isDisplayAddbtn(View view){
-       return view.findViewById(R.id.iv_photo).getVisibility() == View.VISIBLE;
+    public static boolean isDisplayAddbtn(View view) {
+        return view.findViewById(R.id.iv_photo).getVisibility() == View.VISIBLE;
     }
 }

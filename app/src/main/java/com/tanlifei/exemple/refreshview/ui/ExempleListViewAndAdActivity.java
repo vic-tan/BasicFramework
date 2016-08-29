@@ -2,15 +2,15 @@ package com.tanlifei.exemple.refreshview.ui;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.gson.Gson;
-import com.support.imageloader.FanImageLoader;
-import com.support.refresh.more.ListViewFinal;
-import com.support.refresh.more.OnLoadMoreListener;
-import com.tanlifei.support.utils.GsonJsonUtils;
 import com.support.adapter.abslistview.AbsCommonAdapter;
 import com.support.adapter.abslistview.AbsViewHolder;
+import com.support.refresh.more.ListViewFinal;
+import com.support.refresh.more.OnLoadMoreListener;
+import com.support.utils.ImageLoadUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.refreshview.BaseAbsRefreshActivity;
 import com.tanlifei.exemple.refreshview.adapter.BannerAdapter;
@@ -19,6 +19,7 @@ import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.DateFormatUtils;
+import com.tanlifei.support.utils.GsonJsonUtils;
 import com.uikit.viewpager.ChildViewPager;
 
 import org.androidannotations.annotations.AfterViews;
@@ -134,7 +135,7 @@ public class ExempleListViewAndAdActivity extends BaseAbsRefreshActivity {
         return new AbsCommonAdapter<TrainBean>(mContext, R.layout.exemple_refresh_list_item, (List<TrainBean>) mRefreshList) {
             @Override
             protected void convert(AbsViewHolder holder, TrainBean bean, int position) {
-                FanImageLoader.create(bean.getCover()).setAllRes(R.mipmap.exemple_default_img).into(holder.getView(R.id.cover));
+                ImageLoadUtils.INSTANCE.loadImageView((ImageView) holder.getView(R.id.cover),bean.getCover());
                 holder.setText(R.id.title, bean.getName());
                 holder.setText(R.id.desc, "开始时间:" + DateFormatUtils.format(bean.getBegin_time(), DateFormatUtils.FormatType.DAY) + "\r\n"
                         + "结束时间:" + DateFormatUtils.format(bean.getEnd_time(), DateFormatUtils.FormatType.DAY));

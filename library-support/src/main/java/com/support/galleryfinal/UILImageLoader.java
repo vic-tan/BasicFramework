@@ -20,10 +20,11 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.ImageSize;
+import com.nostra13.universalimageloader.core.imageaware.ImageViewAware;
 import com.support.galleryfinal.widget.GFImageView;
-import com.support.imageloader.FanImageLoader;
-import com.support.imageloader.internal.core.DisplayImageOptions;
-import com.support.imageloader.internal.core.assist.ImageSize;
 
 
 /**
@@ -51,9 +52,7 @@ public class UILImageLoader implements GalleryFinalImageLoader {
                 .bitmapConfig(mImageConfig)
                 .build();
         ImageSize imageSize = new ImageSize(width, height);
-        //FanImageLoader.clearDiskCache();
-        FanImageLoader.create("file://" + path).setImageSize(imageSize).into(imageView);
-        //FanImageLoader.getmImageLoader().getInstance().displayImage("file://" + path, new ImageViewAware(imageView), options, imageSize, null, null);
+        ImageLoader.getInstance().displayImage("file://" + path, new ImageViewAware(imageView), options, imageSize, null, null);
     }
 
     @Override

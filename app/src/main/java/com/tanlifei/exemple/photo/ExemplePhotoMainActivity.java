@@ -7,7 +7,6 @@ import com.support.utils.StartActUtils;
 import com.tanlifei.common.bean.BasePhotoBean;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.common.ui.activity.photoview.BaseBrowsePhotoActivity;
-import com.tanlifei.exemple.photo.fanImageloader.ExempleFanImageLoaderActivity_;
 import com.tanlifei.exemple.photo.galleryfinal.ExempleGalleryFinalActivity_;
 import com.tanlifei.framework.R;
 
@@ -48,9 +47,6 @@ public class ExemplePhotoMainActivity extends BaseActionBarActivity {
     }
 
 
-    public void A(View v) {
-        StartActUtils.start(mContext, ExempleFanImageLoaderActivity_.class);
-    }
 
     public void B(View v) {
         BaseBrowsePhotoActivity.start(mContext, list, 0);

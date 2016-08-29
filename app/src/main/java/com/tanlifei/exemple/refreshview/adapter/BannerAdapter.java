@@ -5,8 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.support.imageloader.FanImageLoader;
 import com.support.adapter.pagerview.RecyclingPagerAdapter;
+import com.support.utils.ImageLoadUtils;
 import com.tanlifei.exemple.refreshview.bean.BannerBaen;
 import com.tanlifei.framework.R;
 import com.support.utils.InflaterUtils;
@@ -39,7 +39,7 @@ public class BannerAdapter extends RecyclingPagerAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         int pos = getPosition(position);
-        FanImageLoader.create(mImageList.get(pos).getImage()).setAllRes(R.mipmap.ic_launcher).into(holder.imageView);
+        ImageLoadUtils.INSTANCE.loadImageView(holder.imageView,mImageList.get(pos).getImage());
         holder.imageView.setFocusable(false);
         holder.imageView.setFocusableInTouchMode(false);
         return convertView;
