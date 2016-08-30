@@ -130,7 +130,7 @@ public class BaseBrowsePhotoActivity extends BaseActivity {
             View view = LayoutInflater.from(container.getContext()).inflate(R.layout.common_photo_view_item, null);
             holder.photoView = (PhotoView) view.findViewById(R.id.iv_photo);
             holder.load = (ProgressBar) view.findViewById(R.id.prg_load);
-            ImageLoadUtils.INSTANCE.loadImageView(holder.photoView, getImgUrl(position), new ImageLoadingListener() {
+            ImageLoadUtils.getInstance().loadImageView(holder.photoView, getImgUrl(position), com.support.R.mipmap.ic_gf_default_photo, new ImageLoadingListener() {
                 @Override
                 public void onLoadingStarted(String imageUri, View view) {
                     holder.load.setVisibility(View.VISIBLE);

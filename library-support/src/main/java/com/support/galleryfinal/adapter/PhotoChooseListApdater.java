@@ -62,12 +62,12 @@ public class PhotoChooseListApdater extends BaseAdapter {
     private void displayData(final int position, ViewHolder holder) {
         try {
             if (position == list.size()) {
-                ImageLoadUtils.INSTANCE.loadImageView(holder.image, "drawable://" + R.mipmap.common_add_photo);
+                ImageLoadUtils.getInstance().loadImageView(holder.image, "drawable://" + R.mipmap.common_add_photo, R.mipmap.ic_gf_default_photo);
                 if (position == maxSize) {
                     holder.image.setVisibility(View.INVISIBLE);
                 }
             } else {
-                ImageLoadUtils.INSTANCE.loadImageView(holder.image, "file://" + list.get(position).getPhotoPath());
+                ImageLoadUtils.getInstance().loadImageView(holder.image, "file://" + list.get(position).getPhotoPath(), R.mipmap.ic_gf_default_photo);
             }
         } catch (Exception e) {
             e.printStackTrace();

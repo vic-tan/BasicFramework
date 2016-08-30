@@ -19,9 +19,8 @@ import com.support.R;
 /**
  * Created by tanlifei on 16/8/29.
  */
-public enum ImageLoadUtils {
+public class   ImageLoadUtils {
 
-    INSTANCE;
     /**
      * 标准配置
      */
@@ -40,46 +39,56 @@ public enum ImageLoadUtils {
     private BitmapDisplayer circleBitmapDisplayer;
     private BitmapDisplayer roundedBitmapDisplayer;
 
-    private int onLoadingImageResId;
-    private int onEmptyImageResId;
+    // private int onLoadingImageResId;
+    // private int onEmptyImageResId;
     private int onFailedImageResId;
+
+    private int cornerRadiusDp;//圆角图片 圆角半径px
+
+
+    private static volatile ImageLoadUtils instance = null;
 
     /**
      * 构造方法 参数初始化 单例形式 只会初始化一次 避免不必要的资源开支
      */
     private ImageLoadUtils() {
         //初始化 全局默认图片
-        onLoadingImageResId = R.mipmap.ic_gf_default_photo;
-        onEmptyImageResId = R.mipmap.ic_gf_default_photo;
+        //onLoadingImageResId = R.mipmap.ic_gf_default_photo;
+        //onEmptyImageResId = R.mipmap.ic_gf_default_photo;
         onFailedImageResId = R.mipmap.ic_gf_default_photo;
-
         simpleBitmapDisplayer = new SimpleBitmapDisplayer();
-        normalOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, simpleBitmapDisplayer);
-
+        normalOptions = getOption(onFailedImageResId, simpleBitmapDisplayer);
         circleBitmapDisplayer = new CircleBitmapDisplayer();
-        circleOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, circleBitmapDisplayer);
-
+        circleOptions = getOption(onFailedImageResId, circleBitmapDisplayer);
         //圆角图片 圆角半径dp
-        int cornerRadiusDp = 10;
+        cornerRadiusDp = 10;
         //圆角大小通过 dp2px转换 使得 不同分辨率设备上呈现一致显示效果
         roundedBitmapDisplayer = new RoundedBitmapDisplayer(cornerRadiusDp);
-        roundedOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, roundedBitmapDisplayer);
-
+        roundedOptions = getOption(onFailedImageResId, roundedBitmapDisplayer);
     }
+
+    public static ImageLoadUtils getInstance() {
+        if (instance == null) {
+            synchronized (ImageLoadUtils.class) {
+                if (instance == null) {
+                    instance = new ImageLoadUtils();
+                }
+            }
+        }
+        return instance;
+    }
+
 
     /**
      * 重构 抽取出的通用生成Option方法
      *
-     * @param onLoadingImageResId
-     * @param onEmptyImageResId
      * @param onFailedImageResId
-     * @param bitmapDisplayer     normal 或圆形、圆角 bitmapDisplayer
+     * @param bitmapDisplayer    normal 或圆形、圆角 bitmapDisplayer
      * @return
      */
-    private DisplayImageOptions getOption(int onLoadingImageResId, int onEmptyImageResId, int onFailedImageResId, BitmapDisplayer bitmapDisplayer) {
+    private DisplayImageOptions getOption(int onFailedImageResId, BitmapDisplayer bitmapDisplayer) {
         return new DisplayImageOptions.Builder()
-                //.showImageOnLoading(onLoadingImageResId)
-                .showImageForEmptyUri(onEmptyImageResId)
+                .showImageForEmptyUri(onFailedImageResId)
                 .showImageOnFail(onFailedImageResId)
                 .cacheInMemory(true)
                 .cacheOnDisk(true)
@@ -103,20 +112,63 @@ public enum ImageLoadUtils {
                 .diskCacheSize(1024 * 1024 * 50).build());
     }
 
-    public void loadImageView(ImageView iv, String url) {
+
+    /***--------------------------------  正常显示图片  -----------------------------------------------**/
+
+    /**
+     * 正常显示图片
+     *
+     * @param iv
+     * @param url
+     */
+    public void loadImageView(ImageView iv, String url, int onFailedImageResId) {
+        if (this.onFailedImageResId != onFailedImageResId)
+            normalOptions = getOption(onFailedImageResId, simpleBitmapDisplayer);
         ImageLoader.getInstance().displayImage(url, iv, normalOptions);
     }
 
-    public void loadImageView(ImageView iv, String url,ImageLoadingListener progressListener) {
-        ImageLoader.getInstance().displayImage(url, iv, normalOptions,  progressListener);
+    /**
+     * 返回加载过程
+     *
+     * @param iv
+     * @param url
+     * @param progressListener
+     */
+    public void loadImageView(ImageView iv, String url, int onFailedImageResId, ImageLoadingListener progressListener) {
+        if (this.onFailedImageResId != onFailedImageResId)
+            normalOptions = getOption(onFailedImageResId, simpleBitmapDisplayer);
+        ImageLoader.getInstance().displayImage(url, iv, normalOptions, progressListener);
     }
 
+    /***--------------------------------  正常显示图片  -----------------------------------------------**/
 
-    public void loadCircleImageView(ImageView iv, String url) {
+    /**
+     * 显示图形图片
+     *
+     * @param iv
+     * @param url
+     */
+    public void loadCircleImageView(ImageView iv, String url, int onFailedImageResId) {
+        if (this.onFailedImageResId != onFailedImageResId)
+            circleOptions = getOption(onFailedImageResId, circleBitmapDisplayer);
         ImageLoader.getInstance().displayImage(url, iv, circleOptions);
     }
 
-    public void loadRoundedImageView(ImageView iv, String url) {
+    /***--------------------------------  正常显示图片  -----------------------------------------------**/
+
+    /**
+     * 显示圆角图片
+     *
+     * @param iv
+     * @param url
+     */
+    public void loadRoundedImageView(ImageView iv, String url, int onFailedImageResId, int cornerRadiusDp) {
+        if (this.cornerRadiusDp != cornerRadiusDp) {
+            this.cornerRadiusDp = cornerRadiusDp;
+        }
+        if (this.onFailedImageResId != onFailedImageResId)
+            roundedOptions = getOption(onFailedImageResId, roundedBitmapDisplayer);
+
         ImageLoader.getInstance().displayImage(url, iv, roundedOptions);
     }
 

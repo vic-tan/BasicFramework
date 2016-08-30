@@ -32,7 +32,7 @@ public class ConfigurationUtils {
      * @return
      */
     public static void initImageLoader(Context context) {
-        ImageLoadUtils.INSTANCE.init(context);
+        ImageLoadUtils.getInstance().init(context);
     }
 
     /**

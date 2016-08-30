@@ -135,7 +135,7 @@ public class ExempleListViewAndAdActivity extends BaseAbsRefreshActivity {
         return new AbsCommonAdapter<TrainBean>(mContext, R.layout.exemple_refresh_list_item, (List<TrainBean>) mRefreshList) {
             @Override
             protected void convert(AbsViewHolder holder, TrainBean bean, int position) {
-                ImageLoadUtils.INSTANCE.loadImageView((ImageView) holder.getView(R.id.cover),bean.getCover());
+                ImageLoadUtils.getInstance().loadImageView((ImageView) holder.getView(R.id.cover),bean.getCover(), com.support.R.mipmap.ic_gf_default_photo);
                 holder.setText(R.id.title, bean.getName());
                 holder.setText(R.id.desc, "开始时间:" + DateFormatUtils.format(bean.getBegin_time(), DateFormatUtils.FormatType.DAY) + "\r\n"
                         + "结束时间:" + DateFormatUtils.format(bean.getEnd_time(), DateFormatUtils.FormatType.DAY));
