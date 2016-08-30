@@ -46,7 +46,7 @@ public class ConfigurationUtils {
                 .setEditPhotoCacheFolder(new File(GlobalConstants.IMAGES_EDIT_PHOTO_PATH))////配置编辑（裁剪和旋转）功能产生的cache文件保存目录
                 .setTakePhotoFolder(new File(GlobalConstants.IMAGES_TAKE_PHOTO_PATH))//设置拍照保存目录
                 .setNoAnimcation(true)//关闭动画
-                .setPauseOnScrollListener(new UILPauseOnScrollListener(false, true))
+                .setPauseOnScrollListener(new UILPauseOnScrollListener(false, true))//滑动是否加载图片设置
                 .build();
         GalleryFinal.init(coreConfig);
     }
