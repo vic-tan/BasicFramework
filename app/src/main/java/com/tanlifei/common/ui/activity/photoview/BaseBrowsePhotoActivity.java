@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.support.galleryfinal.widget.zoonview.PhotoView;
+import com.support.galleryfinal.widget.zoonview.PhotoViewAttacher;
 import com.support.utils.ImageLoadUtils;
 import com.support.utils.StartActUtils;
 import com.tanlifei.common.bean.BasePhotoBean;
@@ -24,8 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import uk.co.senab.photoview.PhotoView;
-import uk.co.senab.photoview.PhotoViewAttacher.OnPhotoTapListener;
+
 
 /**
  * 查年多张图片
@@ -152,12 +153,13 @@ public class BaseBrowsePhotoActivity extends BaseActivity {
                 }
             });
             (container).addView(view, 0);
-            holder.photoView.setOnPhotoTapListener(new OnPhotoTapListener() {
+            holder.photoView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
                 @Override
                 public void onPhotoTap(View view, float x, float y) {
                     StartActUtils.finish(mContext);
                 }
             });
+
             return view;
         }
 

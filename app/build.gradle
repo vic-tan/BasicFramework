@@ -35,7 +35,6 @@ dependencies {
     apt "org.androidannotations:androidannotations:3.3.2"
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:design:23.2.1'
-    compile 'com.github.chrisbanes.photoview:library:1.2.4'
     compile 'org.androidannotations:androidannotations:4.0.0'
     compile project(':library-uikit')
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
