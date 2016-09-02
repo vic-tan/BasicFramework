@@ -1,5 +1,6 @@
 package com.tanlifei.framework.main.ui.activity;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -51,7 +52,7 @@ public class AppServiceActivity extends AutoLayoutActivity {
         if (!StringUtils.isEmpty(tag) && StringUtils.isEquals(tag, "appUpdate")) {//app 版本升级业务处理
             appUpdate((AppUpdateBean) getIntent().getParcelableExtra("bean"));
         } else {
-            ActivityManager.getActivityManager().finishActivityDefultAnim(this);
+            colseAcitvity();
         }
 
     }
@@ -82,7 +83,7 @@ public class AppServiceActivity extends AutoLayoutActivity {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
                     stopService(new Intent(mContext, AppDownloadService.class));
-                    ActivityManager.getActivityManager().finishActivityDefultAnim(AppServiceActivity.this);
+                    colseAcitvity();
                 }
             }).show();
         }
@@ -92,13 +93,18 @@ public class AppServiceActivity extends AutoLayoutActivity {
     protected void onDestroy() {
         super.onDestroy();
         stopService(new Intent(mContext, CheckAppUpdateService.class));//停止查检升级服务
-        ActivityManager.getActivityManager().finishActivityDefultAnim(this);
+        colseAcitvity();
 
     }
 
 
     @Override
     public void onBackPressed() {
+        colseAcitvity();
+    }
+
+    private void colseAcitvity() {
         ActivityManager.getActivityManager().finishActivityDefultAnim(this);
+        ((Activity) mContext).overridePendingTransition(R.anim.common_activity_default_finish, R.anim.common_activity_default_finish);
     }
 }
