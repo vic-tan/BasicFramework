@@ -20,6 +20,7 @@ import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.DateFormatUtils;
 import com.tanlifei.support.utils.GsonJsonUtils;
+import com.uikit.CircleIndicator;
 import com.uikit.viewpager.ChildViewPager;
 
 import org.androidannotations.annotations.AfterViews;
@@ -51,6 +52,8 @@ public class ExempleListViewAndAdActivity extends BaseAbsRefreshActivity {
         vp.setAdapter(new BannerAdapter(this,mBannerBaenList));
         mLvGames.addHeaderView(v);
         mPtrLayout.disableWhenHorizontalMove(true);
+        CircleIndicator indicator = (CircleIndicator) v.findViewById(R.id.indicator);
+        indicator.setViewPager(vp,mBannerBaenList.size());
     }
 
     private String getBannerDate() {
