@@ -15,7 +15,7 @@ import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
 import com.base.utils.ActivityManager;
-import com.tanlifei.support.utils.AppUtils;
+import com.base.utils.AppUtils;
 import com.tanlifei.support.utils.ResUtils;
 import com.base.utils.StringUtils;
 import com.uikit.dialog.DialogTools;

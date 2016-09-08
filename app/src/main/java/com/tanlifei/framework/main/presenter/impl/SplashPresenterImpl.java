@@ -2,9 +2,9 @@ package com.tanlifei.framework.main.presenter.impl;
 
 import android.content.Context;
 
+import com.base.utils.AppCacheUtils;
 import com.tanlifei.framework.main.presenter.ISplashPresenter;
 import com.tanlifei.framework.main.ui.view.SplashView;
-import com.tanlifei.support.utils.AppCacheUtils;
 import com.base.utils.CountDownTimer;
 
 

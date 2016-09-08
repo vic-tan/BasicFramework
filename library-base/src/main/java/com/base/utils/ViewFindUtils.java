@@ -1,4 +1,4 @@
-package com.tanlifei.support.utils;
+package com.base.utils;
 
 import android.app.Activity;
 import android.util.SparseArray;

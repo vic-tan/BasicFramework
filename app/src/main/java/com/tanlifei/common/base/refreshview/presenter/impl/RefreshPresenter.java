@@ -20,7 +20,7 @@ import com.tanlifei.support.http.HttpListener;
 import com.tanlifei.support.http.ProcessCallback;
 import com.tanlifei.support.utils.GsonJsonUtils;
 import com.base.utils.ListUtils;
-import com.tanlifei.support.utils.NetUtils;
+import com.base.utils.NetUtils;
 import com.base.utils.ToastUtils;
 
 import java.util.List;

@@ -7,7 +7,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tanlifei.support.utils.ViewFindUtils;
+import com.base.utils.ViewFindUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogCustomBubblePopup;
 import com.tanlifei.framework.R;

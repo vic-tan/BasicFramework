@@ -4,6 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.base.utils.AppCacheUtils;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.adapter.GuideAdapter;
@@ -11,7 +12,6 @@ import com.tanlifei.framework.main.presenter.IGuidePresenter;
 import com.tanlifei.framework.main.presenter.impl.GuidePresenterImpl;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.GuideView;
-import com.tanlifei.support.utils.AppCacheUtils;
 import com.base.utils.StartActUtils;
 
 import org.androidannotations.annotations.AfterViews;

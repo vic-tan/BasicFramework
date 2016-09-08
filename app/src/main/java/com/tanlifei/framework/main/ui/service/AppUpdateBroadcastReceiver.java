@@ -6,7 +6,7 @@ import android.content.Intent;
 
 import com.tanlifei.common.bean.params.NotifyParams;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.AppUtils;
+import com.base.utils.AppUtils;
 import com.tanlifei.support.utils.NotifyUtils;
 import com.tanlifei.support.utils.ResUtils;
 import com.base.utils.StringUtils;

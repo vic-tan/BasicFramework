@@ -13,7 +13,7 @@ import com.tanlifei.support.http.DialogCallback;
 import com.tanlifei.support.http.HttpListener;
 import com.tanlifei.support.http.ProcessCallback;
 import com.tanlifei.support.http.ResultCallback;
-import com.tanlifei.support.utils.NetUtils;
+import com.base.utils.NetUtils;
 import com.base.utils.ToastUtils;
 
 import java.util.HashMap;

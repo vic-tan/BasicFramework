@@ -13,7 +13,7 @@ import com.tanlifei.common.ui.activity.refreshview.BaseAbsRefreshActivity;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
-import com.tanlifei.support.utils.DateFormatUtils;
+import com.base.utils.DateFormatUtils;
 import com.uikit.linearlistview.LinearListView;
 
 import org.androidannotations.annotations.AfterViews;

@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
-import com.tanlifei.support.utils.ViewFindUtils;
+import com.base.utils.ViewFindUtils;
 import com.tanlifei.uikit.actionbar.ActionBarView;
 import com.tanlifei.uikit.actionbar.OnBackClickListener;
 

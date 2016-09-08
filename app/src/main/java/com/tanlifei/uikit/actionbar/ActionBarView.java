@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.base.autolayout.AutoFrameLayout;
 import com.base.utils.StringUtils;
-import com.tanlifei.support.utils.ViewFindUtils;
+import com.base.utils.ViewFindUtils;
 import com.tanlifei.framework.R;
 import com.base.utils.CornerUtils;
 import com.base.utils.InflaterUtils;
