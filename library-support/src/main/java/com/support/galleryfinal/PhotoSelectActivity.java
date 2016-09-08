@@ -44,7 +44,7 @@ import com.support.galleryfinal.utils.DeviceUtils;
 import com.support.galleryfinal.utils.PhotoTools;
 import com.support.galleryfinal.utils.StringUtils;
 import com.support.galleryfinal.widget.FloatingActionButton;
-import com.support.utils.io.FilenameUtils;
+import com.base.utils.io.FilenameUtils;
 
 import java.io.File;
 import java.util.ArrayList;

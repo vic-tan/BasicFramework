@@ -3,10 +3,10 @@ package com.tanlifei.framework.main.interactor.impl;
 import android.content.Context;
 import android.view.View;
 
-import com.support.utils.ListUtils;
+import com.base.utils.ListUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.interactor.IGuideInteractor;
-import com.support.utils.InflaterUtils;
+import com.base.utils.InflaterUtils;
 
 import java.util.ArrayList;
 import java.util.List;

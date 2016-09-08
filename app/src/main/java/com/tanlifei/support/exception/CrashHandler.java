@@ -8,7 +8,7 @@ import android.os.Environment;
 import android.os.Looper;
 
 import com.tanlifei.support.constants.fixed.GlobalConstants;
-import com.tanlifei.support.utils.StringUtils;
+import com.base.utils.StringUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;

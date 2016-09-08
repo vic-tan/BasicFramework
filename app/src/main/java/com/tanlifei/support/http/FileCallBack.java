@@ -2,7 +2,7 @@ package com.tanlifei.support.http;
 
 import com.support.okhttp.OkHttpUtils;
 import com.support.okhttp.callback.Callback;
-import com.support.utils.Logger;
+import com.base.utils.Logger;
 
 import java.io.File;
 import java.io.FileOutputStream;

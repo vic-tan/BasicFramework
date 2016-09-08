@@ -4,7 +4,7 @@ package com.support.okhttp.builder;
 import com.google.gson.Gson;
 import com.support.okhttp.request.GetRequest;
 import com.support.okhttp.request.RequestCall;
-import com.support.utils.Logger;
+import com.base.utils.Logger;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

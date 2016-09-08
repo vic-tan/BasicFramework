@@ -2,10 +2,10 @@ package com.tanlifei.support.exception;
 
 import android.content.Context;
 
-import com.support.utils.Logger;
-import com.tanlifei.support.utils.StringUtils;
+import com.base.utils.Logger;
+import com.base.utils.StringUtils;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
-import com.support.utils.ToastUtils;
+import com.base.utils.ToastUtils;
 
 /**
  * 本app自己定义的异常

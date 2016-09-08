@@ -23,9 +23,9 @@ import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.utils.DeviceUtils;
 import com.support.galleryfinal.utils.StringUtils;
 import com.support.galleryfinal.utils.Utils;
-import com.support.utils.Logger;
-import com.support.utils.ToastUtils;
-import com.support.utils.io.FileUtils;
+import com.base.utils.Logger;
+import com.base.utils.ToastUtils;
+import com.base.utils.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ViewFindUtils;
-import com.support.utils.CornerUtils;
+import com.base.utils.CornerUtils;
 import com.uikit.dialog.base.dialog.BaseDialog;
 
 

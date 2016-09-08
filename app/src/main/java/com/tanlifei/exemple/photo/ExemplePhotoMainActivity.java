@@ -3,7 +3,7 @@ package com.tanlifei.exemple.photo;
 import android.os.Bundle;
 import android.view.View;
 
-import com.support.utils.StartActUtils;
+import com.base.utils.StartActUtils;
 import com.tanlifei.common.bean.BasePhotoBean;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.common.ui.activity.photoview.BaseBrowsePhotoActivity;

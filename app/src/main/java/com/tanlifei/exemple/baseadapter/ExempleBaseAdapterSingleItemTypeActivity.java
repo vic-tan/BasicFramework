@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-import com.support.adapter.abslistview.AbsCommonAdapter;
-import com.support.adapter.abslistview.AbsViewHolder;
-import com.support.utils.ToastUtils;
+import com.base.adapter.abslistview.AbsCommonAdapter;
+import com.base.adapter.abslistview.AbsViewHolder;
+import com.base.utils.ToastUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterBean;
 import com.tanlifei.framework.R;

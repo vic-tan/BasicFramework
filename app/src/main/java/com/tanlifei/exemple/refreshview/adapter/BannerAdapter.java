@@ -5,11 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.support.adapter.pagerview.RecyclingPagerAdapter;
-import com.support.utils.ImageLoadUtils;
+import com.base.adapter.pagerview.RecyclingPagerAdapter;
+import com.tanlifei.support.utils.ImageLoadUtils;
 import com.tanlifei.exemple.refreshview.bean.BannerBaen;
 import com.tanlifei.framework.R;
-import com.support.utils.InflaterUtils;
+import com.base.utils.InflaterUtils;
 
 import java.util.List;
 

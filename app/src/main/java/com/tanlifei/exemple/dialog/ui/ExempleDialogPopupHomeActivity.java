@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-import com.support.adapter.abslistview.AbsCommonAdapter;
-import com.support.adapter.abslistview.AbsViewHolder;
+import com.base.adapter.abslistview.AbsCommonAdapter;
+import com.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 

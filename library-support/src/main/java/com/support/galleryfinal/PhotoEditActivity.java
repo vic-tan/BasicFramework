@@ -43,10 +43,10 @@ import com.support.galleryfinal.widget.HorizontalListView;
 import com.support.galleryfinal.widget.crop.CropImageActivity;
 import com.support.galleryfinal.widget.crop.CropImageView;
 import com.support.galleryfinal.widget.zoonview.PhotoView;
-import com.support.utils.ActivityManager;
-import com.support.utils.Logger;
-import com.support.utils.io.FileUtils;
-import com.support.utils.io.FilenameUtils;
+import com.base.utils.ActivityManager;
+import com.base.utils.Logger;
+import com.base.utils.io.FileUtils;
+import com.base.utils.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;

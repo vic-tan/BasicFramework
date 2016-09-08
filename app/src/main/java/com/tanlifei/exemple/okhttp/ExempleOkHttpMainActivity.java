@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.support.okhttp.OkHttpUtils;
-import com.support.utils.Logger;
+import com.base.utils.Logger;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
@@ -14,7 +14,7 @@ import com.tanlifei.support.http.HttpListener;
 import com.tanlifei.support.http.ProcessCallback;
 import com.tanlifei.support.http.ResultCallback;
 import com.tanlifei.support.utils.NetUtils;
-import com.support.utils.ToastUtils;
+import com.base.utils.ToastUtils;
 
 import java.util.HashMap;
 import java.util.Map;

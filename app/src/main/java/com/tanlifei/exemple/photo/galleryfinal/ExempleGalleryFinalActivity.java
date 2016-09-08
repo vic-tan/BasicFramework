@@ -8,11 +8,11 @@ import android.widget.GridView;
 
 import com.support.galleryfinal.FunctionConfig;
 import com.support.galleryfinal.GalleryFinal;
-import com.support.galleryfinal.adapter.PhotoChooseListApdater;
+import com.tanlifei.common.ui.activity.photoview.PhotoChooseListApdater;
 import com.support.galleryfinal.model.PhotoInfo;
-import com.support.utils.ListUtils;
-import com.support.utils.Logger;
-import com.support.utils.ToastUtils;
+import com.base.utils.ListUtils;
+import com.base.utils.Logger;
+import com.base.utils.ToastUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.common.ui.activity.photoview.BaseDeletePhotoActivity;
 import com.tanlifei.framework.R;

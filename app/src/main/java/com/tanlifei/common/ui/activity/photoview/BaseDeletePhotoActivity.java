@@ -14,8 +14,8 @@ import android.widget.AdapterView;
 
 import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.widget.zoonview.PhotoView;
-import com.support.utils.ImageLoadUtils;
-import com.support.utils.StartActUtils;
+import com.tanlifei.support.utils.ImageLoadUtils;
+import com.base.utils.StartActUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.uikit.actionbar.ActionBarOptViewTagLevel;

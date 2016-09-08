@@ -4,11 +4,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.support.adapter.abslistview.AbsCommonAdapter;
-import com.support.adapter.abslistview.AbsViewHolder;
+import com.base.adapter.abslistview.AbsCommonAdapter;
+import com.base.adapter.abslistview.AbsViewHolder;
 import com.support.refresh.more.OnLoadMoreListener;
 import com.support.refresh.more.ScrollViewFinal;
-import com.support.utils.ImageLoadUtils;
+import com.tanlifei.support.utils.ImageLoadUtils;
 import com.tanlifei.common.ui.activity.refreshview.BaseAbsRefreshActivity;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.support.R;
-import com.support.adapter.pagerview.ViewHolderRecyclingPagerAdapter;
+import com.base.adapter.pagerview.ViewHolderRecyclingPagerAdapter;
 import com.support.galleryfinal.GalleryFinal;
 import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.utils.DeviceUtils;

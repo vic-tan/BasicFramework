@@ -14,10 +14,10 @@ import com.base.autolayout.AutoLayoutActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
-import com.support.utils.ActivityManager;
+import com.base.utils.ActivityManager;
 import com.tanlifei.support.utils.ResUtils;
-import com.support.utils.StartActUtils;
-import com.support.utils.ToastUtils;
+import com.base.utils.StartActUtils;
+import com.base.utils.ToastUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;

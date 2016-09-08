@@ -20,7 +20,7 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 
-import com.support.utils.Logger;
+import com.base.utils.Logger;
 
 public class CupcakeGestureDetector implements GestureDetector {
 

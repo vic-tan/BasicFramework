@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.base.autolayout.AutoLinearLayout;
-import com.support.utils.CornerUtils;
+import com.base.utils.CornerUtils;
 import com.uikit.R;
 import com.uikit.dialog.internal.BaseAlertDialog;
 

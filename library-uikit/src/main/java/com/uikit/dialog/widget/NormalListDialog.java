@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.support.utils.CornerUtils;
+import com.base.utils.CornerUtils;
 import com.uikit.R;
 import com.uikit.dialog.WidthScaleConstants;
 import com.uikit.dialog.base.dialog.BaseDialog;

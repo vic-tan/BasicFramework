@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.ListView;
 
-import com.support.adapter.abslistview.AbsCommonAdapter;
-import com.support.adapter.abslistview.AbsViewHolder;
+import com.base.adapter.abslistview.AbsCommonAdapter;
+import com.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.main.ExempleHomeActivity_;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
-import com.support.utils.StartActUtils;
+import com.base.utils.StartActUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

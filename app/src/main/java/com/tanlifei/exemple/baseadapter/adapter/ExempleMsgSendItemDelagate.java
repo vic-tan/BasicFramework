@@ -1,8 +1,8 @@
 package com.tanlifei.exemple.baseadapter.adapter;
 
-import com.support.adapter.ItemViewDelegate;
-import com.support.adapter.abslistview.AbsViewHolder;
-import com.support.adapter.recycler.RvViewHolder;
+import com.base.adapter.ItemViewDelegate;
+import com.base.adapter.abslistview.AbsViewHolder;
+import com.base.adapter.recycler.RvViewHolder;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterChatMessage;
 import com.tanlifei.framework.R;
 

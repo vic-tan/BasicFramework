@@ -5,11 +5,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.support.adapter.recycler.RvCommonAdapter;
-import com.support.adapter.recycler.RvViewHolder;
+import com.base.adapter.recycler.RvCommonAdapter;
+import com.base.adapter.recycler.RvViewHolder;
 import com.support.refresh.more.OnLoadMoreListener;
 import com.support.refresh.more.RecyclerViewFinal;
-import com.support.utils.ImageLoadUtils;
+import com.tanlifei.support.utils.ImageLoadUtils;
 import com.tanlifei.common.ui.activity.refreshview.BaseRvRefreshActivity;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;

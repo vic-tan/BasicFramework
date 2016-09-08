@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 import com.support.okhttp.callback.Callback;
-import com.tanlifei.support.utils.StringUtils;
+import com.base.utils.StringUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;

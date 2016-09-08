@@ -9,7 +9,7 @@ import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.AppUtils;
 import com.tanlifei.support.utils.NotifyUtils;
 import com.tanlifei.support.utils.ResUtils;
-import com.tanlifei.support.utils.StringUtils;
+import com.base.utils.StringUtils;
 
 /**
  * Created by tanlifei on 16/8/23.

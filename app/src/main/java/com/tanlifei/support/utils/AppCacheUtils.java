@@ -23,7 +23,8 @@ import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
-import com.tanlifei.support.utils.coder.MD5Coder;
+import com.base.utils.StringUtils;
+import com.base.utils.coder.MD5Coder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
