@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.uikit.dialog.BaseAnimatorSet;
-import com.support.autolayout.AutoFrameLayout;
+import com.base.autolayout.AutoFrameLayout;
 
 public abstract class TopBaseDialog<T extends TopBaseDialog<T>> extends BottomTopBaseDialog<T> {
     public TopBaseDialog(Context context, View animateView) {

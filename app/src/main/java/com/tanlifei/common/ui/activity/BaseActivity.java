@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.support.autolayout.AutoLayoutActivity;
+import com.base.autolayout.AutoLayoutActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;

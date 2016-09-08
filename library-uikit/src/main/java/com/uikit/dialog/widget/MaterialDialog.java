@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.support.autolayout.AutoLinearLayout;
+import com.base.autolayout.AutoLinearLayout;
 import com.support.utils.CornerUtils;
 import com.uikit.R;
 import com.uikit.dialog.internal.BaseAlertDialog;

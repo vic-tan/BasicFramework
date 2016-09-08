@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.support.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/transparent"
-    android:gravity="center_vertical"
-    android:orientation="vertical">
+<com.base.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:background="@android:color/transparent"
+                                      android:gravity="center_vertical"
+                                      android:orientation="vertical">
 
     <TextView
         android:id="@+id/mTvTitle"
@@ -50,4 +50,4 @@
         android:textColor="@color/common_prompt_dialog_title_color"
         android:textSize="@dimen/common_dialog_title_size" />
 
-</com.support.autolayout.AutoLinearLayout>
+</com.base.autolayout.AutoLinearLayout>

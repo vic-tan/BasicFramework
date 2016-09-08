@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.support.autolayout.AutoFrameLayout;
+import com.base.autolayout.AutoFrameLayout;
 import com.tanlifei.support.utils.StringUtils;
 import com.tanlifei.support.utils.ViewFindUtils;
 import com.tanlifei.framework.R;

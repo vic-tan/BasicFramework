@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 
-import com.support.autolayout.AutoLayoutActivity;
+import com.base.autolayout.AutoLayoutActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;

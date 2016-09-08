@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.support.autolayout.AutoFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:in="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/actionbar_rlly_root"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/common_actionbar_standard_height"
-    android:layout_alignParentTop="true"
-    android:orientation="horizontal">
+<com.base.autolayout.AutoFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                     xmlns:in="http://schemas.android.com/apk/res-auto"
+                                     xmlns:tools="http://schemas.android.com/tools"
+                                     android:id="@+id/actionbar_rlly_root"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="@dimen/common_actionbar_standard_height"
+                                     android:layout_alignParentTop="true"
+                                     android:orientation="horizontal">
 
 
     <TextView
@@ -24,7 +24,7 @@
         android:textSize="@dimen/common_text_size_actionbar_title"
         tools:text="请设置标题" />
 
-    <com.support.autolayout.AutoRelativeLayout
+    <com.base.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
@@ -113,7 +113,7 @@
 
 
         </LinearLayout>
-    </com.support.autolayout.AutoRelativeLayout>
+    </com.base.autolayout.AutoRelativeLayout>
 
 
-</com.support.autolayout.AutoFrameLayout>
+</com.base.autolayout.AutoFrameLayout>

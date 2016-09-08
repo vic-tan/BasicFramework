@@ -5,7 +5,7 @@ import android.view.Gravity;
 import android.view.View;
 
 import com.nineoldandroids.view.ViewHelper;
-import com.support.autolayout.AutoLinearLayout;
+import com.base.autolayout.AutoLinearLayout;
 import com.uikit.R;
 import com.uikit.dialog.StatusBarUtils;
 import com.uikit.dialog.internal.InternalBasePopup;

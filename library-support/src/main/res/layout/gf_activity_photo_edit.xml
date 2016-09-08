@@ -15,12 +15,12 @@
   ~  limitations under the License.
   -->
 
-<com.support.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                         xmlns:app="http://schemas.android.com/apk/res-auto"
-                                         android:layout_width="match_parent"
-                                         android:layout_height="match_parent"
-                                         android:background="@android:color/white"
-                                         android:orientation="vertical"
+<com.base.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                      xmlns:app="http://schemas.android.com/apk/res-auto"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:background="@android:color/white"
+                                      android:orientation="vertical"
     >
 
     <LinearLayout
@@ -152,4 +152,4 @@
             />
     </LinearLayout>
 
-</com.support.autolayout.AutoLinearLayout>
+</com.base.autolayout.AutoLinearLayout>

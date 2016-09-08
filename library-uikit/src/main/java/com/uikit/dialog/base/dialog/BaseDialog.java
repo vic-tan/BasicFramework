@@ -17,7 +17,7 @@ import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 
 import com.nineoldandroids.animation.Animator;
-import com.support.autolayout.AutoLinearLayout;
+import com.base.autolayout.AutoLinearLayout;
 import com.uikit.dialog.BaseAnimatorSet;
 import com.uikit.dialog.StatusBarUtils;
 

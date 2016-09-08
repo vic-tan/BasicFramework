@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.support.autolayout.AutoLinearLayout;
+import com.base.autolayout.AutoLinearLayout;
 
 /** 用于需要圆角矩形框背景的LinearLayout的情况,减少直接使用LinearLayout时引入的shape资源文件 */
 public class RoundLinearLayout extends AutoLinearLayout {

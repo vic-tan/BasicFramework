@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.support.autolayout.AutoRelativeLayout;
+import com.base.autolayout.AutoRelativeLayout;
 
 /** 用于需要圆角矩形框背景的RelativeLayout的情况,减少直接使用RelativeLayout时引入的shape资源文件 */
 public class RoundRelativeLayout extends AutoRelativeLayout {

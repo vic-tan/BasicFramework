@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.support.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<com.base.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -57,4 +57,4 @@
         </FrameLayout>
     </RelativeLayout>
 
-</com.support.autolayout.AutoLinearLayout>
+</com.base.autolayout.AutoLinearLayout>

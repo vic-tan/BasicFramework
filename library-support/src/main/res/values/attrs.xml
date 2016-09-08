@@ -1,68 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- ————————————————————————————————————————— AutoLayout_Layout ———————————————————————————————————————— -->
-    <declare-styleable name="AutoLayout_Layout">
-        <attr name="layout_auto_basewidth">
-            <flag name="width" value="1"></flag>
-            <flag name="height" value="2"></flag>
-            <flag name="textSize" value="4"></flag>
-            <flag name="padding" value="8"></flag>
-            <flag name="margin" value="16"></flag>
-            <flag name="marginLeft" value="32"></flag>
-            <flag name="marginTop" value="64"></flag>
-            <flag name="marginRight" value="128"></flag>
-            <flag name="marginBottom" value="256"></flag>
-            <flag name="paddingLeft" value="512"></flag>
-            <flag name="paddingTop" value="1024"></flag>
-            <flag name="paddingRight" value="2048"></flag>
-            <flag name="paddingBottom" value="4096"></flag>
-        </attr>
-
-        <attr name="layout_auto_baseheight">
-            <flag name="width" value="1"></flag>
-            <flag name="height" value="2"></flag>
-            <flag name="textSize" value="4"></flag>
-            <flag name="padding" value="8"></flag>
-            <flag name="margin" value="16"></flag>
-            <flag name="marginLeft" value="32"></flag>
-            <flag name="marginTop" value="64"></flag>
-            <flag name="marginRight" value="128"></flag>
-            <flag name="marginBottom" value="256"></flag>
-            <flag name="paddingLeft" value="512"></flag>
-            <flag name="paddingTop" value="1024"></flag>
-            <flag name="paddingRight" value="2048"></flag>
-            <flag name="paddingBottom" value="4096"></flag>
-        </attr>
-
-    </declare-styleable>
 
 
     <!-- ————————————————————————————————————————— library-ultra-pull-to-refresh———————————————————————————————————————— -->
     <declare-styleable name="LoadingViewFinal">
         <attr name="loadMoreMode">
-            <flag name="click" value="0x0" />
-            <flag name="scroll" value="0x1" />
+            <flag name="click" value="0x0"/>
+            <flag name="scroll" value="0x1"/>
         </attr>
-        <attr name="loadMoreView" format="string" />
-        <attr name="noLoadMoreHideView" format="boolean" />
+        <attr name="loadMoreView" format="string"/>
+        <attr name="noLoadMoreHideView" format="boolean"/>
     </declare-styleable>
 
     <declare-styleable name="PtrFrameLayout">
         <!-- Optional. If you put header and content in xml, you can you these to specify them. -->
-        <attr name="ptr_header" format="reference" />
-        <attr name="ptr_content" format="reference" />
-        <attr name="ptr_resistance" format="float" />  <!-- the resistance when you are moving the frame -->
-        <attr name="ptr_ratio_of_header_height_to_refresh" format="float" /><!-- the ration of the height of the header to trigger refresh -->
-        <attr name="ptr_duration_to_close" format="integer" />
-        <attr name="ptr_duration_to_close_header" format="integer" />
+        <attr name="ptr_header" format="reference"/>
+        <attr name="ptr_content" format="reference"/>
+        <attr name="ptr_resistance" format="float"/>  <!-- the resistance when you are moving the frame -->
+        <attr name="ptr_ratio_of_header_height_to_refresh" format="float"/><!-- the ration of the height of the header to trigger refresh -->
+        <attr name="ptr_duration_to_close" format="integer"/>
+        <attr name="ptr_duration_to_close_header" format="integer"/>
         <!-- pull to refresh, otherwise release to refresh, default is release to refresh -->
-        <attr name="ptr_pull_to_fresh" format="boolean" />
+        <attr name="ptr_pull_to_fresh" format="boolean"/>
         <!-- keep header when refreshing-->
-        <attr name="ptr_keep_header_when_refresh" format="boolean" />
+        <attr name="ptr_keep_header_when_refresh" format="boolean"/>
     </declare-styleable>
 
     <declare-styleable name="PtrClassicHeader">
-        <attr name="ptr_rotate_ani_time" format="integer" />
+        <attr name="ptr_rotate_ani_time" format="integer"/>
     </declare-styleable>
 
     <!-- ————————————————————————————————————————— galleryfinal ———————————————————————————————————————— -->
@@ -75,9 +40,9 @@
     </declare-styleable>
 
     <declare-styleable name="HorizontalListView">
-        <attr name="dividerWidth" format="dimension" />
-        <attr name="android:divider" />
-        <attr name="android:requiresFadingEdge" />
-        <attr name="android:fadingEdgeLength" />
+        <attr name="dividerWidth" format="dimension"/>
+        <attr name="android:divider"/>
+        <attr name="android:requiresFadingEdge"/>
+        <attr name="android:fadingEdgeLength"/>
     </declare-styleable>
 </resources>

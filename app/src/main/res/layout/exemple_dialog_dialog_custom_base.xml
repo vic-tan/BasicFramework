@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.support.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:paddingBottom="50px"
-    android:paddingLeft="30px"
-    android:paddingRight="30px"
-    android:paddingTop="50px">
+<com.base.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                      android:layout_width="match_parent"
+                                      android:layout_height="match_parent"
+                                      android:background="#ffffff"
+                                      android:gravity="center_horizontal"
+                                      android:orientation="vertical"
+                                      android:paddingBottom="50px"
+                                      android:paddingLeft="30px"
+                                      android:paddingRight="30px"
+                                      android:paddingTop="50px">
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,4 +53,4 @@
             android:textSize="35px" />
     </LinearLayout>
 
-</com.support.autolayout.AutoLinearLayout>
+</com.base.autolayout.AutoLinearLayout>

@@ -62,6 +62,7 @@
     </declare-styleable>
 
 
+    <!-- ——————————————————————————————————————————CircleIndicator—————————————————————— -->
     <declare-styleable name="CircleIndicator">
         <attr name="ci_width" format="dimension"/>
         <attr name="ci_height" format="dimension"/>
@@ -72,7 +73,7 @@
         <attr name="ci_drawable_unselected" format="reference"/>
 
         <attr name="ci_orientation" format="enum">
-            <!-- Defines an horizontal widget. -->
+            <!-- 定义了一个水平的小部件 -->
             <enum name="horizontal" value="0"/>
             <!-- Defines a vertical widget. -->
             <enum name="vertical" value="1"/>

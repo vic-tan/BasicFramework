@@ -20,7 +20,7 @@ import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.DateFormatUtils;
 import com.tanlifei.support.utils.GsonJsonUtils;
-import com.uikit.CircleIndicator;
+import com.uikit.viewpager.CircleIndicator;
 import com.uikit.viewpager.ChildViewPager;
 
 import org.androidannotations.annotations.AfterViews;

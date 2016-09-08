@@ -29,7 +29,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.support.R;
-import com.support.autolayout.AutoLayoutActivity;
+import com.base.autolayout.AutoLayoutActivity;
 import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.permission.EasyPermissions;
 import com.support.galleryfinal.utils.DeviceUtils;

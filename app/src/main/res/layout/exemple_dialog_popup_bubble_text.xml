@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.support.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+<com.base.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:orientation="horizontal">
 
     <TextView
         android:id="@+id/tv_bubble"
@@ -12,4 +12,4 @@
         android:text="最美的不是下雨天~"
         android:textColor="#ffffff"
         android:textSize="30px" />
-</com.support.autolayout.AutoLinearLayout>
+</com.base.autolayout.AutoLinearLayout>
