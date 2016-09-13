@@ -13,7 +13,7 @@ import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.DialogCallback;
 import com.tanlifei.support.http.HttpListener;
-import com.tanlifei.support.http.MultipleDialogCallback;
+import com.tanlifei.support.http.MultipleCallback;
 import com.tanlifei.support.http.ProcessCallback;
 import com.tanlifei.support.http.ResultCallback;
 import com.uikit.kprogresshud.KProgressHUD;
@@ -86,7 +86,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
     }
 
     public void D(View v) {
-        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new MultipleDialogCallback(mContext) {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new MultipleCallback(mContext) {
             @Override
             public void onCusResponse(BaseJson response, KProgressHUD hud) {
                 scheduleTwo(hud);
@@ -95,7 +95,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
         });
     }
     public void two(KProgressHUD hud) {
-        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new MultipleDialogCallback(mContext, hud,false) {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new MultipleCallback(mContext, hud,false) {
             @Override
             public void onCusResponse(BaseJson response, KProgressHUD hud) {
                 ToastUtils.show(mContext, "接口2");
@@ -106,7 +106,7 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
 
 
     public void three(KProgressHUD hud) {
-        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new MultipleDialogCallback(mContext, hud, true) {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new MultipleCallback(mContext, hud, true) {
             @Override
             public void onCusResponse(BaseJson response, KProgressHUD hud) {
                 ToastUtils.show(mContext, "接口3");

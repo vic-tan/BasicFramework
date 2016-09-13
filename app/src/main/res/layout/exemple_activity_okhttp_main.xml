@@ -48,7 +48,7 @@
                 style="@style/base_button_corners"
                 android:layout_marginBottom="10dp"
                 android:onClick="D"
-                android:text="MultipleDialogCallback 多次个请求共用一个显示加载框"/>
+                android:text="MultipleCallback 多请求同一加载框"/>
 
         </LinearLayout>
 

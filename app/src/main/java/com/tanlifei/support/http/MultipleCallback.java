@@ -21,7 +21,7 @@ import okhttp3.Response;
  * 所有的提示框都得继承本类，
  * Created by tanlifei on 15/12/14.
  */
-public abstract class MultipleDialogCallback extends Callback<BaseJson> {
+public abstract class MultipleCallback extends Callback<BaseJson> {
 
     protected KProgressHUD hud;
     protected Context mContext;
@@ -33,7 +33,7 @@ public abstract class MultipleDialogCallback extends Callback<BaseJson> {
      *
      * @param mContext
      */
-    public MultipleDialogCallback(Context mContext) {
+    public MultipleCallback(Context mContext) {
         this.mContext = mContext;
         frist = true;
         this.last = false;
@@ -54,7 +54,7 @@ public abstract class MultipleDialogCallback extends Callback<BaseJson> {
      * @param hud
      * @param last 是不是最后一个接口，true 表示最后一个，则请求完隐藏提示框
      */
-    public MultipleDialogCallback(Context mContext, KProgressHUD hud, boolean last) {
+    public MultipleCallback(Context mContext, KProgressHUD hud, boolean last) {
         this.mContext = mContext;
         this.last = last;
         this.hud = hud;
