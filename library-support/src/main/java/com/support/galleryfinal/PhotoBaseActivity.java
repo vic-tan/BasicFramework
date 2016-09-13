@@ -18,29 +18,26 @@ package com.support.galleryfinal;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
-import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 
-import com.support.R;
 import com.base.autolayout.AutoLayoutActivity;
+import com.base.utils.ActivityManager;
+import com.base.utils.DateUtils;
+import com.base.utils.Logger;
+import com.base.utils.ToastUtils;
+import com.base.utils.io.FileUtils;
+import com.support.R;
 import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.permission.EasyPermissions;
 import com.support.galleryfinal.utils.DeviceUtils;
 import com.support.galleryfinal.utils.MediaScanner;
 import com.support.galleryfinal.utils.StringUtils;
 import com.support.galleryfinal.utils.Utils;
-import com.base.utils.ActivityManager;
-import com.base.utils.DateUtils;
-import com.base.utils.Logger;
-import com.base.utils.ToastUtils;
-import com.base.utils.io.FileUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -73,22 +70,7 @@ public abstract class PhotoBaseActivity extends AutoLayoutActivity implements Ea
     }
 
 
-    /**
-     * 导航栏显示中状态栏一样的颜色
-     */
-    protected void setTranslucentStatus(int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
-                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(getResources().getColor(color));
-            window.setNavigationBarColor(getResources().getColor(color));
-        }
-    }
+
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {

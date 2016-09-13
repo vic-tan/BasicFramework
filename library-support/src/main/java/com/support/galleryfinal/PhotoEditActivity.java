@@ -31,6 +31,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.base.utils.StatusUtils;
 import com.support.R;
 import com.support.galleryfinal.adapter.PhotoEditListAdapter;
 import com.support.galleryfinal.model.PhotoInfo;
@@ -198,7 +199,7 @@ public class PhotoEditActivity extends CropImageActivity implements AdapterView.
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTranslucentStatus(R.color.common_actionbar_bg_color);
+        StatusUtils.setTranslucentStatus(this,R.color.common_actionbar_bg_color);
         if (GalleryFinal.getFunctionConfig() == null || GalleryFinal.getGalleryTheme() == null) {
             resultFailureDelayed(getString(R.string.please_reopen_gf), true);
         } else {

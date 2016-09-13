@@ -4,20 +4,17 @@ package com.tanlifei.common.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.base.autolayout.AutoLayoutActivity;
+import com.base.utils.ActivityManager;
+import com.base.utils.StartActUtils;
+import com.base.utils.StatusUtils;
+import com.base.utils.ToastUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
-import com.base.utils.ActivityManager;
 import com.tanlifei.support.utils.ResUtils;
-import com.base.utils.StartActUtils;
-import com.base.utils.ToastUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -35,26 +32,10 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         ActivityManager.getActivityManager().addActivity(this);
-        setTranslucentStatus(R.color.common_actionbar_bg_color);
+        StatusUtils.setTranslucentStatus(this,R.color.common_actionbar_bg_color);
     }
 
 
-    /**
-     * 导航栏显示中状态栏一样的颜色
-     */
-    protected void setTranslucentStatus(int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
-                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(ResUtils.getColor(color));
-            window.setNavigationBarColor(ResUtils.getColor(color));
-        }
-    }
 
 
     /**

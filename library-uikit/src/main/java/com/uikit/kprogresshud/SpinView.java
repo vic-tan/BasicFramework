@@ -64,11 +64,11 @@ class SpinView extends ImageView implements Indeterminate {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.rotate(mRotateDegrees, getWidth() / 2, getHeight() / 2);
         /*ViewGroup.LayoutParams params = this.getLayoutParams();
-        params.width = (int) ResUtils.getDimens(R.dimen.common_kprogresshud_height);
-        params.height = (int) ResUtils.getDimens(R.dimen.common_kprogresshud_height);
+        params.width = (int) getResources().getDimension(R.dimen.common_kprogresshud_width);
+        params.height = (int) getResources().getDimension(R.dimen.common_kprogresshud_height);
         this.setLayoutParams(params);*/
+        canvas.rotate(mRotateDegrees, getWidth() / 2, getHeight() / 2);
         super.onDraw(canvas);
     }
 

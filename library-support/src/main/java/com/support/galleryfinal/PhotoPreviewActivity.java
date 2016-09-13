@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.base.utils.StatusUtils;
 import com.support.R;
 import com.support.galleryfinal.adapter.PhotoPreviewAdapter;
 import com.support.galleryfinal.model.PhotoInfo;
@@ -36,7 +37,7 @@ public class PhotoPreviewActivity extends PhotoBaseActivity implements ViewPager
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTranslucentStatus(R.color.common_actionbar_bg_color);
+        StatusUtils.setTranslucentStatus(this,R.color.common_actionbar_bg_color);
         mThemeConfig = GalleryFinal.getGalleryTheme();
         if ( mThemeConfig == null) {
             resultFailureDelayed(getString(R.string.please_reopen_gf), true);
