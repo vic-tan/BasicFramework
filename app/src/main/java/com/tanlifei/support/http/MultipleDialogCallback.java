@@ -2,9 +2,9 @@ package com.tanlifei.support.http;
 
 import android.content.Context;
 
+import com.base.utils.StringUtils;
 import com.google.gson.Gson;
 import com.support.okhttp.callback.Callback;
-import com.base.utils.StringUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
@@ -17,30 +17,59 @@ import okhttp3.Response;
 
 
 /**
- * 提示框加载基类，
+ * 多次请求只显示同一个提示框加载基类，
  * 所有的提示框都得继承本类，
  * Created by tanlifei on 15/12/14.
  */
-public abstract class DialogCallback extends Callback<BaseJson> {
+public abstract class MultipleDialogCallback extends Callback<BaseJson> {
 
     protected KProgressHUD hud;
     protected Context mContext;
+    protected boolean frist, last;
 
-    public DialogCallback(Context mContext) {
+
+    /**
+     * 第一个接口调用 这个方法
+     *
+     * @param mContext
+     */
+    public MultipleDialogCallback(Context mContext) {
         this.mContext = mContext;
-        hud = KProgressHUD.create(mContext)
+        frist = true;
+        this.last = false;
+        this.hud = KProgressHUD.create(mContext)
                 .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
                 .setDimAmount(0.5f)
                 .setLabel(mContext.getResources().getString(R.string.common_dialog_loading))
                 .setCancellable(true);
+
+    }
+
+
+
+    /**
+     * 除了了第一个外接口调用这个方法
+     *
+     * @param mContext
+     * @param hud
+     * @param last 是不是最后一个接口，true 表示最后一个，则请求完隐藏提示框
+     */
+    public MultipleDialogCallback(Context mContext, KProgressHUD hud, boolean last) {
+        this.mContext = mContext;
+        this.last = last;
+        this.hud = hud;
+        frist = false;
     }
 
 
     @Override
     public void onAfter() {
         super.onAfter();
-        hud.dismiss();
+        if (last) {
+            hud.dismiss();
+        }
     }
+
 
     @Override
     public BaseJson parseNetworkResponse(Response response) throws Exception {
@@ -55,9 +84,9 @@ public abstract class DialogCallback extends Callback<BaseJson> {
             if (null == response) {
                 throw new AppException(mContext, ExceptionConstants.CODE_DATA_ERROR);
             }
-            if (StringUtils.isEquals(response.getCode(),ExceptionConstants.CODE_SUCCEE)){
-                onCusResponse(response);
-            }else{
+            if (StringUtils.isEquals(response.getCode(), ExceptionConstants.CODE_SUCCEE)) {
+                onCusResponse(response, hud);
+            } else {
                 throw new AppException(mContext, response.getMsg());
             }
         } catch (AppException e) {
@@ -68,7 +97,9 @@ public abstract class DialogCallback extends Callback<BaseJson> {
     @Override
     public void onBefore(Request request) {
         super.onBefore(request);
-        hud.show();
+        if (frist) {
+            hud.show();
+        }
     }
 
     @Override
@@ -82,7 +113,7 @@ public abstract class DialogCallback extends Callback<BaseJson> {
         }
     }
 
-    public abstract void onCusResponse(BaseJson response);
+    public abstract void onCusResponse(BaseJson response, KProgressHUD hud);
 
 
 }

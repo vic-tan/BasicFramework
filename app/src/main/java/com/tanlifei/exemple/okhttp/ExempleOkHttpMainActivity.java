@@ -1,20 +1,22 @@
 package com.tanlifei.exemple.okhttp;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 
-import com.support.okhttp.OkHttpUtils;
 import com.base.utils.Logger;
+import com.base.utils.ToastUtils;
+import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.DialogCallback;
 import com.tanlifei.support.http.HttpListener;
+import com.tanlifei.support.http.MultipleDialogCallback;
 import com.tanlifei.support.http.ProcessCallback;
 import com.tanlifei.support.http.ResultCallback;
-import com.base.utils.NetUtils;
-import com.base.utils.ToastUtils;
+import com.uikit.kprogresshud.KProgressHUD;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +25,6 @@ import okhttp3.Call;
 import okhttp3.Request;
 
 public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
-
 
 
     @Override
@@ -36,10 +37,6 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
 
 
     public void A(View v) {
-        if (!NetUtils.isConnected(mContext)) {
-            ToastUtils.show(mContext, "没有网络!!");
-            return;
-        }
         OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new ResultCallback(mContext) {
 
             @Override
@@ -52,10 +49,6 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
     }
 
     public void B(View v) {
-        if (!NetUtils.isConnected(mContext)) {
-            ToastUtils.show(mContext, "没有网络!!");
-            return;
-        }
         OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new DialogCallback(mContext) {
             @Override
             public void onCusResponse(BaseJson response) {
@@ -92,11 +85,60 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
         }));
     }
 
+    public void D(View v) {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new MultipleDialogCallback(mContext) {
+            @Override
+            public void onCusResponse(BaseJson response, KProgressHUD hud) {
+                scheduleTwo(hud);
+                ToastUtils.show(mContext, "接口1");
+            }
+        });
+    }
+    public void two(KProgressHUD hud) {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new MultipleDialogCallback(mContext, hud,false) {
+            @Override
+            public void onCusResponse(BaseJson response, KProgressHUD hud) {
+                ToastUtils.show(mContext, "接口2");
+                scheduleThree(hud);
+            }
+        });
+    }
+
+
+    public void three(KProgressHUD hud) {
+        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new MultipleDialogCallback(mContext, hud, true) {
+            @Override
+            public void onCusResponse(BaseJson response, KProgressHUD hud) {
+                ToastUtils.show(mContext, "接口3");
+            }
+        });
+    }
+
 
     public Map<String, Object> tagList() {
         Map<String, Object> map = new HashMap<>();
         map.put("sid", "ipeiban2016");
         return map;
+    }
+
+    private void scheduleTwo(final KProgressHUD hud) {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                two(hud);
+            }
+        }, 2000);
+    }
+
+    private void scheduleThree(final KProgressHUD hud) {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                three(hud);
+            }
+        }, 2000);
     }
 
 

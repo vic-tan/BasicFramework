@@ -3,7 +3,7 @@
 
 
     <!-- —————————————————— 正在加载框  ——————————————————————————————— -->
-    <string name="common_dialog_loading">加载中..</string>
+    <string name="common_dialog_loading">&#160;&#160;加载中...&#160;&#160;</string>
     <string name="common_net_error">网络异常,请检查你的网络无误后再重试</string>
     <string name="common_data_error">加载失败,请重试</string>
     <string name="common_empty_data">^_^没有任何数据</string>

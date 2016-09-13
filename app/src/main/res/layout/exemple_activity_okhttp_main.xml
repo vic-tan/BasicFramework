@@ -43,6 +43,13 @@
                 android:onClick="C"
                 android:text="ProcessCallback 过程请求"/>
 
+            <Button
+                android:id="@+id/D"
+                style="@style/base_button_corners"
+                android:layout_marginBottom="10dp"
+                android:onClick="D"
+                android:text="MultipleDialogCallback 多次个请求共用一个显示加载框"/>
+
         </LinearLayout>
 
         <!--   <LinearLayout
