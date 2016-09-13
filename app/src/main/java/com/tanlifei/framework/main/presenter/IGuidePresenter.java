@@ -11,7 +11,4 @@ import java.util.List;
 public interface IGuidePresenter {
 
     List<View> addGuideViews(View.OnClickListener clickListener);
-
-    void addGuideIndicatorViews(ViewGroup viewGroup,View.OnClickListener clickListener);
-
 }

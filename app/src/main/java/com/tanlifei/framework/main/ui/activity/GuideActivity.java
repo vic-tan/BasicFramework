@@ -2,9 +2,9 @@ package com.tanlifei.framework.main.ui.activity;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.base.utils.AppCacheUtils;
+import com.base.utils.StartActUtils;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.adapter.GuideAdapter;
@@ -12,7 +12,7 @@ import com.tanlifei.framework.main.presenter.IGuidePresenter;
 import com.tanlifei.framework.main.presenter.impl.GuidePresenterImpl;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.GuideView;
-import com.base.utils.StartActUtils;
+import com.uikit.viewpager.CircleIndicator;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -29,18 +29,17 @@ import org.androidannotations.annotations.ViewById;
 public class GuideActivity extends BaseActivity implements GuideView,
         ViewPager.OnPageChangeListener, View.OnClickListener {
 
-    public static final String TAG = GuideActivity.class.getSimpleName();
     @ViewById(R.id.guide_pager)
     ViewPager guidePager;
-    @ViewById(R.id.guide_dots_container)
-    LinearLayout guideDotsContainer;
+    @ViewById(R.id.indicator)
+    CircleIndicator indicator;
     private IGuidePresenter presenter;
 
     @AfterViews
     void init() {
         presenter = new GuidePresenterImpl(this, mContext);
-        presenter.addGuideIndicatorViews(guideDotsContainer, this);
         guidePager.setAdapter(new GuideAdapter(presenter.addGuideViews(this)));
+        indicator.setViewPager(guidePager,presenter.addGuideViews(this).size());
     }
 
     @Override
@@ -57,10 +56,10 @@ public class GuideActivity extends BaseActivity implements GuideView,
 
     @Override
     public void onPageSelected(int position) {
-        for (int i = 0; i < guideDotsContainer.getChildCount(); i++) {
-            guideDotsContainer.getChildAt(i).setSelected(false);
+        for (int i = 0; i < indicator.getChildCount(); i++) {
+            indicator.getChildAt(i).setSelected(false);
         }
-        guideDotsContainer.getChildAt(position).setSelected(true);
+        indicator.getChildAt(position).setSelected(true);
     }
 
     @Override

@@ -12,7 +12,4 @@ public interface IGuideInteractor {
 
 
     List<View> addGuideViews(Context context, View.OnClickListener listener);
-
-    List<View> addGuideIndicatorViews(Context context, View.OnClickListener listener);
-
 }

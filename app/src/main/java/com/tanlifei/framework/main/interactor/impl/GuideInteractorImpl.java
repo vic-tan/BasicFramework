@@ -17,7 +17,6 @@ import java.util.List;
 public class GuideInteractorImpl implements IGuideInteractor {
 
     private List<View> guideViews;
-    private List<View> guideIndicatorViews;
 
     @Override
     public List<View> addGuideViews(Context context, View.OnClickListener listener) {
@@ -32,20 +31,5 @@ public class GuideInteractorImpl implements IGuideInteractor {
 
         }
         return guideViews;
-    }
-
-
-    @Override
-    public List<View> addGuideIndicatorViews(Context context, View.OnClickListener listener) {
-        if (ListUtils.isEmpty(guideViews)) {
-            addGuideViews(context, listener);
-        }
-        if (ListUtils.isEmpty(guideIndicatorViews)) {
-            guideIndicatorViews = new ArrayList<>();
-            for (int i = 0; i < guideViews.size(); i++) {
-                guideIndicatorViews.add(InflaterUtils.inflate(context, R.layout.main_activity_guide_indicator));
-            }
-        }
-        return guideIndicatorViews;
     }
 }

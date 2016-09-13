@@ -2,7 +2,6 @@ package com.tanlifei.framework.main.presenter.impl;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.tanlifei.framework.main.interactor.IGuideInteractor;
 import com.tanlifei.framework.main.interactor.impl.GuideInteractorImpl;
@@ -30,16 +29,4 @@ public class GuidePresenterImpl implements IGuidePresenter {
     public List<View> addGuideViews(View.OnClickListener clickListener) {
         return interactor.addGuideViews(mContext, clickListener);
     }
-
-    @Override
-    public void addGuideIndicatorViews(ViewGroup viewGroup, View.OnClickListener clickListener) {
-        List<View> list = interactor.addGuideIndicatorViews(mContext, clickListener);
-        for (int i = 0; i < list.size(); i++) {
-            if (i == 0) {
-                list.get(i).setSelected(true);
-            }
-            viewGroup.addView(list.get(i));
-        }
-    }
-
 }
