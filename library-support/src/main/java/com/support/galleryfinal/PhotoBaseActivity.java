@@ -117,7 +117,7 @@ public abstract class PhotoBaseActivity extends AutoLayoutActivity implements Ea
      *
      * @param statusBarTintResource
      */
-    private void applyKitKatTranslucency(int statusBarTintResource) {
+    protected void applyKitKatTranslucency(int statusBarTintResource) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             setTranslucentStatus(true);
             SystemBarTintManager mTintManager = new SystemBarTintManager(this);

@@ -79,6 +79,7 @@ public abstract class CropImageActivity extends MonitoredActivity {
 
     }
 
+
     @TargetApi(Build.VERSION_CODES.KITKAT)
     private void setupWindowFlags() {
         requestWindowFeature(Window.FEATURE_NO_TITLE);

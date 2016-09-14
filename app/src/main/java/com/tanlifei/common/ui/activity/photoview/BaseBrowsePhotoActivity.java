@@ -27,7 +27,6 @@ import java.util.List;
 import java.util.Map;
 
 
-
 /**
  * 查年多张图片
  *
@@ -181,5 +180,10 @@ public class BaseBrowsePhotoActivity extends BaseActivity {
     static class Holder {
         PhotoView photoView;
         ProgressBar load;
+    }
+
+    @Override
+    protected void setSystemBarTint(int statusBarTintResource) {
+
     }
 }
