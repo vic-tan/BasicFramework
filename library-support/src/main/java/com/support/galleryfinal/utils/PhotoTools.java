@@ -19,13 +19,12 @@ package com.support.galleryfinal.utils;
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.MediaStore;
-import android.util.Log;
 
+import com.base.utils.Logger;
 import com.support.R;
 import com.support.galleryfinal.GalleryFinal;
 import com.support.galleryfinal.model.PhotoFolderInfo;
 import com.support.galleryfinal.model.PhotoInfo;
-import com.base.utils.Logger;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -80,7 +79,7 @@ public class PhotoTools {
                     //int thumbImageColumn = cursor.getColumnIndex(MediaStore.Images.Thumbnails.DATA);
                     final int imageId = cursor.getInt(imageIdColumn);
                     final String path = cursor.getString(dataColumn);
-                    Log.d("--->",path);
+                    //Log.d("--->",path);
                     //final String thumb = cursor.getString(thumbImageColumn);
                     File file = new File(path);
                     if ( (filterList == null || !filterList.contains(path)) && file.exists() && file.length() > 0 ) {

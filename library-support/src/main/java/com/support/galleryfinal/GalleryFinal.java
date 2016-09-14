@@ -18,14 +18,14 @@ package com.support.galleryfinal;
 
 import android.content.Intent;
 
+import com.base.utils.Logger;
+import com.base.utils.StringUtils;
+import com.base.utils.ToastUtils;
+import com.base.utils.io.FileUtils;
 import com.support.R;
 import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.utils.DeviceUtils;
-import com.support.galleryfinal.utils.StringUtils;
 import com.support.galleryfinal.utils.Utils;
-import com.base.utils.Logger;
-import com.base.utils.ToastUtils;
-import com.base.utils.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;

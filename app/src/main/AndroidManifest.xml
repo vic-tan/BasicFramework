@@ -41,7 +41,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.ui.activity.GuideActivity_"/>
-        <activity android:name=".main.ui.activity.HomeActivity_"/>
+        <activity
+            android:name=".main.ui.activity.HomeActivity_"/>
+
 
         <!-- 当前应用分辨率参考标准 -->
         <meta-data

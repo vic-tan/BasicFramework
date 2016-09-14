@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.base.utils.StatusUtils;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.support.galleryfinal.widget.zoonview.PhotoView;
@@ -56,7 +55,6 @@ public class BaseBrowsePhotoActivity extends BaseActivity {
         getIntentData();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.common_photo_view_viewpager);
-        StatusUtils.setTranslucentStatus(this,android.R.color.transparent);
         initWidget();
         initData();
         initListener();

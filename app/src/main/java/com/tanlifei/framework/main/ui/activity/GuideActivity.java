@@ -76,4 +76,7 @@ public class GuideActivity extends BaseActivity implements GuideView,
     }
 
 
+    @Override
+    protected void setSystemBarTint(int systemBarTint) {
+    }
 }

@@ -32,6 +32,8 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 
+import com.base.utils.StringUtils;
+
 import java.io.File;
 import java.math.BigInteger;
 import java.net.InetAddress;

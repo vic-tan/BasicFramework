@@ -24,4 +24,8 @@ public class LoadingActivity extends BaseActivity {
         exitApp();
     }
 
+    @Override
+    protected void setSystemBarTint(int systemBarTint) {
+    }
+
 }

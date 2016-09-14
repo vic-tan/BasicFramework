@@ -31,10 +31,10 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.support.R;
-import com.support.galleryfinal.GalleryFinal;
 import com.base.utils.Logger;
 import com.base.utils.io.FilenameUtils;
+import com.support.R;
+import com.support.galleryfinal.GalleryFinal;
 
 import java.io.File;
 import java.io.IOException;
@@ -76,6 +76,7 @@ public abstract class CropImageActivity extends MonitoredActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setupWindowFlags();
+
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)

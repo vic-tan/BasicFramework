@@ -1,16 +1,20 @@
 package com.tanlifei.common.ui.activity;
 
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.base.autolayout.AutoLayoutActivity;
 import com.base.utils.ActivityManager;
 import com.base.utils.StartActUtils;
-import com.base.utils.StatusUtils;
 import com.base.utils.ToastUtils;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
@@ -32,10 +36,44 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         ActivityManager.getActivityManager().addActivity(this);
-        StatusUtils.setTranslucentStatus(this,R.color.common_actionbar_bg_color);
+        setSystemBarTint(R.color.common_actionbar_bg_color);
+    }
+
+    /**
+     * 如果不想让标题栏变色，或者更改其它变色，重写此方法那可
+     */
+    protected void setSystemBarTint(int statusBarTintResource) {
+        applyKitKatTranslucency(statusBarTintResource);
     }
 
 
+    /**
+     * 标题栏变色
+     *
+     * @param statusBarTintResource
+     */
+    private void applyKitKatTranslucency(int statusBarTintResource) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            setTranslucentStatus(true);
+            SystemBarTintManager mTintManager = new SystemBarTintManager(this);
+            mTintManager.setStatusBarTintEnabled(true);
+            mTintManager.setStatusBarTintResource(statusBarTintResource);//通知栏所需颜色
+        }
+
+    }
+
+    @TargetApi(19)
+    private void setTranslucentStatus(boolean on) {
+        Window win = getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
+        }
+        win.setAttributes(winParams);
+    }
 
 
     /**
