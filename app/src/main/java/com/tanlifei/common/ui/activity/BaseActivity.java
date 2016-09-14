@@ -11,10 +11,10 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.base.autolayout.AutoLayoutActivity;
+import com.base.systembartint.SystemBarTintManager;
 import com.base.utils.ActivityManager;
 import com.base.utils.StartActUtils;
 import com.base.utils.ToastUtils;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;

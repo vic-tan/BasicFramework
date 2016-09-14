@@ -29,13 +29,13 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.base.autolayout.AutoLayoutActivity;
+import com.base.systembartint.SystemBarTintManager;
 import com.base.utils.ActivityManager;
 import com.base.utils.DateUtils;
 import com.base.utils.Logger;
 import com.base.utils.StringUtils;
 import com.base.utils.ToastUtils;
 import com.base.utils.io.FileUtils;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.support.R;
 import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.permission.EasyPermissions;
