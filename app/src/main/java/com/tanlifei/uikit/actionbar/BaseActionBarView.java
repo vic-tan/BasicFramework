@@ -51,7 +51,7 @@ public class BaseActionBarView {
     /**
      * 默认背影颜色红色
      */
-    private int DEFAULT_BACKGROUNDCOLOR = ResUtils.getColor(R.color.common_actionbar_bg_color);
+    private int DEFAULT_BACKGROUNDCOLOR = ResUtils.getColor(R.color.theme_color);
     /**
      * 默标题字体大小 单位 px
      */

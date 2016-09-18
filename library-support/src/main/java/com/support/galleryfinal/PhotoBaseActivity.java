@@ -100,7 +100,7 @@ public abstract class PhotoBaseActivity extends AutoLayoutActivity implements Ea
         DisplayMetrics dm = DeviceUtils.getScreenPix(this);
         mScreenWidth = dm.widthPixels;
         mScreenHeight = dm.heightPixels;
-        setSystemBarTint(R.color.common_actionbar_bg_color);
+        setSystemBarTint(R.color.theme_color);
 
     }
 

@@ -15,10 +15,5 @@
     <color name="list_item_bg_pressed">#eaeaef</color><!-- mRefreshList item 按下时的背景色 -->
 
 
-    <!-- —————————————————— button 颜色 ——————————————————————————————— -->
-
-    <color name="common_button_bg_normal">@color/common_actionbar_bg_color</color><!-- 标准button默认颜色-->
-    <color name="common_button_bg_pressed">#8000C15C</color> <!-- 标准button 点击颜色 -->
-
 
 </resources>

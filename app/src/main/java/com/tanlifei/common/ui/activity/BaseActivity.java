@@ -36,7 +36,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         ActivityManager.getActivityManager().addActivity(this);
-        setSystemBarTint(R.color.common_actionbar_bg_color);
+        setSystemBarTint(R.color.theme_color);
     }
 
     /**

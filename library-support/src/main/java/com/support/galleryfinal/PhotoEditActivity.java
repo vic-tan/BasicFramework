@@ -360,7 +360,7 @@ public class PhotoEditActivity extends CropImageActivity implements AdapterView.
         mPhotoList.add(0, info);
         mSelectPhotoList.add(info);
         mPhotoTempMap.put(info.getPhotoId(), new PhotoTempModel(info.getPhotoPath()));
-        applyKitKatTranslucency(R.color.common_actionbar_bg_color);
+        applyKitKatTranslucency(R.color.theme_color);
         if (!GalleryFinal.getFunctionConfig().isEditPhoto() && mTakePhotoAction && !GalleryFinal.getFunctionConfig().isCameraEditPhoto()) {
             resultAction();
         } else {
