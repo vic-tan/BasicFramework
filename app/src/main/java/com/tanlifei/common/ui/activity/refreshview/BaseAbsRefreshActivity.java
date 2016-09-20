@@ -13,7 +13,7 @@ public abstract class BaseAbsRefreshActivity extends BaseRefreshActivity {
 
     protected void supperInit() {
         super.supperInit();
-        mRefreshAdapter = setRefreshAdapter();
+        setRefreshAdapter();
     }
 
     @Override

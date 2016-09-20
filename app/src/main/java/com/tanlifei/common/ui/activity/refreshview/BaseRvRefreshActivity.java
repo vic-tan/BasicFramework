@@ -12,7 +12,7 @@ public abstract class BaseRvRefreshActivity extends BaseRefreshActivity {
 
     protected void supperInit() {
         super.supperInit();
-        mRefreshAdapter = setRefreshAdapter();
+        getmRefreshAdapter();
     }
 
     @Override
@@ -21,6 +21,9 @@ public abstract class BaseRvRefreshActivity extends BaseRefreshActivity {
     }
 
     public RvCommonAdapter getmRefreshAdapter() {
+        if (null == mRefreshAdapter) {
+            mRefreshAdapter = setRefreshAdapter();
+        }
         return mRefreshAdapter;
     }
 
