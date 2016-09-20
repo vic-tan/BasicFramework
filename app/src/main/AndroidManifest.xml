@@ -119,6 +119,14 @@
         <activity android:name="com.tanlifei.exemple.photo.ExemplePhotoMainActivity"/>
         <activity android:name="com.tanlifei.exemple.photo.galleryfinal.ExempleGalleryFinalActivity_"/>
 
+
+        <!-- —————————————————————————————————— 测试示范 ———————————————————————————————————— -->
+
+        <activity android:name="com.tanlifei.demo.DemoHomeActivity_"/>
+        <activity android:name="com.tanlifei.demo.eventbus.DemoEventBusMainActivity"/>
+        <activity android:name="com.tanlifei.demo.eventbus.DemoEventBusOneActivity"/>
+        <activity android:name="com.tanlifei.demo.eventbus.DemoEventBusTwoActivity"/>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>

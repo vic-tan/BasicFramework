@@ -3,9 +3,13 @@ package com.tanlifei.support.exception;
 import android.content.Context;
 
 import com.base.utils.Logger;
+import com.base.utils.NetUtils;
 import com.base.utils.StringUtils;
-import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.base.utils.ToastUtils;
+import com.tanlifei.framework.R;
+import com.tanlifei.support.constants.fixed.ExceptionConstants;
+
+import java.net.SocketTimeoutException;
 
 /**
  * 本app自己定义的异常
@@ -20,6 +24,12 @@ public class AppException extends Exception {
     }
 
 
+    /**
+     * 请求过程正常完成,自己的后服务器返回异常处理
+     *
+     * @param mContext
+     * @param msgCode
+     */
     public AppException(Context mContext, String msgCode) {
         super(msgCode);
         if (StringUtils.isEquals(msgCode, ExceptionConstants.CODE_DATA_ERROR)) {
@@ -33,9 +43,24 @@ public class AppException extends Exception {
 
     }
 
+    /**
+     * 请求过程未知异常处理,如超时,网络,数据等异常时处理
+     *
+     * @param mContext
+     * @param e
+     */
     public AppException(Context mContext, Exception e) {
         super(e.getMessage());
-        Logger.e(TAG, e.toString());
+        if (e instanceof SocketTimeoutException) {//超时
+            ToastUtils.show(mContext, "请求超时");
+        } else {
+            if (!NetUtils.isConnected(mContext)) {
+                ToastUtils.show(mContext, mContext.getResources().getString(R.string.common_net_error));
+                return;
+            }
+            Logger.e(TAG, e.toString());
+        }
+
     }
 
 }

@@ -6,11 +6,12 @@ import android.widget.ListView;
 
 import com.base.adapter.abslistview.AbsCommonAdapter;
 import com.base.adapter.abslistview.AbsViewHolder;
+import com.base.utils.StartActUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
+import com.tanlifei.demo.DemoHomeActivity_;
 import com.tanlifei.exemple.main.ExempleHomeActivity_;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
-import com.base.utils.StartActUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -58,6 +59,7 @@ public class HomeActivity extends BaseActionBarActivity {
                                 StartActUtils.start(mContext, ExempleHomeActivity_.class);
                                 break;
                             case 1:
+                                StartActUtils.start(mContext, DemoHomeActivity_.class);
                                 break;
                         }
                     }
