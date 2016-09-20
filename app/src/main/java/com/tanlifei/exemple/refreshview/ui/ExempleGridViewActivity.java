@@ -38,7 +38,7 @@ public class ExempleGridViewActivity extends BaseAbsRefreshActivity {
     void init() {
         super.supperInit();
         actionBarView.setActionbarTitle("GridView 上拉下拉刷新");
-        mLvGames.setAdapter(mRefreshAdapter);
+        mLvGames.setAdapter(getmRefreshAdapter());
         mLvGames.setEmptyView(mFlEmptyView);
         mLvGames.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override

@@ -8,8 +8,7 @@ import com.base.adapter.recycler.RvCommonAdapter;
  */
 public abstract class BaseRvRefreshActivity extends BaseRefreshActivity {
 
-
-    protected RvCommonAdapter mRefreshAdapter;
+    private RvCommonAdapter mRefreshAdapter;
 
     protected void supperInit() {
         super.supperInit();
@@ -21,6 +20,9 @@ public abstract class BaseRvRefreshActivity extends BaseRefreshActivity {
         mRefreshAdapter.notifyDataSetChanged();
     }
 
+    public RvCommonAdapter getmRefreshAdapter() {
+        return mRefreshAdapter;
+    }
 
     public abstract RvCommonAdapter setRefreshAdapter();
 

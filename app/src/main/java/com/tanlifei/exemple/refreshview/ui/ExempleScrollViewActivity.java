@@ -42,7 +42,7 @@ public class ExempleScrollViewActivity extends BaseAbsRefreshActivity {
         initActionBar();
         actionBarView.setActionbarTitle("ScrollView 上拉下拉刷新");
         super.supperInit();
-        mLinearListView.setAdapter(mRefreshAdapter);
+        mLinearListView.setAdapter(getmRefreshAdapter());
         mLinearListView.setEmptyView(mFlEmptyView);
         mLvGames.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override

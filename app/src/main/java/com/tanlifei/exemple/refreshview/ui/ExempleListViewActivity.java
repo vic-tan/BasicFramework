@@ -38,7 +38,7 @@ public class ExempleListViewActivity extends BaseAbsRefreshActivity {
     void init() {
         super.supperInit();
         actionBarView.setActionbarTitle("ListView 上拉下拉刷新");
-        mLvGames.setAdapter(mRefreshAdapter);
+        mLvGames.setAdapter(getmRefreshAdapter());
         mLvGames.setEmptyView(mFlEmptyView);
         mLvGames.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override

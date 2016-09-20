@@ -9,7 +9,7 @@ import com.base.adapter.abslistview.AbsCommonAdapter;
 public abstract class BaseAbsRefreshActivity extends BaseRefreshActivity {
 
 
-    protected AbsCommonAdapter mRefreshAdapter;
+    private AbsCommonAdapter mRefreshAdapter;
 
     protected void supperInit() {
         super.supperInit();
@@ -21,6 +21,12 @@ public abstract class BaseAbsRefreshActivity extends BaseRefreshActivity {
         mRefreshAdapter.notifyDataSetChanged();
     }
 
+    public AbsCommonAdapter getmRefreshAdapter() {
+        if (null == mRefreshAdapter) {
+            mRefreshAdapter = setRefreshAdapter();
+        }
+        return mRefreshAdapter;
+    }
 
     public abstract AbsCommonAdapter setRefreshAdapter();
 

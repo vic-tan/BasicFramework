@@ -45,7 +45,7 @@ public class ExempleRecyclerViewActivity extends BaseRvRefreshActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mLvGames.setLayoutManager(linearLayoutManager);
-        mLvGames.setAdapter(mRefreshAdapter);
+        mLvGames.setAdapter(getmRefreshAdapter());
         mLvGames.setEmptyView(mFlEmptyView);
         mLvGames.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override

@@ -19,7 +19,7 @@ import com.support.R;
 /**
  * Created by tanlifei on 16/8/29.
  */
-public class   ImageLoadUtils {
+public class ImageLoadUtils {
 
     /**
      * 标准配置

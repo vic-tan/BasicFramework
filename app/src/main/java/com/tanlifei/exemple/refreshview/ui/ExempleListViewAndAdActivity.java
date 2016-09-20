@@ -86,7 +86,7 @@ public class ExempleListViewAndAdActivity extends BaseAbsRefreshActivity {
 
         super.supperInit();
         actionBarView.setActionbarTitle("listView 标准上拉下拉带广告轮播");
-        mLvGames.setAdapter(mRefreshAdapter);
+        mLvGames.setAdapter(getmRefreshAdapter());
         mLvGames.setEmptyView(mFlEmptyView);
         mLvGames.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
