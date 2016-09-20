@@ -1,6 +1,7 @@
 package com.tanlifei.support.utils;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.widget.ImageView;
 
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
@@ -90,11 +91,9 @@ public class ImageLoadUtils {
         return new DisplayImageOptions.Builder()
                 .showImageForEmptyUri(onFailedImageResId)
                 .showImageOnFail(onFailedImageResId)
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .considerExifParams(true)
-                .displayer(bitmapDisplayer)
-                .build();
+                .cacheInMemory(true).cacheOnDisk(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .displayer(bitmapDisplayer).build();
     }
 
     /**

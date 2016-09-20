@@ -7,14 +7,15 @@ import android.widget.RelativeLayout;
 
 import com.base.adapter.recycler.RvCommonAdapter;
 import com.base.adapter.recycler.RvViewHolder;
+import com.base.utils.DateFormatUtils;
 import com.support.refresh.more.OnLoadMoreListener;
 import com.support.refresh.more.RecyclerViewFinal;
-import com.tanlifei.support.utils.ImageLoadUtils;
 import com.tanlifei.common.ui.activity.refreshview.BaseRvRefreshActivity;
+import com.tanlifei.exemple.refreshview.NoAlphaItemAnimator;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
-import com.base.utils.DateFormatUtils;
+import com.tanlifei.support.utils.ImageLoadUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -44,6 +45,7 @@ public class ExempleRecyclerViewActivity extends BaseRvRefreshActivity {
         actionBarView.setActionbarTitle("RecyclerView 刷新");
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mLvGames.setItemAnimator(new NoAlphaItemAnimator());
         mLvGames.setLayoutManager(linearLayoutManager);
         mLvGames.setAdapter(getmRefreshAdapter());
         mLvGames.setEmptyView(mFlEmptyView);
