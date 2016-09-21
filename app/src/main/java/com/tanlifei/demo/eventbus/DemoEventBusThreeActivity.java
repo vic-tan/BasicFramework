@@ -27,24 +27,23 @@ import android.view.View;
 import android.widget.Button;
 
 import com.base.utils.StartActUtils;
-import com.base.utils.ToastUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.demo.evenbean.FirstEvent;
 import com.tanlifei.framework.R;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 
-public class DemoEventBusTwoActivity extends BaseActionBarActivity implements View.OnClickListener {
+public class DemoEventBusThreeActivity extends BaseActionBarActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.demo_eventbus_activity_two);
+        setContentView(R.layout.demo_eventbus_activity_three);
+
         Button indeterminate = (Button) findViewById(R.id.indeterminate);
         indeterminate.setOnClickListener(this);
-        EventBus.getDefault().register(this);
+
         super.initActionBar();
     }
 
@@ -53,26 +52,13 @@ public class DemoEventBusTwoActivity extends BaseActionBarActivity implements Vi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.indeterminate:
-                StartActUtils.start(mContext, DemoEventBusThreeActivity.class);
+                EventBus.getDefault().post(
+                        new FirstEvent("FirstEvent btn clicked", 2));
+                StartActUtils.finish(mContext);
                 break;
 
         }
     }
 
-    @Subscribe
-    public void onEventMainThread(FirstEvent event) {
-        if (event.getTag() == 2) {
-            String msg = "Two 收到了消息：" + event.getMsg();
-            ToastUtils.show(mContext, msg);
-            EventBus.getDefault().post(
-                    new FirstEvent("FirstEvent btn clicked", 1));
-            StartActUtils.finish(mContext);
-        }
-    }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);
-    }
 }

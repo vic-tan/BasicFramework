@@ -37,37 +37,19 @@
                     android:id="@+id/indeterminate"
                     style="@style/base_button_corners"
                     android:layout_marginBottom="10dp"
-                    android:text="A" />
+                    android:text="three"/>
 
-                <Button
-                    android:id="@+id/label_indeterminate"
-                    style="@style/base_button_corners"
-                    android:layout_marginBottom="10dp"
-                    android:text="B"/>
-
-                <Button
-                    android:id="@+id/detail_indeterminate"
-                    style="@style/base_button_corners"
-                    android:layout_marginBottom="10dp"
-                    android:text="C" />
-
-                <Button
-                    android:id="@+id/determinate"
-                    style="@style/base_button_corners"
-                    android:layout_marginBottom="10dp"
-                    android:text="D"/>
-
-                <Button
-                    android:id="@+id/annular_determinate"
-                    style="@style/base_button_corners"
-                    android:layout_marginBottom="10dp"
-                    android:text="E"/>
-
-                <Button
-                    android:id="@+id/bar_determinate"
-                    style="@style/base_button_corners"
-                    android:layout_marginBottom="10dp"
-                    android:text="F"/>
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="148px"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="40px"
+                    android:gravity="center_vertical"
+                    android:padding="5px"
+                    android:singleLine="true"
+                    android:textColor="#293b5f"
+                    android:textSize="45px"/>
 
 
             </LinearLayout>

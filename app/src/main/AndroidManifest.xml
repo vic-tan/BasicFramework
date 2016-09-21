@@ -122,10 +122,9 @@
 
         <!-- —————————————————————————————————— 测试示范 ———————————————————————————————————— -->
 
-        <activity android:name="com.tanlifei.demo.DemoHomeActivity_"/>
-        <activity android:name="com.tanlifei.demo.eventbus.DemoEventBusMainActivity"/>
         <activity android:name="com.tanlifei.demo.eventbus.DemoEventBusOneActivity"/>
         <activity android:name="com.tanlifei.demo.eventbus.DemoEventBusTwoActivity"/>
+        <activity android:name="com.tanlifei.demo.eventbus.DemoEventBusThreeActivity"/>
 
         <meta-data
             android:name="com.google.android.gms.version"

@@ -23,23 +23,31 @@
 package com.tanlifei.demo.eventbus;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.base.utils.StartActUtils;
+import com.base.utils.ToastUtils;
+import com.support.okhttp.OkHttpUtils;
+import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
+import com.tanlifei.demo.evenbean.FirstEvent;
 import com.tanlifei.framework.R;
+import com.tanlifei.support.constants.fixed.UrlConstants;
+import com.tanlifei.support.http.DialogCallback;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class DemoEventBusOneActivity extends BaseActionBarActivity implements View.OnClickListener {
 
     TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,17 +70,75 @@ public class DemoEventBusOneActivity extends BaseActionBarActivity implements Vi
         }
     }
 
+
+
+    /**
+     * 与发布者在同一个线程
+     */
+  /*  @Subscribe
+    public void onEvent(FirstEvent event) {
+        if (event.getTag() == 1) {
+            String msg = "one onEvent 收到了消息：" + event.getMsg();
+            tv.setText(msg);
+            ToastUtils.show(mContext, msg);
+        }
+    }*/
+
+    /**
+     * 执行在主线程。
+     * 非常实用，可以在这里将子线程加载到的数据直接设置到界面中。
+     */
     @Subscribe
     public void onEventMainThread(FirstEvent event) {
-        String msg = "onEventMainThread收到了消息：" + event.getMsg();
-        Log.d("harvic", msg);
-        tv.setText(msg);
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+        if (event.getTag() == 1) {
+            String msg = "one onEventMainThread 收到了消息：" + event.getMsg();
+            tv.setText(msg);
+            ToastUtils.show(mContext, msg);
+            OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new DialogCallback(mContext) {
+                @Override
+                public void onCusResponse(BaseJson response) {
+                    ToastUtils.show(mContext, response.getData() + "");
+                }
+            });
+        }
     }
 
+    /**
+     * 执行在子线程，如果发布者是子线程则直接执行，如果发布者不是子线程，则创建一个再执行
+     * 此处可能会有线程阻塞问题。
+     */
+  /*  @Subscribe
+    public void onEventBackgroundThread(FirstEvent event) {
+        if (event.getTag() == 1) {
+            String msg = "one onEventBackgroundThread 收到了消息：" + event.getMsg();
+            tv.setText(msg);
+            ToastUtils.show(mContext, msg);
+        }
+    }*/
+
+    /**
+     * 执行在在一个新的子线程
+     * 适用于多个线程任务处理， 内部有线程池管理。
+     */
+
+   /* @Subscribe
+    public void onEventAsync(FirstEvent event) {
+        if (event.getTag() == 1) {
+            String msg = "one onEventAsync：收到了消息" + event.getMsg();
+            tv.setText(msg);
+            ToastUtils.show(mContext, msg);
+        }
+    }*/
+
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);//反注册EventBus
+    }
+
+    public Map<String, Object> tagList() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("sid", "ipeiban2016");
+        return map;
     }
 }
