@@ -37,33 +37,29 @@ public class AppDownloadService extends IntentService {
      * @param updateBean
      */
     public void appDownload(final AppUpdateBean updateBean) {
-
-
-        final Intent intent = new Intent(AppDownloadService.this, AppUpdateBroadcastReceiver.class);
-        intent.setAction(AppUpdateBroadcastReceiver.APP_UPDATE_ACTION);
+        final Intent intent = new Intent(AppDownloadService.this, AppUpdateBroadcastReceiver.class);//注册下载通知栏广播监听者
+        intent.setAction(AppUpdateBroadcastReceiver.APP_UPDATE_ACTION);//广播action 标识
         OkHttpUtils.get().url(updateBean.getUrl()).build().execute(new FileCallBack(GlobalConstants.DOWNLOAD_PATH, updateBean.getName() + ".apk") {
             @Override
             public void inProgress(float progress, long total) {
-                // updateProgress(false, progress, total, updateBean);
-                if (isStart) {
+                if (isStart) {//准备下载
                     intent.putExtra(AppUpdateBroadcastReceiver.APP_DOWNLOAD_TAG, AppUpdateBroadcastReceiver.APP_DOWNLOAD_TAG_START);
                     isStart = false;
-                } else {
+                } else {//正在下载
                     intent.putExtra(AppUpdateBroadcastReceiver.APP_DOWNLOAD_TAG, AppUpdateBroadcastReceiver.APP_DOWNLOAD_TAG_PROGRESS);
                 }
                 intent.putExtra(AppUpdateBroadcastReceiver.APP_DOWNLOAD_TOTAL, total);
                 intent.putExtra(AppUpdateBroadcastReceiver.APP_DOWNLOAD_PROGRESS, progress);
-                intent.putExtra(AppUpdateBroadcastReceiver.APP_DOWNLOAD_NAME,updateBean.getName());
-                sendBroadcast(intent);
+                intent.putExtra(AppUpdateBroadcastReceiver.APP_DOWNLOAD_NAME, updateBean.getName());
+                sendBroadcast(intent);//发送下载信息广播
             }
 
             @Override
             public void onResponse(File response) {
-                //updateProgress(true, 0, 0, updateBean);
-                // AppUtils.installNormal(AppDownloadService.this, GlobalConstants.DOWNLOAD_PATH + "/" + updateBean.getName() + ".apk");
+                //下载完成
                 intent.putExtra(AppUpdateBroadcastReceiver.APP_DOWNLOAD_TAG, AppUpdateBroadcastReceiver.APP_DOWNLOAD_TAG_DONE);
                 intent.putExtra(AppUpdateBroadcastReceiver.APP_INSTALL_URL, GlobalConstants.DOWNLOAD_PATH + "/" + updateBean.getName() + ".apk");
-                intent.putExtra(AppUpdateBroadcastReceiver.APP_DOWNLOAD_NAME,updateBean.getName());
+                intent.putExtra(AppUpdateBroadcastReceiver.APP_DOWNLOAD_NAME, updateBean.getName());
                 sendBroadcast(intent);
             }
         });
