@@ -20,11 +20,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.provider.MediaStore;
 
-import com.base.utils.Logger;
 import com.support.R;
 import com.support.galleryfinal.GalleryFinal;
 import com.support.galleryfinal.model.PhotoFolderInfo;
 import com.support.galleryfinal.model.PhotoInfo;
+import com.tlf.basic.Logger;
 
 import java.io.File;
 import java.util.ArrayList;

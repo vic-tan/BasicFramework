@@ -12,9 +12,9 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 
-import com.base.utils.ToastUtils;
 import com.tanlifei.common.bean.params.NotifyParams;
 import com.tanlifei.framework.R;
+import com.tlf.basic.ToastUtils;
 
 import java.util.ArrayList;
 

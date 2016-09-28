@@ -22,7 +22,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
 
-import com.base.autolayout.AutoLinearLayout;
+import com.tlf.basic.base.autolayout.AutoLinearLayout;
 import com.uikit.R;
 
 class BackgroundLayout extends AutoLinearLayout {

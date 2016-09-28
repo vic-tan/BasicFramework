@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.base.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tlf.basic.base.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                         xmlns:in="http://schemas.android.com/apk/res-auto"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
@@ -16,4 +16,4 @@
         android:layout_marginBottom="180px"
         in:in_normal_drawable="@mipmap/main_guide_view_into_btn_normal"
         in:in_pressed_drawable="@mipmap/main_guide_view_into_btn_pressed"/>
-</com.base.autolayout.AutoRelativeLayout>
+</com.tlf.basic.base.autolayout.AutoRelativeLayout>

@@ -16,11 +16,11 @@ import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.support.galleryfinal.widget.zoonview.PhotoView;
 import com.support.galleryfinal.widget.zoonview.PhotoViewAttacher;
-import com.tanlifei.support.utils.ImageLoadUtils;
-import com.base.utils.StartActUtils;
 import com.tanlifei.common.bean.BasePhotoBean;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
+import com.tanlifei.support.utils.ImageLoadUtils;
+import com.tlf.basic.StartActUtils;
 
 import java.util.HashMap;
 import java.util.List;

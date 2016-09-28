@@ -3,12 +3,12 @@ package com.tanlifei.exemple.photo;
 import android.os.Bundle;
 import android.view.View;
 
-import com.base.utils.StartActUtils;
 import com.tanlifei.common.bean.BasePhotoBean;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.common.ui.activity.photoview.BaseBrowsePhotoActivity;
 import com.tanlifei.exemple.photo.galleryfinal.ExempleGalleryFinalActivity_;
 import com.tanlifei.framework.R;
+import com.tlf.basic.StartActUtils;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.text.TextUtils;
 
-import com.base.utils.Logger;
+import com.tlf.basic.Logger;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

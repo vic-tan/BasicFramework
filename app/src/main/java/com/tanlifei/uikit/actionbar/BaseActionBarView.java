@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ResUtils;
-import com.base.utils.StringUtils;
+import com.tlf.basic.StringUtils;
 
 /**
  * Created by tanlifei on 16/8/12.

@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
-import com.base.utils.Logger;
-import com.base.utils.ToastUtils;
 import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
@@ -16,6 +14,8 @@ import com.tanlifei.support.http.HttpListener;
 import com.tanlifei.support.http.MultipleCallback;
 import com.tanlifei.support.http.ProcessCallback;
 import com.tanlifei.support.http.ResultCallback;
+import com.tlf.basic.Logger;
+import com.tlf.basic.ToastUtils;
 import com.uikit.kprogresshud.KProgressHUD;
 
 import java.util.HashMap;

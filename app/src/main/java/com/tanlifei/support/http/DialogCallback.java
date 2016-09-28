@@ -4,11 +4,11 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 import com.support.okhttp.callback.Callback;
-import com.base.utils.StringUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
+import com.tlf.basic.StringUtils;
 import com.uikit.kprogresshud.KProgressHUD;
 
 import okhttp3.Call;

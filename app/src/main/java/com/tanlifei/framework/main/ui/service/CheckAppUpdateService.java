@@ -13,7 +13,7 @@ import com.tanlifei.framework.main.ui.activity.AppServiceActivity;
 import com.tanlifei.framework.main.ui.activity.AppServiceActivity_;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.ResultCallback;
-import com.base.utils.AppUtils;
+import com.tlf.basic.AppUtils;
 
 import java.util.HashMap;
 import java.util.Map;

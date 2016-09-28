@@ -31,11 +31,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.base.utils.ActivityManager;
-import com.base.utils.Logger;
-import com.base.utils.StringUtils;
-import com.base.utils.io.FileUtils;
-import com.base.utils.io.FilenameUtils;
 import com.support.R;
 import com.support.galleryfinal.adapter.PhotoEditListAdapter;
 import com.support.galleryfinal.model.PhotoInfo;
@@ -47,6 +42,11 @@ import com.support.galleryfinal.widget.HorizontalListView;
 import com.support.galleryfinal.widget.crop.CropImageActivity;
 import com.support.galleryfinal.widget.crop.CropImageView;
 import com.support.galleryfinal.widget.zoonview.PhotoView;
+import com.tlf.basic.ActivityManager;
+import com.tlf.basic.Logger;
+import com.tlf.basic.StringUtils;
+import com.tlf.basic.io.FileUtils;
+import com.tlf.basic.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;

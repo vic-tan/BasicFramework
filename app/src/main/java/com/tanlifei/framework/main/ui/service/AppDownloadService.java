@@ -7,6 +7,7 @@ import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.http.FileCallBack;
+import com.tlf.basic.Logger;
 
 import java.io.File;
 
@@ -37,6 +38,7 @@ public class AppDownloadService extends IntentService {
      * @param updateBean
      */
     public void appDownload(final AppUpdateBean updateBean) {
+        Logger.d("---start download ---");
         final Intent intent = new Intent(AppDownloadService.this, AppUpdateBroadcastReceiver.class);//注册下载通知栏广播监听者
         intent.setAction(AppUpdateBroadcastReceiver.APP_UPDATE_ACTION);//广播action 标识
         OkHttpUtils.get().url(updateBean.getUrl()).build().execute(new FileCallBack(GlobalConstants.DOWNLOAD_PATH, updateBean.getName() + ".apk") {

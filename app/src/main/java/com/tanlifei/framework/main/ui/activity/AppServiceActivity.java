@@ -9,15 +9,15 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 
-import com.base.autolayout.AutoLayoutActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
-import com.base.utils.ActivityManager;
-import com.base.utils.AppUtils;
 import com.tanlifei.support.utils.ResUtils;
-import com.base.utils.StringUtils;
+import com.tlf.basic.ActivityManager;
+import com.tlf.basic.AppUtils;
+import com.tlf.basic.StringUtils;
+import com.tlf.basic.base.autolayout.AutoLayoutActivity;
 import com.uikit.dialog.DialogTools;
 import com.uikit.dialog.listener.OnBtnClickL;
 

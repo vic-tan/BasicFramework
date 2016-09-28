@@ -34,7 +34,7 @@ import android.view.animation.Transformation;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.base.autolayout.AutoLinearLayout;
+import com.tlf.basic.base.autolayout.AutoLinearLayout;
 import com.uikit.R;
 
 

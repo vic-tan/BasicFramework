@@ -31,10 +31,10 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.base.utils.Logger;
-import com.base.utils.io.FilenameUtils;
 import com.support.R;
 import com.support.galleryfinal.GalleryFinal;
+import com.tlf.basic.Logger;
+import com.tlf.basic.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;

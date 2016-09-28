@@ -6,14 +6,14 @@ import android.widget.RelativeLayout;
 
 import com.support.refresh.more.GridViewFinal;
 import com.support.refresh.more.OnLoadMoreListener;
-import com.base.adapter.abslistview.AbsCommonAdapter;
-import com.base.adapter.abslistview.AbsViewHolder;
-import com.tanlifei.support.utils.ImageLoadUtils;
 import com.tanlifei.common.ui.activity.refreshview.BaseAbsRefreshActivity;
 import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
-import com.base.utils.DateFormatUtils;
+import com.tanlifei.support.utils.ImageLoadUtils;
+import com.tlf.basic.DateFormatUtils;
+import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
+import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

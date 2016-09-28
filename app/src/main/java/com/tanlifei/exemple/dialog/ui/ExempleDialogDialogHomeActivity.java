@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 
-import com.base.utils.ViewFindUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.dialog.adapter.ExempleDialogHomeAdapter;
 import com.tanlifei.exemple.dialog.adapter.ExempleDialogTestAdapter;
@@ -18,7 +17,8 @@ import com.tanlifei.exemple.dialog.extra.ExempleDialogIOSTaoBaoDialog;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogShareBottomDialog;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogShareTopDialog;
 import com.tanlifei.framework.R;
-import com.base.utils.ToastUtils;
+import com.tlf.basic.ToastUtils;
+import com.tlf.basic.ViewFindUtils;
 import com.uikit.dialog.bean.DialogMenuItem;
 import com.uikit.dialog.listener.OnBtnClickL;
 import com.uikit.dialog.listener.OnOperItemClickL;

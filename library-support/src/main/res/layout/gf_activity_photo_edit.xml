@@ -15,7 +15,7 @@
   ~  limitations under the License.
   -->
 
-<com.base.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tlf.basic.base.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                       xmlns:app="http://schemas.android.com/apk/res-auto"
                                       android:layout_width="match_parent"
                                       android:layout_height="match_parent"
@@ -152,4 +152,4 @@
             />
     </LinearLayout>
 
-</com.base.autolayout.AutoLinearLayout>
+</com.tlf.basic.base.autolayout.AutoLinearLayout>

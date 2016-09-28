@@ -33,8 +33,6 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.base.utils.StringUtils;
-import com.base.utils.io.FilenameUtils;
 import com.support.R;
 import com.support.galleryfinal.adapter.FolderListAdapter;
 import com.support.galleryfinal.adapter.PhotoListAdapter;
@@ -45,6 +43,8 @@ import com.support.galleryfinal.permission.EasyPermissions;
 import com.support.galleryfinal.utils.DeviceUtils;
 import com.support.galleryfinal.utils.PhotoTools;
 import com.support.galleryfinal.widget.FloatingActionButton;
+import com.tlf.basic.StringUtils;
+import com.tlf.basic.io.FilenameUtils;
 
 import java.io.File;
 import java.util.ArrayList;

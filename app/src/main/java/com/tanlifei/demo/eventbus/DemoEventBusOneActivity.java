@@ -27,8 +27,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.base.utils.StartActUtils;
-import com.base.utils.ToastUtils;
 import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
@@ -36,6 +34,8 @@ import com.tanlifei.demo.evenbean.FirstEvent;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.DialogCallback;
+import com.tlf.basic.StartActUtils;
+import com.tlf.basic.ToastUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

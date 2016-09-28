@@ -9,11 +9,11 @@ import com.support.galleryfinal.ThemeConfig;
 import com.support.galleryfinal.UILImageLoader;
 import com.support.galleryfinal.UILPauseOnScrollListener;
 import com.support.okhttp.OkHttpUtils;
-import com.base.utils.io.FileUtils;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.OnOffConstants;
 import com.tanlifei.support.constants.level.OnOffLevel;
 import com.tanlifei.support.exception.CrashHandler;
+import com.tlf.basic.io.FileUtils;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;

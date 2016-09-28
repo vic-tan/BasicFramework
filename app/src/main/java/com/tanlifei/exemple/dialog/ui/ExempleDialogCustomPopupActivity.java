@@ -6,10 +6,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.base.utils.ViewFindUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.base.utils.ToastUtils;
+import com.tlf.basic.ToastUtils;
+import com.tlf.basic.ViewFindUtils;
 import com.uikit.dialog.base.popup.BasePopup;
 
 
@@ -29,7 +29,7 @@ public class ExempleDialogCustomPopupActivity extends BaseActionBarActivity impl
         initActionBar();
         actionBarView.setActionbarTitle("Custom Dialog分类");
 
-        mTvTopLeft =ViewFindUtils.find(this, R.id.tv_top_left);
+        mTvTopLeft = ViewFindUtils.find(this, R.id.tv_top_left);
         mTvTopRight = ViewFindUtils.find(this, R.id.tv_top_right);
         mTvBottomLeft =  ViewFindUtils.find(this, R.id.tv_bottom_left);
         mTvBottomRight = ViewFindUtils.find(this, R.id.tv_bottom_right);

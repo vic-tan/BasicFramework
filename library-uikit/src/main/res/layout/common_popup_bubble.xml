@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.base.autolayout.AutoRelativeLayout
+<com.tlf.basic.base.autolayout.AutoRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,11 +9,11 @@
         android:layout_width="50px"
         android:layout_height="32px"/>
 
-    <com.base.autolayout.AutoLinearLayout
+    <com.tlf.basic.base.autolayout.AutoLinearLayout
         android:id="@+id/ll_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"/>
 
-</com.base.autolayout.AutoRelativeLayout>
+</com.tlf.basic.base.autolayout.AutoRelativeLayout>

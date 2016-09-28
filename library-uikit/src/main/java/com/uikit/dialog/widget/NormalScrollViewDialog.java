@@ -7,8 +7,8 @@ import android.os.Build;
 import android.view.View;
 import android.widget.TextView;
 
-import com.base.autolayout.utils.AutoUtils;
-import com.base.utils.CornerUtils;
+import com.tlf.basic.CornerUtils;
+import com.tlf.basic.base.autolayout.utils.AutoUtils;
 import com.uikit.R;
 import com.uikit.dialog.WidthScaleConstants;
 import com.uikit.dialog.base.dialog.BaseDialog;

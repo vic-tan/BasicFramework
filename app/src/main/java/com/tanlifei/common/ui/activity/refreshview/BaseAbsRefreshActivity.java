@@ -1,6 +1,7 @@
 package com.tanlifei.common.ui.activity.refreshview;
 
-import com.base.adapter.abslistview.AbsCommonAdapter;
+
+import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
 
 /**
  * AbsListView 列表刷新基类，继承基本

@@ -28,20 +28,20 @@ import android.util.DisplayMetrics;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.base.autolayout.AutoLayoutActivity;
-import com.base.systembartint.SystemBarTintManager;
-import com.base.utils.ActivityManager;
-import com.base.utils.DateUtils;
-import com.base.utils.Logger;
-import com.base.utils.StringUtils;
-import com.base.utils.ToastUtils;
-import com.base.utils.io.FileUtils;
 import com.support.R;
 import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.permission.EasyPermissions;
 import com.support.galleryfinal.utils.DeviceUtils;
 import com.support.galleryfinal.utils.MediaScanner;
 import com.support.galleryfinal.utils.Utils;
+import com.tlf.basic.ActivityManager;
+import com.tlf.basic.DateUtils;
+import com.tlf.basic.Logger;
+import com.tlf.basic.StringUtils;
+import com.tlf.basic.ToastUtils;
+import com.tlf.basic.base.autolayout.AutoLayoutActivity;
+import com.tlf.basic.base.systembartint.SystemBarTintManager;
+import com.tlf.basic.io.FileUtils;
 
 import java.io.File;
 import java.util.ArrayList;

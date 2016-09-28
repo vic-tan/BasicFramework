@@ -2,8 +2,8 @@ package com.tanlifei.exemple.baseadapter.adapter;
 
 import android.content.Context;
 
-import com.base.adapter.abslistview.AbsMultiItemTypeAdapter;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterChatMessage;
+import com.tlf.basic.base.adapter.abslistview.AbsMultiItemTypeAdapter;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ package com.support.okhttp.builder;
 import com.google.gson.Gson;
 import com.support.okhttp.request.PostFormRequest;
 import com.support.okhttp.request.RequestCall;
-import com.base.utils.Logger;
+import com.tlf.basic.Logger;
 
 import java.io.File;
 import java.util.ArrayList;

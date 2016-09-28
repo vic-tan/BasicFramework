@@ -7,7 +7,7 @@ import com.support.okhttp.callback.Callback;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
-import com.base.utils.StringUtils;
+import com.tlf.basic.StringUtils;
 
 import okhttp3.Call;
 import okhttp3.Request;

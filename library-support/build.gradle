@@ -24,5 +24,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-    compile project(':library-base');
+    compile 'com.vic-tan:basic-library-base:1.0.0'
+    compile 'com.vic-tan:basic-library-utils:1.0.0'
 }

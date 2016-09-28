@@ -1,11 +1,11 @@
 package com.tanlifei.framework.main.ui.activity;
 
-import com.base.utils.StartActUtils;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.presenter.ISplashPresenter;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.SplashView;
+import com.tlf.basic.StartActUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

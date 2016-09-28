@@ -4,7 +4,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.base.autolayout.AutoFrameLayout;
+import com.tlf.basic.base.autolayout.AutoFrameLayout;
+
 
 /** 用于需要圆角矩形框背景的FrameLayout的情况,减少直接使用FrameLayout时引入的shape资源文件 */
 public class RoundFrameLayout extends AutoFrameLayout {

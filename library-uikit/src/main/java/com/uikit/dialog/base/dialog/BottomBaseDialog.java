@@ -7,7 +7,7 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 
 import com.nineoldandroids.animation.ObjectAnimator;
-import com.base.autolayout.AutoFrameLayout;
+import com.tlf.basic.base.autolayout.AutoFrameLayout;
 import com.uikit.dialog.BaseAnimatorSet;
 
 

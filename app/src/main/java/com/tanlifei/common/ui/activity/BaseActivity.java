@@ -10,15 +10,15 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.base.autolayout.AutoLayoutActivity;
-import com.base.systembartint.SystemBarTintManager;
-import com.base.utils.ActivityManager;
-import com.base.utils.StartActUtils;
-import com.base.utils.ToastUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
 import com.tanlifei.support.utils.ResUtils;
+import com.tlf.basic.ActivityManager;
+import com.tlf.basic.StartActUtils;
+import com.tlf.basic.ToastUtils;
+import com.tlf.basic.base.autolayout.AutoLayoutActivity;
+import com.tlf.basic.base.systembartint.SystemBarTintManager;
 
 import java.util.Timer;
 import java.util.TimerTask;

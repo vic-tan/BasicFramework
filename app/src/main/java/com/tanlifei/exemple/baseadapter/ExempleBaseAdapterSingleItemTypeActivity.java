@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-import com.base.adapter.abslistview.AbsCommonAdapter;
-import com.base.adapter.abslistview.AbsViewHolder;
-import com.base.utils.ToastUtils;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterBean;
 import com.tanlifei.framework.R;
+import com.tlf.basic.ToastUtils;
+import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
+import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;

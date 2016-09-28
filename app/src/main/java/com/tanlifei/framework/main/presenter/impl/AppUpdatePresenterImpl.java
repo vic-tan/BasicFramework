@@ -12,7 +12,7 @@ import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.FileCallBack;
 import com.tanlifei.support.http.ResultCallback;
-import com.base.utils.AppUtils;
+import com.tlf.basic.AppUtils;
 
 import java.io.File;
 import java.util.HashMap;

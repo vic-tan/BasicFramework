@@ -6,15 +6,15 @@ import android.widget.FrameLayout;
 import com.support.refresh.header.OnDefaultRefreshListener;
 import com.support.refresh.header.PtrClassicFrameLayout;
 import com.support.refresh.header.PtrFrameLayout;
-import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
-import com.base.utils.ViewFindUtils;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInConfiguration;
 import com.tanlifei.common.base.refreshview.presenter.IRefreshInPresenter;
 import com.tanlifei.common.base.refreshview.presenter.impl.RefreshPresenter;
 import com.tanlifei.common.base.refreshview.ui.RefreshView;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.bean.PageBean;
+import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
+import com.tlf.basic.ViewFindUtils;
 
 import java.util.ArrayList;
 import java.util.List;

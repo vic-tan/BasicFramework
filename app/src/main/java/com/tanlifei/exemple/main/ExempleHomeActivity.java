@@ -4,13 +4,13 @@ import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.ListView;
 
-import com.base.adapter.abslistview.AbsCommonAdapter;
-import com.base.adapter.abslistview.AbsViewHolder;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.main.bean.ExempleHomeListBean;
 import com.tanlifei.exemple.main.presenter.ExempleHomePresenter;
 import com.tanlifei.framework.R;
-import com.base.utils.StartActUtils;
+import com.tlf.basic.StartActUtils;
+import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
+import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
 import com.uikit.expandable.ExpandableTextView;
 
 import org.androidannotations.annotations.AfterViews;

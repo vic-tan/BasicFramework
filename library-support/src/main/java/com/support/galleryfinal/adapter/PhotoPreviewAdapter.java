@@ -7,11 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.support.R;
-import com.base.adapter.pagerview.ViewHolderRecyclingPagerAdapter;
 import com.support.galleryfinal.GalleryFinal;
 import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.utils.DeviceUtils;
 import com.support.galleryfinal.widget.zoonview.PhotoView;
+import com.tlf.basic.base.adapter.pagerview.ViewHolderRecyclingPagerAdapter;
 
 import java.util.List;
 

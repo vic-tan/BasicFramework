@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.nineoldandroids.animation.ObjectAnimator;
-import com.base.utils.ViewFindUtils;
 import com.tanlifei.framework.R;
-import com.base.utils.ToastUtils;
+import com.tlf.basic.ToastUtils;
+import com.tlf.basic.ViewFindUtils;
 import com.uikit.dialog.BaseAnimatorSet;
 import com.uikit.dialog.base.dialog.BottomBaseDialog;
 

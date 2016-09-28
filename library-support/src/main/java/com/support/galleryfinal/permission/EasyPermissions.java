@@ -18,15 +18,15 @@ package com.support.galleryfinal.permission;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.support.annotation.StringRes;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 
-import com.base.utils.Logger;
+import com.tlf.basic.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
