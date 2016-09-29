@@ -1,9 +1,0 @@
-<resources>
-
-    <!-- ———————————————————————— theme 样式 ———————————————————————————————————————————— -->
-    <style name="AppTheme">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:fitsSystemWindows">true</item>
-    </style>
-
-</resources>

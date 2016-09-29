@@ -12,14 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
-import com.support.galleryfinal.model.PhotoInfo;
-import com.support.galleryfinal.widget.zoonview.PhotoView;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ImageLoadUtils;
 import com.tanlifei.uikit.actionbar.ActionBarOptViewTagLevel;
 import com.tanlifei.uikit.actionbar.OnBackClickListener;
 import com.tanlifei.uikit.actionbar.OnOptClickListener;
+import com.tlf.basic.support.galleryfinal.model.PhotoInfo;
+import com.tlf.basic.support.galleryfinal.widget.zoonview.PhotoView;
 import com.tlf.basic.utils.StartActUtils;
 import com.uikit.dialog.listener.OnOperItemClickL;
 import com.uikit.dialog.widget.ActionSheetTools;
@@ -187,7 +187,7 @@ public class BaseDeletePhotoActivity extends BaseActionBarActivity {
             final Holder holder = new Holder();
             View view = LayoutInflater.from(container.getContext()).inflate(R.layout.common_photo_delete_view_item, null);
             holder.photoView = (PhotoView) view.findViewById(R.id.iv_photo);
-            ImageLoadUtils.getInstance().loadImageView(holder.photoView, "file://" + list.get(position).getPhotoPath(), com.support.R.mipmap.ic_gf_default_photo);
+            ImageLoadUtils.getInstance().loadImageView(holder.photoView, "file://" + list.get(position).getPhotoPath(), R.mipmap.ic_gf_default_photo);
             (container).addView(view, 0);
             return view;
         }

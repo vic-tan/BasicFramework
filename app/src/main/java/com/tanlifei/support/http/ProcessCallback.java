@@ -3,10 +3,10 @@ package com.tanlifei.support.http;
 import android.content.Context;
 
 import com.google.gson.Gson;
-import com.support.okhttp.callback.Callback;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
+import com.tlf.basic.support.okhttp.callback.Callback;
 import com.tlf.basic.utils.StringUtils;
 
 import okhttp3.Call;

@@ -6,13 +6,13 @@ import android.os.Bundle;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.ui.activity.AppServiceActivity;
 import com.tanlifei.framework.main.ui.activity.AppServiceActivity_;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.ResultCallback;
+import com.tlf.basic.support.okhttp.OkHttpUtils;
 import com.tlf.basic.utils.AppUtils;
 
 import java.util.HashMap;

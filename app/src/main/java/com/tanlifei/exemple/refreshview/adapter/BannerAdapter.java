@@ -39,7 +39,7 @@ public class BannerAdapter extends RecyclingPagerAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         int pos = getPosition(position);
-        ImageLoadUtils.getInstance().loadImageView(holder.imageView,mImageList.get(pos).getImage(), com.support.R.mipmap.ic_gf_default_photo);
+        ImageLoadUtils.getInstance().loadImageView(holder.imageView,mImageList.get(pos).getImage(), R.mipmap.ic_gf_default_photo);
         holder.imageView.setFocusable(false);
         holder.imageView.setFocusableInTouchMode(false);
         return convertView;

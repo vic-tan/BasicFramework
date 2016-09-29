@@ -6,8 +6,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.gson.Gson;
-import com.support.refresh.more.ListViewFinal;
-import com.support.refresh.more.OnLoadMoreListener;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.ui.activity.refreshview.BaseAbsRefreshActivity;
 import com.tanlifei.exemple.refreshview.adapter.BannerAdapter;
@@ -19,6 +17,8 @@ import com.tanlifei.support.utils.GsonJsonUtils;
 import com.tanlifei.support.utils.ImageLoadUtils;
 import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
 import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
+import com.tlf.basic.support.refresh.more.ListViewFinal;
+import com.tlf.basic.support.refresh.more.OnLoadMoreListener;
 import com.tlf.basic.utils.DateFormatUtils;
 import com.uikit.viewpager.ChildViewPager;
 import com.uikit.viewpager.CircleIndicator;
@@ -138,7 +138,7 @@ public class ExempleListViewAndAdActivity extends BaseAbsRefreshActivity {
         return new AbsCommonAdapter<TrainBean>(mContext, R.layout.exemple_refresh_list_item, (List<TrainBean>) mRefreshList) {
             @Override
             protected void convert(AbsViewHolder holder, TrainBean bean, int position) {
-                ImageLoadUtils.getInstance().loadImageView((ImageView) holder.getView(R.id.cover),bean.getCover(), com.support.R.mipmap.ic_gf_default_photo);
+                ImageLoadUtils.getInstance().loadImageView((ImageView) holder.getView(R.id.cover),bean.getCover(), R.mipmap.ic_gf_default_photo);
                 holder.setText(R.id.title, bean.getName());
                 holder.setText(R.id.desc, "开始时间:" + DateFormatUtils.format(bean.getBegin_time(), DateFormatUtils.FormatType.DAY) + "\r\n"
                         + "结束时间:" + DateFormatUtils.format(bean.getEnd_time(), DateFormatUtils.FormatType.DAY));

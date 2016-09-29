@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BasicFramework.iml" filepath="$PROJECT_DIR$/BasicFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library-support/library-support.iml" filepath="$PROJECT_DIR$/library-support/library-support.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-uikit/library-uikit.iml" filepath="$PROJECT_DIR$/library-uikit/library-uikit.iml" />
     </modules>
   </component>

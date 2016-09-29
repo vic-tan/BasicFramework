@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.presenter.IAppUpdatePresenter;
@@ -12,6 +11,7 @@ import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.FileCallBack;
 import com.tanlifei.support.http.ResultCallback;
+import com.tlf.basic.support.okhttp.OkHttpUtils;
 import com.tlf.basic.utils.AppUtils;
 
 import java.io.File;

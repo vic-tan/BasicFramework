@@ -15,7 +15,7 @@ import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
-import com.support.R;
+import com.tanlifei.framework.R;
 
 /**
  * Created by tanlifei on 16/8/29.

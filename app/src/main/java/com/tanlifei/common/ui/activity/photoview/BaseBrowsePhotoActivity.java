@@ -14,12 +14,12 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
-import com.support.galleryfinal.widget.zoonview.PhotoView;
-import com.support.galleryfinal.widget.zoonview.PhotoViewAttacher;
 import com.tanlifei.common.bean.BasePhotoBean;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ImageLoadUtils;
+import com.tlf.basic.support.galleryfinal.widget.zoonview.PhotoView;
+import com.tlf.basic.support.galleryfinal.widget.zoonview.PhotoViewAttacher;
 import com.tlf.basic.utils.StartActUtils;
 
 import java.util.HashMap;
@@ -129,7 +129,7 @@ public class BaseBrowsePhotoActivity extends BaseActivity {
             View view = LayoutInflater.from(container.getContext()).inflate(R.layout.common_photo_view_item, null);
             holder.photoView = (PhotoView) view.findViewById(R.id.iv_photo);
             holder.load = (ProgressBar) view.findViewById(R.id.prg_load);
-            ImageLoadUtils.getInstance().loadImageView(holder.photoView, getImgUrl(position), com.support.R.mipmap.ic_gf_default_photo, new ImageLoadingListener() {
+            ImageLoadUtils.getInstance().loadImageView(holder.photoView, getImgUrl(position), R.mipmap.ic_gf_default_photo, new ImageLoadingListener() {
                 @Override
                 public void onLoadingStarted(String imageUri, View view) {
                     holder.load.setVisibility(View.VISIBLE);

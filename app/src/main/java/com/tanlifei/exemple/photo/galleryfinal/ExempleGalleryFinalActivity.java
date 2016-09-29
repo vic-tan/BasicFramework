@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.support.galleryfinal.FunctionConfig;
-import com.support.galleryfinal.GalleryFinal;
-import com.support.galleryfinal.model.PhotoInfo;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.common.ui.activity.photoview.BaseDeletePhotoActivity;
 import com.tanlifei.common.ui.activity.photoview.PhotoChooseListApdater;
 import com.tanlifei.framework.R;
+import com.tlf.basic.support.galleryfinal.FunctionConfig;
+import com.tlf.basic.support.galleryfinal.GalleryFinal;
+import com.tlf.basic.support.galleryfinal.model.PhotoInfo;
 import com.tlf.basic.utils.ListUtils;
 import com.tlf.basic.utils.Logger;
 import com.tlf.basic.utils.ToastUtils;

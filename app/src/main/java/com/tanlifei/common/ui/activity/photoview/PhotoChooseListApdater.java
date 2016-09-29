@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.support.galleryfinal.model.PhotoInfo;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ImageLoadUtils;
+import com.tlf.basic.support.galleryfinal.model.PhotoInfo;
 import com.tlf.basic.utils.InflaterUtils;
 import com.tlf.basic.utils.ListUtils;
 

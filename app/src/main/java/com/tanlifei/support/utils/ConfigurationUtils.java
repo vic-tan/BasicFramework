@@ -3,18 +3,18 @@ package com.tanlifei.support.utils;
 import android.content.Context;
 import android.graphics.Color;
 
-import com.support.galleryfinal.CoreConfig;
-import com.support.galleryfinal.FunctionConfig;
-import com.support.galleryfinal.GalleryFinal;
-import com.support.galleryfinal.ThemeConfig;
-import com.support.galleryfinal.UILImageLoader;
-import com.support.galleryfinal.UILPauseOnScrollListener;
-import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.OnOffConstants;
 import com.tanlifei.support.constants.level.OnOffLevel;
 import com.tanlifei.support.exception.CrashHandler;
+import com.tlf.basic.support.galleryfinal.CoreConfig;
+import com.tlf.basic.support.galleryfinal.FunctionConfig;
+import com.tlf.basic.support.galleryfinal.GalleryFinal;
+import com.tlf.basic.support.galleryfinal.ThemeConfig;
+import com.tlf.basic.support.galleryfinal.UILImageLoader;
+import com.tlf.basic.support.galleryfinal.UILPauseOnScrollListener;
+import com.tlf.basic.support.okhttp.OkHttpUtils;
 import com.tlf.basic.utils.io.FileUtils;
 
 import java.io.File;
