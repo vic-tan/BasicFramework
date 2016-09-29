@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.tanlifei.framework.main.presenter.ISplashPresenter;
 import com.tanlifei.framework.main.ui.view.SplashView;
-import com.tlf.basic.AppCacheUtils;
-import com.tlf.basic.CountDownTimer;
+import com.tlf.basic.utils.AppCacheUtils;
+import com.tlf.basic.utils.CountDownTimer;
 
 
 /**

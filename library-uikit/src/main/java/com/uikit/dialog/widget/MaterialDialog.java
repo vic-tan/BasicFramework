@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tlf.basic.CornerUtils;
 import com.tlf.basic.base.autolayout.AutoLinearLayout;
+import com.tlf.basic.utils.CornerUtils;
 import com.uikit.R;
 import com.uikit.dialog.internal.BaseAlertDialog;
 

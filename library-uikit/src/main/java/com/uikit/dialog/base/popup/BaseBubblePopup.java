@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.nineoldandroids.view.ViewHelper;
-import com.tlf.basic.CornerUtils;
+import com.tlf.basic.utils.CornerUtils;
 import com.uikit.R;
 import com.uikit.dialog.StatusBarUtils;
 import com.uikit.dialog.internal.InternalBasePopup;

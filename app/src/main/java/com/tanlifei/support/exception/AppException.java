@@ -4,10 +4,10 @@ import android.content.Context;
 
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
-import com.tlf.basic.Logger;
-import com.tlf.basic.NetUtils;
-import com.tlf.basic.StringUtils;
-import com.tlf.basic.ToastUtils;
+import com.tlf.basic.utils.Logger;
+import com.tlf.basic.utils.NetUtils;
+import com.tlf.basic.utils.StringUtils;
+import com.tlf.basic.utils.ToastUtils;
 
 import java.net.SocketTimeoutException;
 

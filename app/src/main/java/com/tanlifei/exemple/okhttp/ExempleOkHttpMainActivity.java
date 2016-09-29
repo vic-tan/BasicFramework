@@ -14,8 +14,8 @@ import com.tanlifei.support.http.HttpListener;
 import com.tanlifei.support.http.MultipleCallback;
 import com.tanlifei.support.http.ProcessCallback;
 import com.tanlifei.support.http.ResultCallback;
-import com.tlf.basic.Logger;
-import com.tlf.basic.ToastUtils;
+import com.tlf.basic.utils.Logger;
+import com.tlf.basic.utils.ToastUtils;
 import com.uikit.kprogresshud.KProgressHUD;
 
 import java.util.HashMap;

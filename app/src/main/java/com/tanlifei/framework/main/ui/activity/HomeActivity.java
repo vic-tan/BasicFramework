@@ -9,9 +9,9 @@ import com.tanlifei.demo.eventbus.DemoEventBusOneActivity;
 import com.tanlifei.exemple.main.ExempleHomeActivity_;
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
-import com.tlf.basic.StartActUtils;
 import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
 import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
+import com.tlf.basic.utils.StartActUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

@@ -34,8 +34,8 @@ import com.tanlifei.demo.evenbean.FirstEvent;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.DialogCallback;
-import com.tlf.basic.StartActUtils;
-import com.tlf.basic.ToastUtils;
+import com.tlf.basic.utils.StartActUtils;
+import com.tlf.basic.utils.ToastUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

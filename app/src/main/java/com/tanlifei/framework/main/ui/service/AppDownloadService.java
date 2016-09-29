@@ -7,7 +7,7 @@ import com.support.okhttp.OkHttpUtils;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.http.FileCallBack;
-import com.tlf.basic.Logger;
+import com.tlf.basic.utils.Logger;
 
 import java.io.File;
 

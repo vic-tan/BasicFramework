@@ -1,6 +1,7 @@
 package com.tanlifei.support.utils;
 
 import android.content.Context;
+import android.graphics.Color;
 
 import com.support.galleryfinal.CoreConfig;
 import com.support.galleryfinal.FunctionConfig;
@@ -9,11 +10,12 @@ import com.support.galleryfinal.ThemeConfig;
 import com.support.galleryfinal.UILImageLoader;
 import com.support.galleryfinal.UILPauseOnScrollListener;
 import com.support.okhttp.OkHttpUtils;
+import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.constants.fixed.OnOffConstants;
 import com.tanlifei.support.constants.level.OnOffLevel;
 import com.tanlifei.support.exception.CrashHandler;
-import com.tlf.basic.io.FileUtils;
+import com.tlf.basic.utils.io.FileUtils;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -40,7 +42,18 @@ public class ConfigurationUtils {
      * @param context
      */
     public static void initGalleryFinal(Context context) {
-        CoreConfig coreConfig = new CoreConfig.Builder(context, new UILImageLoader(), ThemeConfig.GREEN)
+        String THEME_COLOR = "#00C15C";
+        ThemeConfig GREEN = new ThemeConfig.Builder()
+                .setTitleBarBgColor(Color.parseColor(THEME_COLOR))
+                .setTitleBarStatusColor(THEME_COLOR)
+                .setCheckNornalSelectedDrawable(context.getResources().getDrawable(R.drawable.common_gf_check_normal))
+                .setCheckPressedSelectedDrawable(context.getResources().getDrawable(R.drawable.common_gf_check_pressed))
+                .setFabNornalColor(Color.parseColor(THEME_COLOR))
+                .setFabPressedColor(Color.parseColor("#e000C15C"))
+                .setCheckSelectedColor(Color.parseColor(THEME_COLOR))
+                .setCropControlColor(Color.parseColor(THEME_COLOR))
+                .build();
+        CoreConfig coreConfig = new CoreConfig.Builder(context, new UILImageLoader(), GREEN)
                 .setFunctionConfig(new FunctionConfig.Builder().build())
                 .setEditPhotoCacheFolder(new File(GlobalConstants.IMAGES_EDIT_PHOTO_PATH))////配置编辑（裁剪和旋转）功能产生的cache文件保存目录
                 .setTakePhotoFolder(new File(GlobalConstants.IMAGES_TAKE_PHOTO_PATH))//设置拍照保存目录

@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.tlf.basic.ToastUtils;
-import com.tlf.basic.ViewFindUtils;
+import com.tlf.basic.utils.ToastUtils;
+import com.tlf.basic.utils.ViewFindUtils;
 import com.uikit.dialog.base.popup.BasePopup;
 
 

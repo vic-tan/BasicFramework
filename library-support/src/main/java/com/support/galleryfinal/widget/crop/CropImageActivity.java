@@ -33,8 +33,8 @@ import android.view.WindowManager;
 
 import com.support.R;
 import com.support.galleryfinal.GalleryFinal;
-import com.tlf.basic.Logger;
-import com.tlf.basic.io.FilenameUtils;
+import com.tlf.basic.utils.Logger;
+import com.tlf.basic.utils.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;

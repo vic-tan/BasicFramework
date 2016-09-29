@@ -8,7 +8,7 @@ import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.uikit.actionbar.ActionBarView;
 import com.tanlifei.uikit.actionbar.OnBackClickListener;
-import com.tlf.basic.ViewFindUtils;
+import com.tlf.basic.utils.ViewFindUtils;
 
 /**
  * Created by tanlifei on 15/12/17.

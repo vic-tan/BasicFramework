@@ -3,7 +3,7 @@ package com.tanlifei.exemple.refreshview.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.tlf.basic.StringUtils;
+import com.tlf.basic.utils.StringUtils;
 
 
 /**

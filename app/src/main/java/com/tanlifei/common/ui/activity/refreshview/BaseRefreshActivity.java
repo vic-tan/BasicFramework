@@ -14,7 +14,7 @@ import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.bean.PageBean;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.tlf.basic.ViewFindUtils;
+import com.tlf.basic.utils.ViewFindUtils;
 
 import java.util.ArrayList;
 import java.util.List;

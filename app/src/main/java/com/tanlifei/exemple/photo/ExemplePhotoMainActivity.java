@@ -8,7 +8,7 @@ import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.common.ui.activity.photoview.BaseBrowsePhotoActivity;
 import com.tanlifei.exemple.photo.galleryfinal.ExempleGalleryFinalActivity_;
 import com.tanlifei.framework.R;
-import com.tlf.basic.StartActUtils;
+import com.tlf.basic.utils.StartActUtils;
 
 import java.util.ArrayList;
 import java.util.List;

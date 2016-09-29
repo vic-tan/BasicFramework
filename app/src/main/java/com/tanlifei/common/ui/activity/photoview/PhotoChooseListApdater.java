@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import com.support.galleryfinal.model.PhotoInfo;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ImageLoadUtils;
-import com.tlf.basic.InflaterUtils;
-import com.tlf.basic.ListUtils;
+import com.tlf.basic.utils.InflaterUtils;
+import com.tlf.basic.utils.ListUtils;
 
 import java.util.List;
 

@@ -8,8 +8,8 @@ import com.tanlifei.common.bean.params.NotifyParams;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.NotifyUtils;
 import com.tanlifei.support.utils.ResUtils;
-import com.tlf.basic.AppUtils;
-import com.tlf.basic.StringUtils;
+import com.tlf.basic.utils.AppUtils;
+import com.tlf.basic.utils.StringUtils;
 
 /**
  * Created by tanlifei on 16/8/23.

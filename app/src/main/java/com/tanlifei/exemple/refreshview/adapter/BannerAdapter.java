@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import com.tanlifei.exemple.refreshview.bean.BannerBaen;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ImageLoadUtils;
-import com.tlf.basic.InflaterUtils;
 import com.tlf.basic.base.adapter.pagerview.RecyclingPagerAdapter;
+import com.tlf.basic.utils.InflaterUtils;
 
 import java.util.List;
 

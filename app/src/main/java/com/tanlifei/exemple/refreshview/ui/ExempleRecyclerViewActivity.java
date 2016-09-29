@@ -12,9 +12,9 @@ import com.tanlifei.exemple.refreshview.bean.TrainBean;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.ImageLoadUtils;
-import com.tlf.basic.DateFormatUtils;
 import com.tlf.basic.base.adapter.recycler.RvCommonAdapter;
 import com.tlf.basic.base.adapter.recycler.RvViewHolder;
+import com.tlf.basic.utils.DateFormatUtils;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

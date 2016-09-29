@@ -24,7 +24,7 @@ import com.support.R;
 import com.support.galleryfinal.GalleryFinal;
 import com.support.galleryfinal.model.PhotoFolderInfo;
 import com.support.galleryfinal.model.PhotoInfo;
-import com.tlf.basic.Logger;
+import com.tlf.basic.utils.Logger;
 
 import java.io.File;
 import java.util.ArrayList;

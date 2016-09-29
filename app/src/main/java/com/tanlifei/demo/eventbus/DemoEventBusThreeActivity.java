@@ -29,7 +29,7 @@ import android.widget.Button;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.demo.evenbean.FirstEvent;
 import com.tanlifei.framework.R;
-import com.tlf.basic.StartActUtils;
+import com.tlf.basic.utils.StartActUtils;
 
 import org.greenrobot.eventbus.EventBus;
 

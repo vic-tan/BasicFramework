@@ -43,8 +43,8 @@ import com.support.galleryfinal.permission.EasyPermissions;
 import com.support.galleryfinal.utils.DeviceUtils;
 import com.support.galleryfinal.utils.PhotoTools;
 import com.support.galleryfinal.widget.FloatingActionButton;
-import com.tlf.basic.StringUtils;
-import com.tlf.basic.io.FilenameUtils;
+import com.tlf.basic.utils.StringUtils;
+import com.tlf.basic.utils.io.FilenameUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -485,11 +485,19 @@ public class PhotoSelectActivity extends PhotoBaseActivity implements View.OnCli
         PhotoListAdapter.PhotoViewHolder holder = (PhotoListAdapter.PhotoViewHolder) view.getTag();
         if (holder != null) {
             if (checked) {
-                //holder.mIvCheck.setBackgroundColor(GalleryFinal.getGalleryTheme().getCheckSelectedColor());
-                holder.mIvCheck.setBackgroundDrawable(PhotoSelectActivity.this.getResources().getDrawable(R.drawable.bg_gf_check_pressed));
+                //holder.mIvCheck.setBackgroundColor(GalleryFinal.getGalleryTheme().com.tlf.basic.base.autolayout());
+                if(null!=GalleryFinal.getGalleryTheme().getCheckPressedSelectedDrawable()){
+                    holder.mIvCheck.setBackgroundDrawable(GalleryFinal.getGalleryTheme().getCheckPressedSelectedDrawable());
+                }else {
+                    holder.mIvCheck.setBackgroundDrawable(PhotoSelectActivity.this.getResources().getDrawable(R.drawable.bg_gf_check_pressed));
+                }
             } else {
                 //holder.mIvCheck.setBackgroundColor(GalleryFinal.getGalleryTheme().getCheckNornalColor());
-                holder.mIvCheck.setBackgroundDrawable(PhotoSelectActivity.this.getResources().getDrawable(R.drawable.bg_gf_check_normal));
+                if(null!=GalleryFinal.getGalleryTheme().getCheckNornalSelectedDrawable()){
+                    holder.mIvCheck.setBackgroundDrawable(GalleryFinal.getGalleryTheme().getCheckNornalSelectedDrawable());
+                }else {
+                    holder.mIvCheck.setBackgroundDrawable(PhotoSelectActivity.this.getResources().getDrawable(R.drawable.bg_gf_check_normal));
+                }
             }
 
         } else {

@@ -14,10 +14,10 @@ import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
 import com.tanlifei.support.utils.ResUtils;
-import com.tlf.basic.ActivityManager;
-import com.tlf.basic.AppUtils;
-import com.tlf.basic.StringUtils;
 import com.tlf.basic.base.autolayout.AutoLayoutActivity;
+import com.tlf.basic.utils.ActivityManager;
+import com.tlf.basic.utils.AppUtils;
+import com.tlf.basic.utils.StringUtils;
 import com.uikit.dialog.DialogTools;
 import com.uikit.dialog.listener.OnBtnClickL;
 

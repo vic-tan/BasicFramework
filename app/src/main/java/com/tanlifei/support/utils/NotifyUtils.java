@@ -14,7 +14,7 @@ import android.widget.RemoteViews;
 
 import com.tanlifei.common.bean.params.NotifyParams;
 import com.tanlifei.framework.R;
-import com.tlf.basic.ToastUtils;
+import com.tlf.basic.utils.ToastUtils;
 
 import java.util.ArrayList;
 

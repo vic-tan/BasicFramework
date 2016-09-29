@@ -8,7 +8,7 @@ import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
-import com.tlf.basic.StringUtils;
+import com.tlf.basic.utils.StringUtils;
 import com.uikit.kprogresshud.KProgressHUD;
 
 import okhttp3.Call;

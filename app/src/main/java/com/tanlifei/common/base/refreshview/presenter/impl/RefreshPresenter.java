@@ -19,9 +19,9 @@ import com.tanlifei.support.constants.fixed.JsonConstants;
 import com.tanlifei.support.http.HttpListener;
 import com.tanlifei.support.http.ProcessCallback;
 import com.tanlifei.support.utils.GsonJsonUtils;
-import com.tlf.basic.ListUtils;
-import com.tlf.basic.NetUtils;
-import com.tlf.basic.ToastUtils;
+import com.tlf.basic.utils.ListUtils;
+import com.tlf.basic.utils.NetUtils;
+import com.tlf.basic.utils.ToastUtils;
 
 import java.util.List;
 import java.util.Map;

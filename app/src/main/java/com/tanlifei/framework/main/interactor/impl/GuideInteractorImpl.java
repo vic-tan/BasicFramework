@@ -5,8 +5,8 @@ import android.view.View;
 
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.interactor.IGuideInteractor;
-import com.tlf.basic.InflaterUtils;
-import com.tlf.basic.ListUtils;
+import com.tlf.basic.utils.InflaterUtils;
+import com.tlf.basic.utils.ListUtils;
 
 import java.util.ArrayList;
 import java.util.List;

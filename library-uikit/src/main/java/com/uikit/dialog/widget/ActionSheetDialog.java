@@ -20,7 +20,7 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.tlf.basic.CornerUtils;
+import com.tlf.basic.utils.CornerUtils;
 import com.uikit.R;
 import com.uikit.dialog.WidthScaleConstants;
 import com.uikit.dialog.base.dialog.BottomBaseDialog;

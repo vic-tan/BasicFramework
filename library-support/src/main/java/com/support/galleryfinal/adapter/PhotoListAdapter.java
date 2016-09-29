@@ -79,9 +79,17 @@ public class PhotoListAdapter extends ViewHolderAdapter<PhotoListAdapter.PhotoVi
         if ( GalleryFinal.getFunctionConfig().isMutiSelect() ) {
             holder.mIvCheck.setVisibility(View.VISIBLE);
             if (mSelectList.contains(photoInfo)) {
-                holder.mIvCheck.setBackgroundDrawable(mActivity.getResources().getDrawable(R.drawable.bg_gf_check_pressed));
+                if(null!=GalleryFinal.getGalleryTheme().getCheckPressedSelectedDrawable()){
+                    holder.mIvCheck.setBackgroundDrawable(GalleryFinal.getGalleryTheme().getCheckPressedSelectedDrawable());
+                }else {
+                    holder.mIvCheck.setBackgroundDrawable(mActivity.getResources().getDrawable(R.drawable.bg_gf_check_pressed));
+                }
             } else {
-                holder.mIvCheck.setBackgroundDrawable(mActivity.getResources().getDrawable(R.drawable.bg_gf_check_normal));
+                if(null!=GalleryFinal.getGalleryTheme().getCheckNornalSelectedDrawable()){
+                    holder.mIvCheck.setBackgroundDrawable(GalleryFinal.getGalleryTheme().getCheckNornalSelectedDrawable());
+                }else {
+                    holder.mIvCheck.setBackgroundDrawable(mActivity.getResources().getDrawable(R.drawable.bg_gf_check_normal));
+                }
             }
         } else {
             holder.mIvCheck.setVisibility(View.GONE);

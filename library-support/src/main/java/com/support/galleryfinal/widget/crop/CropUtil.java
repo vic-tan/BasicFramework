@@ -28,7 +28,7 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-import com.tlf.basic.Logger;
+import com.tlf.basic.utils.Logger;
 
 import java.io.Closeable;
 import java.io.File;

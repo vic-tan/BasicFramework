@@ -14,11 +14,11 @@ import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
 import com.tanlifei.support.utils.ResUtils;
-import com.tlf.basic.ActivityManager;
-import com.tlf.basic.StartActUtils;
-import com.tlf.basic.ToastUtils;
 import com.tlf.basic.base.autolayout.AutoLayoutActivity;
 import com.tlf.basic.base.systembartint.SystemBarTintManager;
+import com.tlf.basic.utils.ActivityManager;
+import com.tlf.basic.utils.StartActUtils;
+import com.tlf.basic.utils.ToastUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;

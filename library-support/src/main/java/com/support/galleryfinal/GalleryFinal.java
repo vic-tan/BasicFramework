@@ -22,10 +22,10 @@ import com.support.R;
 import com.support.galleryfinal.model.PhotoInfo;
 import com.support.galleryfinal.utils.DeviceUtils;
 import com.support.galleryfinal.utils.Utils;
-import com.tlf.basic.Logger;
-import com.tlf.basic.StringUtils;
-import com.tlf.basic.ToastUtils;
-import com.tlf.basic.io.FileUtils;
+import com.tlf.basic.utils.Logger;
+import com.tlf.basic.utils.StringUtils;
+import com.tlf.basic.utils.ToastUtils;
+import com.tlf.basic.utils.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;

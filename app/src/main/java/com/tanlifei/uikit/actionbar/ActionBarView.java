@@ -10,11 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.tanlifei.framework.R;
-import com.tlf.basic.CornerUtils;
-import com.tlf.basic.InflaterUtils;
-import com.tlf.basic.StringUtils;
-import com.tlf.basic.ViewFindUtils;
 import com.tlf.basic.base.autolayout.AutoFrameLayout;
+import com.tlf.basic.utils.CornerUtils;
+import com.tlf.basic.utils.InflaterUtils;
+import com.tlf.basic.utils.StringUtils;
+import com.tlf.basic.utils.ViewFindUtils;
 
 /**
  * 自定义的ActionBarView

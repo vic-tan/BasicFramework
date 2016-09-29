@@ -2,7 +2,7 @@ package com.support.okhttp.log;
 
 import android.text.TextUtils;
 
-import com.tlf.basic.Logger;
+import com.tlf.basic.utils.Logger;
 
 import java.io.IOException;
 

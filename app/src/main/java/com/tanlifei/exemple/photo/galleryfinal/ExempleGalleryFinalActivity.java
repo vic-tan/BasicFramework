@@ -13,9 +13,9 @@ import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.common.ui.activity.photoview.BaseDeletePhotoActivity;
 import com.tanlifei.common.ui.activity.photoview.PhotoChooseListApdater;
 import com.tanlifei.framework.R;
-import com.tlf.basic.ListUtils;
-import com.tlf.basic.Logger;
-import com.tlf.basic.ToastUtils;
+import com.tlf.basic.utils.ListUtils;
+import com.tlf.basic.utils.Logger;
+import com.tlf.basic.utils.ToastUtils;
 import com.uikit.dialog.listener.OnOperItemClickL;
 import com.uikit.dialog.widget.ActionSheetDialog;
 

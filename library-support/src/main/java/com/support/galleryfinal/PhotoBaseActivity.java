@@ -18,6 +18,7 @@ package com.support.galleryfinal;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,19 +35,21 @@ import com.support.galleryfinal.permission.EasyPermissions;
 import com.support.galleryfinal.utils.DeviceUtils;
 import com.support.galleryfinal.utils.MediaScanner;
 import com.support.galleryfinal.utils.Utils;
-import com.tlf.basic.ActivityManager;
-import com.tlf.basic.DateUtils;
-import com.tlf.basic.Logger;
-import com.tlf.basic.StringUtils;
-import com.tlf.basic.ToastUtils;
 import com.tlf.basic.base.autolayout.AutoLayoutActivity;
 import com.tlf.basic.base.systembartint.SystemBarTintManager;
-import com.tlf.basic.io.FileUtils;
+import com.tlf.basic.utils.ActivityManager;
+import com.tlf.basic.utils.DateUtils;
+import com.tlf.basic.utils.Logger;
+import com.tlf.basic.utils.StringUtils;
+import com.tlf.basic.utils.ToastUtils;
+import com.tlf.basic.utils.io.FileUtils;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.support.galleryfinal.ThemeConfig.THEME_COLOR;
 
 
 /**
@@ -100,7 +103,7 @@ public abstract class PhotoBaseActivity extends AutoLayoutActivity implements Ea
         DisplayMetrics dm = DeviceUtils.getScreenPix(this);
         mScreenWidth = dm.widthPixels;
         mScreenHeight = dm.heightPixels;
-        setSystemBarTint(R.color.theme_color);
+        setSystemBarTint(Color.parseColor(THEME_COLOR));
 
     }
 
@@ -122,7 +125,7 @@ public abstract class PhotoBaseActivity extends AutoLayoutActivity implements Ea
             setTranslucentStatus(true);
             SystemBarTintManager mTintManager = new SystemBarTintManager(this);
             mTintManager.setStatusBarTintEnabled(true);
-            mTintManager.setStatusBarTintResource(statusBarTintResource);//通知栏所需颜色
+            mTintManager.setStatusBarTintColor(statusBarTintResource);//通知栏所需颜色
         }
 
     }

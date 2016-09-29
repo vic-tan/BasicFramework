@@ -7,9 +7,9 @@ import android.widget.ListView;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.baseadapter.bean.ExempleBaseAdpterBean;
 import com.tanlifei.framework.R;
-import com.tlf.basic.ToastUtils;
 import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
 import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
+import com.tlf.basic.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;

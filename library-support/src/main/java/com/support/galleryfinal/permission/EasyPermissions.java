@@ -26,7 +26,7 @@ import android.support.annotation.StringRes;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
-import com.tlf.basic.Logger;
+import com.tlf.basic.utils.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

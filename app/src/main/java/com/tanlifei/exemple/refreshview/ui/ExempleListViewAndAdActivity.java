@@ -17,9 +17,9 @@ import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.GsonJsonUtils;
 import com.tanlifei.support.utils.ImageLoadUtils;
-import com.tlf.basic.DateFormatUtils;
 import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
 import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
+import com.tlf.basic.utils.DateFormatUtils;
 import com.uikit.viewpager.ChildViewPager;
 import com.uikit.viewpager.CircleIndicator;
 

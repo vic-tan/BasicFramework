@@ -23,5 +23,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.vic-tan:basic-library-base:1.0.0'
-    compile 'com.vic-tan:basic-library-utils:1.0.0'
+    compile 'com.vic-tan:basic-library-utils:1.0.1'
 }

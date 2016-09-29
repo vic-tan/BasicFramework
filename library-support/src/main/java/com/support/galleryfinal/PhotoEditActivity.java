@@ -19,6 +19,7 @@ package com.support.galleryfinal;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -42,11 +43,11 @@ import com.support.galleryfinal.widget.HorizontalListView;
 import com.support.galleryfinal.widget.crop.CropImageActivity;
 import com.support.galleryfinal.widget.crop.CropImageView;
 import com.support.galleryfinal.widget.zoonview.PhotoView;
-import com.tlf.basic.ActivityManager;
-import com.tlf.basic.Logger;
-import com.tlf.basic.StringUtils;
-import com.tlf.basic.io.FileUtils;
-import com.tlf.basic.io.FilenameUtils;
+import com.tlf.basic.utils.ActivityManager;
+import com.tlf.basic.utils.Logger;
+import com.tlf.basic.utils.StringUtils;
+import com.tlf.basic.utils.io.FileUtils;
+import com.tlf.basic.utils.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -55,6 +56,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import static com.support.galleryfinal.ThemeConfig.THEME_COLOR;
 
 
 /**
@@ -360,7 +363,7 @@ public class PhotoEditActivity extends CropImageActivity implements AdapterView.
         mPhotoList.add(0, info);
         mSelectPhotoList.add(info);
         mPhotoTempMap.put(info.getPhotoId(), new PhotoTempModel(info.getPhotoPath()));
-        applyKitKatTranslucency(R.color.theme_color);
+        applyKitKatTranslucency(Color.parseColor(THEME_COLOR));
         if (!GalleryFinal.getFunctionConfig().isEditPhoto() && mTakePhotoAction && !GalleryFinal.getFunctionConfig().isCameraEditPhoto()) {
             resultAction();
         } else {

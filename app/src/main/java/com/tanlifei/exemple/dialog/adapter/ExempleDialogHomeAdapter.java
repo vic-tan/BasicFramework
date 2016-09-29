@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.tanlifei.exemple.dialog.ui.ExempleDialogDialogHomeActivity;
 import com.tanlifei.framework.R;
-import com.tlf.basic.ViewFindUtils;
+import com.tlf.basic.utils.ViewFindUtils;
 
 
 public class ExempleDialogHomeAdapter extends BaseExpandableListAdapter {

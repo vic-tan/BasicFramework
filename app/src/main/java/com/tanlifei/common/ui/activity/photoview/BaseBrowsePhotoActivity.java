@@ -20,7 +20,7 @@ import com.tanlifei.common.bean.BasePhotoBean;
 import com.tanlifei.common.ui.activity.BaseActivity;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.utils.ImageLoadUtils;
-import com.tlf.basic.StartActUtils;
+import com.tlf.basic.utils.StartActUtils;
 
 import java.util.HashMap;
 import java.util.List;

@@ -28,9 +28,10 @@ import java.io.Serializable;
  * Author:pengjianbo
  * Date:15/12/16 下午2:49
  */
-public class ThemeConfig implements Serializable{
+public class ThemeConfig implements Serializable {
 
-    public static final String THEME_COLOR = "#00C15C";
+    public static String THEME_COLOR = "#00C15C";
+
 
     //默认主题
     public static ThemeConfig DEFAULT = new ThemeConfig.Builder().build();
@@ -55,9 +56,12 @@ public class ThemeConfig implements Serializable{
 
     private int titleBarTextColor;
     private int titleBarBgColor;
+    private String titleBarStatusColor;
     private int titleBarIconColor;
     private int checkNornalColor;
     private int checkSelectedColor;
+    private Drawable checkNornalSelectedDrawable;
+    private Drawable checkPressedSelectedDrawable;
     private int fabNornalColor;
     private int fabPressedColor;
     private int cropControlColor;
@@ -80,8 +84,11 @@ public class ThemeConfig implements Serializable{
         this.titleBarTextColor = builder.titleBarTextColor;
         this.titleBarBgColor = builder.titleBarBgColor;
         this.titleBarIconColor = builder.titleBarIconColor;
+        this.titleBarStatusColor = builder.titleBarStatusColor;
         this.checkNornalColor = builder.checkNornalColor;
         this.checkSelectedColor = builder.checkSelectedColor;
+        this.checkNornalSelectedDrawable = builder.checkNornalSelectedDrawable;
+        this.checkPressedSelectedDrawable = builder.checkPressedSelectedDrawable;
         this.fabNornalColor = builder.fabNornalColor;
         this.fabPressedColor = builder.fabPressedColor;
         this.cropControlColor = builder.cropControlColor;
@@ -103,8 +110,11 @@ public class ThemeConfig implements Serializable{
         private int titleBarTextColor = Color.WHITE;
         private int titleBarBgColor = Color.rgb(0x3F, 0x51, 0xB5);
         private int titleBarIconColor = Color.WHITE;
+        private String titleBarStatusColor = "#00C15C";
         private int checkNornalColor = Color.parseColor("#CACACA");
         private int checkSelectedColor = Color.parseColor(THEME_COLOR);
+        private Drawable checkNornalSelectedDrawable = null;
+        private Drawable checkPressedSelectedDrawable = null;
         private int fabNornalColor = Color.rgb(0x3F, 0x51, 0xB5);
         private int fabPressedColor = Color.rgb(0x30, 0x3f, 0x9f);
         private int cropControlColor = Color.rgb(0x3F, 0x51, 0xB5);
@@ -138,6 +148,12 @@ public class ThemeConfig implements Serializable{
             return this;
         }
 
+        public Builder setTitleBarStatusColor(String titleBarStatusColor) {
+            this.titleBarStatusColor = titleBarStatusColor;
+            THEME_COLOR = titleBarStatusColor;
+            return this;
+        }
+
         public Builder setCheckNornalColor(int checkNornalColor) {
             this.checkNornalColor = checkNornalColor;
             return this;
@@ -145,6 +161,15 @@ public class ThemeConfig implements Serializable{
 
         public Builder setCheckSelectedColor(int checkSelectedColor) {
             this.checkSelectedColor = checkSelectedColor;
+            return this;
+        }
+        public Builder setCheckNornalSelectedDrawable(Drawable checkNornalSelectedDrawable) {
+            this.checkNornalSelectedDrawable = checkNornalSelectedDrawable;
+            return this;
+        }
+
+        public Builder setCheckPressedSelectedDrawable(Drawable checkPressedSelectedDrawable) {
+            this.checkPressedSelectedDrawable = checkPressedSelectedDrawable;
             return this;
         }
 
@@ -244,8 +269,20 @@ public class ThemeConfig implements Serializable{
         return checkSelectedColor;
     }
 
+    public Drawable getCheckNornalSelectedDrawable() {
+        return checkNornalSelectedDrawable;
+    }
+
+    public Drawable getCheckPressedSelectedDrawable() {
+        return checkPressedSelectedDrawable;
+    }
+
     public int getTitleBarIconColor() {
         return titleBarIconColor;
+    }
+
+    public String getTitleBarStatusColor() {
+        return titleBarStatusColor;
     }
 
     public int getFabNornalColor() {
