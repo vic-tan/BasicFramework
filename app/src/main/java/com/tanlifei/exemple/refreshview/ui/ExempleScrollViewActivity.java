@@ -13,8 +13,8 @@ import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
 import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
 import com.tlf.basic.support.refresh.more.OnLoadMoreListener;
 import com.tlf.basic.support.refresh.more.ScrollViewFinal;
+import com.tlf.basic.uikit.linearlistview.LinearListView;
 import com.tlf.basic.utils.DateFormatUtils;
-import com.uikit.linearlistview.LinearListView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

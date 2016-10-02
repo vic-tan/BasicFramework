@@ -19,9 +19,9 @@ import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
 import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
 import com.tlf.basic.support.refresh.more.ListViewFinal;
 import com.tlf.basic.support.refresh.more.OnLoadMoreListener;
+import com.tlf.basic.uikit.viewpager.ChildViewPager;
+import com.tlf.basic.uikit.viewpager.CircleIndicator;
 import com.tlf.basic.utils.DateFormatUtils;
-import com.uikit.viewpager.ChildViewPager;
-import com.uikit.viewpager.CircleIndicator;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

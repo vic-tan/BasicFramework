@@ -15,11 +15,11 @@ import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
 import com.tanlifei.support.utils.ResUtils;
 import com.tlf.basic.base.autolayout.AutoLayoutActivity;
+import com.tlf.basic.uikit.dialog.DialogTools;
+import com.tlf.basic.uikit.dialog.listener.OnBtnClickL;
 import com.tlf.basic.utils.ActivityManager;
 import com.tlf.basic.utils.AppUtils;
 import com.tlf.basic.utils.StringUtils;
-import com.uikit.dialog.DialogTools;
-import com.uikit.dialog.listener.OnBtnClickL;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

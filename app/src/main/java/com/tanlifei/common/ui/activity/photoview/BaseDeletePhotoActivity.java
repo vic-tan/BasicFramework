@@ -20,9 +20,9 @@ import com.tanlifei.uikit.actionbar.OnBackClickListener;
 import com.tanlifei.uikit.actionbar.OnOptClickListener;
 import com.tlf.basic.support.galleryfinal.model.PhotoInfo;
 import com.tlf.basic.support.galleryfinal.widget.zoonview.PhotoView;
+import com.tlf.basic.uikit.dialog.listener.OnOperItemClickL;
+import com.tlf.basic.uikit.dialog.widget.ActionSheetTools;
 import com.tlf.basic.utils.StartActUtils;
-import com.uikit.dialog.listener.OnOperItemClickL;
-import com.uikit.dialog.widget.ActionSheetTools;
 
 import java.util.HashMap;
 import java.util.List;

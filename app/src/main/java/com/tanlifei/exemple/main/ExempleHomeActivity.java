@@ -10,8 +10,8 @@ import com.tanlifei.exemple.main.presenter.ExempleHomePresenter;
 import com.tanlifei.framework.R;
 import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
 import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
+import com.tlf.basic.uikit.expandable.ExpandableTextView;
 import com.tlf.basic.utils.StartActUtils;
-import com.uikit.expandable.ExpandableTextView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

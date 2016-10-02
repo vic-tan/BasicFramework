@@ -13,11 +13,11 @@ import com.tanlifei.framework.R;
 import com.tlf.basic.support.galleryfinal.FunctionConfig;
 import com.tlf.basic.support.galleryfinal.GalleryFinal;
 import com.tlf.basic.support.galleryfinal.model.PhotoInfo;
+import com.tlf.basic.uikit.dialog.listener.OnOperItemClickL;
+import com.tlf.basic.uikit.dialog.widget.ActionSheetDialog;
 import com.tlf.basic.utils.ListUtils;
 import com.tlf.basic.utils.Logger;
 import com.tlf.basic.utils.ToastUtils;
-import com.uikit.dialog.listener.OnOperItemClickL;
-import com.uikit.dialog.widget.ActionSheetDialog;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;

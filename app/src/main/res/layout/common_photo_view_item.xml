@@ -4,7 +4,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent">
 
-    <com.support.galleryfinal.widget.zoonview.PhotoView
+    <com.tlf.basic.support.galleryfinal.widget.zoonview.PhotoView
         android:id="@+id/iv_photo"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>

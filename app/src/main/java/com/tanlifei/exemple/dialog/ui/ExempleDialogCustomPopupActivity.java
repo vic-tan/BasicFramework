@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
+import com.tlf.basic.uikit.dialog.base.popup.BasePopup;
 import com.tlf.basic.utils.ToastUtils;
 import com.tlf.basic.utils.ViewFindUtils;
-import com.uikit.dialog.base.popup.BasePopup;
 
 
 public class ExempleDialogCustomPopupActivity extends BaseActionBarActivity implements View.OnClickListener{

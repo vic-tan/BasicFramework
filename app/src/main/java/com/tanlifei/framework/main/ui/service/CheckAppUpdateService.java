@@ -14,6 +14,7 @@ import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.ResultCallback;
 import com.tlf.basic.support.okhttp.OkHttpUtils;
 import com.tlf.basic.utils.AppUtils;
+import com.tlf.basic.utils.NetUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,13 +42,15 @@ public class CheckAppUpdateService extends IntentService {
      * 查看可否升级
      */
     public void appUpdate() {
-        OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new ResultCallback(this) {
-            @Override
-            public void onCusResponse(BaseJson response) {
-                response = date();
-                checkAppUpdate(response);
-            }
-        });
+        if(NetUtils.isConnected(CheckAppUpdateService.this)) {
+            OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new ResultCallback(this) {
+                @Override
+                public void onCusResponse(BaseJson response) {
+                    response = date();
+                    checkAppUpdate(response);
+                }
+            });
+        }
     }
 
     /**

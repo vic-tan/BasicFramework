@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.tanlifei.framework.R;
+import com.tlf.basic.uikit.dialog.base.dialog.BaseDialog;
 import com.tlf.basic.utils.CornerUtils;
 import com.tlf.basic.utils.ViewFindUtils;
-import com.uikit.dialog.base.dialog.BaseDialog;
 
 
 public class ExempleDialogCustomBaseDialog extends BaseDialog<ExempleDialogCustomBaseDialog> {

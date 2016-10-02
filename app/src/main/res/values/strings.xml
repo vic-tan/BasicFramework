@@ -18,4 +18,5 @@
     <string name="app_update_downloading_desc">正在更新中</string>
     <string name="app_update_notify">您有一条新通知</string>
     <string name="app_update_dialog_title">版本升级</string>
+    <string name="app_update_socket_timeout">升级版本超时</string>
 </resources>

@@ -17,15 +17,15 @@ import com.tanlifei.exemple.dialog.extra.ExempleDialogIOSTaoBaoDialog;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogShareBottomDialog;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogShareTopDialog;
 import com.tanlifei.framework.R;
+import com.tlf.basic.uikit.dialog.bean.DialogMenuItem;
+import com.tlf.basic.uikit.dialog.listener.OnBtnClickL;
+import com.tlf.basic.uikit.dialog.listener.OnOperItemClickL;
+import com.tlf.basic.uikit.dialog.widget.ActionSheetDialog;
+import com.tlf.basic.uikit.dialog.widget.MaterialDialog;
+import com.tlf.basic.uikit.dialog.widget.NormalDialog;
+import com.tlf.basic.uikit.dialog.widget.NormalListDialog;
 import com.tlf.basic.utils.ToastUtils;
 import com.tlf.basic.utils.ViewFindUtils;
-import com.uikit.dialog.bean.DialogMenuItem;
-import com.uikit.dialog.listener.OnBtnClickL;
-import com.uikit.dialog.listener.OnOperItemClickL;
-import com.uikit.dialog.widget.ActionSheetDialog;
-import com.uikit.dialog.widget.MaterialDialog;
-import com.uikit.dialog.widget.NormalDialog;
-import com.uikit.dialog.widget.NormalListDialog;
 
 import java.util.ArrayList;
 

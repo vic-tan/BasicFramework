@@ -10,9 +10,9 @@ import android.widget.TextView;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.exemple.dialog.extra.ExempleDialogCustomBubblePopup;
 import com.tanlifei.framework.R;
+import com.tlf.basic.uikit.dialog.base.popup.BubblePopup;
 import com.tlf.basic.utils.ToastUtils;
 import com.tlf.basic.utils.ViewFindUtils;
-import com.uikit.dialog.base.popup.BubblePopup;
 
 
 public class ExempleDialogBubblePopupActivity extends BaseActionBarActivity implements View.OnClickListener{

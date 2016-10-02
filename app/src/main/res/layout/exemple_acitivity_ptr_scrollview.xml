@@ -13,13 +13,13 @@
         android:layout_below="@id/actionbar"
         android:background="@android:color/white">
 
-        <com.support.refresh.header.PtrClassicFrameLayout
+        <com.tlf.basic.support.refresh.header.PtrClassicFrameLayout
             android:id="@id/ptr_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:ptr_pull_to_fresh="false">
 
-            <com.support.refresh.more.ScrollViewFinal
+            <com.tlf.basic.support.refresh.more.ScrollViewFinal
                 android:id="@+id/lv_games"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,15 +42,15 @@
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
-                    <com.uikit.linearlistview.LinearListView
+                    <com.tlf.basic.uikit.linearlistview.LinearListView
                         android:id="@+id/linear_list_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical" />
                 </LinearLayout>
-            </com.support.refresh.more.ScrollViewFinal>
+            </com.tlf.basic.support.refresh.more.ScrollViewFinal>
 
-        </com.support.refresh.header.PtrClassicFrameLayout>
+        </com.tlf.basic.support.refresh.header.PtrClassicFrameLayout>
 
         <include layout="@layout/exemple_refresh_layout_empty_view" />
     </FrameLayout>

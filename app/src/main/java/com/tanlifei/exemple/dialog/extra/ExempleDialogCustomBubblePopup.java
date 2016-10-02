@@ -6,8 +6,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tanlifei.framework.R;
+import com.tlf.basic.uikit.dialog.base.popup.BaseBubblePopup;
 import com.tlf.basic.utils.ToastUtils;
-import com.uikit.dialog.base.popup.BaseBubblePopup;
 
 
 public class ExempleDialogCustomBubblePopup extends BaseBubblePopup<ExempleDialogCustomBubblePopup> {

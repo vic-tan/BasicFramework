@@ -10,9 +10,9 @@ import com.tanlifei.framework.main.presenter.IGuidePresenter;
 import com.tanlifei.framework.main.presenter.impl.GuidePresenterImpl;
 import com.tanlifei.framework.main.presenter.impl.SplashPresenterImpl;
 import com.tanlifei.framework.main.ui.view.GuideView;
+import com.tlf.basic.uikit.viewpager.CircleIndicator;
 import com.tlf.basic.utils.AppCacheUtils;
 import com.tlf.basic.utils.StartActUtils;
-import com.uikit.viewpager.CircleIndicator;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
