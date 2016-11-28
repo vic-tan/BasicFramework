@@ -39,6 +39,12 @@
                     android:layout_marginBottom="10dp"
                     android:text="start"/>
 
+                <Button
+                    android:id="@+id/indeterminate2"
+                    style="@style/base_button_corners"
+                    android:layout_marginBottom="10dp"
+                    android:text="END"/>
+
                 <TextView
                     android:id="@+id/tv"
                     android:layout_width="match_parent"

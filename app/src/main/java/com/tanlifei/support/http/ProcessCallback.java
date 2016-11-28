@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
+import com.tanlifei.support.utils.ConsoleUtils;
 import com.tlf.basic.support.okhttp.callback.Callback;
 import com.tlf.basic.utils.StringUtils;
 
@@ -46,7 +47,7 @@ public class ProcessCallback extends Callback<BaseJson>
             if (null == response) {
                 throw new AppException(mContext, ExceptionConstants.CODE_DATA_ERROR);
             }
-            if (StringUtils.isEquals(response.getCode(),ExceptionConstants.CODE_SUCCEE)){
+            if (StringUtils.isEquals(response.getCode(), ConsoleUtils.randomRequest())){
                 httpListener.onCusResponse(response);
             }else{
                 throw new AppException(mContext, response.getMsg());

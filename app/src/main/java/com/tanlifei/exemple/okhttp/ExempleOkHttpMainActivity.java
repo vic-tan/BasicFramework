@@ -46,6 +46,12 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
 
 
         });
+       /* OkHttpUtils.post().url("http://192.168.2.11:8080/test.json").build().execute(new DialogCallback(mContext) {
+            @Override
+            public void onCusResponse(BaseJson response) {
+                ToastUtils.show(mContext,response.getData()+"");
+            }
+        });*/
     }
 
     public void B(View v) {

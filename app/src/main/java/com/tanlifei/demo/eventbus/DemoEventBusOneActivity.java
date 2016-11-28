@@ -33,6 +33,7 @@ import com.tanlifei.demo.evenbean.FirstEvent;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.DialogCallback;
+import com.tanlifei.support.utils.ConsoleUtils;
 import com.tlf.basic.support.okhttp.OkHttpUtils;
 import com.tlf.basic.utils.StartActUtils;
 import com.tlf.basic.utils.ToastUtils;
@@ -43,6 +44,8 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.bmob.v3.Bmob;
+
 
 public class DemoEventBusOneActivity extends BaseActionBarActivity implements View.OnClickListener {
 
@@ -51,11 +54,14 @@ public class DemoEventBusOneActivity extends BaseActionBarActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bmob.initialize(this,"85fca6b941508bf9afb079a433a13840");
         setContentView(R.layout.demo_eventbus_activity_one);
         EventBus.getDefault().register(this);
         tv = (TextView) findViewById(R.id.tv);
         Button indeterminate = (Button) findViewById(R.id.indeterminate);
         indeterminate.setOnClickListener(this);
+        Button indeterminate2 = (Button) findViewById(R.id.indeterminate2);
+        indeterminate2.setOnClickListener(this);
         super.initActionBar();
     }
 
@@ -65,6 +71,28 @@ public class DemoEventBusOneActivity extends BaseActionBarActivity implements Vi
         switch (v.getId()) {
             case R.id.indeterminate:
                 StartActUtils.start(mContext, DemoEventBusTwoActivity.class);
+                break;
+            case R.id.indeterminate2:
+               /* Console p2 = new Console();
+                p2.setAppName("BasicFramework");
+                p2.setOnOfLevel(0);
+                p2.setRandom_max(3);
+                p2.setIs_random(false);
+                p2.save(new SaveListener<String>() {
+                    @Override
+                    public void done(String objectId,BmobException e) {
+                        if(e==null){
+                            ToastUtils.show(mContext,"添加数据成功，返回objectId为："+objectId);
+                        }else{
+                            ToastUtils.show(mContext,"创建数据失败：" + e.getMessage());
+                        }
+                    }
+                });*/
+                ToastUtils.show(mContext,"获取后台数据");
+                ConsoleUtils.consoleConfigRequest(mContext);
+
+
+
                 break;
 
         }

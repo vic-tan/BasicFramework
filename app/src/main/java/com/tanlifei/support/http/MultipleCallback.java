@@ -7,6 +7,7 @@ import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
+import com.tanlifei.support.utils.ConsoleUtils;
 import com.tlf.basic.support.okhttp.callback.Callback;
 import com.tlf.basic.uikit.kprogresshud.KProgressHUD;
 import com.tlf.basic.utils.StringUtils;
@@ -84,9 +85,10 @@ public abstract class MultipleCallback extends Callback<BaseJson> {
             if (null == response) {
                 throw new AppException(mContext, ExceptionConstants.CODE_DATA_ERROR);
             }
-            if (StringUtils.isEquals(response.getCode(), ExceptionConstants.CODE_SUCCEE)) {
+            if (StringUtils.isEquals(response.getCode(), ConsoleUtils.randomRequest())) {
                 onCusResponse(response, hud);
             } else {
+                last = true;
                 throw new AppException(mContext, response.getMsg());
             }
         } catch (AppException e) {

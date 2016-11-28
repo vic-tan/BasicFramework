@@ -67,7 +67,7 @@ public class ConfigurationUtils {
      * 初始化Okhttp
      */
     public static void initOKhttp(Context context) {
-        OkHttpUtils.getInstance().debug("OkHttpUtils", true).setConnectTimeout(15000, TimeUnit.MILLISECONDS);
+        OkHttpUtils.getInstance().debug("OkHttpUtils", true).console(ConsoleUtils.setConsoleBean(context)).setConnectTimeout(15000, TimeUnit.MILLISECONDS);
         OkHttpUtils.getInstance().setCertificates();
     }
 
