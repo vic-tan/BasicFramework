@@ -8,8 +8,9 @@ import cn.bmob.v3.BmobObject;
  * Created by tanlifei on 16/10/17.
  */
 
-public class Console extends BmobObject implements Serializable{
+public class Console extends BmobObject implements Serializable {
 
+    private static final long serialVersionUID = 1L;
 
     private String appName;
     private boolean on_of_level;
@@ -87,5 +88,18 @@ public class Console extends BmobObject implements Serializable{
 
     public void setIs_start_timer(boolean is_start_timer) {
         this.is_start_timer = is_start_timer;
+    }
+
+    @Override
+    public String toString() {
+        return "Console{" +
+                "appName='" + appName + '\'' +
+                ", on_of_level=" + on_of_level +
+                ", random_max=" + random_max +
+                ", is_random=" + is_random +
+                ", timer_start='" + timer_start + '\'' +
+                ", timer_end='" + timer_end + '\'' +
+                ", is_start_timer=" + is_start_timer +
+                '}';
     }
 }

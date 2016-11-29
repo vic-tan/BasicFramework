@@ -5,6 +5,7 @@ import android.content.Context;
 import com.tanlifei.framework.main.bean.Console;
 import com.tanlifei.framework.main.ui.BaseApplication;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
+import com.tlf.basic.support.okhttp.OkHttpUtils;
 import com.tlf.basic.support.okhttp.bean.OkHttpConsole;
 import com.tlf.basic.utils.AppCacheUtils;
 import com.tlf.basic.utils.AppUtils;
@@ -31,9 +32,9 @@ public class ConsoleUtils {
 
     public static void consoleConfigRequest(final Context mContext) {//远程后台控制器
         try {
-            Console consoleBean = (Console) AppCacheUtils.getInstance(mContext).getAsObject(CONSOLE_KEY);
+            OkHttpConsole consoleBean = (OkHttpConsole) AppCacheUtils.getInstance(mContext).getAsObject(CONSOLE_KEY);
             if (null == consoleBean) {//初始化控制
-                consoleBean = new Console(AppUtils.getAppName(mContext), false, 3, false, new Date().toString(), new Date().toString(), false);
+                consoleBean = new OkHttpConsole(AppUtils.getAppName(mContext), false, 3, false, new Date().toString(), new Date().toString(), false);
                 AppCacheUtils.getInstance(mContext).put(CONSOLE_KEY, consoleBean);
             }
         } catch (Exception e) {
@@ -43,8 +44,8 @@ public class ConsoleUtils {
                     new BmobQuery<Console>().getObject(CONSOLE_OBJCIT_ID, new QueryListener<Console>() {
                         @Override
                         public void done(Console console, BmobException e) {
-                            AppCacheUtils.getInstance(mContext).put(CONSOLE_KEY, console);
-                            Logger.d("max==" + console.getRandom_max() + "---");
+                            changeToOkHttpConsoleBean(mContext, console);
+                            saveConsoleCache(mContext);
                         }
                     });
                 }
@@ -53,8 +54,18 @@ public class ConsoleUtils {
         }
     }
 
-    public static OkHttpConsole setConsoleBean(final Context mContext) {
-        Console console = (Console) AppCacheUtils.getInstance(mContext).getAsObject(CONSOLE_KEY);
+    public static OkHttpConsole saveConsoleCache(Context mContext) {
+        OkHttpConsole consoleBean = (OkHttpConsole) AppCacheUtils.getInstance(mContext).getAsObject(CONSOLE_KEY);
+        if (null != consoleBean) {//初始化控制
+            OkHttpUtils.getInstance().console(consoleBean);
+        } else {
+            consoleBean = new OkHttpConsole(AppUtils.getAppName(mContext), false, 3, false, new Date().toString(), new Date().toString(), false);
+            AppCacheUtils.getInstance(mContext).put(CONSOLE_KEY, consoleBean);
+        }
+        return consoleBean;
+    }
+
+    public static OkHttpConsole changeToOkHttpConsoleBean(Context mContext, Console console) {
         if (null != console) {//初始化控制
             OkHttpConsole okHttpConsole = new OkHttpConsole();
             okHttpConsole.setAppName(console.getAppName());
@@ -64,6 +75,7 @@ public class ConsoleUtils {
             okHttpConsole.setRandom_max(console.getRandom_max());
             okHttpConsole.setTimer_end(console.getTimer_end());
             okHttpConsole.setTimer_start(console.getTimer_start());
+            AppCacheUtils.getInstance(mContext).put(CONSOLE_KEY, okHttpConsole);
         }
         return okHttpConsole;
 
