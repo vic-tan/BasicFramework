@@ -69,13 +69,15 @@ public abstract class DialogCallback extends Callback<BaseJson> {
     @Override
     public void onBefore(Request request) {
         super.onBefore(request);
-        hud.show();
+        if(null!=hud)
+            hud.show();
     }
 
     @Override
     public void onError(Call call, Exception e) {
         super.onError(call, e);
-        hud.dismiss();
+        if(null!=hud && hud.isShowing())
+            hud.dismiss();
         try {
             throw new AppException(mContext, e);
         } catch (AppException e1) {
