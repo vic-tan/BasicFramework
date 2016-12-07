@@ -10,6 +10,7 @@ import com.tanlifei.support.exception.AppException;
 import com.tanlifei.support.utils.ConsoleUtils;
 import com.tlf.basic.support.okhttp.callback.Callback;
 import com.tlf.basic.uikit.kprogresshud.KProgressHUD;
+import com.tlf.basic.utils.Logger;
 import com.tlf.basic.utils.StringUtils;
 
 import okhttp3.Call;
@@ -29,6 +30,7 @@ public abstract class DialogCallback extends Callback<BaseJson> {
 
     public DialogCallback(Context mContext) {
         this.mContext = mContext;
+        Logger.d(mContext.getClass().getName());
         hud = KProgressHUD.create(mContext)
                 .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
                 .setDimAmount(0.5f)

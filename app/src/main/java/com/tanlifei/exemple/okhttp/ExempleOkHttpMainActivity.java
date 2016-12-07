@@ -15,7 +15,6 @@ import com.tanlifei.support.http.ProcessCallback;
 import com.tanlifei.support.http.ResultCallback;
 import com.tlf.basic.support.okhttp.OkHttpUtils;
 import com.tlf.basic.uikit.kprogresshud.KProgressHUD;
-import com.tlf.basic.utils.Logger;
 import com.tlf.basic.utils.ToastUtils;
 
 import java.util.HashMap;
@@ -67,25 +66,21 @@ public class ExempleOkHttpMainActivity extends BaseActionBarActivity {
         OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new ProcessCallback(mContext, new HttpListener() {
             @Override
             public void onAfter() {
-                Logger.d("onAfter");
                 ToastUtils.show(mContext, "onAfter");
             }
 
             @Override
             public void onBefore(Request request) {
-                Logger.d("onBefore");
                 ToastUtils.show(mContext, "onBefore");
             }
 
             @Override
             public void onError(Call call, Exception e) {
-                Logger.d("onError");
                 ToastUtils.show(mContext, "onError");
             }
 
             @Override
             public void onCusResponse(BaseJson response) {
-                Logger.d("onCusResponse");
                 ToastUtils.show(mContext, "onCusResponse");
             }
         }));

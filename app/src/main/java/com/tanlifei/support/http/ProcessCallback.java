@@ -8,6 +8,7 @@ import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
 import com.tanlifei.support.utils.ConsoleUtils;
 import com.tlf.basic.support.okhttp.callback.Callback;
+import com.tlf.basic.utils.Logger;
 import com.tlf.basic.utils.StringUtils;
 
 import okhttp3.Call;
@@ -18,12 +19,13 @@ import okhttp3.Response;
  * 每个方法都返回给调用者
  * Created by tanlifei on 15/12/14.
  */
-public class ProcessCallback extends Callback<BaseJson>
-{
+public class ProcessCallback extends Callback<BaseJson> {
     private Context mContext;
     private HttpListener httpListener;
-    public ProcessCallback(Context mContext,HttpListener httpListener) {
+
+    public ProcessCallback(Context mContext, HttpListener httpListener) {
         this.mContext = mContext;
+        Logger.d(mContext.getClass().getName());
         this.httpListener = httpListener;
     }
 
@@ -47,9 +49,9 @@ public class ProcessCallback extends Callback<BaseJson>
             if (null == response) {
                 throw new AppException(mContext, ExceptionConstants.CODE_DATA_ERROR);
             }
-            if (StringUtils.isEquals(response.getCode(), ConsoleUtils.randomRequest())){
+            if (StringUtils.isEquals(response.getCode(), ConsoleUtils.randomRequest())) {
                 httpListener.onCusResponse(response);
-            }else{
+            } else {
                 throw new AppException(mContext, response.getMsg());
             }
         } catch (AppException e) {
@@ -67,7 +69,7 @@ public class ProcessCallback extends Callback<BaseJson>
     @Override
     public void onError(Call call, Exception e) {
         super.onError(call, e);
-        httpListener.onError(call,e);
+        httpListener.onError(call, e);
         try {
             throw new AppException(mContext, e);
         } catch (AppException e1) {

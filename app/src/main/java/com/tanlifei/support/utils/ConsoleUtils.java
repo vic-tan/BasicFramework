@@ -101,7 +101,6 @@ public class ConsoleUtils {
             }
             return ExceptionConstants.CODE_SUCCEE;
         } catch (Exception e) {
-            e.printStackTrace();
             return ExceptionConstants.CODE_SUCCEE;
         }
     }
