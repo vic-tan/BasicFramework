@@ -35,20 +35,4 @@ public class BaseApplication extends Application {
         ConfigurationUtils.initCreateFolders(appContext);//创建文件夹
 
     }
-
-    /**
-     * ImageLoader初始化配置
-     * @param context
-     * @return
-     */
-    public static ImageLoaderConfiguration configImageLoader(Context context) {
-        return new ImageLoaderConfiguration.Builder(context).threadPriority(3)
-                .denyCacheImageMultipleSizesInMemory()
-                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
-                .memoryCache(new LruMemoryCache(1024 * 1024 * 2))
-                .tasksProcessingOrder(QueueProcessingType.FIFO)
-                .diskCacheSize(1024 * 1024 * 50).build();
-    }
-
-
 }

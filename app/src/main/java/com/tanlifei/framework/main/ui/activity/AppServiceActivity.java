@@ -8,17 +8,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.TextView;
 
 import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.framework.main.ui.service.AppDownloadService;
 import com.tanlifei.framework.main.ui.service.CheckAppUpdateService;
+import com.tanlifei.support.utils.DialogTools;
 import com.tanlifei.support.utils.ResUtils;
 import com.tlf.basic.base.autolayout.AutoLayoutActivity;
-import com.tlf.basic.uikit.dialog.DialogTools;
 import com.tlf.basic.uikit.dialog.listener.OnBtnClickL;
 import com.tlf.basic.utils.ActivityManager;
 import com.tlf.basic.utils.AppUtils;
+import com.tlf.basic.utils.InflaterUtils;
 import com.tlf.basic.utils.StringUtils;
 
 import org.androidannotations.annotations.AfterViews;
@@ -64,6 +66,36 @@ public class AppServiceActivity extends AutoLayoutActivity {
      */
     private void appUpdate(final AppUpdateBean appUpdateBean) {
         if (null != appUpdateBean && appUpdateBean.getVersion_code() > AppUtils.getVersionCode(mContext)) {
+           /* NormalScrollViewDialog dialog = new NormalScrollViewDialog(this) {
+                @Override
+                public void setUiBeforShow() {
+                    getmTvOk().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), AppDownloadService.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putParcelable("bean", appUpdateBean);
+                            intent.putExtras(bundle);
+                            startService(intent);
+                            dismiss();
+                        }
+                    });
+                    getmTvExit().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dismiss();
+                        }
+                    });
+                }
+            };
+            dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+            dialog.show();
+            dialog.getmTvContent().setText(Html.fromHtml(appUpdateBean.getDesc()).toString());
+            dialog.setCanceledOnTouchOutside(false);*/
+
+            View contetView = InflaterUtils.inflate(this,R.layout.main_version_content_view);
+            TextView contetent = (TextView) contetView.findViewById(R.id.mTvContent);
+            contetent.setText(Html.fromHtml(appUpdateBean.getDesc()).toString());
             DialogTools.getInstance(mContext).title(ResUtils.getStr(R.string.app_update_dialog_title)).content(Html.fromHtml(appUpdateBean.getDesc()).toString()).setOnBtnClickL(new OnBtnClickL() {
                 @Override
                 public void onBtnClick(View v, Dialog dialog) {

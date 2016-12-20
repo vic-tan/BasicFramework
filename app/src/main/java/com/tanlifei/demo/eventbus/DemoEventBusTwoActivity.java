@@ -26,8 +26,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.tanlifei.common.bean.params.BaseEventbusParams;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
-import com.tanlifei.demo.evenbean.FirstEvent;
 import com.tanlifei.framework.R;
 import com.tlf.basic.utils.StartActUtils;
 import com.tlf.basic.utils.ToastUtils;
@@ -60,12 +60,12 @@ public class DemoEventBusTwoActivity extends BaseActionBarActivity implements Vi
     }
 
     @Subscribe
-    public void onEventMainThread(FirstEvent event) {
+    public void onEventMainThread(BaseEventbusParams event) {
         if (event.getTag() == 2) {
-            String msg = "Two 收到了消息：" + event.getMsg();
+            String msg = "Two 收到了消息：" + event.getStrParam();
             ToastUtils.show(mContext, msg);
             EventBus.getDefault().post(
-                    new FirstEvent("FirstEvent btn clicked", 1));
+                    new BaseEventbusParams(1,"FirstEvent btn clicked"));
             StartActUtils.finish(mContext);
         }
     }

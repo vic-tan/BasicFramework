@@ -28,8 +28,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.tanlifei.common.bean.BaseJson;
+import com.tanlifei.common.bean.params.BaseEventbusParams;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
-import com.tanlifei.demo.evenbean.FirstEvent;
 import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.DialogCallback;
@@ -54,7 +54,7 @@ public class DemoEventBusOneActivity extends BaseActionBarActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bmob.initialize(this,"85fca6b941508bf9afb079a433a13840");
+        Bmob.initialize(this, "85fca6b941508bf9afb079a433a13840");
         setContentView(R.layout.demo_eventbus_activity_one);
         EventBus.getDefault().register(this);
         tv = (TextView) findViewById(R.id.tv);
@@ -88,16 +88,14 @@ public class DemoEventBusOneActivity extends BaseActionBarActivity implements Vi
                         }
                     }
                 });*/
-                ToastUtils.show(mContext,"获取后台数据");
+                ToastUtils.show(mContext, "获取后台数据");
                 ConsoleUtils.consoleConfigRequest(mContext);
-
 
 
                 break;
 
         }
     }
-
 
 
     /**
@@ -117,9 +115,9 @@ public class DemoEventBusOneActivity extends BaseActionBarActivity implements Vi
      * 非常实用，可以在这里将子线程加载到的数据直接设置到界面中。
      */
     @Subscribe
-    public void onEventMainThread(FirstEvent event) {
+    public void onEventMainThread(BaseEventbusParams event) {
         if (event.getTag() == 1) {
-            String msg = "one onEventMainThread 收到了消息：" + event.getMsg();
+            String msg = "one onEventMainThread 收到了消息：" + event.getStrParam();
             tv.setText(msg);
             ToastUtils.show(mContext, msg);
             OkHttpUtils.post().url(UrlConstants.APP_VERSION_UPDATE).paramsForJson(tagList()).build().execute(new DialogCallback(mContext) {
@@ -157,7 +155,6 @@ public class DemoEventBusOneActivity extends BaseActionBarActivity implements Vi
             ToastUtils.show(mContext, msg);
         }
     }*/
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

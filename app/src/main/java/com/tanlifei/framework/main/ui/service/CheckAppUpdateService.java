@@ -98,11 +98,50 @@ public class CheckAppUpdateService extends IntentService {
                 "                版本号：<br>\n" +
                 "                Android 3.1.2298版<br>\n" +
                 "                二、产品介绍<br>\n" +
-                "                实现智能操控的语音助手<br>\n" +
+                "                实现智能操控的语音现智能操控的语现智能操控的语现智能操控的语现智能操控的语助手<br>\n" +
                 "                【重要机能档案】<br>\n" +
                 "                官方百度贴吧：灵犀语音助手吧<br>\n" +
                 "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglglingingxi<br>\n" +
+                "                官方微信：yidonglglingingxi<br>\n" +
+                "                官方微信：yidonglglingglingglingingxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidongliglingglingngxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidongliglingglingglingngxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglinglingglinggxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidongliglingglingglingngxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglinglingglinggxi<br>\n" +
+                "                官方微信：yidonglinglinggxi<br>\n" +
+                "                官方微信：yidonglinglinggxi<br>\n" +
+                "                官方微信：yidonglinglinggxi<br>\n" +
+                "                官方微信：yidonglingglingxi<br>\n" +
+                "                官方微信：yidonglinglinggxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglingxglingi<br>\n" +
+                "                官方微信：yidongliglingngxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglglingiglingngxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglinglingglinggxi<br>\n" +
+                "                官方微信：yidonglglinginglinggxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglglingingxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglglinginglinggxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidonglglingingxi<br>\n" +
+                "                官方微信：yidonglglingingxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
+                "                官方微信：yidongglinglingxi<br>\n" +
+                "                官方微信：yidonglingxi<br>\n" +
                 "                官方微博：@灵犀官方微博\"\n" +
+
                 "    }\n" +
                 "}";
         BaseJson baseJson = new Gson().fromJson(str, BaseJson.class);

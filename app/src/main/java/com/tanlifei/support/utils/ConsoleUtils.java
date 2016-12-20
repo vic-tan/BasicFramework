@@ -9,7 +9,6 @@ import com.tlf.basic.support.okhttp.OkHttpUtils;
 import com.tlf.basic.support.okhttp.bean.OkHttpConsole;
 import com.tlf.basic.utils.AppCacheUtils;
 import com.tlf.basic.utils.AppUtils;
-import com.tlf.basic.utils.Logger;
 import com.tlf.basic.utils.NetUtils;
 import com.tlf.basic.utils.RandomUtils;
 
@@ -89,7 +88,6 @@ public class ConsoleUtils {
             }
             if (console.isOn_of_level() && console.is_random()) {//开始
                 int random = RandomUtils.getRandom(console.getRandom_max());
-                Logger.d("max==" + console.getRandom_max() + "---" + random + "");
                 if (random == 0) {
                     return "";
                 } else {
