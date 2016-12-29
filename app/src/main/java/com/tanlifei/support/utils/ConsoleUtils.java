@@ -5,8 +5,8 @@ import android.content.Context;
 import com.tanlifei.framework.main.bean.Console;
 import com.tanlifei.framework.main.ui.BaseApplication;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
-import com.tlf.basic.support.okhttp.OkHttpUtils;
-import com.tlf.basic.support.okhttp.bean.OkHttpConsole;
+import com.tlf.basic.http.okhttp.OkHttpUtils;
+import com.tlf.basic.http.okhttp.bean.OkHttpConsole;
 import com.tlf.basic.utils.AppCacheUtils;
 import com.tlf.basic.utils.AppUtils;
 import com.tlf.basic.utils.NetUtils;
@@ -18,7 +18,8 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
 
-import static com.tlf.basic.support.okhttp.OkHttpUtils.okHttpConsole;
+import static com.tlf.basic.http.okhttp.OkHttpUtils.okHttpConsole;
+
 
 /**
  * Created by tanlifei on 16/11/24.
@@ -34,7 +35,7 @@ public class ConsoleUtils {
             OkHttpConsole consoleBean = (OkHttpConsole) AppCacheUtils.getInstance(mContext).getAsObject(CONSOLE_KEY);
             if (null == consoleBean) {//初始化控制
                 consoleBean = new OkHttpConsole(AppUtils.getAppName(mContext), false, 3, false, new Date().toString(), new Date().toString(), false);
-                AppCacheUtils.getInstance(mContext).put(CONSOLE_KEY, consoleBean);
+                AppCacheUtils.getInstance(mContext).put(CONSOLE_KEY,consoleBean);
             }
         } catch (Exception e) {
         } finally {

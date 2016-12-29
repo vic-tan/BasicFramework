@@ -12,8 +12,8 @@ import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.ImageLoadUtils;
 import com.tlf.basic.base.adapter.recycler.RvCommonAdapter;
 import com.tlf.basic.base.adapter.recycler.RvViewHolder;
-import com.tlf.basic.support.refresh.more.OnLoadMoreListener;
-import com.tlf.basic.support.refresh.more.RecyclerViewFinal;
+import com.tlf.basic.refreshview.more.OnLoadMoreListener;
+import com.tlf.basic.refreshview.more.RecyclerViewFinal;
 import com.tlf.basic.utils.DateFormatUtils;
 
 import org.androidannotations.annotations.AfterViews;

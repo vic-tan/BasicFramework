@@ -7,7 +7,7 @@ import com.tanlifei.framework.R;
 import com.tanlifei.framework.main.bean.AppUpdateBean;
 import com.tanlifei.support.constants.fixed.GlobalConstants;
 import com.tanlifei.support.http.FileCallBack;
-import com.tlf.basic.support.okhttp.OkHttpUtils;
+import com.tlf.basic.http.okhttp.OkHttpUtils;
 import com.tlf.basic.utils.Logger;
 import com.tlf.basic.utils.NetUtils;
 import com.tlf.basic.utils.ToastUtils;

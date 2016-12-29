@@ -11,8 +11,8 @@ import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.utils.ImageLoadUtils;
 import com.tlf.basic.base.adapter.abslistview.AbsCommonAdapter;
 import com.tlf.basic.base.adapter.abslistview.AbsViewHolder;
-import com.tlf.basic.support.refresh.more.GridViewFinal;
-import com.tlf.basic.support.refresh.more.OnLoadMoreListener;
+import com.tlf.basic.refreshview.more.GridViewFinal;
+import com.tlf.basic.refreshview.more.OnLoadMoreListener;
 import com.tlf.basic.utils.DateFormatUtils;
 
 import org.androidannotations.annotations.AfterViews;

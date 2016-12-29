@@ -34,7 +34,7 @@ import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.DialogCallback;
 import com.tanlifei.support.utils.ConsoleUtils;
-import com.tlf.basic.support.okhttp.OkHttpUtils;
+import com.tlf.basic.http.okhttp.OkHttpUtils;
 import com.tlf.basic.utils.StartActUtils;
 import com.tlf.basic.utils.ToastUtils;
 

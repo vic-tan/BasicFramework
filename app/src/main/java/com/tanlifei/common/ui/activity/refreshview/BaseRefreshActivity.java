@@ -11,9 +11,9 @@ import com.tanlifei.common.bean.BaseJson;
 import com.tanlifei.common.bean.PageBean;
 import com.tanlifei.common.ui.activity.actionbar.BaseActionBarActivity;
 import com.tanlifei.framework.R;
-import com.tlf.basic.support.refresh.header.OnDefaultRefreshListener;
-import com.tlf.basic.support.refresh.header.PtrClassicFrameLayout;
-import com.tlf.basic.support.refresh.header.PtrFrameLayout;
+import com.tlf.basic.refreshview.header.OnDefaultRefreshListener;
+import com.tlf.basic.refreshview.header.PtrClassicFrameLayout;
+import com.tlf.basic.refreshview.header.PtrFrameLayout;
 import com.tlf.basic.utils.ViewFindUtils;
 
 import java.util.ArrayList;

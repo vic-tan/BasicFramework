@@ -8,7 +8,7 @@ import com.tanlifei.framework.R;
 import com.tanlifei.support.constants.fixed.ExceptionConstants;
 import com.tanlifei.support.exception.AppException;
 import com.tanlifei.support.utils.ConsoleUtils;
-import com.tlf.basic.support.okhttp.callback.Callback;
+import com.tlf.basic.http.okhttp.callback.Callback;
 import com.tlf.basic.uikit.kprogresshud.KProgressHUD;
 import com.tlf.basic.utils.Logger;
 import com.tlf.basic.utils.StringUtils;

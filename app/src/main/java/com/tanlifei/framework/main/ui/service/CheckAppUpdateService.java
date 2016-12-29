@@ -12,7 +12,7 @@ import com.tanlifei.framework.main.ui.activity.AppServiceActivity;
 import com.tanlifei.framework.main.ui.activity.AppServiceActivity_;
 import com.tanlifei.support.constants.fixed.UrlConstants;
 import com.tanlifei.support.http.ResultCallback;
-import com.tlf.basic.support.okhttp.OkHttpUtils;
+import com.tlf.basic.http.okhttp.OkHttpUtils;
 import com.tlf.basic.utils.AppUtils;
 import com.tlf.basic.utils.NetUtils;
 
