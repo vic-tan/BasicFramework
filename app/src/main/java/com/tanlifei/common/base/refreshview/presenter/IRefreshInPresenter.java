@@ -21,7 +21,6 @@ public interface IRefreshInPresenter {
      * 不分显示数据
      * @param url
      * @param map
-     * @param fromStart true 下拉或自动刷新标识
      */
     void requestData(String url,Map<String, String> map);
 }
